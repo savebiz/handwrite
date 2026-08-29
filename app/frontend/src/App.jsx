@@ -347,6 +347,11 @@ export default function App() {
                                   {field.sensitivity}
                                 </span>
                                 <span className={`text-[10px] font-bold uppercase px-2 py-0.5 rounded ${
+                                  field.text_style === 'typewritten' ? 'bg-teal-900 text-teal-300 border border-teal-600' : 'bg-slate-800 text-slate-400'
+                                }`}>
+                                  {field.text_style || 'handwritten'}
+                                </span>
+                                <span className={`text-[10px] font-bold uppercase px-2 py-0.5 rounded ${
                                   field.decision === 'auto_accept' ? 'bg-emerald-900 text-emerald-300' : 'bg-amber-900 text-amber-300'
                                 }`}>
                                   {field.decision}

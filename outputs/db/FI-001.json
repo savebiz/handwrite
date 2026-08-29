@@ -1,5 +1,5 @@
 {
-  "run_id": "run-fdf1c43e",
+  "run_id": "run-13239ffb",
   "document_id": "FI-001",
   "document_type": "field_inspection",
   "document_quality": {
@@ -13,9 +13,10 @@
       "display_name": "Inspection Reference",
       "proposed_value": "INSP-2026-001",
       "normalized_value": "INSP-2026-001",
-      "confidence": 0.95,
+      "confidence": 0.99,
       "decision": "auto_accept",
       "sensitivity": "public",
+      "text_style": "typewritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -48,9 +49,10 @@
       "display_name": "Inspection Date",
       "proposed_value": "2026-08-15",
       "normalized_value": "2026-08-15",
-      "confidence": 0.95,
+      "confidence": 0.99,
       "decision": "auto_accept",
       "sensitivity": "public",
+      "text_style": "typewritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -83,9 +85,10 @@
       "display_name": "Site / Location",
       "proposed_value": "Building A, North Wing",
       "normalized_value": "Building A, North Wing",
-      "confidence": 0.95,
+      "confidence": 0.94,
       "decision": "auto_accept",
       "sensitivity": "internal",
+      "text_style": "handwritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -113,9 +116,10 @@
       "display_name": "Inspector Name",
       "proposed_value": "John Doe",
       "normalized_value": "John Doe",
-      "confidence": 0.95,
+      "confidence": 0.94,
       "decision": "human_review",
       "sensitivity": "personal",
+      "text_style": "handwritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -148,9 +152,10 @@
       "display_name": "Asset Reference",
       "proposed_value": "AST-10293",
       "normalized_value": "AST-10293",
-      "confidence": 0.95,
+      "confidence": 0.94,
       "decision": "auto_accept",
       "sensitivity": "internal",
+      "text_style": "handwritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -183,9 +188,10 @@
       "display_name": "Inspection Status",
       "proposed_value": "PASS",
       "normalized_value": "PASS",
-      "confidence": 0.95,
+      "confidence": 0.94,
       "decision": "auto_accept",
       "sensitivity": "public",
+      "text_style": "handwritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -218,9 +224,10 @@
       "display_name": "Observation / Finding",
       "proposed_value": "All pressure valves optimal.",
       "normalized_value": "All pressure valves optimal.",
-      "confidence": 0.95,
+      "confidence": 0.94,
       "decision": "auto_accept",
       "sensitivity": "public",
+      "text_style": "handwritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -242,9 +249,10 @@
       "display_name": "Action Required",
       "proposed_value": "None",
       "normalized_value": "None",
-      "confidence": 0.95,
+      "confidence": 0.94,
       "decision": "auto_accept",
       "sensitivity": "public",
+      "text_style": "handwritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -266,9 +274,10 @@
       "display_name": "Follow-up Date",
       "proposed_value": "2026-11-15",
       "normalized_value": "2026-11-15",
-      "confidence": 0.95,
+      "confidence": 0.94,
       "decision": "auto_accept",
       "sensitivity": "public",
+      "text_style": "handwritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -296,9 +305,10 @@
       "display_name": "Form Completeness",
       "proposed_value": "COMPLETE",
       "normalized_value": "COMPLETE",
-      "confidence": 0.95,
+      "confidence": 0.94,
       "decision": "auto_accept",
       "sensitivity": "internal",
+      "text_style": "handwritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -330,11 +340,11 @@
   "record_status": "awaiting_review",
   "audit_events": [
     {
-      "timestamp": "2026-08-29T19:34:58.102467+00:00",
+      "timestamp": "2026-08-29T19:55:03.390175+00:00",
       "actor": "agent",
       "action": "DOCUMENT_PIPELINE_PROCESSED",
       "details": {
-        "run_id": "run-fdf1c43e",
+        "run_id": "run-13239ffb",
         "document_id": "FI-001",
         "document_type": "field_inspection",
         "quality_status": "pass",

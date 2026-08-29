@@ -70,6 +70,25 @@ def test_sensitive_customer_onboarding_routing():
         assert f_obj.sensitivity in [SensitivityEnum.PERSONAL, SensitivityEnum.SENSITIVE]
 
 
+def test_typewritten_text_processing():
+    image_path = "data/synthetic/field-inspection/field_insp_001.png"
+    gold_path = "data/gold-labels/FI-001_gold.json"
+
+    record = process_document_pipeline(
+        image_path=image_path,
+        document_id="FI-001-TYPED",
+        gold_data_path=gold_path,
+        issues_hint=["typewritten"],
+        doc_type_hint="field_inspection",
+    )
+
+    # Typewritten field inspection_ref should have high confidence (0.99) and typewritten text_style
+    ref_field = next(f for f in record.field_results if f.field_name == "inspection_ref")
+    assert ref_field.text_style.value == "typewritten"
+    assert ref_field.confidence >= 0.98
+    assert ref_field.decision == DecisionEnum.AUTO_ACCEPT
+
+
 def run_all_pipeline_tests():
     print("--- Running Agent Pipeline Integration Tests ---")
     test_clean_document_routing()
@@ -78,7 +97,9 @@ def run_all_pipeline_tests():
     print("[PASS] Extreme Hard Case Rescan Routing Test")
     test_sensitive_customer_onboarding_routing()
     print("[PASS] Sensitive PII Mandatory Human Review Test")
-    print("\n[SUCCESS] ALL AGENT PIPELINE TESTS PASSED CLEANLY (3/3).")
+    test_typewritten_text_processing()
+    print("[PASS] Graceful Typewritten Text Processing Test")
+    print("\n[SUCCESS] ALL AGENT PIPELINE TESTS PASSED CLEANLY (4/4).")
 
 
 if __name__ == "__main__":

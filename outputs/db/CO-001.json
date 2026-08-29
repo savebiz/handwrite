@@ -1,5 +1,5 @@
 {
-  "run_id": "run-df5ad0a6",
+  "run_id": "run-83890a73",
   "document_id": "CO-001",
   "document_type": "customer_onboarding",
   "document_quality": {
@@ -13,9 +13,10 @@
       "display_name": "Onboarding Reference",
       "proposed_value": "ONB-2026-101",
       "normalized_value": "ONB-2026-101",
-      "confidence": 0.95,
+      "confidence": 0.99,
       "decision": "auto_accept",
       "sensitivity": "public",
+      "text_style": "typewritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -48,9 +49,10 @@
       "display_name": "Application Date",
       "proposed_value": "2026-08-10",
       "normalized_value": "2026-08-10",
-      "confidence": 0.95,
+      "confidence": 0.99,
       "decision": "auto_accept",
       "sensitivity": "public",
+      "text_style": "typewritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -83,9 +85,10 @@
       "display_name": "Applicant Name",
       "proposed_value": "Sarah Jenkins",
       "normalized_value": "Sarah Jenkins",
-      "confidence": 0.95,
+      "confidence": 0.94,
       "decision": "human_review",
       "sensitivity": "personal",
+      "text_style": "handwritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -118,9 +121,10 @@
       "display_name": "Contact Number",
       "proposed_value": "+14155550192",
       "normalized_value": "+14155550192",
-      "confidence": 0.95,
+      "confidence": 0.94,
       "decision": "human_review",
       "sensitivity": "personal",
+      "text_style": "handwritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -158,9 +162,10 @@
       "display_name": "Email Address",
       "proposed_value": "sarah.j@example.com",
       "normalized_value": "sarah.j@example.com",
-      "confidence": 0.95,
+      "confidence": 0.94,
       "decision": "human_review",
       "sensitivity": "personal",
+      "text_style": "handwritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -193,9 +198,10 @@
       "display_name": "Address / Location",
       "proposed_value": "742 Evergreen Terrace, Springfield",
       "normalized_value": "742 Evergreen Terrace, Springfield",
-      "confidence": 0.95,
+      "confidence": 0.94,
       "decision": "human_review",
       "sensitivity": "personal",
+      "text_style": "handwritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -228,9 +234,10 @@
       "display_name": "Product Requested",
       "proposed_value": "Standard",
       "normalized_value": "Standard",
-      "confidence": 0.95,
+      "confidence": 0.94,
       "decision": "auto_accept",
       "sensitivity": "internal",
+      "text_style": "handwritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -263,9 +270,10 @@
       "display_name": "Identity Reference Placeholder",
       "proposed_value": "ID-984712",
       "normalized_value": "ID-984712",
-      "confidence": 0.95,
+      "confidence": 0.94,
       "decision": "human_review",
       "sensitivity": "sensitive",
+      "text_style": "handwritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -303,9 +311,10 @@
       "display_name": "Consent Indicator",
       "proposed_value": "YES",
       "normalized_value": "YES",
-      "confidence": 0.95,
+      "confidence": 0.94,
       "decision": "human_review",
       "sensitivity": "personal",
+      "text_style": "handwritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -343,9 +352,10 @@
       "display_name": "Reviewer Status",
       "proposed_value": "PENDING",
       "normalized_value": "PENDING",
-      "confidence": 0.95,
+      "confidence": 0.94,
       "decision": "auto_accept",
       "sensitivity": "internal",
+      "text_style": "handwritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -378,9 +388,10 @@
       "display_name": "Form Completeness",
       "proposed_value": "COMPLETE",
       "normalized_value": "COMPLETE",
-      "confidence": 0.95,
+      "confidence": 0.94,
       "decision": "auto_accept",
       "sensitivity": "internal",
+      "text_style": "handwritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -412,11 +423,11 @@
   "record_status": "approved",
   "audit_events": [
     {
-      "timestamp": "2026-08-29T19:34:58.124020+00:00",
+      "timestamp": "2026-08-29T19:55:03.406257+00:00",
       "actor": "agent",
       "action": "DOCUMENT_PIPELINE_PROCESSED",
       "details": {
-        "run_id": "run-df5ad0a6",
+        "run_id": "run-83890a73",
         "document_id": "CO-001",
         "document_type": "customer_onboarding",
         "quality_status": "pass",
@@ -427,7 +438,7 @@
       }
     },
     {
-      "timestamp": "2026-08-29T19:34:58.171449+00:00",
+      "timestamp": "2026-08-29T19:55:03.459477+00:00",
       "actor": "reviewer",
       "action": "DOCUMENT_REVIEW_SUBMITTED",
       "details": {

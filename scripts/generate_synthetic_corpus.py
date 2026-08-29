@@ -278,9 +278,16 @@ def render_synthetic_form(spec: dict) -> str:
         draw.text((60, y_offset + 5), f"{label_str}:", fill=(100, 100, 100))
 
         display_val = str(val) if val is not None else "[UNREADABLE / BLANK]"
-        # Simulate handwriting text
-        val_color = (20, 20, 150) if "extreme" not in spec["filename"] else (120, 120, 120)
-        draw.text((300, y_offset + 20), display_val, fill=val_color)
+        
+        # Render typewritten vs handwritten text style
+        is_typewritten_field = field_key in ["inspection_ref", "onboarding_ref", "application_date", "inspection_date"] or "typewritten" in str(spec.get("issues", []))
+        val_color = (0, 0, 0) if is_typewritten_field else (20, 20, 150)
+        if "extreme" in spec["filename"]:
+            val_color = (120, 120, 120)
+
+        # Draw typewritten text with clear monospace padding vs handwritten offset
+        text_pos = (300, y_offset + 18) if is_typewritten_field else (300, y_offset + 22)
+        draw.text(text_pos, display_val, fill=val_color)
 
         if "crossed_out" in str(spec.get("issues", [])) and field_key == "observation_finding":
             draw.line([300, y_offset + 25, 600, y_offset + 25], fill=(200, 0, 0), width=3)

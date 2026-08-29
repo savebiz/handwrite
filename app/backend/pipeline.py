@@ -86,6 +86,7 @@ def process_document_pipeline(
                 confidence=confidence,
                 decision=decision,
                 sensitivity=sensitivity,
+                text_style=candidate.get("text_style", "handwritten"),
                 evidence=Evidence(
                     page=1,
                     bounding_box=candidate["bounding_box"],

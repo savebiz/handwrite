@@ -66,6 +66,12 @@ class ReviewerDecisionEnum(str, Enum):
     NOT_REQUIRED = "not_required"
 
 
+class TextStyleEnum(str, Enum):
+    HANDWRITTEN = "handwritten"
+    TYPEWRITTEN = "typewritten"
+    MIXED = "mixed"
+
+
 class FieldResult(BaseModel):
     field_name: str
     display_name: str
@@ -74,6 +80,7 @@ class FieldResult(BaseModel):
     confidence: float = Field(..., ge=0.0, le=1.0)
     decision: DecisionEnum
     sensitivity: SensitivityEnum
+    text_style: TextStyleEnum = TextStyleEnum.HANDWRITTEN
     evidence: Evidence
     verification_checks: List[VerificationCheck] = Field(default_factory=list)
     decision_reason: str

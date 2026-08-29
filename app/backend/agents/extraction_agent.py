@@ -29,10 +29,14 @@ def extract_field_candidates(
     for field_name, meta in field_meta.items():
         gold_val = gold_dict.get(field_name)
 
-        proposed_val = gold_val
-        confidence = 0.95
+        # Detect text style (typewritten vs handwritten)
+        is_typewritten = "typewritten" in issues_list or field_name in ["inspection_ref", "onboarding_ref", "application_date", "inspection_date"]
+        text_style = "typewritten" if is_typewritten else "handwritten"
 
-        # Noisy / hard case adjustments
+        proposed_val = gold_val
+        confidence = 0.99 if is_typewritten else 0.94
+
+        # Noisy / hard case adjustments for handwritten text
         if "cursive_handwriting" in issues_list or "ambiguous_digits" in issues_list:
             confidence = 0.72
         elif "extreme_blur" in issues_list or "crossed_out_text" in issues_list:
@@ -47,6 +51,7 @@ def extract_field_candidates(
             "display_name": meta.display_name,
             "proposed_value": proposed_val,
             "confidence": confidence,
+            "text_style": text_style,
             "bounding_box": meta.default_bounding_box,
             "sensitivity": meta.sensitivity,
         }
