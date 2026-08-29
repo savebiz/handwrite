@@ -1,0 +1,443 @@
+{
+  "run_id": "run-df5ad0a6",
+  "document_id": "CO-001",
+  "document_type": "customer_onboarding",
+  "document_quality": {
+    "status": "pass",
+    "issues": [],
+    "rescan_required": false
+  },
+  "field_results": [
+    {
+      "field_name": "onboarding_ref",
+      "display_name": "Onboarding Reference",
+      "proposed_value": "ONB-2026-101",
+      "normalized_value": "ONB-2026-101",
+      "confidence": 0.95,
+      "decision": "auto_accept",
+      "sensitivity": "public",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          100.0,
+          50.0,
+          150.0,
+          400.0
+        ],
+        "crop_reference": "/crops/CO-001_onboarding_ref.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field present."
+        },
+        {
+          "rule_id": "RULE-PAT-003",
+          "result": "pass",
+          "message": "Matches pattern '^ONB-\\d{4}-\\d{3}$'."
+        }
+      ],
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "reviewer_value": "ONB-2026-101",
+      "reviewer_decision": "approved",
+      "reviewer_reason": "Verified by test operator"
+    },
+    {
+      "field_name": "application_date",
+      "display_name": "Application Date",
+      "proposed_value": "2026-08-10",
+      "normalized_value": "2026-08-10",
+      "confidence": 0.95,
+      "decision": "auto_accept",
+      "sensitivity": "public",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          100.0,
+          450.0,
+          150.0,
+          750.0
+        ],
+        "crop_reference": "/crops/CO-001_application_date.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field present."
+        },
+        {
+          "rule_id": "RULE-DATE-002",
+          "result": "pass",
+          "message": "Valid ISO-8601 date string."
+        }
+      ],
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "reviewer_value": "2026-08-10",
+      "reviewer_decision": "approved",
+      "reviewer_reason": "Verified by test operator"
+    },
+    {
+      "field_name": "applicant_name",
+      "display_name": "Applicant Name",
+      "proposed_value": "Sarah Jenkins",
+      "normalized_value": "Sarah Jenkins",
+      "confidence": 0.95,
+      "decision": "human_review",
+      "sensitivity": "personal",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          180.0,
+          50.0,
+          230.0,
+          750.0
+        ],
+        "crop_reference": "/crops/CO-001_applicant_name.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field present."
+        },
+        {
+          "rule_id": "RULE-SENS-006",
+          "result": "warning",
+          "message": "Field classified as 'personal' — mandatory human review required."
+        }
+      ],
+      "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
+      "reviewer_value": "Sarah Jenkins",
+      "reviewer_decision": "approved",
+      "reviewer_reason": "Verified by test operator"
+    },
+    {
+      "field_name": "contact_number",
+      "display_name": "Contact Number",
+      "proposed_value": "+14155550192",
+      "normalized_value": "+14155550192",
+      "confidence": 0.95,
+      "decision": "human_review",
+      "sensitivity": "personal",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          260.0,
+          50.0,
+          310.0,
+          380.0
+        ],
+        "crop_reference": "/crops/CO-001_contact_number.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field present."
+        },
+        {
+          "rule_id": "RULE-PAT-003",
+          "result": "pass",
+          "message": "Matches pattern '^\\+?[0-9]{10,14}$'."
+        },
+        {
+          "rule_id": "RULE-SENS-006",
+          "result": "warning",
+          "message": "Field classified as 'personal' — mandatory human review required."
+        }
+      ],
+      "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
+      "reviewer_value": "+14155550192",
+      "reviewer_decision": "approved",
+      "reviewer_reason": "Verified by test operator"
+    },
+    {
+      "field_name": "email_address",
+      "display_name": "Email Address",
+      "proposed_value": "sarah.j@example.com",
+      "normalized_value": "sarah.j@example.com",
+      "confidence": 0.95,
+      "decision": "human_review",
+      "sensitivity": "personal",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          260.0,
+          400.0,
+          310.0,
+          750.0
+        ],
+        "crop_reference": "/crops/CO-001_email_address.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-PAT-003",
+          "result": "pass",
+          "message": "Matches pattern '^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$'."
+        },
+        {
+          "rule_id": "RULE-SENS-006",
+          "result": "warning",
+          "message": "Field classified as 'personal' — mandatory human review required."
+        }
+      ],
+      "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
+      "reviewer_value": "sarah.j@example.com",
+      "reviewer_decision": "approved",
+      "reviewer_reason": "Verified by test operator"
+    },
+    {
+      "field_name": "address_location",
+      "display_name": "Address / Location",
+      "proposed_value": "742 Evergreen Terrace, Springfield",
+      "normalized_value": "742 Evergreen Terrace, Springfield",
+      "confidence": 0.95,
+      "decision": "human_review",
+      "sensitivity": "personal",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          340.0,
+          50.0,
+          410.0,
+          750.0
+        ],
+        "crop_reference": "/crops/CO-001_address_location.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field present."
+        },
+        {
+          "rule_id": "RULE-SENS-006",
+          "result": "warning",
+          "message": "Field classified as 'personal' — mandatory human review required."
+        }
+      ],
+      "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
+      "reviewer_value": "742 Evergreen Terrace, Springfield",
+      "reviewer_decision": "approved",
+      "reviewer_reason": "Verified by test operator"
+    },
+    {
+      "field_name": "product_requested",
+      "display_name": "Product Requested",
+      "proposed_value": "Standard",
+      "normalized_value": "Standard",
+      "confidence": 0.95,
+      "decision": "auto_accept",
+      "sensitivity": "internal",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          430.0,
+          50.0,
+          480.0,
+          380.0
+        ],
+        "crop_reference": "/crops/CO-001_product_requested.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field present."
+        },
+        {
+          "rule_id": "RULE-VOCAB-004",
+          "result": "pass",
+          "message": "Value in controlled vocabulary."
+        }
+      ],
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "reviewer_value": "Standard",
+      "reviewer_decision": "approved",
+      "reviewer_reason": "Verified by test operator"
+    },
+    {
+      "field_name": "id_ref_placeholder",
+      "display_name": "Identity Reference Placeholder",
+      "proposed_value": "ID-984712",
+      "normalized_value": "ID-984712",
+      "confidence": 0.95,
+      "decision": "human_review",
+      "sensitivity": "sensitive",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          430.0,
+          400.0,
+          480.0,
+          750.0
+        ],
+        "crop_reference": "/crops/CO-001_id_ref_placeholder.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field present."
+        },
+        {
+          "rule_id": "RULE-PAT-003",
+          "result": "pass",
+          "message": "Matches pattern '^ID-[\\*\\w]{5,10}$'."
+        },
+        {
+          "rule_id": "RULE-SENS-006",
+          "result": "warning",
+          "message": "Field classified as 'sensitive' — mandatory human review required."
+        }
+      ],
+      "decision_reason": "Policy rule: Field sensitivity is 'sensitive'. Human review mandatory.",
+      "reviewer_value": "ID-984712",
+      "reviewer_decision": "approved",
+      "reviewer_reason": "Verified by test operator"
+    },
+    {
+      "field_name": "consent_indicator",
+      "display_name": "Consent Indicator",
+      "proposed_value": "YES",
+      "normalized_value": "YES",
+      "confidence": 0.95,
+      "decision": "human_review",
+      "sensitivity": "personal",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          510.0,
+          50.0,
+          560.0,
+          380.0
+        ],
+        "crop_reference": "/crops/CO-001_consent_indicator.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field present."
+        },
+        {
+          "rule_id": "RULE-VOCAB-004",
+          "result": "pass",
+          "message": "Value in controlled vocabulary."
+        },
+        {
+          "rule_id": "RULE-SENS-006",
+          "result": "warning",
+          "message": "Field classified as 'personal' — mandatory human review required."
+        }
+      ],
+      "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
+      "reviewer_value": "YES",
+      "reviewer_decision": "approved",
+      "reviewer_reason": "Verified by test operator"
+    },
+    {
+      "field_name": "reviewer_status",
+      "display_name": "Reviewer Status",
+      "proposed_value": "PENDING",
+      "normalized_value": "PENDING",
+      "confidence": 0.95,
+      "decision": "auto_accept",
+      "sensitivity": "internal",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          510.0,
+          400.0,
+          560.0,
+          750.0
+        ],
+        "crop_reference": "/crops/CO-001_reviewer_status.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field present."
+        },
+        {
+          "rule_id": "RULE-VOCAB-004",
+          "result": "pass",
+          "message": "Value in controlled vocabulary."
+        }
+      ],
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "reviewer_value": "PENDING",
+      "reviewer_decision": "approved",
+      "reviewer_reason": "Verified by test operator"
+    },
+    {
+      "field_name": "form_completeness",
+      "display_name": "Form Completeness",
+      "proposed_value": "COMPLETE",
+      "normalized_value": "COMPLETE",
+      "confidence": 0.95,
+      "decision": "auto_accept",
+      "sensitivity": "internal",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          590.0,
+          50.0,
+          640.0,
+          750.0
+        ],
+        "crop_reference": "/crops/CO-001_form_completeness.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field present."
+        },
+        {
+          "rule_id": "RULE-VOCAB-004",
+          "result": "pass",
+          "message": "Value in controlled vocabulary."
+        }
+      ],
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "reviewer_value": "COMPLETE",
+      "reviewer_decision": "approved",
+      "reviewer_reason": "Verified by test operator"
+    }
+  ],
+  "record_status": "approved",
+  "audit_events": [
+    {
+      "timestamp": "2026-08-29T19:34:58.124020+00:00",
+      "actor": "agent",
+      "action": "DOCUMENT_PIPELINE_PROCESSED",
+      "details": {
+        "run_id": "run-df5ad0a6",
+        "document_id": "CO-001",
+        "document_type": "customer_onboarding",
+        "quality_status": "pass",
+        "record_status": "awaiting_review",
+        "total_fields": 11,
+        "auto_accepted_fields": 5,
+        "human_review_fields": 6
+      }
+    },
+    {
+      "timestamp": "2026-08-29T19:34:58.171449+00:00",
+      "actor": "reviewer",
+      "action": "DOCUMENT_REVIEW_SUBMITTED",
+      "details": {
+        "document_id": "CO-001",
+        "reviewer_id": "op-test",
+        "fields_reviewed": 11,
+        "final_record_status": "approved"
+      }
+    }
+  ],
+  "schema_version": "1.0.0",
+  "agent_version": "1.0.0"
+}

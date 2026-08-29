@@ -1,0 +1,350 @@
+{
+  "run_id": "run-fdf1c43e",
+  "document_id": "FI-001",
+  "document_type": "field_inspection",
+  "document_quality": {
+    "status": "pass",
+    "issues": [],
+    "rescan_required": false
+  },
+  "field_results": [
+    {
+      "field_name": "inspection_ref",
+      "display_name": "Inspection Reference",
+      "proposed_value": "INSP-2026-001",
+      "normalized_value": "INSP-2026-001",
+      "confidence": 0.95,
+      "decision": "auto_accept",
+      "sensitivity": "public",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          100.0,
+          50.0,
+          150.0,
+          400.0
+        ],
+        "crop_reference": "/crops/FI-001_inspection_ref.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field present."
+        },
+        {
+          "rule_id": "RULE-PAT-003",
+          "result": "pass",
+          "message": "Matches pattern '^INSP-\\d{4}-\\d{3}$'."
+        }
+      ],
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "reviewer_value": null,
+      "reviewer_decision": "not_required",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "inspection_date",
+      "display_name": "Inspection Date",
+      "proposed_value": "2026-08-15",
+      "normalized_value": "2026-08-15",
+      "confidence": 0.95,
+      "decision": "auto_accept",
+      "sensitivity": "public",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          100.0,
+          450.0,
+          150.0,
+          750.0
+        ],
+        "crop_reference": "/crops/FI-001_inspection_date.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field present."
+        },
+        {
+          "rule_id": "RULE-DATE-002",
+          "result": "pass",
+          "message": "Valid ISO-8601 date string."
+        }
+      ],
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "reviewer_value": null,
+      "reviewer_decision": "not_required",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "site_location",
+      "display_name": "Site / Location",
+      "proposed_value": "Building A, North Wing",
+      "normalized_value": "Building A, North Wing",
+      "confidence": 0.95,
+      "decision": "auto_accept",
+      "sensitivity": "internal",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          180.0,
+          50.0,
+          230.0,
+          750.0
+        ],
+        "crop_reference": "/crops/FI-001_site_location.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field present."
+        }
+      ],
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "reviewer_value": null,
+      "reviewer_decision": "not_required",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "inspector_name",
+      "display_name": "Inspector Name",
+      "proposed_value": "John Doe",
+      "normalized_value": "John Doe",
+      "confidence": 0.95,
+      "decision": "human_review",
+      "sensitivity": "personal",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          260.0,
+          50.0,
+          310.0,
+          750.0
+        ],
+        "crop_reference": "/crops/FI-001_inspector_name.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field present."
+        },
+        {
+          "rule_id": "RULE-SENS-006",
+          "result": "warning",
+          "message": "Field classified as 'personal' — mandatory human review required."
+        }
+      ],
+      "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
+      "reviewer_value": null,
+      "reviewer_decision": "pending",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "asset_ref",
+      "display_name": "Asset Reference",
+      "proposed_value": "AST-10293",
+      "normalized_value": "AST-10293",
+      "confidence": 0.95,
+      "decision": "auto_accept",
+      "sensitivity": "internal",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          340.0,
+          50.0,
+          390.0,
+          400.0
+        ],
+        "crop_reference": "/crops/FI-001_asset_ref.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field present."
+        },
+        {
+          "rule_id": "RULE-PAT-003",
+          "result": "pass",
+          "message": "Matches pattern '^AST-\\d{5}$'."
+        }
+      ],
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "reviewer_value": null,
+      "reviewer_decision": "not_required",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "inspection_status",
+      "display_name": "Inspection Status",
+      "proposed_value": "PASS",
+      "normalized_value": "PASS",
+      "confidence": 0.95,
+      "decision": "auto_accept",
+      "sensitivity": "public",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          340.0,
+          450.0,
+          390.0,
+          750.0
+        ],
+        "crop_reference": "/crops/FI-001_inspection_status.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field present."
+        },
+        {
+          "rule_id": "RULE-VOCAB-004",
+          "result": "pass",
+          "message": "Value in controlled vocabulary."
+        }
+      ],
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "reviewer_value": null,
+      "reviewer_decision": "not_required",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "observation_finding",
+      "display_name": "Observation / Finding",
+      "proposed_value": "All pressure valves optimal.",
+      "normalized_value": "All pressure valves optimal.",
+      "confidence": 0.95,
+      "decision": "auto_accept",
+      "sensitivity": "public",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          420.0,
+          50.0,
+          520.0,
+          750.0
+        ],
+        "crop_reference": "/crops/FI-001_observation_finding.png"
+      },
+      "verification_checks": [],
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "reviewer_value": null,
+      "reviewer_decision": "not_required",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "action_required",
+      "display_name": "Action Required",
+      "proposed_value": "None",
+      "normalized_value": "None",
+      "confidence": 0.95,
+      "decision": "auto_accept",
+      "sensitivity": "public",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          550.0,
+          50.0,
+          650.0,
+          750.0
+        ],
+        "crop_reference": "/crops/FI-001_action_required.png"
+      },
+      "verification_checks": [],
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "reviewer_value": null,
+      "reviewer_decision": "not_required",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "followup_date",
+      "display_name": "Follow-up Date",
+      "proposed_value": "2026-11-15",
+      "normalized_value": "2026-11-15",
+      "confidence": 0.95,
+      "decision": "auto_accept",
+      "sensitivity": "public",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          680.0,
+          50.0,
+          730.0,
+          380.0
+        ],
+        "crop_reference": "/crops/FI-001_followup_date.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-DATE-002",
+          "result": "pass",
+          "message": "Valid ISO-8601 date string."
+        }
+      ],
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "reviewer_value": null,
+      "reviewer_decision": "not_required",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "form_completeness",
+      "display_name": "Form Completeness",
+      "proposed_value": "COMPLETE",
+      "normalized_value": "COMPLETE",
+      "confidence": 0.95,
+      "decision": "auto_accept",
+      "sensitivity": "internal",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          680.0,
+          420.0,
+          730.0,
+          750.0
+        ],
+        "crop_reference": "/crops/FI-001_form_completeness.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field present."
+        },
+        {
+          "rule_id": "RULE-VOCAB-004",
+          "result": "pass",
+          "message": "Value in controlled vocabulary."
+        }
+      ],
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "reviewer_value": null,
+      "reviewer_decision": "not_required",
+      "reviewer_reason": null
+    }
+  ],
+  "record_status": "awaiting_review",
+  "audit_events": [
+    {
+      "timestamp": "2026-08-29T19:34:58.102467+00:00",
+      "actor": "agent",
+      "action": "DOCUMENT_PIPELINE_PROCESSED",
+      "details": {
+        "run_id": "run-fdf1c43e",
+        "document_id": "FI-001",
+        "document_type": "field_inspection",
+        "quality_status": "pass",
+        "record_status": "awaiting_review",
+        "total_fields": 10,
+        "auto_accepted_fields": 9,
+        "human_review_fields": 1
+      }
+    }
+  ],
+  "schema_version": "1.0.0",
+  "agent_version": "1.0.0"
+}
