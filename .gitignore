@@ -10,7 +10,9 @@ vendor/
 
 # Node / Frontend
 node_modules/
+app/frontend/node_modules/
 dist/
+app/frontend/dist/
 .vite/
 npm-debug.log*
 

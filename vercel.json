@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app/backend/main.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "app/frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "app/backend/main.py"
+    },
+    {
+      "src": "/synthetic/(.*)",
+      "dest": "app/backend/main.py"
+    },
+    {
+      "src": "/crops/(.*)",
+      "dest": "app/backend/main.py"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "app/frontend/$1"
+    }
+  ]
+}
