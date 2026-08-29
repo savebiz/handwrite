@@ -1,0 +1,15 @@
+{
+  "dataset": {
+    "total_samples": 12,
+    "manifest": "data/manifests/manifest.json",
+    "timestamp": "2026-08-29T20:31:06Z"
+  },
+  "baseline": {
+    "verified_field_accuracy_percent": 86.51,
+    "correct_fields": 109,
+    "total_fields": 126,
+    "schema_pass_rate_percent": 100.0,
+    "total_duration_seconds": 0.1803,
+    "avg_duration_per_doc_seconds": 0.015
+  }
+}
