@@ -1,0 +1,19 @@
+{
+  "document_id": "CO-002",
+  "document_type": "customer_onboarding",
+  "difficulty": "clean",
+  "issues": [],
+  "gold_fields": {
+    "onboarding_ref": "ONB-2026-102",
+    "application_date": "2026-08-11",
+    "applicant_name": "Michael Brown",
+    "contact_number": "+12125550144",
+    "email_address": "m.brown@domain.com",
+    "address_location": "100 Broadway Ave, New York, NY",
+    "product_requested": "Premium",
+    "id_ref_placeholder": "ID-551029",
+    "consent_indicator": "YES",
+    "reviewer_status": "PENDING",
+    "form_completeness": "COMPLETE"
+  }
+}

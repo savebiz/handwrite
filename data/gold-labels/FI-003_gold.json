@@ -1,0 +1,20 @@
+{
+  "document_id": "FI-003",
+  "document_type": "field_inspection",
+  "difficulty": "medium",
+  "issues": [
+    "minor_skew"
+  ],
+  "gold_fields": {
+    "inspection_ref": "INSP-2026-003",
+    "inspection_date": "2026-08-18",
+    "site_location": "Warehouse Depot 12",
+    "inspector_name": "Robert Vance",
+    "asset_ref": "AST-88192",
+    "inspection_status": "FAIL",
+    "observation_finding": "Heavy corrosion on structural beam.",
+    "action_required": "Immediate safety audit & beam replacement.",
+    "followup_date": "2026-08-25",
+    "form_completeness": "COMPLETE"
+  }
+}

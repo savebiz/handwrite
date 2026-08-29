@@ -1,0 +1,21 @@
+{
+  "document_id": "FI-005",
+  "document_type": "field_inspection",
+  "difficulty": "hard",
+  "issues": [
+    "handwriting_overlap",
+    "noise"
+  ],
+  "gold_fields": {
+    "inspection_ref": "INSP-2026-005",
+    "inspection_date": "2026-08-22",
+    "site_location": "Refinery Zone C",
+    "inspector_name": "David K.",
+    "asset_ref": "AST-99001",
+    "inspection_status": "NEEDS_ATTENTION",
+    "observation_finding": "Vibration noise in pump motor.",
+    "action_required": "Lubricate bearings.",
+    "followup_date": "2026-09-05",
+    "form_completeness": "COMPLETE"
+  }
+}

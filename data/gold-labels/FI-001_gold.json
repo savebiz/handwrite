@@ -1,0 +1,18 @@
+{
+  "document_id": "FI-001",
+  "document_type": "field_inspection",
+  "difficulty": "clean",
+  "issues": [],
+  "gold_fields": {
+    "inspection_ref": "INSP-2026-001",
+    "inspection_date": "2026-08-15",
+    "site_location": "Building A, North Wing",
+    "inspector_name": "John Doe",
+    "asset_ref": "AST-10293",
+    "inspection_status": "PASS",
+    "observation_finding": "All pressure valves optimal.",
+    "action_required": "None",
+    "followup_date": "2026-11-15",
+    "form_completeness": "COMPLETE"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "document_id": "FI-006",
+  "document_type": "field_inspection",
+  "difficulty": "hard",
+  "issues": [
+    "extreme_blur",
+    "skew",
+    "crossed_out_text",
+    "missing_mandatory_field",
+    "multiple_handwriting_styles"
+  ],
+  "gold_fields": {
+    "inspection_ref": "INSP-2026-006",
+    "inspection_date": "2026-08-25",
+    "site_location": "Offshore Platform Delta",
+    "inspector_name": null,
+    "asset_ref": "AST-11002",
+    "inspection_status": "FAIL",
+    "observation_finding": "Pressure drop cross-out (120psi -> 80psi)",
+    "action_required": "Emergency shutdown valve check",
+    "followup_date": "2026-08-26",
+    "form_completeness": "INCOMPLETE"
+  }
+}

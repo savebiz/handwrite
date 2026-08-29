@@ -1,0 +1,21 @@
+{
+  "document_id": "CO-003",
+  "document_type": "customer_onboarding",
+  "difficulty": "medium",
+  "issues": [
+    "slight_skew"
+  ],
+  "gold_fields": {
+    "onboarding_ref": "ONB-2026-103",
+    "application_date": "2026-08-14",
+    "applicant_name": "Elena Rostova",
+    "contact_number": "+442079460912",
+    "email_address": "elena.r@net.co.uk",
+    "address_location": "12 Baker Street, London",
+    "product_requested": "Enterprise",
+    "id_ref_placeholder": "ID-334910",
+    "consent_indicator": "YES",
+    "reviewer_status": "PENDING",
+    "form_completeness": "COMPLETE"
+  }
+}

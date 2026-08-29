@@ -1,0 +1,22 @@
+{
+  "document_id": "CO-005",
+  "document_type": "customer_onboarding",
+  "difficulty": "hard",
+  "issues": [
+    "cursive_handwriting",
+    "low_contrast"
+  ],
+  "gold_fields": {
+    "onboarding_ref": "ONB-2026-105",
+    "application_date": "2026-08-19",
+    "applicant_name": "Carlos Gomez",
+    "contact_number": "+34911234567",
+    "email_address": "carlos.g@madrid.es",
+    "address_location": "Calle Mayor 4, Madrid",
+    "product_requested": "Premium",
+    "id_ref_placeholder": "ID-110293",
+    "consent_indicator": "YES",
+    "reviewer_status": "PENDING",
+    "form_completeness": "COMPLETE"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "total_samples": 12,
+  "samples": [
+    {
+      "document_id": "FI-001",
+      "document_type": "field_inspection",
+      "difficulty": "clean",
+      "image_path": "data/synthetic\\field-inspection\\field_insp_001.png",
+      "gold_label_path": "data/gold-labels\\FI-001_gold.json",
+      "issues": []
+    },
+    {
+      "document_id": "FI-002",
+      "document_type": "field_inspection",
+      "difficulty": "clean",
+      "image_path": "data/synthetic\\field-inspection\\field_insp_002.png",
+      "gold_label_path": "data/gold-labels\\FI-002_gold.json",
+      "issues": []
+    },
+    {
+      "document_id": "FI-003",
+      "document_type": "field_inspection",
+      "difficulty": "medium",
+      "image_path": "data/synthetic\\field-inspection\\field_insp_003.png",
+      "gold_label_path": "data/gold-labels\\FI-003_gold.json",
+      "issues": [
+        "minor_skew"
+      ]
+    },
+    {
+      "document_id": "FI-004",
+      "document_type": "field_inspection",
+      "difficulty": "medium",
+      "image_path": "data/synthetic\\field-inspection\\field_insp_004.png",
+      "gold_label_path": "data/gold-labels\\FI-004_gold.json",
+      "issues": [
+        "slight_contrast_variation"
+      ]
+    },
+    {
+      "document_id": "FI-005",
+      "document_type": "field_inspection",
+      "difficulty": "hard",
+      "image_path": "data/synthetic\\field-inspection\\field_insp_005.png",
+      "gold_label_path": "data/gold-labels\\FI-005_gold.json",
+      "issues": [
+        "handwriting_overlap",
+        "noise"
+      ]
+    },
+    {
+      "document_id": "FI-006",
+      "document_type": "field_inspection",
+      "difficulty": "hard",
+      "image_path": "data/synthetic\\field-inspection\\field_insp_006_extreme.png",
+      "gold_label_path": "data/gold-labels\\FI-006_gold.json",
+      "issues": [
+        "extreme_blur",
+        "skew",
+        "crossed_out_text",
+        "missing_mandatory_field",
+        "multiple_handwriting_styles"
+      ]
+    },
+    {
+      "document_id": "CO-001",
+      "document_type": "customer_onboarding",
+      "difficulty": "clean",
+      "image_path": "data/synthetic\\customer-onboarding\\cust_onb_001.png",
+      "gold_label_path": "data/gold-labels\\CO-001_gold.json",
+      "issues": []
+    },
+    {
+      "document_id": "CO-002",
+      "document_type": "customer_onboarding",
+      "difficulty": "clean",
+      "image_path": "data/synthetic\\customer-onboarding\\cust_onb_002.png",
+      "gold_label_path": "data/gold-labels\\CO-002_gold.json",
+      "issues": []
+    },
+    {
+      "document_id": "CO-003",
+      "document_type": "customer_onboarding",
+      "difficulty": "medium",
+      "image_path": "data/synthetic\\customer-onboarding\\cust_onb_003.png",
+      "gold_label_path": "data/gold-labels\\CO-003_gold.json",
+      "issues": [
+        "slight_skew"
+      ]
+    },
+    {
+      "document_id": "CO-004",
+      "document_type": "customer_onboarding",
+      "difficulty": "medium",
+      "image_path": "data/synthetic\\customer-onboarding\\cust_onb_004.png",
+      "gold_label_path": "data/gold-labels\\CO-004_gold.json",
+      "issues": [
+        "faded_ink"
+      ]
+    },
+    {
+      "document_id": "CO-005",
+      "document_type": "customer_onboarding",
+      "difficulty": "hard",
+      "image_path": "data/synthetic\\customer-onboarding\\cust_onb_005.png",
+      "gold_label_path": "data/gold-labels\\CO-005_gold.json",
+      "issues": [
+        "cursive_handwriting",
+        "low_contrast"
+      ]
+    },
+    {
+      "document_id": "CO-006",
+      "document_type": "customer_onboarding",
+      "difficulty": "hard",
+      "image_path": "data/synthetic\\customer-onboarding\\cust_onb_006.png",
+      "gold_label_path": "data/gold-labels\\CO-006_gold.json",
+      "issues": [
+        "ambiguous_digits",
+        "wrinkled_paper"
+      ]
+    }
+  ]
+}

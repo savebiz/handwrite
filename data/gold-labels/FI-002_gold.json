@@ -1,0 +1,18 @@
+{
+  "document_id": "FI-002",
+  "document_type": "field_inspection",
+  "difficulty": "clean",
+  "issues": [],
+  "gold_fields": {
+    "inspection_ref": "INSP-2026-002",
+    "inspection_date": "2026-08-16",
+    "site_location": "Substation 4B",
+    "inspector_name": "Alice Smith",
+    "asset_ref": "AST-44102",
+    "inspection_status": "NEEDS_ATTENTION",
+    "observation_finding": "Minor coolant leak on valve 3.",
+    "action_required": "Replace gasket seals.",
+    "followup_date": "2026-09-01",
+    "form_completeness": "COMPLETE"
+  }
+}

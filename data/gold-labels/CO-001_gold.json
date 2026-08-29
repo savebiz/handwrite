@@ -1,0 +1,19 @@
+{
+  "document_id": "CO-001",
+  "document_type": "customer_onboarding",
+  "difficulty": "clean",
+  "issues": [],
+  "gold_fields": {
+    "onboarding_ref": "ONB-2026-101",
+    "application_date": "2026-08-10",
+    "applicant_name": "Sarah Jenkins",
+    "contact_number": "+14155550192",
+    "email_address": "sarah.j@example.com",
+    "address_location": "742 Evergreen Terrace, Springfield",
+    "product_requested": "Standard",
+    "id_ref_placeholder": "ID-984712",
+    "consent_indicator": "YES",
+    "reviewer_status": "PENDING",
+    "form_completeness": "COMPLETE"
+  }
+}

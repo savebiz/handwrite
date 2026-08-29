@@ -1,0 +1,22 @@
+{
+  "document_id": "CO-006",
+  "document_type": "customer_onboarding",
+  "difficulty": "hard",
+  "issues": [
+    "ambiguous_digits",
+    "wrinkled_paper"
+  ],
+  "gold_fields": {
+    "onboarding_ref": "ONB-2026-106",
+    "application_date": "2026-08-21",
+    "applicant_name": "Anita Patel",
+    "contact_number": "+919876543210",
+    "email_address": null,
+    "address_location": "MG Road 45, Bengaluru",
+    "product_requested": "Enterprise",
+    "id_ref_placeholder": "ID-882019",
+    "consent_indicator": "YES",
+    "reviewer_status": "PENDING",
+    "form_completeness": "COMPLETE"
+  }
+}

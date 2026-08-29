@@ -1,0 +1,1 @@
+# app/shared module initialization

@@ -1,0 +1,20 @@
+{
+  "document_id": "FI-004",
+  "document_type": "field_inspection",
+  "difficulty": "medium",
+  "issues": [
+    "slight_contrast_variation"
+  ],
+  "gold_fields": {
+    "inspection_ref": "INSP-2026-004",
+    "inspection_date": "2026-08-20",
+    "site_location": "Solar Array Field 7",
+    "inspector_name": "Maria Garcia",
+    "asset_ref": "AST-33019",
+    "inspection_status": "PASS",
+    "observation_finding": "Dust buildup on panel surface.",
+    "action_required": "Schedule monthly cleaning.",
+    "followup_date": "2026-09-20",
+    "form_completeness": "COMPLETE"
+  }
+}

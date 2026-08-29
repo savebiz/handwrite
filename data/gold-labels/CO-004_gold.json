@@ -1,0 +1,21 @@
+{
+  "document_id": "CO-004",
+  "document_type": "customer_onboarding",
+  "difficulty": "medium",
+  "issues": [
+    "faded_ink"
+  ],
+  "gold_fields": {
+    "onboarding_ref": "ONB-2026-104",
+    "application_date": "2026-08-15",
+    "applicant_name": "David Wu",
+    "contact_number": "+14085550188",
+    "email_address": "dwu@techcorp.io",
+    "address_location": "500 Market St, San Francisco, CA",
+    "product_requested": "Standard",
+    "id_ref_placeholder": "ID-771823",
+    "consent_indicator": "NO",
+    "reviewer_status": "PENDING",
+    "form_completeness": "COMPLETE"
+  }
+}
