@@ -2,6 +2,38 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.5.0] - 2026-08-30 — Synthetic evaluation corpus update
+### What Changed
+- Upgraded evaluation corpus manifest (`data/manifests/manifest.json`) to dataset version `2.0.0`.
+- Added synthetic data governance policy statement explicitly declaring 100% synthetic origin.
+- Normalized all manifest file paths from Windows backslashes (`\`) to POSIX forward slashes (`/`) for cross-platform execution.
+- Reclassified document `FI-006` difficulty from `"hard"` to `"extreme"` in both `manifest.json` and `FI-006_gold.json` envelope to match `specs/evaluation-plan.md`.
+- Added field-level difficulty labels (`field_difficulty`: `"easy"`, `"medium"`, `"hard"`) across all 12 samples (126 total field mappings).
+- Added expected escalation labels (`expected_escalations`: `field`, `expected_decision`, `reason`) across all 12 samples defining explicit human-review and rescan requirements.
+- Added comprehensive corpus validation test suites: `tests/test_corpus.py` (21 pytest tests) and `scripts/run_corpus_tests.py` (19 standalone tests).
+
+### Dataset Summary
+- **Dataset Version**: `2.0.0`
+- **Total Samples**: 12 (6 Field Inspection `field_inspection`, 6 Customer Onboarding `customer_onboarding`)
+- **Difficulty Mix**: 4 Clean (`FI-001`, `FI-002`, `CO-001`, `CO-002`), 4 Medium (`FI-003`, `FI-004`, `CO-003`, `CO-004`), 4 Hard/Extreme (`FI-005`, `FI-006`, `CO-005`, `CO-006`)
+- **Hard Case Coverage**: Blur & skew (`FI-006`), crossed-out handwriting (`FI-006`), ambiguous digits (`CO-006`), missing mandatory field (`FI-006`), multiple handwriting styles (`FI-006`).
+
+### Why It Changed
+- To satisfy Frontier Engineering Challenge 2026 synthetic corpus requirements, guarantee cross-platform compatibility, enforce clear data privacy disclosures, and enable programmatic validation of expected escalations and per-field difficulty metrics without mutating underlying gold labels or image files.
+
+### Evidence of Coverage
+- `scripts/run_corpus_tests.py`: 19/19 validation tests PASSED cleanly.
+- `pytest tests/test_corpus.py tests/test_schemas.py`: 34/34 unit tests PASSED cleanly (0 failures).
+- Zero gold label field values (`gold_fields`) modified (byte-identical gold field verification).
+
+### Decision
+- Enrich manifest metadata and envelope structures to dataset version `2.0.0` while maintaining strict immutability of gold field values and synthetic PNG image assets.
+
+### Learning
+- Programmatic manifest enrichment with field-level difficulty and expected escalations enables automated evaluation of triage precision and escalation recall without requiring costly re-labeling or breaking historical baseline benchmarks.
+
+---
+
 ## [1.4.0] - 2026-08-30 — Foundation contract reconciliation
 ### What Changed
 - Fixed display name mismatch: `contact_number` in `specs/metadata-dictionary.md` said "Contact Phone" but code used "Contact Number". Spec updated to match code.

@@ -1,7 +1,7 @@
 {
   "document_id": "FI-006",
   "document_type": "field_inspection",
-  "difficulty": "hard",
+  "difficulty": "extreme",
   "issues": [
     "extreme_blur",
     "skew",

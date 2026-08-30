@@ -1,5 +1,5 @@
 {
-  "run_id": "run-3799aad7",
+  "run_id": "run-aaea6616",
   "document_id": "FI-001",
   "document_type": "field_inspection",
   "document_quality": {
@@ -340,11 +340,11 @@
   "record_status": "awaiting_review",
   "audit_events": [
     {
-      "timestamp": "2026-08-30T20:57:00.175629+00:00",
+      "timestamp": "2026-08-30T21:14:44.670077+00:00",
       "actor": "agent",
       "action": "DOCUMENT_PIPELINE_PROCESSED",
       "details": {
-        "run_id": "run-3799aad7",
+        "run_id": "run-aaea6616",
         "document_id": "FI-001",
         "document_type": "field_inspection",
         "quality_status": "pass",
