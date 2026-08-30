@@ -1,0 +1,21 @@
+{
+  "test_run_id": "test-run-01",
+  "created_at": "2026-08-30T23:28:00Z",
+  "dataset_version": "2.0.0",
+  "purpose": "Validation of HandWrite Verify baseline, advanced pipeline, and reviewer workflow against external test file set.",
+  "safety_declaration": "All files included in this test run are 100% synthetic, public sample forms, or approved anonymized test data. Zero real customer PII or real confidential business documents are included.",
+  "files": [
+    {
+      "filename": "sample_field_inspection.png",
+      "document_type": "field_inspection",
+      "expected_difficulty": "medium",
+      "notes": "Sample field inspection document for test-run-01 validation."
+    },
+    {
+      "filename": "sample_customer_onboarding.pdf",
+      "document_type": "customer_onboarding",
+      "expected_difficulty": "clean",
+      "notes": "Sample customer onboarding application PDF for test-run-01 validation."
+    }
+  ]
+}

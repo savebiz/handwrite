@@ -1,0 +1,14 @@
+{
+  "test_run_id": "test-run-01",
+  "baseline_enabled": true,
+  "advanced_enabled": true,
+  "reviewer_ui_enabled": true,
+  "evaluation_enabled": true,
+  "output_directory": "outputs/test-run-01",
+  "log_directory": "logs/test-run-01",
+  "constraints": {
+    "max_files": 20,
+    "max_file_size_bytes": 10485760,
+    "allowed_types": ["png", "jpg", "jpeg", "webp", "pdf"]
+  }
+}

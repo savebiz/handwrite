@@ -2,6 +2,36 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.8.0] - 2026-08-30 — Test-run folder and manifest prepared
+### What Changed
+- Created dedicated test run environment directory `data/test-run-01/`.
+- Created test-set manifest template `data/test-run-01/manifest.json` with `test_run_id`, `dataset_version: "2.0.0"`, `purpose`, file list array, and synthetic/public `safety_declaration`.
+- Created gold label ground-truth templates:
+  - `data/test-run-01/gold-labels/field_inspection_template.gold.json`
+  - `data/test-run-01/gold-labels/customer_onboarding_template.gold.json`
+  - `data/test-run-01/gold-labels/sample_test_doc.gold.json`
+- Created test-run configuration file `data/test-run-01/test-config.json` defining baseline, advanced pipeline, reviewer UI, evaluation outputs (`outputs/test-run-01/`), log path (`logs/test-run-01/`), and file constraints (`max_files: 20`, `max_file_size: 10MB`, `allowed_types: ["png", "jpg", "jpeg", "webp", "pdf"]`).
+- Created operational guide `data/test-run-01/README.md`.
+- **Zero product application code was created or modified.**
+
+### Test Folder Path
+- External Test Folder Source Path: `C:\Users\hp\OneDrive - Dataguard Document Management Limited\Projects\Project AXA\AXA Insurance\Test File\TrainData1`
+- Workspace Staging Directory: `data/test-run-01/raw_files/`
+
+### Purpose
+- To establish a clean, repeatable testing framework for ingesting, classifying, extracting, verifying, and evaluating external test files without polluting the core synthetic evaluation benchmark corpus (`data/manifests/manifest.json`).
+
+### Safety Declaration
+- All files placed in `data/test-run-01/` or processed from local test directories MUST be 100% synthetic, public sample forms, or approved anonymized test data. Zero real customer PII or confidential business documents are permitted.
+
+### Decision
+- Isolate test-run configurations and gold label templates under `data/test-run-01/` while leaving existing core agent pipelines and evaluation baseline code untouched.
+
+### Learning
+- Providing pre-validated JSON templates for external test set manifests and gold labels eliminates schema mismatch errors during evaluation runs.
+
+---
+
 ## [1.7.0] - 2026-08-30 — Native PDF document processing support
 ### What Changed
 - Created native PDF helper module `app/shared/pdf_utils.py` using `pypdf` (v6.10.2) and `PIL`:

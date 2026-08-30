@@ -1,0 +1,69 @@
+{
+  "document_id": "SAMPLE-DOC-001",
+  "document_type": "field_inspection",
+  "created_by": "Victor Sabo",
+  "created_at": "2026-08-30T23:28:00Z",
+  "notes": "Sample ground truth gold label reference document for test-run-01.",
+  "fields": [
+    {
+      "field_name": "inspection_ref",
+      "expected_value": "INSP-2026-101",
+      "required": true,
+      "sensitivity": "public"
+    },
+    {
+      "field_name": "inspection_date",
+      "expected_value": "2026-08-30",
+      "required": true,
+      "sensitivity": "public"
+    },
+    {
+      "field_name": "site_location",
+      "expected_value": "Substation Alpha",
+      "required": true,
+      "sensitivity": "internal"
+    },
+    {
+      "field_name": "inspector_name",
+      "expected_value": "Morgan Lee",
+      "required": true,
+      "sensitivity": "personal"
+    },
+    {
+      "field_name": "asset_ref",
+      "expected_value": "AST-11223",
+      "required": true,
+      "sensitivity": "internal"
+    },
+    {
+      "field_name": "inspection_status",
+      "expected_value": "PASS",
+      "required": true,
+      "sensitivity": "public"
+    },
+    {
+      "field_name": "observation_finding",
+      "expected_value": "Visual check passed cleanly.",
+      "required": false,
+      "sensitivity": "public"
+    },
+    {
+      "field_name": "action_required",
+      "expected_value": "None",
+      "required": false,
+      "sensitivity": "public"
+    },
+    {
+      "field_name": "followup_date",
+      "expected_value": "2026-12-01",
+      "required": false,
+      "sensitivity": "public"
+    },
+    {
+      "field_name": "form_completeness",
+      "expected_value": "COMPLETE",
+      "required": true,
+      "sensitivity": "internal"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "document_id": "CO-TEST-001",
+  "document_type": "customer_onboarding",
+  "created_by": "Victor Sabo",
+  "created_at": "2026-08-30T23:28:00Z",
+  "notes": "Gold label ground truth template for Customer Onboarding forms in test-run-01.",
+  "fields": [
+    {
+      "field_name": "onboarding_ref",
+      "expected_value": "ONB-2026-999",
+      "required": true,
+      "sensitivity": "public"
+    },
+    {
+      "field_name": "application_date",
+      "expected_value": "2026-08-30",
+      "required": true,
+      "sensitivity": "public"
+    },
+    {
+      "field_name": "applicant_name",
+      "expected_value": "Jane Smith",
+      "required": true,
+      "sensitivity": "personal"
+    },
+    {
+      "field_name": "contact_number",
+      "expected_value": "+14155550199",
+      "required": true,
+      "sensitivity": "personal"
+    },
+    {
+      "field_name": "email_address",
+      "expected_value": "jane.smith@example.com",
+      "required": false,
+      "sensitivity": "personal"
+    },
+    {
+      "field_name": "address_location",
+      "expected_value": "123 Innovation Way, Tech City",
+      "required": true,
+      "sensitivity": "personal"
+    },
+    {
+      "field_name": "product_requested",
+      "expected_value": "Premium",
+      "required": true,
+      "sensitivity": "internal"
+    },
+    {
+      "field_name": "id_ref_placeholder",
+      "expected_value": "ID-998877",
+      "required": true,
+      "sensitivity": "sensitive"
+    },
+    {
+      "field_name": "consent_indicator",
+      "expected_value": "YES",
+      "required": true,
+      "sensitivity": "personal"
+    },
+    {
+      "field_name": "reviewer_status",
+      "expected_value": "PENDING",
+      "required": true,
+      "sensitivity": "internal"
+    },
+    {
+      "field_name": "form_completeness",
+      "expected_value": "COMPLETE",
+      "required": true,
+      "sensitivity": "internal"
+    }
+  ]
+}

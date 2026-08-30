@@ -1,0 +1,69 @@
+{
+  "document_id": "FI-TEST-001",
+  "document_type": "field_inspection",
+  "created_by": "Victor Sabo",
+  "created_at": "2026-08-30T23:28:00Z",
+  "notes": "Gold label ground truth template for Field Inspection forms in test-run-01.",
+  "fields": [
+    {
+      "field_name": "inspection_ref",
+      "expected_value": "INSP-2026-999",
+      "required": true,
+      "sensitivity": "public"
+    },
+    {
+      "field_name": "inspection_date",
+      "expected_value": "2026-08-30",
+      "required": true,
+      "sensitivity": "public"
+    },
+    {
+      "field_name": "site_location",
+      "expected_value": "Building C, Facility 4",
+      "required": true,
+      "sensitivity": "internal"
+    },
+    {
+      "field_name": "inspector_name",
+      "expected_value": "Alex Taylor",
+      "required": true,
+      "sensitivity": "personal"
+    },
+    {
+      "field_name": "asset_ref",
+      "expected_value": "AST-55443",
+      "required": true,
+      "sensitivity": "internal"
+    },
+    {
+      "field_name": "inspection_status",
+      "expected_value": "PASS",
+      "required": true,
+      "sensitivity": "public"
+    },
+    {
+      "field_name": "observation_finding",
+      "expected_value": "System parameters within nominal tolerance.",
+      "required": false,
+      "sensitivity": "public"
+    },
+    {
+      "field_name": "action_required",
+      "expected_value": "Routine quarterly check",
+      "required": false,
+      "sensitivity": "public"
+    },
+    {
+      "field_name": "followup_date",
+      "expected_value": "2026-11-30",
+      "required": false,
+      "sensitivity": "public"
+    },
+    {
+      "field_name": "form_completeness",
+      "expected_value": "COMPLETE",
+      "required": true,
+      "sensitivity": "internal"
+    }
+  ]
+}
