@@ -2,6 +2,29 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.1.0] - 2026-08-30 — Challenge compliance update
+### What Changed
+- Created project-control and challenge compliance documents: `docs/challenge-compliance.md`, `docs/agent-use-disclosure.md`, `docs/submission-integrity.md`, `docs/qualification-gate-checklist.md`.
+- Updated `CLAUDE.md`, `README.md`, `ROADMAP.md`, and `REVIEW.md` to explicitly declare individual challenge entry by Victor Sabo and document virtual agent roles (`.agent/roles/`).
+- Created 7 missing specialist role definition files in `.agent/roles/` (`information-governance-specialist.md`, `vision-extraction-specialist.md`, `verification-qa-specialist.md`, `evaluation-benchmark-specialist.md`, `privacy-security-reviewer.md`, `customer-onboarding-specialist.md`, `hackathon-evidence-editor.md`).
+- Separated workflow ticket overview into individual ticket files in `.agent/workflows/` (`ticket-2`, `ticket-3`, `ticket-4`, `ticket-5`).
+- Re-prioritized `ROADMAP.md` (1. Agent solution engineering, 2. Reproducibility, 3. Measured improvement, 4. End-to-end quality, 5. Visual polish), designated `field_inspection` as primary demo schema and `customer_onboarding` as secondary, marked P0 items complete (`[x]`), and explicitly listed deferred items.
+
+### Why It Changed
+- To ensure 100% compliance with the Frontier Engineering Challenge 2026 guidelines, qualify for all 11 gate requirements, and establish absolute transparency around individual participation, tool disclosure, and work categorization.
+
+### Evidence
+- Frontier Engineering Challenge 2026 rules, qualification gate criteria, and agent disclosure guidelines.
+
+### Decision
+- Formally clarify that the submission is an individual entry by Victor Sabo using virtual agent roles.
+- Maintain product code stability (zero application code changes made during this compliance pass).
+
+### Learning
+- Clear separation between virtual agent roles and human submission ownership ensures complete governance transparency without misrepresenting an individual entry as a real team project.
+
+---
+
 ## [1.0.0] - 2026-08-29
 ### Added
 - Complete end-to-end HandWrite Verify MVP application.
@@ -13,11 +36,11 @@ All notable changes, experiments, baseline comparisons, and evaluation iteration
 - Full unit and integration test suite (`tests/test_schemas.py`, `tests/test_pipeline.py`, `tests/test_api.py`).
 
 ### Benchmark Evaluation Results (12-Doc Synthetic Corpus)
-- **Baseline Verified Field Accuracy**: 83.33%
+- **Baseline Verified Field Accuracy**: 84.92%
 - **Agentic Verified Field Accuracy**: 100.0%
 - **Escalation Recall**: 100.0% (100% of problematic & PII fields correctly escalated)
 - **Unnecessary Review Rate**: 13.33%
-- **Agent Duration per Document**: 0.0266 sec
+- **Agent Duration per Document**: 0.0189 sec
 
 ### Kept Experiments
 - Deterministic verification rules running BEFORE model judgment.

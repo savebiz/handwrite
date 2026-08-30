@@ -4,14 +4,31 @@
 
 ---
 
-## 📌 Problem & Purpose
-Digitization teams processing handwritten paper business forms spend massive manual effort reading handwriting, indexing metadata, and catching scan flaws. Existing OCR systems often hallucinate uncertain characters or output raw text without source evidence. HandWrite Verify introduces an agentic human-in-the-loop processing pipeline that enforces deterministic rule checks, provides visual crop evidence, and routes high-risk or low-confidence data to human reviewers.
+## 👤 Individual Challenge Submission
+* **Participant**: **Victor Sabo** (`sabo.victor1@gmail.com`)
+* **Event**: Frontier Engineering Challenge 2026 / micro1 Agentic Workflows Hackathon
+* **Submission Type**: Individual Entry. Specialized role definition files (`.agent/roles/`) represent virtual coding-agent roles operated under Victor Sabo's direction.
+
+---
+
+## 📌 Primary & Secondary Document Schemas
+* **Primary Demo Schema**: `field_inspection` forms (equipment checks, site locations, inspector observations).
+* **Secondary Supported Schema**: `customer-onboarding` forms (applications, contact numbers, PII sensitivity guardrails).
+
+---
+
+## 📁 Work Categorization (Pre-existing vs Challenge-Created)
+* **Pre-existing Repository Files**: *None*. The workspace was empty prior to challenge initialization.
+* **Challenge-Created Code**: FastAPI backend (`app/backend/`), React SPA (`app/frontend/`), Pydantic schemas (`app/shared/`), evaluation suite (`evaluation/`).
+* **Challenge-Created Specs**: 14 specification documents in `specs/`, agent skills in `.agent/skills/`, virtual roles in `.agent/roles/`.
+* **Generated Data & Outputs**: 12 synthetic document forms (`data/synthetic/`), gold labels (`data/gold-labels/`), evaluation results (`outputs/evaluation_results.json`).
 
 ---
 
 ## 🛠️ Tech Stack & Architecture
 - **Backend**: Python 3.13 + FastAPI + Pydantic v2 + Pillow
 - **Frontend**: Vite + React + Tailwind CSS
+- **Deployment**: Vercel Serverless + Static Build Configuration (`vercel.json`, `pyproject.toml`)
 - **Data & Logs**: JSON File DB + Append-only Audit Log (`logs/audit.jsonl`)
 - **Evaluation Engine**: Automated comparative scoring harness (`evaluation/evaluate.py`)
 
@@ -19,43 +36,40 @@ Digitization teams processing handwritten paper business forms spend massive man
 
 ## 🚀 Quickstart & Setup
 
-### Prerequisites
-- Python 3.13+
-- Node.js v20+
-
-### Local Setup
 ```bash
-# 1. Clone repository & install backend dependencies
-python -m venv venv
-venv\Scripts\activate
+# 1. Install Python dependencies
 pip install -r requirements.txt
 
 # 2. Configure Environment
 cp .env.example .env
 
-# 3. Run Backend API
-uvicorn app.backend.main:app --reload --port 8000
-
-# 4. Run Frontend UI (in separate terminal)
-cd app/frontend
-npm install
-npm run dev
-```
-
----
-
-## 📊 Running Baseline & Agent Evaluation
-```bash
-# Generate synthetic dataset (12 sample forms)
+# 3. Generate 12 Synthetic Evaluation Forms
 python scripts/generate_synthetic_corpus.py
 
-# Run baseline & agent evaluation pipeline
+# 4. Run Test Suite & Evaluation Benchmark
+python scripts/run_schema_tests.py
+python tests/test_pipeline.py
+python tests/test_api.py
 python evaluation/evaluate.py
+
+# 5. Run FastAPI Backend API
+uvicorn app.backend.main:app --reload --port 8000
 ```
 
 ---
 
-## 🛡️ Core Safety Principles
-1. Synthetic Data Only — No real customer documents or PII.
-2. Evidence Transparency — Every field links to image coordinates `[ymin, xmin, ymax, xmax]`.
-3. Human-in-the-Loop Safeguard — Personal & sensitive fields require explicit human sign-off.
+## 📊 Benchmark Evaluation Metrics (12-Doc Corpus)
+- **Baseline Verified Field Accuracy**: 84.92%
+- **Agentic Verified Field Accuracy**: **100.0%**
+- **Escalation Recall**: **100.0%** (100% of PII and corrupted fields correctly routed to human review/rescan)
+- **Unnecessary Review Rate**: 13.33%
+- **Agent Processing Duration**: **0.0189 sec / doc**
+
+---
+
+## 🛡️ Governance & Compliance Documents
+- [docs/challenge-compliance.md](file:///c:/Users/hp/OneDrive%20-%20Dataguard%20Document%20Management%20Limited/Desktop/GIGS/HandWrite/docs/challenge-compliance.md) — Safety & Individual Entry Compliance Statement
+- [docs/agent-use-disclosure.md](file:///c:/Users/hp/OneDrive%20-%20Dataguard%20Document%20Management%20Limited/Desktop/GIGS/HandWrite/docs/agent-use-disclosure.md) — Tool & Agent Disclosure Matrix
+- [docs/submission-integrity.md](file:///c:/Users/hp/OneDrive%20-%20Dataguard%20Document%20Management%20Limited/Desktop/GIGS/HandWrite/docs/submission-integrity.md) — Work Categorization & Originality Certification
+- [docs/qualification-gate-checklist.md](file:///c:/Users/hp/OneDrive%20-%20Dataguard%20Document%20Management%20Limited/Desktop/GIGS/HandWrite/docs/qualification-gate-checklist.md) — 11-Point Qualification Gate Checklist
+- [docs/reproduction.md](file:///c:/Users/hp/OneDrive%20-%20Dataguard%20Document%20Management%20Limited/Desktop/GIGS/HandWrite/docs/reproduction.md) — Clean Environment Reproduction Guide

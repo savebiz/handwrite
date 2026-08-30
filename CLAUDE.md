@@ -1,13 +1,22 @@
 # CLAUDE.md — Operating Manual for HandWrite Verify
 
+## 👤 Individual Entry Declaration
+- **Submission Type**: Individual Challenge Entry (Frontier Engineering Challenge 2026).
+- **Participant & Final Decision-Maker**: **Victor Sabo** (`sabo.victor1@gmail.com`).
+- **Virtual Agent Roles**: Specialized role definition files located under `.agent/roles/` represent virtual coding-agent roles operated under Victor Sabo's direction to structure agentic execution. This project is **not** a real team submission.
+- **Human Authority**: Final approvals, code merges, interpretation of evaluation evidence, dependency decisions, and submission approvals remain 100% human-owned by Victor Sabo.
+
+---
+
 ## Product Purpose & MVP Boundaries
 HandWrite Verify turns scanned handwritten business forms into structured, evidence-linked, review-ready records without silently treating uncertain handwriting as fact.
 
 ### MVP Scope Boundaries
-- Document Families: `field_inspection` and `customer_onboarding`.
-- Input formats: Synthetic PNG/JPG images and PDFs.
+- **Primary Demo Schema**: `field_inspection` forms.
+- **Secondary Supported Schema**: `customer_onboarding` forms.
+- Input Formats: Synthetic PNG/JPG images and PDFs.
 - Human-in-the-Loop Safety: Sensitive/personal data and low-confidence fields MUST be routed to human review.
-- Out of Scope: Training custom OCR/handwriting neural networks, real customer data, live ECM/M-Files integration, autonomous credit/legal decisions.
+- **Deferred / Out of Scope**: Custom handwriting OCR model training, live ECM/M-Files integration, production multi-user auth, production deployment, real customer data, batch processing, complex analytics dashboards, pattern memory.
 
 ---
 

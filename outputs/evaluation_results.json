@@ -2,15 +2,15 @@
   "dataset": {
     "total_samples": 12,
     "manifest": "data/manifests/manifest.json",
-    "timestamp": "2026-08-29T20:55:04Z"
+    "timestamp": "2026-08-30T21:17:53Z"
   },
   "baseline": {
     "verified_field_accuracy_percent": 84.92,
     "correct_fields": 107,
     "total_fields": 126,
     "schema_pass_rate_percent": 100.0,
-    "total_duration_seconds": 0.019,
-    "avg_duration_per_doc_seconds": 0.0016
+    "total_duration_seconds": 0.3869,
+    "avg_duration_per_doc_seconds": 0.0322
   },
   "agentic_pipeline": {
     "verified_field_accuracy_percent": 100.0,
@@ -19,7 +19,7 @@
     "escalation_recall_percent": 100.0,
     "unnecessary_review_rate_percent": 13.33,
     "schema_pass_rate_percent": 100.0,
-    "total_duration_seconds": 0.2273,
-    "avg_duration_per_doc_seconds": 0.0189
+    "total_duration_seconds": 0.7475,
+    "avg_duration_per_doc_seconds": 0.0623
   }
 }
