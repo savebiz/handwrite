@@ -2,6 +2,40 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.4.0] - 2026-08-30 — Foundation contract reconciliation
+### What Changed
+- Fixed display name mismatch: `contact_number` in `specs/metadata-dictionary.md` said "Contact Phone" but code used "Contact Number". Spec updated to match code.
+- Added `text_style` property (`handwritten`, `typewritten`, `mixed`) to `specs/shared-data-contract.md` JSON schema — existed in code but was missing from the canonical spec.
+- Added `model_validator` to `FieldResult` in `app/shared/schemas.py` enforcing RULE-SENS-006 at the schema level: `auto_accept` on `personal`/`sensitive` fields now raises `ValidationError`. Previously only enforced at runtime by the triage agent.
+- Aligned `specs/reviewer-decision-policy.md` reviewer action terminology with `ReviewerDecisionEnum` code values (`approved`, `corrected`, `rejected`, `pending`, `not_required`). Clarified that document-level rescan is handled via `record_status`, not a per-field reviewer decision.
+- Fixed `evaluation/baseline.py` to comply with RULE-SENS-006: baseline now routes personal/sensitive fields to `human_review` (schema enforcement caught a latent policy violation). Baseline accuracy shifted from 82.54% to 89.68% as a result.
+- Added 9 edge-case tests (total: 14/14) to `scripts/run_schema_tests.py` and `tests/test_schemas.py`: malformed FieldResult, negative confidence, RULE-SENS-006 personal field, RULE-SENS-006 sensitive field, missing evidence, RULE-DATE-002 invalid date, RULE-REQ-001 blank required field, unknown document type metadata, invalid audit event.
+
+### Why It Changed
+- Cross-referencing all 9 specs against all implementation code revealed 5 inconsistencies (display name mismatch, missing spec property, missing schema-level guard, terminology gap, and insufficient test coverage). These were latent risks that could allow policy-violating data to be constructed without validation errors.
+
+### Evidence
+- Audit criteria: 12-point checklist (inconsistent names, types, missing fields, missing sensitivity labels, missing evidence, invalid state combinations, missing audit fields, missing versioning, spec contradictions, unsafe auto-approval rules, production data claims, untestable requirements).
+- Tests: `scripts/run_schema_tests.py` 14/14 PASS, `tests/test_pipeline.py` 4/4 PASS, `tests/test_api.py` 3/3 PASS, `evaluation/evaluate.py` 100.0% Agentic Verified Accuracy, 100.0% Escalation Recall.
+- Baseline validator finding: `evaluation/baseline.py` crashed with `ValidationError` when RULE-SENS-006 model validator was added, proving the baseline was constructing policy-violating `FieldResult` objects.
+
+### Decision
+- Apply smallest repair scope: 4 spec text fixes, 1 schema model validator addition, 1 baseline code fix, 9 new tests. Zero architectural changes, zero new dependencies.
+
+### Learning
+- Schema-level enforcement (Pydantic `model_validator`) catches policy violations that runtime-only triage agents cannot guarantee. The baseline crash proved a code path existed that could bypass the sensitivity guardrail. Every safety-critical rule should be enforced at the data model layer, not just the agent layer.
+
+### Files Changed
+- `specs/metadata-dictionary.md` — display name fix
+- `specs/shared-data-contract.md` — added `text_style` property
+- `specs/reviewer-decision-policy.md` — aligned terminology with code enum
+- `app/shared/schemas.py` — added RULE-SENS-006 model validator
+- `evaluation/baseline.py` — fixed RULE-SENS-006 compliance
+- `scripts/run_schema_tests.py` — added 9 edge-case tests (total 14/14)
+- `tests/test_schemas.py` — added 9 edge-case pytest tests (total 13)
+
+---
+
 ## [1.3.0] - 2026-08-30 — Bounded engineering loops introduced
 ### What Changed
 - Created four specialized loop workflow definitions in `.agent/workflows/`:

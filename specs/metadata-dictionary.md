@@ -22,7 +22,7 @@
 | `onboarding_ref` | Onboarding Reference | String | Yes | Public | Pattern `ONB-[0-9]{4}-[0-9]{3}` |
 | `application_date` | Application Date | Date | Yes | Public | Valid ISO-8601 date, not in future |
 | `applicant_name` | Applicant Name | String | Yes | Personal | Non-empty text, human review mandatory |
-| `contact_number` | Contact Phone | String | Yes | Personal | Phone regex `^\+?[0-9]{10,14}$`, human review mandatory |
+| `contact_number` | Contact Number | String | Yes | Personal | Phone regex `^\+?[0-9]{10,14}$`, human review mandatory |
 | `email_address` | Email Address | String | No | Personal | Standard email regex, human review mandatory |
 | `address_location` | Address / Location | String | Yes | Personal | Non-empty text, human review mandatory |
 | `product_requested` | Product / Service | String | Yes | Internal | Controlled list (`Standard`, `Premium`, `Enterprise`) |

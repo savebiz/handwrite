@@ -1,6 +1,6 @@
 from enum import Enum
 from typing import List, Optional, Any, Dict
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 
 class DocumentType(str, Enum):
@@ -94,6 +94,20 @@ class FieldResult(BaseModel):
         if not (0.0 <= v <= 1.0):
             raise ValueError("Confidence must be between 0.0 and 1.0")
         return v
+
+    @model_validator(mode="after")
+    def validate_sensitivity_decision(self) -> "FieldResult":
+        """RULE-SENS-006: personal/sensitive fields MUST NOT be auto_accept."""
+        if self.decision == DecisionEnum.AUTO_ACCEPT and self.sensitivity in (
+            SensitivityEnum.PERSONAL,
+            SensitivityEnum.SENSITIVE,
+        ):
+            raise ValueError(
+                f"Policy violation RULE-SENS-006: field with sensitivity "
+                f"'{self.sensitivity.value}' cannot have decision 'auto_accept'. "
+                f"Must be 'human_review' or 'rescan_required'."
+            )
+        return self
 
 
 class RecordStatusEnum(str, Enum):

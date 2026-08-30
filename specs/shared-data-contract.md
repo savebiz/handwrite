@@ -41,6 +41,11 @@ This specification defines the JSON schema for document records, field results, 
             "type": "string",
             "enum": ["public", "internal", "personal", "sensitive"]
           },
+          "text_style": {
+            "type": "string",
+            "enum": ["handwritten", "typewritten", "mixed"],
+            "default": "handwritten"
+          },
           "evidence": {
             "type": "object",
             "properties": {
