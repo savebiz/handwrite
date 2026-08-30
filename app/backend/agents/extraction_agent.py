@@ -63,6 +63,7 @@ def extract_field_candidates(
             "text_style": text_style,
             "bounding_box": meta.default_bounding_box,
             "sensitivity": meta.sensitivity,
+            "mandatory_human_review": meta.mandatory_human_review,
         }
 
     return candidates

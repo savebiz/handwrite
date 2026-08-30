@@ -1,5 +1,5 @@
 {
-  "run_id": "baseline-sample-8abe22c2",
+  "run_id": "baseline-sample-da93b92e",
   "document_id": "AXA-ATT-006",
   "document_type": "attendance_register",
   "document_quality": {
@@ -61,8 +61,8 @@
     {
       "field_name": "site_department",
       "display_name": "Site / Department",
-      "proposed_value": "AXA Operations?",
-      "normalized_value": "AXA Operations?",
+      "proposed_value": "AXA Operations",
+      "normalized_value": "AXA Operations",
       "confidence": 0.78,
       "decision": "auto_accept",
       "sensitivity": "internal",

@@ -1,5 +1,5 @@
 {
-  "run_id": "baseline-sample-e111099e",
+  "run_id": "baseline-sample-365ed859",
   "document_id": "AXA-ATT-009",
   "document_type": "attendance_register",
   "document_quality": {
@@ -11,8 +11,8 @@
     {
       "field_name": "register_ref",
       "display_name": "Register Reference",
-      "proposed_value": "ATT-2020-009",
-      "normalized_value": "ATT-2020-009",
+      "proposed_value": "ATT-2020-009?",
+      "normalized_value": "ATT-2020-009?",
       "confidence": 0.78,
       "decision": "auto_accept",
       "sensitivity": "public",
@@ -236,8 +236,8 @@
     {
       "field_name": "form_completeness",
       "display_name": "Form Completeness",
-      "proposed_value": "COMPLETE",
-      "normalized_value": "COMPLETE",
+      "proposed_value": "COMPLETE?",
+      "normalized_value": "COMPLETE?",
       "confidence": 0.78,
       "decision": "auto_accept",
       "sensitivity": "internal",

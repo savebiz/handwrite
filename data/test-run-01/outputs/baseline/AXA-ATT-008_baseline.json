@@ -1,5 +1,5 @@
 {
-  "run_id": "baseline-sample-59e50c9a",
+  "run_id": "baseline-sample-f21e7975",
   "document_id": "AXA-ATT-008",
   "document_type": "attendance_register",
   "document_quality": {
@@ -11,8 +11,8 @@
     {
       "field_name": "register_ref",
       "display_name": "Register Reference",
-      "proposed_value": "ATT-2020-008?",
-      "normalized_value": "ATT-2020-008?",
+      "proposed_value": "ATT-2020-008",
+      "normalized_value": "ATT-2020-008",
       "confidence": 0.78,
       "decision": "auto_accept",
       "sensitivity": "public",
@@ -36,8 +36,8 @@
     {
       "field_name": "record_date",
       "display_name": "Record Date",
-      "proposed_value": "2020-08-15?",
-      "normalized_value": "2020-08-15?",
+      "proposed_value": "2020-08-15",
+      "normalized_value": "2020-08-15",
       "confidence": 0.78,
       "decision": "auto_accept",
       "sensitivity": "public",
@@ -86,8 +86,8 @@
     {
       "field_name": "attendee_name",
       "display_name": "Attendee Name",
-      "proposed_value": "Staff Member 8",
-      "normalized_value": "Staff Member 8",
+      "proposed_value": "Staff Member 8?",
+      "normalized_value": "Staff Member 8?",
       "confidence": 0.78,
       "decision": "human_review",
       "sensitivity": "personal",
@@ -161,8 +161,8 @@
     {
       "field_name": "time_in",
       "display_name": "Time In",
-      "proposed_value": "08:30?",
-      "normalized_value": "08:30?",
+      "proposed_value": "08:30",
+      "normalized_value": "08:30",
       "confidence": 0.78,
       "decision": "auto_accept",
       "sensitivity": "internal",
@@ -186,8 +186,8 @@
     {
       "field_name": "time_out",
       "display_name": "Time Out",
-      "proposed_value": "17:00?",
-      "normalized_value": "17:00?",
+      "proposed_value": "17:00",
+      "normalized_value": "17:00",
       "confidence": 0.78,
       "decision": "auto_accept",
       "sensitivity": "internal",

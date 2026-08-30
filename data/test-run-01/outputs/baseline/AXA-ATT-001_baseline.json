@@ -1,5 +1,5 @@
 {
-  "run_id": "baseline-sample-022f0a52",
+  "run_id": "baseline-sample-189b3b31",
   "document_id": "AXA-ATT-001",
   "document_type": "attendance_register",
   "document_quality": {
@@ -36,8 +36,8 @@
     {
       "field_name": "record_date",
       "display_name": "Record Date",
-      "proposed_value": "2020-08-15?",
-      "normalized_value": "2020-08-15?",
+      "proposed_value": "2020-08-15",
+      "normalized_value": "2020-08-15",
       "confidence": 0.78,
       "decision": "auto_accept",
       "sensitivity": "public",
@@ -161,8 +161,8 @@
     {
       "field_name": "time_in",
       "display_name": "Time In",
-      "proposed_value": "08:30?",
-      "normalized_value": "08:30?",
+      "proposed_value": "08:30",
+      "normalized_value": "08:30",
       "confidence": 0.78,
       "decision": "auto_accept",
       "sensitivity": "internal",

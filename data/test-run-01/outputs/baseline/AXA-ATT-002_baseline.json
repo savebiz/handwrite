@@ -1,5 +1,5 @@
 {
-  "run_id": "baseline-sample-a983766e",
+  "run_id": "baseline-sample-c6e17c4b",
   "document_id": "AXA-ATT-002",
   "document_type": "attendance_register",
   "document_quality": {
@@ -161,8 +161,8 @@
     {
       "field_name": "time_in",
       "display_name": "Time In",
-      "proposed_value": "08:30",
-      "normalized_value": "08:30",
+      "proposed_value": "08:30?",
+      "normalized_value": "08:30?",
       "confidence": 0.78,
       "decision": "auto_accept",
       "sensitivity": "internal",

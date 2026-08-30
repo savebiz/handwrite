@@ -22,9 +22,9 @@ Test Run ID:       test-run-01
 Files Processed:   11 / 11
 Failures:          0
 Total Fields:      110
-Correct Fields:    101
-Verified Accuracy: 91.82%
-Runtime Seconds:   1.3789 sec
+Correct Fields:    104
+Verified Accuracy: 94.55%
+Runtime Seconds:   1.1513 sec
 Output Summary:    data/test-run-01/outputs/baseline\summary.json
 Log Captured To:   data/test-run-01/logs\baseline.log
 ==========================================================================

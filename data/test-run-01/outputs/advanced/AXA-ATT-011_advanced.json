@@ -1,5 +1,5 @@
 {
-  "run_id": "run-7bec83af",
+  "run_id": "run-e630c8e5",
   "document_id": "AXA-ATT-011",
   "document_type": "attendance_register",
   "document_quality": {
@@ -351,11 +351,11 @@
   "record_status": "awaiting_review",
   "audit_events": [
     {
-      "timestamp": "2026-08-30T23:04:55.823755+00:00",
+      "timestamp": "2026-08-30T23:13:07.625849+00:00",
       "actor": "agent",
       "action": "DOCUMENT_PIPELINE_PROCESSED",
       "details": {
-        "run_id": "run-7bec83af",
+        "run_id": "run-e630c8e5",
         "document_id": "AXA-ATT-011",
         "document_type": "attendance_register",
         "quality_status": "pass",

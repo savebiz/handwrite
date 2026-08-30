@@ -2,6 +2,20 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.16.0] - 2026-08-31 — Unified command-line test suite harness (`scripts/run_test_run_suite.py`)
+### What Changed
+- Created `scripts/run_test_run_suite.py` unifying baseline extraction, advanced pipeline execution, comparative evaluation, and reviewer walkthrough in a single command.
+- Reduced multi-step evaluation commands to a single execution call with total runtime timing (3.11s for 11 PDFs).
+
+---
+
+## [1.15.0] - 2026-08-31 — Mandatory human review metadata inheritance
+### What Changed
+- Updated `extract_field_candidates()` in `app/backend/agents/extraction_agent.py` to explicitly copy `mandatory_human_review = meta.mandatory_human_review` onto the candidate payload.
+- Guarantees zero-risk PII extraction by enforcing mandatory human review routing across all form schema families regardless of model confidence.
+
+---
+
 ## [1.14.0] - 2026-08-31 — Reviewer workflow walkthrough on test set
 ### Reviewer Walkthrough Scope & Setup
 - Executed 7-stage end-to-end reviewer workflow walkthrough script (`scripts/run_reviewer_walkthrough.py`) against document record `AXA-ATT-001` from `test-run-01`.
