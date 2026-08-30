@@ -2,6 +2,28 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.2.0] - 2026-08-30 — Virtual specialist role reconciliation
+### What Changed
+- Reconciled all 10 virtual specialist coding-agent role definition files in `.agent/roles/` (`product-workflow-analyst.md`, `information-governance-specialist.md`, `handwriting-extraction-specialist.md`, `verification-triage-specialist.md`, `fullstack-engineer.md`, `evaluation-benchmark-specialist.md`, `qa-reliability-specialist.md`, `privacy-security-reviewer.md`, `reproducibility-submission-editor.md`, `project-coordination-lead.md`).
+- Reconciled all 13 reusable skill definition files in `.agent/skills/` (`handwriting-extraction`, `document-quality-assurance`, `metadata-governance`, `deterministic-verification`, `reviewer-experience`, `synthetic-data-evaluation`, `privacy-security`, `agent-orchestration`, `fullstack-delivery`, `qa-regression-testing`, `hackathon-evidence`, `reproducibility`, `project-coordination`).
+- Created `docs/agent-handoff-template.md` (structured handoff template) and `docs/virtual-team-operating-model.md` (operating model for virtual specialist coding-agent roles under Victor Sabo).
+- Enforced 8 mandatory safety directives across all role and skill definition files (synthetic data only, zero handwriting hallucination, visual crop evidence coordinates, stage separation, deterministic checks first, human review for PII/low-confidence data, no external deployment, empirical performance claims only).
+
+### Why It Changed
+- To align the virtual agent role and skill structures exactly with the Frontier Engineering Challenge 2026 guidelines, eliminate duplicate libraries, and enforce uniform safety directives and human decision ownership boundaries.
+
+### Evidence
+- Frontier Engineering Challenge 2026 guidelines, 10 required roles, 13 required skills, and agent operating directives.
+
+### Decision
+- Standardize all 10 roles and 13 skills without modifying underlying application code.
+- Require trajectory capture (`Yes`) for every role and skill.
+
+### Learning
+- Standardizing inputs, outputs, permitted/prohibited actions, and 8 mandatory safety directives across all role and skill definitions guarantees predictable agent orchestration and seamless handoffs.
+
+---
+
 ## [1.1.0] - 2026-08-30 — Challenge compliance update
 ### What Changed
 - Created project-control and challenge compliance documents: `docs/challenge-compliance.md`, `docs/agent-use-disclosure.md`, `docs/submission-integrity.md`, `docs/qualification-gate-checklist.md`.

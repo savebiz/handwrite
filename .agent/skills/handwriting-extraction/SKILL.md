@@ -1,12 +1,23 @@
-# Skill: Handwriting Extraction
+# Reusable Skill: Handwriting Extraction
 
-- **Owner Roles**: `vision-extraction-specialist`
-- **Purpose**: Extract handwritten form fields into structured text with bounding box evidence coordinates `[ymin, xmin, ymax, xmax]` and confidence scores.
-- **Non-Goals**: Making autonomous verification decisions or outputting hallucinated values.
-- **Inputs**: Form image file, document family schema.
-- **Method**:
-  1. Identify candidate field bounding boxes based on template coordinates or visual layout.
-  2. Perform line/box level transcription.
-  3. Attach bounding box coordinates and calculated confidence (0.0 to 1.0).
-  4. Output structured field candidates according to `shared-data-contract.md`.
-- **Quality Checks**: Bounding box normalized `[0..1000]`, non-null page index, confidence score present.
+- **Purpose**: Transcribe handwritten and printed form fields, assign confidence scores, and derive source visual bounding boxes `[ymin, xmin, ymax, xmax]`.
+- **Human Approval Boundary**: Extraction confidence scoring models and crop bounds must be approved by Victor Sabo.
+- **Input Files**: `data/synthetic/*`, `app/shared/schemas.py`, `app/shared/metadata.py`
+- **Output Files**: `app/backend/agents/extraction_agent.py`
+- **Permitted Actions**: Transcription logic, confidence calculation, crop coordinate derivation.
+- **Prohibited Actions**: Hallucinating unbacked field values, omitting bounding box crops.
+- **Tests & Evidence Required**: `python tests/test_pipeline.py` (4/4 PASS).
+- **Escalation Conditions**: Severe image blur, unreadable region, or invalid image path.
+- **Trajectory Capture Required**: `Yes` (`.agent/workflows/` / `logs/`).
+
+---
+
+## 🛡️ Mandatory Safety Directives
+1. Synthetic form data only.
+2. Zero handwriting hallucination.
+3. Visual crop evidence coordinates required for every extracted field.
+4. Keep extraction separate from verification, triage, and human review decisions.
+5. Deterministic verification rules run before model judgment.
+6. Flag low-confidence (<0.85) fields for human review.
+7. No external deployment.
+8. Empirical evidence required for all accuracy claims.
