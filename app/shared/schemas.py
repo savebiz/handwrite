@@ -6,6 +6,7 @@ from pydantic import BaseModel, Field, field_validator, model_validator
 class DocumentType(str, Enum):
     FIELD_INSPECTION = "field_inspection"
     CUSTOMER_ONBOARDING = "customer_onboarding"
+    ATTENDANCE_REGISTER = "attendance_register"
     UNKNOWN = "unknown"
 
 

@@ -25,6 +25,8 @@ npm-debug.log*
 # Application Data & Outputs
 outputs/crops/*
 !outputs/crops/.gitkeep
+data/local_test/
+outputs/local_test/
 logs/*.log
 logs/*.jsonl
 !logs/.gitkeep

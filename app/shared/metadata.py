@@ -209,9 +209,103 @@ CUSTOMER_ONBOARDING_METADATA: Dict[str, FieldMetadata] = {
 }
 
 
+ATTENDANCE_REGISTER_METADATA: Dict[str, FieldMetadata] = {
+    "register_ref": FieldMetadata(
+        field_name="register_ref",
+        display_name="Register Reference",
+        required=True,
+        sensitivity=SensitivityEnum.PUBLIC,
+        data_type="string",
+        pattern=r"^ATT-\d{4}-\d{3}$",
+        default_bounding_box=[100.0, 50.0, 150.0, 400.0],
+    ),
+    "record_date": FieldMetadata(
+        field_name="record_date",
+        display_name="Record Date",
+        required=True,
+        sensitivity=SensitivityEnum.PUBLIC,
+        data_type="date",
+        default_bounding_box=[100.0, 450.0, 150.0, 750.0],
+    ),
+    "site_department": FieldMetadata(
+        field_name="site_department",
+        display_name="Site / Department",
+        required=True,
+        sensitivity=SensitivityEnum.INTERNAL,
+        data_type="string",
+        default_bounding_box=[180.0, 50.0, 230.0, 750.0],
+    ),
+    "attendee_name": FieldMetadata(
+        field_name="attendee_name",
+        display_name="Attendee Name",
+        required=True,
+        sensitivity=SensitivityEnum.PERSONAL,
+        data_type="string",
+        default_bounding_box=[260.0, 50.0, 310.0, 750.0],
+        mandatory_human_review=True,
+    ),
+    "staff_ref": FieldMetadata(
+        field_name="staff_ref",
+        display_name="Staff Reference",
+        required=True,
+        sensitivity=SensitivityEnum.SENSITIVE,
+        data_type="string",
+        pattern=r"^EMP-\d{5}$",
+        default_bounding_box=[340.0, 50.0, 390.0, 400.0],
+        mandatory_human_review=True,
+    ),
+    "attendance_status": FieldMetadata(
+        field_name="attendance_status",
+        display_name="Attendance Status",
+        required=True,
+        sensitivity=SensitivityEnum.PUBLIC,
+        data_type="enum",
+        allowed_values=["PRESENT", "ABSENT", "LATE", "LEAVE"],
+        default_bounding_box=[340.0, 450.0, 390.0, 750.0],
+    ),
+    "time_in": FieldMetadata(
+        field_name="time_in",
+        display_name="Time In",
+        required=False,
+        sensitivity=SensitivityEnum.INTERNAL,
+        data_type="string",
+        pattern=r"^[0-2][0-9]:[0-5][0-9]$",
+        default_bounding_box=[420.0, 50.0, 470.0, 380.0],
+    ),
+    "time_out": FieldMetadata(
+        field_name="time_out",
+        display_name="Time Out",
+        required=False,
+        sensitivity=SensitivityEnum.INTERNAL,
+        data_type="string",
+        pattern=r"^[0-2][0-9]:[0-5][0-9]$",
+        default_bounding_box=[420.0, 400.0, 470.0, 750.0],
+    ),
+    "supervisor_notes": FieldMetadata(
+        field_name="supervisor_notes",
+        display_name="Supervisor Notes",
+        required=False,
+        sensitivity=SensitivityEnum.PUBLIC,
+        data_type="string",
+        default_bounding_box=[500.0, 50.0, 600.0, 750.0],
+    ),
+    "form_completeness": FieldMetadata(
+        field_name="form_completeness",
+        display_name="Form Completeness",
+        required=True,
+        sensitivity=SensitivityEnum.INTERNAL,
+        data_type="enum",
+        allowed_values=["COMPLETE", "INCOMPLETE"],
+        default_bounding_box=[630.0, 50.0, 680.0, 750.0],
+    ),
+}
+
+
 def get_metadata_for_family(doc_type: DocumentType) -> Dict[str, FieldMetadata]:
     if doc_type == DocumentType.FIELD_INSPECTION:
         return FIELD_INSPECTION_METADATA
     elif doc_type == DocumentType.CUSTOMER_ONBOARDING:
         return CUSTOMER_ONBOARDING_METADATA
+    elif doc_type == DocumentType.ATTENDANCE_REGISTER:
+        return ATTENDANCE_REGISTER_METADATA
     return {}

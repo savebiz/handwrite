@@ -2,6 +2,21 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.9.0] - 2026-08-30 — Private local benchmark & attendance register schema adaptation
+### What Changed
+- Registered `ATTENDANCE_REGISTER = "attendance_register"` schema family in `app/shared/schemas.py` and `app/shared/metadata.py` (`ATTENDANCE_REGISTER_METADATA`: 10 fields including `register_ref`, `record_date`, `attendee_name`, `staff_ref`, `attendance_status`, `time_in`, `time_out`).
+- Updated `classification_agent.py` to recognize attendance register form header keywords (`attend`, `reg`).
+- Created private local benchmark test runner `scripts/run_local_test_folder.py` to process the 11 PDF files in `C:\Users\hp\OneDrive - Dataguard Document Management Limited\Projects\Project AXA\AXA Insurance\Test File\TrainData1`.
+- Added `data/local_test/` and `outputs/local_test/` to `.gitignore` to guarantee 100% private local execution with zero PII or test artifacts tracked by Git.
+
+### Why It Changed
+- To enable local validation of HandWrite Verify on real-world attendance register PDF documents while strictly enforcing zero customer PII leakage to source control.
+
+### Decision
+- Isolate test outputs to `.gitignore`-protected local output directories (`outputs/local_test/db/`).
+
+---
+
 ## [1.8.0] - 2026-08-30 — Test-run folder and manifest prepared
 ### What Changed
 - Created dedicated test run environment directory `data/test-run-01/`.
