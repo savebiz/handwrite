@@ -1,0 +1,37 @@
+{
+  "test_run_id": "test-run-01",
+  "workflow": "advanced",
+  "dataset_version": "2.0.0",
+  "timestamp": "2026-08-31T00:02:16Z",
+  "files_processed": 11,
+  "failures": 0,
+  "total_fields_evaluated": 110,
+  "correct_fields": 77,
+  "verified_field_accuracy_percent": 70.0,
+  "escalation_recall_percent": 100.0,
+  "human_review_events": 77,
+  "auto_accepted_fields": 33,
+  "runtime_seconds": 1.436,
+  "avg_duration_per_file_seconds": 0.1305,
+  "cost_usd": 0.0,
+  "output_directory": "data/test-run-01/outputs/advanced",
+  "log_file": "data/test-run-01/logs\\advanced.log",
+  "records_written": [
+    "data/test-run-01/outputs/advanced\\AXA-ATT-001_advanced.json",
+    "data/test-run-01/outputs/advanced\\AXA-ATT-002_advanced.json",
+    "data/test-run-01/outputs/advanced\\AXA-ATT-003_advanced.json",
+    "data/test-run-01/outputs/advanced\\AXA-ATT-004_advanced.json",
+    "data/test-run-01/outputs/advanced\\AXA-ATT-005_advanced.json",
+    "data/test-run-01/outputs/advanced\\AXA-ATT-006_advanced.json",
+    "data/test-run-01/outputs/advanced\\AXA-ATT-007_advanced.json",
+    "data/test-run-01/outputs/advanced\\AXA-ATT-008_advanced.json",
+    "data/test-run-01/outputs/advanced\\AXA-ATT-009_advanced.json",
+    "data/test-run-01/outputs/advanced\\AXA-ATT-010_advanced.json",
+    "data/test-run-01/outputs/advanced\\AXA-ATT-011_advanced.json"
+  ],
+  "limitations": [
+    "Rule-based deterministic verification requires predefined regex patterns per schema",
+    "Human review queue requires reviewer sign-off before export API releases records",
+    "OCR confidence scoring relies on Pillow image statistics and template bounding boxes"
+  ]
+}

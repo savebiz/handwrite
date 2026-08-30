@@ -1,0 +1,334 @@
+{
+  "run_id": "run-ec8c683d",
+  "document_id": "AXA-ATT-007",
+  "document_type": "attendance_register",
+  "document_quality": {
+    "status": "pass",
+    "issues": [],
+    "rescan_required": false
+  },
+  "field_results": [
+    {
+      "field_name": "register_ref",
+      "display_name": "Register Reference",
+      "proposed_value": null,
+      "normalized_value": null,
+      "confidence": 0.94,
+      "decision": "human_review",
+      "sensitivity": "public",
+      "text_style": "handwritten",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          100.0,
+          50.0,
+          150.0,
+          400.0
+        ],
+        "crop_reference": "/crops/AXA-ATT-007_register_ref.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "fail",
+          "message": "Mandatory field 'Register Reference' is blank or unreadable."
+        }
+      ],
+      "decision_reason": "Verification rule check failed: Mandatory field 'Register Reference' is blank or unreadable.",
+      "reviewer_value": null,
+      "reviewer_decision": "pending",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "record_date",
+      "display_name": "Record Date",
+      "proposed_value": null,
+      "normalized_value": null,
+      "confidence": 0.94,
+      "decision": "human_review",
+      "sensitivity": "public",
+      "text_style": "handwritten",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          100.0,
+          450.0,
+          150.0,
+          750.0
+        ],
+        "crop_reference": "/crops/AXA-ATT-007_record_date.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "fail",
+          "message": "Mandatory field 'Record Date' is blank or unreadable."
+        }
+      ],
+      "decision_reason": "Verification rule check failed: Mandatory field 'Record Date' is blank or unreadable.",
+      "reviewer_value": null,
+      "reviewer_decision": "pending",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "site_department",
+      "display_name": "Site / Department",
+      "proposed_value": null,
+      "normalized_value": null,
+      "confidence": 0.94,
+      "decision": "human_review",
+      "sensitivity": "internal",
+      "text_style": "handwritten",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          180.0,
+          50.0,
+          230.0,
+          750.0
+        ],
+        "crop_reference": "/crops/AXA-ATT-007_site_department.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "fail",
+          "message": "Mandatory field 'Site / Department' is blank or unreadable."
+        }
+      ],
+      "decision_reason": "Verification rule check failed: Mandatory field 'Site / Department' is blank or unreadable.",
+      "reviewer_value": null,
+      "reviewer_decision": "pending",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "attendee_name",
+      "display_name": "Attendee Name",
+      "proposed_value": null,
+      "normalized_value": null,
+      "confidence": 0.94,
+      "decision": "human_review",
+      "sensitivity": "personal",
+      "text_style": "handwritten",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          260.0,
+          50.0,
+          310.0,
+          750.0
+        ],
+        "crop_reference": "/crops/AXA-ATT-007_attendee_name.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "fail",
+          "message": "Mandatory field 'Attendee Name' is blank or unreadable."
+        },
+        {
+          "rule_id": "RULE-SENS-006",
+          "result": "warning",
+          "message": "Field classified as 'personal' — mandatory human review required."
+        }
+      ],
+      "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
+      "reviewer_value": null,
+      "reviewer_decision": "pending",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "staff_ref",
+      "display_name": "Staff Reference",
+      "proposed_value": null,
+      "normalized_value": null,
+      "confidence": 0.94,
+      "decision": "human_review",
+      "sensitivity": "sensitive",
+      "text_style": "handwritten",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          340.0,
+          50.0,
+          390.0,
+          400.0
+        ],
+        "crop_reference": "/crops/AXA-ATT-007_staff_ref.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "fail",
+          "message": "Mandatory field 'Staff Reference' is blank or unreadable."
+        },
+        {
+          "rule_id": "RULE-SENS-006",
+          "result": "warning",
+          "message": "Field classified as 'sensitive' — mandatory human review required."
+        }
+      ],
+      "decision_reason": "Policy rule: Field sensitivity is 'sensitive'. Human review mandatory.",
+      "reviewer_value": null,
+      "reviewer_decision": "pending",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "attendance_status",
+      "display_name": "Attendance Status",
+      "proposed_value": null,
+      "normalized_value": null,
+      "confidence": 0.94,
+      "decision": "human_review",
+      "sensitivity": "public",
+      "text_style": "handwritten",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          340.0,
+          450.0,
+          390.0,
+          750.0
+        ],
+        "crop_reference": "/crops/AXA-ATT-007_attendance_status.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "fail",
+          "message": "Mandatory field 'Attendance Status' is blank or unreadable."
+        }
+      ],
+      "decision_reason": "Verification rule check failed: Mandatory field 'Attendance Status' is blank or unreadable.",
+      "reviewer_value": null,
+      "reviewer_decision": "pending",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "time_in",
+      "display_name": "Time In",
+      "proposed_value": null,
+      "normalized_value": null,
+      "confidence": 0.94,
+      "decision": "auto_accept",
+      "sensitivity": "internal",
+      "text_style": "handwritten",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          420.0,
+          50.0,
+          470.0,
+          380.0
+        ],
+        "crop_reference": "/crops/AXA-ATT-007_time_in.png"
+      },
+      "verification_checks": [],
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "reviewer_value": null,
+      "reviewer_decision": "not_required",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "time_out",
+      "display_name": "Time Out",
+      "proposed_value": null,
+      "normalized_value": null,
+      "confidence": 0.94,
+      "decision": "auto_accept",
+      "sensitivity": "internal",
+      "text_style": "handwritten",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          420.0,
+          400.0,
+          470.0,
+          750.0
+        ],
+        "crop_reference": "/crops/AXA-ATT-007_time_out.png"
+      },
+      "verification_checks": [],
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "reviewer_value": null,
+      "reviewer_decision": "not_required",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "supervisor_notes",
+      "display_name": "Supervisor Notes",
+      "proposed_value": null,
+      "normalized_value": null,
+      "confidence": 0.94,
+      "decision": "auto_accept",
+      "sensitivity": "public",
+      "text_style": "handwritten",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          500.0,
+          50.0,
+          600.0,
+          750.0
+        ],
+        "crop_reference": "/crops/AXA-ATT-007_supervisor_notes.png"
+      },
+      "verification_checks": [],
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "reviewer_value": null,
+      "reviewer_decision": "not_required",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "form_completeness",
+      "display_name": "Form Completeness",
+      "proposed_value": null,
+      "normalized_value": null,
+      "confidence": 0.94,
+      "decision": "human_review",
+      "sensitivity": "internal",
+      "text_style": "handwritten",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          630.0,
+          50.0,
+          680.0,
+          750.0
+        ],
+        "crop_reference": "/crops/AXA-ATT-007_form_completeness.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "fail",
+          "message": "Mandatory field 'Form Completeness' is blank or unreadable."
+        }
+      ],
+      "decision_reason": "Verification rule check failed: Mandatory field 'Form Completeness' is blank or unreadable.",
+      "reviewer_value": null,
+      "reviewer_decision": "pending",
+      "reviewer_reason": null
+    }
+  ],
+  "record_status": "awaiting_review",
+  "audit_events": [
+    {
+      "timestamp": "2026-08-30T23:02:15.899568+00:00",
+      "actor": "agent",
+      "action": "DOCUMENT_PIPELINE_PROCESSED",
+      "details": {
+        "run_id": "run-ec8c683d",
+        "document_id": "AXA-ATT-007",
+        "document_type": "attendance_register",
+        "quality_status": "pass",
+        "record_status": "awaiting_review",
+        "total_fields": 10,
+        "auto_accepted_fields": 3,
+        "human_review_fields": 7
+      }
+    }
+  ],
+  "schema_version": "1.0.0",
+  "agent_version": "1.0.0"
+}
