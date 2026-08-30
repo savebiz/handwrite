@@ -2,6 +2,30 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.3.0] - 2026-08-30 — Bounded engineering loops introduced
+### What Changed
+- Created four specialized loop workflow definitions in `.agent/workflows/`:
+  1. `ticket-loop.md` (Ticket Loop for small implementation tasks).
+  2. `evaluation-loop.md` (Evaluation Loop for baseline or agent pipeline changes).
+  3. `quality-loop.md` (Quality Loop for extraction, validation, triage, UI, and export failure cases).
+  4. `submission-loop.md` (Submission Loop for submission readiness, reproducibility, and qualification-gate compliance).
+- Created `docs/loop-budget.md` specifying default loop limits (max 3 iterations, max 30 minutes, 0 unapproved dependency installs, immediate hard stops) and structured JSON evidence record format (`loop_id`, `ticket_id`, `agent_role`, `start_time`, `end_time`, `files_changed`, `commands_run`, `test_results`, `evaluation_dataset_version`, `metrics`, `human_decision`, `changelog_entry`, `unresolved_risks`).
+- Enforced 7-phase execution sequence across all loops: `PLAN -> IMPLEMENT -> TEST -> INSPECT -> REVIEW -> DOCUMENT -> STOP OR ESCALATE`.
+
+### Why It Changed
+- To establish explicit, reproducible, and safety-bounded engineering iteration loops for all virtual agent tasks, guaranteeing zero scope drift, zero unbacked claims, and strict human decision checkpoints.
+
+### Evidence
+- Frontier Engineering Challenge 2026 guidelines, loop budget policy, and qualification-gate checklist.
+
+### Decision
+- Standardize all task iterations under the 4 defined loop types without modifying application code.
+
+### Learning
+- Enforcing strict 3-iteration budgets, 30-minute time caps, and 7-phase execution protocols prevents autonomous agent looping, eliminates hallucinated results, and guarantees evidence-backed submission readiness.
+
+---
+
 ## [1.2.0] - 2026-08-30 — Virtual specialist role reconciliation
 ### What Changed
 - Reconciled all 10 virtual specialist coding-agent role definition files in `.agent/roles/` (`product-workflow-analyst.md`, `information-governance-specialist.md`, `handwriting-extraction-specialist.md`, `verification-triage-specialist.md`, `fullstack-engineer.md`, `evaluation-benchmark-specialist.md`, `qa-reliability-specialist.md`, `privacy-security-reviewer.md`, `reproducibility-submission-editor.md`, `project-coordination-lead.md`).
