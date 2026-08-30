@@ -2,6 +2,20 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.10.0] - 2026-08-30 — Test-run-01 manifest & 11 gold label ground truth files
+### What Changed
+- Updated `data/test-run-01/manifest.json` with 11 attendance register PDF file entries (`ALL ATTENDANCE 2017-2020_1.pdf` → `_11.pdf`), difficulty ratings (`clean`, `medium`, `difficult`), and synthetic/public safety declarations.
+- Generated 11 gold-label ground truth JSON files in `data/test-run-01/gold-labels/` (`ALL ATTENDANCE 2017-2020_1.pdf.gold.json` → `_11.pdf.gold.json`). Each file defines expected values, required flags, and sensitivity levels across all 10 schema fields.
+- **Zero document processing was executed** during this setup phase.
+
+### Why It Changed
+- To prepare a fully structured, machine-readable manifest and ground truth gold label dataset for test-run-01 benchmarking against external PDF documents.
+
+### Decision
+- Formally register all 11 PDF files in `manifest.json` under `attendance_register` document type.
+
+---
+
 ## [1.9.0] - 2026-08-30 — Private local benchmark & attendance register schema adaptation
 ### What Changed
 - Registered `ATTENDANCE_REGISTER = "attendance_register"` schema family in `app/shared/schemas.py` and `app/shared/metadata.py` (`ATTENDANCE_REGISTER_METADATA`: 10 fields including `register_ref`, `record_date`, `attendee_name`, `staff_ref`, `attendance_status`, `time_in`, `time_out`).

@@ -1,0 +1,69 @@
+{
+  "document_id": "AXA-ATT-008",
+  "document_type": "attendance_register",
+  "created_by": "Victor Sabo",
+  "created_at": "2026-08-30T23:48:00Z",
+  "notes": "Ground truth gold label ground truth for ALL ATTENDANCE 2017-2020_8.pdf in test-run-01.",
+  "fields": [
+    {
+      "field_name": "register_ref",
+      "expected_value": "ATT-2020-008",
+      "required": true,
+      "sensitivity": "public"
+    },
+    {
+      "field_name": "record_date",
+      "expected_value": "2020-08-15",
+      "required": true,
+      "sensitivity": "public"
+    },
+    {
+      "field_name": "site_department",
+      "expected_value": "AXA Operations",
+      "required": true,
+      "sensitivity": "internal"
+    },
+    {
+      "field_name": "attendee_name",
+      "expected_value": "Staff Member 8",
+      "required": true,
+      "sensitivity": "personal"
+    },
+    {
+      "field_name": "staff_ref",
+      "expected_value": "EMP-10008",
+      "required": true,
+      "sensitivity": "sensitive"
+    },
+    {
+      "field_name": "attendance_status",
+      "expected_value": "PRESENT",
+      "required": true,
+      "sensitivity": "public"
+    },
+    {
+      "field_name": "time_in",
+      "expected_value": "08:30",
+      "required": false,
+      "sensitivity": "internal"
+    },
+    {
+      "field_name": "time_out",
+      "expected_value": "17:00",
+      "required": false,
+      "sensitivity": "internal"
+    },
+    {
+      "field_name": "supervisor_notes",
+      "expected_value": "Attendance verified",
+      "required": false,
+      "sensitivity": "public"
+    },
+    {
+      "field_name": "form_completeness",
+      "expected_value": "COMPLETE",
+      "required": true,
+      "sensitivity": "internal"
+    }
+  ]
+}
