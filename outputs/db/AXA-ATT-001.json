@@ -1,7 +1,7 @@
 {
-  "run_id": "run-1efebf29",
-  "document_id": "FI-001",
-  "document_type": "field_inspection",
+  "run_id": "run-9c48de45",
+  "document_id": "AXA-ATT-001",
+  "document_type": "attendance_register",
   "document_quality": {
     "status": "pass",
     "issues": [],
@@ -9,14 +9,14 @@
   },
   "field_results": [
     {
-      "field_name": "inspection_ref",
-      "display_name": "Inspection Reference",
-      "proposed_value": "INSP-2026-001",
-      "normalized_value": "INSP-2026-001",
-      "confidence": 0.99,
+      "field_name": "register_ref",
+      "display_name": "Register Reference",
+      "proposed_value": "ATT-2020-001",
+      "normalized_value": "ATT-2020-001",
+      "confidence": 0.94,
       "decision": "auto_accept",
       "sensitivity": "public",
-      "text_style": "typewritten",
+      "text_style": "handwritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -25,7 +25,7 @@
           150.0,
           400.0
         ],
-        "crop_reference": "/crops/FI-001_inspection_ref.png"
+        "crop_reference": "/crops/AXA-ATT-001_register_ref.png"
       },
       "verification_checks": [
         {
@@ -36,23 +36,23 @@
         {
           "rule_id": "RULE-PAT-003",
           "result": "pass",
-          "message": "Matches pattern '^INSP-\\d{4}-\\d{3}$'."
+          "message": "Matches pattern '^ATT-\\d{4}-\\d{3}$'."
         }
       ],
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
-      "reviewer_value": null,
-      "reviewer_decision": "not_required",
+      "reviewer_value": "ATT-2020-001",
+      "reviewer_decision": "approved",
       "reviewer_reason": null
     },
     {
-      "field_name": "inspection_date",
-      "display_name": "Inspection Date",
-      "proposed_value": "2026-08-15",
-      "normalized_value": "2026-08-15",
-      "confidence": 0.99,
+      "field_name": "record_date",
+      "display_name": "Record Date",
+      "proposed_value": "2020-08-15",
+      "normalized_value": "2020-08-15",
+      "confidence": 0.94,
       "decision": "auto_accept",
       "sensitivity": "public",
-      "text_style": "typewritten",
+      "text_style": "handwritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -61,7 +61,7 @@
           150.0,
           750.0
         ],
-        "crop_reference": "/crops/FI-001_inspection_date.png"
+        "crop_reference": "/crops/AXA-ATT-001_record_date.png"
       },
       "verification_checks": [
         {
@@ -76,15 +76,15 @@
         }
       ],
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
-      "reviewer_value": null,
-      "reviewer_decision": "not_required",
+      "reviewer_value": "2020-08-15",
+      "reviewer_decision": "approved",
       "reviewer_reason": null
     },
     {
-      "field_name": "site_location",
-      "display_name": "Site / Location",
-      "proposed_value": "Building A, North Wing",
-      "normalized_value": "Building A, North Wing",
+      "field_name": "site_department",
+      "display_name": "Site / Department",
+      "proposed_value": "AXA Operations",
+      "normalized_value": "AXA Operations",
       "confidence": 0.94,
       "decision": "auto_accept",
       "sensitivity": "internal",
@@ -97,7 +97,7 @@
           230.0,
           750.0
         ],
-        "crop_reference": "/crops/FI-001_site_location.png"
+        "crop_reference": "/crops/AXA-ATT-001_site_department.png"
       },
       "verification_checks": [
         {
@@ -107,15 +107,15 @@
         }
       ],
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
-      "reviewer_value": null,
-      "reviewer_decision": "not_required",
+      "reviewer_value": "AXA Operations",
+      "reviewer_decision": "approved",
       "reviewer_reason": null
     },
     {
-      "field_name": "inspector_name",
-      "display_name": "Inspector Name",
-      "proposed_value": "John Doe",
-      "normalized_value": "John Doe",
+      "field_name": "attendee_name",
+      "display_name": "Attendee Name",
+      "proposed_value": "Staff Member 1",
+      "normalized_value": "Staff Member 1",
       "confidence": 0.94,
       "decision": "human_review",
       "sensitivity": "personal",
@@ -128,7 +128,7 @@
           310.0,
           750.0
         ],
-        "crop_reference": "/crops/FI-001_inspector_name.png"
+        "crop_reference": "/crops/AXA-ATT-001_attendee_name.png"
       },
       "verification_checks": [
         {
@@ -143,18 +143,18 @@
         }
       ],
       "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
-      "reviewer_value": null,
-      "reviewer_decision": "pending",
-      "reviewer_reason": null
+      "reviewer_value": "Staff Member 1",
+      "reviewer_decision": "corrected",
+      "reviewer_reason": "Verified against attendance register handwriting"
     },
     {
-      "field_name": "asset_ref",
-      "display_name": "Asset Reference",
-      "proposed_value": "AST-10293",
-      "normalized_value": "AST-10293",
+      "field_name": "staff_ref",
+      "display_name": "Staff Reference",
+      "proposed_value": "EMP-10001",
+      "normalized_value": "EMP-10001",
       "confidence": 0.94,
-      "decision": "auto_accept",
-      "sensitivity": "internal",
+      "decision": "human_review",
+      "sensitivity": "sensitive",
       "text_style": "handwritten",
       "evidence": {
         "page": 1,
@@ -164,7 +164,7 @@
           390.0,
           400.0
         ],
-        "crop_reference": "/crops/FI-001_asset_ref.png"
+        "crop_reference": "/crops/AXA-ATT-001_staff_ref.png"
       },
       "verification_checks": [
         {
@@ -175,19 +175,24 @@
         {
           "rule_id": "RULE-PAT-003",
           "result": "pass",
-          "message": "Matches pattern '^AST-\\d{5}$'."
+          "message": "Matches pattern '^EMP-\\d{5}$'."
+        },
+        {
+          "rule_id": "RULE-SENS-006",
+          "result": "warning",
+          "message": "Field classified as 'sensitive' — mandatory human review required."
         }
       ],
-      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
-      "reviewer_value": null,
-      "reviewer_decision": "not_required",
+      "decision_reason": "Policy rule: Field sensitivity is 'sensitive'. Human review mandatory.",
+      "reviewer_value": "EMP-10001",
+      "reviewer_decision": "approved",
       "reviewer_reason": null
     },
     {
-      "field_name": "inspection_status",
-      "display_name": "Inspection Status",
-      "proposed_value": "PASS",
-      "normalized_value": "PASS",
+      "field_name": "attendance_status",
+      "display_name": "Attendance Status",
+      "proposed_value": "PRESENT",
+      "normalized_value": "PRESENT",
       "confidence": 0.94,
       "decision": "auto_accept",
       "sensitivity": "public",
@@ -200,7 +205,7 @@
           390.0,
           750.0
         ],
-        "crop_reference": "/crops/FI-001_inspection_status.png"
+        "crop_reference": "/crops/AXA-ATT-001_attendance_status.png"
       },
       "verification_checks": [
         {
@@ -215,89 +220,95 @@
         }
       ],
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
-      "reviewer_value": null,
-      "reviewer_decision": "not_required",
+      "reviewer_value": "PRESENT",
+      "reviewer_decision": "approved",
       "reviewer_reason": null
     },
     {
-      "field_name": "observation_finding",
-      "display_name": "Observation / Finding",
-      "proposed_value": "All pressure valves optimal.",
-      "normalized_value": "All pressure valves optimal.",
+      "field_name": "time_in",
+      "display_name": "Time In",
+      "proposed_value": "08:30",
+      "normalized_value": "08:30",
       "confidence": 0.94,
       "decision": "auto_accept",
-      "sensitivity": "public",
+      "sensitivity": "internal",
       "text_style": "handwritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
           420.0,
           50.0,
-          520.0,
-          750.0
-        ],
-        "crop_reference": "/crops/FI-001_observation_finding.png"
-      },
-      "verification_checks": [],
-      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
-      "reviewer_value": null,
-      "reviewer_decision": "not_required",
-      "reviewer_reason": null
-    },
-    {
-      "field_name": "action_required",
-      "display_name": "Action Required",
-      "proposed_value": "None",
-      "normalized_value": "None",
-      "confidence": 0.94,
-      "decision": "auto_accept",
-      "sensitivity": "public",
-      "text_style": "handwritten",
-      "evidence": {
-        "page": 1,
-        "bounding_box": [
-          550.0,
-          50.0,
-          650.0,
-          750.0
-        ],
-        "crop_reference": "/crops/FI-001_action_required.png"
-      },
-      "verification_checks": [],
-      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
-      "reviewer_value": null,
-      "reviewer_decision": "not_required",
-      "reviewer_reason": null
-    },
-    {
-      "field_name": "followup_date",
-      "display_name": "Follow-up Date",
-      "proposed_value": "2026-11-15",
-      "normalized_value": "2026-11-15",
-      "confidence": 0.94,
-      "decision": "auto_accept",
-      "sensitivity": "public",
-      "text_style": "handwritten",
-      "evidence": {
-        "page": 1,
-        "bounding_box": [
-          680.0,
-          50.0,
-          730.0,
+          470.0,
           380.0
         ],
-        "crop_reference": "/crops/FI-001_followup_date.png"
+        "crop_reference": "/crops/AXA-ATT-001_time_in.png"
       },
       "verification_checks": [
         {
-          "rule_id": "RULE-DATE-002",
+          "rule_id": "RULE-PAT-003",
           "result": "pass",
-          "message": "Valid ISO-8601 date string."
+          "message": "Matches pattern '^[0-2][0-9]:[0-5][0-9]$'."
         }
       ],
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
-      "reviewer_value": null,
-      "reviewer_decision": "not_required",
+      "reviewer_value": "08:30",
+      "reviewer_decision": "approved",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "time_out",
+      "display_name": "Time Out",
+      "proposed_value": "17:00",
+      "normalized_value": "17:00",
+      "confidence": 0.94,
+      "decision": "auto_accept",
+      "sensitivity": "internal",
+      "text_style": "handwritten",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          420.0,
+          400.0,
+          470.0,
+          750.0
+        ],
+        "crop_reference": "/crops/AXA-ATT-001_time_out.png"
+      },
+      "verification_checks": [
+        {
+          "rule_id": "RULE-PAT-003",
+          "result": "pass",
+          "message": "Matches pattern '^[0-2][0-9]:[0-5][0-9]$'."
+        }
+      ],
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "reviewer_value": "17:00",
+      "reviewer_decision": "approved",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "supervisor_notes",
+      "display_name": "Supervisor Notes",
+      "proposed_value": "Attendance verified",
+      "normalized_value": "Attendance verified",
+      "confidence": 0.94,
+      "decision": "auto_accept",
+      "sensitivity": "public",
+      "text_style": "handwritten",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          500.0,
+          50.0,
+          600.0,
+          750.0
+        ],
+        "crop_reference": "/crops/AXA-ATT-001_supervisor_notes.png"
+      },
+      "verification_checks": [],
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "reviewer_value": "Attendance verified",
+      "reviewer_decision": "approved",
       "reviewer_reason": null
     },
     {
@@ -312,12 +323,12 @@
       "evidence": {
         "page": 1,
         "bounding_box": [
+          630.0,
+          50.0,
           680.0,
-          420.0,
-          730.0,
           750.0
         ],
-        "crop_reference": "/crops/FI-001_form_completeness.png"
+        "crop_reference": "/crops/AXA-ATT-001_form_completeness.png"
       },
       "verification_checks": [
         {
@@ -332,26 +343,37 @@
         }
       ],
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
-      "reviewer_value": null,
-      "reviewer_decision": "not_required",
+      "reviewer_value": "COMPLETE",
+      "reviewer_decision": "approved",
       "reviewer_reason": null
     }
   ],
-  "record_status": "awaiting_review",
+  "record_status": "approved",
   "audit_events": [
     {
-      "timestamp": "2026-08-30T23:09:02.558413+00:00",
+      "timestamp": "2026-08-30T23:04:54.313977+00:00",
       "actor": "agent",
       "action": "DOCUMENT_PIPELINE_PROCESSED",
       "details": {
-        "run_id": "run-1efebf29",
-        "document_id": "FI-001",
-        "document_type": "field_inspection",
+        "run_id": "run-9c48de45",
+        "document_id": "AXA-ATT-001",
+        "document_type": "attendance_register",
         "quality_status": "pass",
         "record_status": "awaiting_review",
         "total_fields": 10,
-        "auto_accepted_fields": 9,
-        "human_review_fields": 1
+        "auto_accepted_fields": 8,
+        "human_review_fields": 2
+      }
+    },
+    {
+      "timestamp": "2026-08-30T23:08:35.475731+00:00",
+      "actor": "reviewer",
+      "action": "DOCUMENT_REVIEW_SUBMITTED",
+      "details": {
+        "document_id": "AXA-ATT-001",
+        "reviewer_id": "reviewer-victor-01",
+        "fields_reviewed": 10,
+        "final_record_status": "approved"
       }
     }
   ],

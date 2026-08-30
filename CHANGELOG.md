@@ -2,6 +2,35 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.14.0] - 2026-08-31 — Reviewer workflow walkthrough on test set
+### Reviewer Walkthrough Scope & Setup
+- Executed 7-stage end-to-end reviewer workflow walkthrough script (`scripts/run_reviewer_walkthrough.py`) against document record `AXA-ATT-001` from `test-run-01`.
+- **Zero product application code was modified.**
+
+### What Worked
+- **Queue Prioritization (`GET /api/documents/queue`)**: Correctly ordered items by priority (`RESCAN_REQUIRED` → `AWAITING_REVIEW` → `PROCESSING` → `APPROVED`).
+- **Detail Inspection (`GET /api/documents/AXA-ATT-001`)**: Loaded complete 10-field record structure with quality metrics.
+- **Evidence & Crop Linkage**: Identified 2 PII fields (`attendee_name`, `staff_ref`) with bounding box crops (`/crops/AXA-ATT-001_attendee_name.png`).
+- **Export Guardrail Block (`GET /api/documents/AXA-ATT-001/export`)**: Successfully blocked unapproved export attempt with HTTP 400 rejection.
+- **Review Submission (`POST /api/documents/AXA-ATT-001/review`)**: Submitted field approvals & correction (`attendee_name` -> `"Staff Member 1"`), transitioning record to `APPROVED`.
+- **Approved Record Export (`GET /api/documents/AXA-ATT-001/export`)**: Released verified JSON export payload after human approval.
+- **Audit Logging**: Recorded `DOCUMENT_REVIEW_SUBMITTED` event in `record.audit_events` with actor `reviewer`.
+
+### What Failed or Was Unclear
+- **Status Distinction**: Corrected records transition directly to `APPROVED`; adding explicit UI status "Approved with Corrections" would improve transparency.
+
+### Actual Evidence File Paths
+- **Walkthrough Detailed Report**: [data/test-run-01/reviewer-walkthrough.md](file:///c:/Users/hp/OneDrive%20-%20Dataguard%20Document%20Management%20Limited/Desktop/GIGS/HandWrite/data/test-run-01/reviewer-walkthrough.md)
+- **Walkthrough Test Script**: [scripts/run_reviewer_walkthrough.py](file:///c:/Users/hp/OneDrive%20-%20Dataguard%20Document%20Management%20Limited/Desktop/GIGS/HandWrite/scripts/run_reviewer_walkthrough.py)
+
+### Decision
+- Formalize `scripts/run_reviewer_walkthrough.py` as an automated integration test for reviewer workflow APIs.
+
+### Learning
+- The reviewer workflow security architecture successfully enforces export guardrails, ensuring sensitive personal fields cannot be exported without human review sign-off.
+
+---
+
 ## [1.13.0] - 2026-08-31 — Baseline-versus-advanced comparison on test set
 ### Executive Evaluation Summary
 Executed fair comparative evaluation (`scripts/run_test_run_comparison.py`) comparing the single-pass unverified baseline against the multi-stage advanced agentic workflow across all 11 accepted PDF document files in `data/test-run-01/manifest.json` (110 total fields evaluated).
