@@ -1,0 +1,3360 @@
+{
+  "run_metadata": {
+    "run_id": "baseline-run-20260830-222045",
+    "dataset_version": "2.0.0",
+    "schema_version": "1.0.0",
+    "agent_version": "baseline-1.0.0",
+    "timestamp": "2026-08-30T22:20:45Z",
+    "total_samples": 12,
+    "total_fields": 126,
+    "correct_fields": 101,
+    "verified_field_accuracy_percent": 80.16,
+    "duration_seconds": 0.0059,
+    "avg_duration_per_doc_seconds": 0.0005,
+    "cost_usd": 0.0
+  },
+  "records": [
+    {
+      "run_id": "baseline-sample-1106df9d",
+      "document_id": "FI-001",
+      "document_type": "field_inspection",
+      "document_quality": {
+        "status": "pass",
+        "issues": [],
+        "rescan_required": false
+      },
+      "field_results": [
+        {
+          "field_name": "inspection_ref",
+          "display_name": "Inspection Reference",
+          "proposed_value": "INSP-2026-001",
+          "normalized_value": "INSP-2026-001",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              50.0,
+              150.0,
+              400.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "inspection_date",
+          "display_name": "Inspection Date",
+          "proposed_value": "2026-08-15",
+          "normalized_value": "2026-08-15",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              450.0,
+              150.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "site_location",
+          "display_name": "Site / Location",
+          "proposed_value": "Building A, North Wing",
+          "normalized_value": "Building A, North Wing",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              180.0,
+              50.0,
+              230.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "inspector_name",
+          "display_name": "Inspector Name",
+          "proposed_value": "John Doe",
+          "normalized_value": "John Doe",
+          "confidence": 0.92,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              260.0,
+              50.0,
+              310.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "asset_ref",
+          "display_name": "Asset Reference",
+          "proposed_value": "AST-10293",
+          "normalized_value": "AST-10293",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              340.0,
+              50.0,
+              390.0,
+              400.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "inspection_status",
+          "display_name": "Inspection Status",
+          "proposed_value": "PASS",
+          "normalized_value": "PASS",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              340.0,
+              450.0,
+              390.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "observation_finding",
+          "display_name": "Observation / Finding",
+          "proposed_value": "All pressure valves optimal.",
+          "normalized_value": "All pressure valves optimal.",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              420.0,
+              50.0,
+              520.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "action_required",
+          "display_name": "Action Required",
+          "proposed_value": "None",
+          "normalized_value": "None",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              550.0,
+              50.0,
+              650.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "followup_date",
+          "display_name": "Follow-up Date",
+          "proposed_value": "2026-11-15",
+          "normalized_value": "2026-11-15",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              680.0,
+              50.0,
+              730.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "form_completeness",
+          "display_name": "Form Completeness",
+          "proposed_value": "COMPLETE",
+          "normalized_value": "COMPLETE",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              680.0,
+              420.0,
+              730.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        }
+      ],
+      "record_status": "awaiting_review",
+      "audit_events": [],
+      "schema_version": "1.0.0",
+      "agent_version": "baseline-1.0.0"
+    },
+    {
+      "run_id": "baseline-sample-0625186f",
+      "document_id": "FI-002",
+      "document_type": "field_inspection",
+      "document_quality": {
+        "status": "pass",
+        "issues": [],
+        "rescan_required": false
+      },
+      "field_results": [
+        {
+          "field_name": "inspection_ref",
+          "display_name": "Inspection Reference",
+          "proposed_value": "INSP-2026-002",
+          "normalized_value": "INSP-2026-002",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              50.0,
+              150.0,
+              400.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "inspection_date",
+          "display_name": "Inspection Date",
+          "proposed_value": "2026-08-16",
+          "normalized_value": "2026-08-16",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              450.0,
+              150.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "site_location",
+          "display_name": "Site / Location",
+          "proposed_value": "Substation 4B",
+          "normalized_value": "Substation 4B",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              180.0,
+              50.0,
+              230.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "inspector_name",
+          "display_name": "Inspector Name",
+          "proposed_value": "Alice Smith",
+          "normalized_value": "Alice Smith",
+          "confidence": 0.92,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              260.0,
+              50.0,
+              310.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "asset_ref",
+          "display_name": "Asset Reference",
+          "proposed_value": "AST-44102",
+          "normalized_value": "AST-44102",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              340.0,
+              50.0,
+              390.0,
+              400.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "inspection_status",
+          "display_name": "Inspection Status",
+          "proposed_value": "NEEDS_ATTENTION",
+          "normalized_value": "NEEDS_ATTENTION",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              340.0,
+              450.0,
+              390.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "observation_finding",
+          "display_name": "Observation / Finding",
+          "proposed_value": "Minor coolant leak on valve 3.",
+          "normalized_value": "Minor coolant leak on valve 3.",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              420.0,
+              50.0,
+              520.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "action_required",
+          "display_name": "Action Required",
+          "proposed_value": "Replace gasket seals.",
+          "normalized_value": "Replace gasket seals.",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              550.0,
+              50.0,
+              650.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "followup_date",
+          "display_name": "Follow-up Date",
+          "proposed_value": "2026-09-01",
+          "normalized_value": "2026-09-01",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              680.0,
+              50.0,
+              730.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "form_completeness",
+          "display_name": "Form Completeness",
+          "proposed_value": "COMPLETE",
+          "normalized_value": "COMPLETE",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              680.0,
+              420.0,
+              730.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        }
+      ],
+      "record_status": "awaiting_review",
+      "audit_events": [],
+      "schema_version": "1.0.0",
+      "agent_version": "baseline-1.0.0"
+    },
+    {
+      "run_id": "baseline-sample-77f3a3bb",
+      "document_id": "FI-003",
+      "document_type": "field_inspection",
+      "document_quality": {
+        "status": "pass",
+        "issues": [],
+        "rescan_required": false
+      },
+      "field_results": [
+        {
+          "field_name": "inspection_ref",
+          "display_name": "Inspection Reference",
+          "proposed_value": "INSP-2026-003",
+          "normalized_value": "INSP-2026-003",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              50.0,
+              150.0,
+              400.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "inspection_date",
+          "display_name": "Inspection Date",
+          "proposed_value": "2026-08-18",
+          "normalized_value": "2026-08-18",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              450.0,
+              150.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "site_location",
+          "display_name": "Site / Location",
+          "proposed_value": "Warehouse Depot 12",
+          "normalized_value": "Warehouse Depot 12",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              180.0,
+              50.0,
+              230.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "inspector_name",
+          "display_name": "Inspector Name",
+          "proposed_value": "Robert Vance",
+          "normalized_value": "Robert Vance",
+          "confidence": 0.78,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              260.0,
+              50.0,
+              310.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "asset_ref",
+          "display_name": "Asset Reference",
+          "proposed_value": "AST-88192",
+          "normalized_value": "AST-88192",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              340.0,
+              50.0,
+              390.0,
+              400.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "inspection_status",
+          "display_name": "Inspection Status",
+          "proposed_value": "FAIL",
+          "normalized_value": "FAIL",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              340.0,
+              450.0,
+              390.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "observation_finding",
+          "display_name": "Observation / Finding",
+          "proposed_value": "Heavy corrosion on structural beam.",
+          "normalized_value": "Heavy corrosion on structural beam.",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              420.0,
+              50.0,
+              520.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "action_required",
+          "display_name": "Action Required",
+          "proposed_value": "Immediate safety audit & beam replacement.",
+          "normalized_value": "Immediate safety audit & beam replacement.",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              550.0,
+              50.0,
+              650.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "followup_date",
+          "display_name": "Follow-up Date",
+          "proposed_value": "2026-08-25",
+          "normalized_value": "2026-08-25",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              680.0,
+              50.0,
+              730.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "form_completeness",
+          "display_name": "Form Completeness",
+          "proposed_value": "COMPLETE",
+          "normalized_value": "COMPLETE",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              680.0,
+              420.0,
+              730.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        }
+      ],
+      "record_status": "awaiting_review",
+      "audit_events": [],
+      "schema_version": "1.0.0",
+      "agent_version": "baseline-1.0.0"
+    },
+    {
+      "run_id": "baseline-sample-c337249b",
+      "document_id": "FI-004",
+      "document_type": "field_inspection",
+      "document_quality": {
+        "status": "pass",
+        "issues": [],
+        "rescan_required": false
+      },
+      "field_results": [
+        {
+          "field_name": "inspection_ref",
+          "display_name": "Inspection Reference",
+          "proposed_value": "INSP-2026-004",
+          "normalized_value": "INSP-2026-004",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              50.0,
+              150.0,
+              400.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "inspection_date",
+          "display_name": "Inspection Date",
+          "proposed_value": "2026-08-20",
+          "normalized_value": "2026-08-20",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              450.0,
+              150.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "site_location",
+          "display_name": "Site / Location",
+          "proposed_value": "Solar Array Field 7",
+          "normalized_value": "Solar Array Field 7",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              180.0,
+              50.0,
+              230.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "inspector_name",
+          "display_name": "Inspector Name",
+          "proposed_value": "Maria Garcia",
+          "normalized_value": "Maria Garcia",
+          "confidence": 0.78,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              260.0,
+              50.0,
+              310.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "asset_ref",
+          "display_name": "Asset Reference",
+          "proposed_value": "AST-33019",
+          "normalized_value": "AST-33019",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              340.0,
+              50.0,
+              390.0,
+              400.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "inspection_status",
+          "display_name": "Inspection Status",
+          "proposed_value": "PASS",
+          "normalized_value": "PASS",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              340.0,
+              450.0,
+              390.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "observation_finding",
+          "display_name": "Observation / Finding",
+          "proposed_value": "Dust buildup on panel surface.",
+          "normalized_value": "Dust buildup on panel surface.",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              420.0,
+              50.0,
+              520.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "action_required",
+          "display_name": "Action Required",
+          "proposed_value": "Schedule monthly cleaning.",
+          "normalized_value": "Schedule monthly cleaning.",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              550.0,
+              50.0,
+              650.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "followup_date",
+          "display_name": "Follow-up Date",
+          "proposed_value": "2026-09-20",
+          "normalized_value": "2026-09-20",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              680.0,
+              50.0,
+              730.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "form_completeness",
+          "display_name": "Form Completeness",
+          "proposed_value": "COMPLETE",
+          "normalized_value": "COMPLETE",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              680.0,
+              420.0,
+              730.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        }
+      ],
+      "record_status": "awaiting_review",
+      "audit_events": [],
+      "schema_version": "1.0.0",
+      "agent_version": "baseline-1.0.0"
+    },
+    {
+      "run_id": "baseline-sample-4f584ad9",
+      "document_id": "FI-005",
+      "document_type": "field_inspection",
+      "document_quality": {
+        "status": "pass",
+        "issues": [],
+        "rescan_required": false
+      },
+      "field_results": [
+        {
+          "field_name": "inspection_ref",
+          "display_name": "Inspection Reference",
+          "proposed_value": "INSP-2026-005",
+          "normalized_value": "INSP-2026-005",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              50.0,
+              150.0,
+              400.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "inspection_date",
+          "display_name": "Inspection Date",
+          "proposed_value": "2026-08-2X",
+          "normalized_value": "2026-08-2X",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              450.0,
+              150.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "site_location",
+          "display_name": "Site / Location",
+          "proposed_value": "Refinery Zone C",
+          "normalized_value": "Refinery Zone C",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              180.0,
+              50.0,
+              230.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "inspector_name",
+          "display_name": "Inspector Name",
+          "proposed_value": "David K.",
+          "normalized_value": "David K.",
+          "confidence": 0.55,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              260.0,
+              50.0,
+              310.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "asset_ref",
+          "display_name": "Asset Reference",
+          "proposed_value": "AST-9900X",
+          "normalized_value": "AST-9900X",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              340.0,
+              50.0,
+              390.0,
+              400.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "inspection_status",
+          "display_name": "Inspection Status",
+          "proposed_value": "NEEDS_ATTENTION",
+          "normalized_value": "NEEDS_ATTENTION",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              340.0,
+              450.0,
+              390.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "observation_finding",
+          "display_name": "Observation / Finding",
+          "proposed_value": "Vibration noise in pump motorX",
+          "normalized_value": "Vibration noise in pump motorX",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              420.0,
+              50.0,
+              520.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "action_required",
+          "display_name": "Action Required",
+          "proposed_value": "Lubricate bearingsX",
+          "normalized_value": "Lubricate bearingsX",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              550.0,
+              50.0,
+              650.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "followup_date",
+          "display_name": "Follow-up Date",
+          "proposed_value": "2026-09-05",
+          "normalized_value": "2026-09-05",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              680.0,
+              50.0,
+              730.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "form_completeness",
+          "display_name": "Form Completeness",
+          "proposed_value": "COMPLETX",
+          "normalized_value": "COMPLETX",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              680.0,
+              420.0,
+              730.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        }
+      ],
+      "record_status": "awaiting_review",
+      "audit_events": [],
+      "schema_version": "1.0.0",
+      "agent_version": "baseline-1.0.0"
+    },
+    {
+      "run_id": "baseline-sample-ef663f39",
+      "document_id": "FI-006",
+      "document_type": "field_inspection",
+      "document_quality": {
+        "status": "pass",
+        "issues": [],
+        "rescan_required": false
+      },
+      "field_results": [
+        {
+          "field_name": "inspection_ref",
+          "display_name": "Inspection Reference",
+          "proposed_value": "INSP-2026-00X",
+          "normalized_value": "INSP-2026-00X",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              50.0,
+              150.0,
+              400.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "inspection_date",
+          "display_name": "Inspection Date",
+          "proposed_value": "2026-08-2X",
+          "normalized_value": "2026-08-2X",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              450.0,
+              150.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "site_location",
+          "display_name": "Site / Location",
+          "proposed_value": "Offshore Platform Delta",
+          "normalized_value": "Offshore Platform Delta",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              180.0,
+              50.0,
+              230.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "inspector_name",
+          "display_name": "Inspector Name",
+          "proposed_value": null,
+          "normalized_value": null,
+          "confidence": 0.5,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              260.0,
+              50.0,
+              310.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "asset_ref",
+          "display_name": "Asset Reference",
+          "proposed_value": "AST-11002",
+          "normalized_value": "AST-11002",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              340.0,
+              50.0,
+              390.0,
+              400.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "inspection_status",
+          "display_name": "Inspection Status",
+          "proposed_value": "FAIX",
+          "normalized_value": "FAIX",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              340.0,
+              450.0,
+              390.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "observation_finding",
+          "display_name": "Observation / Finding",
+          "proposed_value": "Pressure drop cross-out (120psi -> 80psiX",
+          "normalized_value": "Pressure drop cross-out (120psi -> 80psiX",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              420.0,
+              50.0,
+              520.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "action_required",
+          "display_name": "Action Required",
+          "proposed_value": "Emergency shutdown valve check",
+          "normalized_value": "Emergency shutdown valve check",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              550.0,
+              50.0,
+              650.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "followup_date",
+          "display_name": "Follow-up Date",
+          "proposed_value": "2026-08-2X",
+          "normalized_value": "2026-08-2X",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              680.0,
+              50.0,
+              730.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "form_completeness",
+          "display_name": "Form Completeness",
+          "proposed_value": "INCOMPLETX",
+          "normalized_value": "INCOMPLETX",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              680.0,
+              420.0,
+              730.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        }
+      ],
+      "record_status": "awaiting_review",
+      "audit_events": [],
+      "schema_version": "1.0.0",
+      "agent_version": "baseline-1.0.0"
+    },
+    {
+      "run_id": "baseline-sample-2c75d939",
+      "document_id": "CO-001",
+      "document_type": "customer_onboarding",
+      "document_quality": {
+        "status": "pass",
+        "issues": [],
+        "rescan_required": false
+      },
+      "field_results": [
+        {
+          "field_name": "onboarding_ref",
+          "display_name": "Onboarding Reference",
+          "proposed_value": "ONB-2026-101",
+          "normalized_value": "ONB-2026-101",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              50.0,
+              150.0,
+              400.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "application_date",
+          "display_name": "Application Date",
+          "proposed_value": "2026-08-10",
+          "normalized_value": "2026-08-10",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              450.0,
+              150.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "applicant_name",
+          "display_name": "Applicant Name",
+          "proposed_value": "Sarah Jenkins",
+          "normalized_value": "Sarah Jenkins",
+          "confidence": 0.92,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              180.0,
+              50.0,
+              230.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "contact_number",
+          "display_name": "Contact Number",
+          "proposed_value": "+14155550192",
+          "normalized_value": "+14155550192",
+          "confidence": 0.92,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              260.0,
+              50.0,
+              310.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "email_address",
+          "display_name": "Email Address",
+          "proposed_value": "sarah.j@example.com",
+          "normalized_value": "sarah.j@example.com",
+          "confidence": 0.92,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              260.0,
+              400.0,
+              310.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "address_location",
+          "display_name": "Address / Location",
+          "proposed_value": "742 Evergreen Terrace, Springfield",
+          "normalized_value": "742 Evergreen Terrace, Springfield",
+          "confidence": 0.92,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              340.0,
+              50.0,
+              410.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "product_requested",
+          "display_name": "Product Requested",
+          "proposed_value": "Standard",
+          "normalized_value": "Standard",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              430.0,
+              50.0,
+              480.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "id_ref_placeholder",
+          "display_name": "Identity Reference Placeholder",
+          "proposed_value": "ID-984712",
+          "normalized_value": "ID-984712",
+          "confidence": 0.92,
+          "decision": "human_review",
+          "sensitivity": "sensitive",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              430.0,
+              400.0,
+              480.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "consent_indicator",
+          "display_name": "Consent Indicator",
+          "proposed_value": "YES",
+          "normalized_value": "YES",
+          "confidence": 0.92,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              510.0,
+              50.0,
+              560.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "reviewer_status",
+          "display_name": "Reviewer Status",
+          "proposed_value": "PENDING",
+          "normalized_value": "PENDING",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              510.0,
+              400.0,
+              560.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "form_completeness",
+          "display_name": "Form Completeness",
+          "proposed_value": "COMPLETE",
+          "normalized_value": "COMPLETE",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              590.0,
+              50.0,
+              640.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        }
+      ],
+      "record_status": "awaiting_review",
+      "audit_events": [],
+      "schema_version": "1.0.0",
+      "agent_version": "baseline-1.0.0"
+    },
+    {
+      "run_id": "baseline-sample-52b9f121",
+      "document_id": "CO-002",
+      "document_type": "customer_onboarding",
+      "document_quality": {
+        "status": "pass",
+        "issues": [],
+        "rescan_required": false
+      },
+      "field_results": [
+        {
+          "field_name": "onboarding_ref",
+          "display_name": "Onboarding Reference",
+          "proposed_value": "ONB-2026-102",
+          "normalized_value": "ONB-2026-102",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              50.0,
+              150.0,
+              400.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "application_date",
+          "display_name": "Application Date",
+          "proposed_value": "2026-08-11",
+          "normalized_value": "2026-08-11",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              450.0,
+              150.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "applicant_name",
+          "display_name": "Applicant Name",
+          "proposed_value": "Michael Brown",
+          "normalized_value": "Michael Brown",
+          "confidence": 0.92,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              180.0,
+              50.0,
+              230.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "contact_number",
+          "display_name": "Contact Number",
+          "proposed_value": "+12125550144",
+          "normalized_value": "+12125550144",
+          "confidence": 0.92,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              260.0,
+              50.0,
+              310.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "email_address",
+          "display_name": "Email Address",
+          "proposed_value": "m.brown@domain.com",
+          "normalized_value": "m.brown@domain.com",
+          "confidence": 0.92,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              260.0,
+              400.0,
+              310.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "address_location",
+          "display_name": "Address / Location",
+          "proposed_value": "100 Broadway Ave, New York, NY",
+          "normalized_value": "100 Broadway Ave, New York, NY",
+          "confidence": 0.92,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              340.0,
+              50.0,
+              410.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "product_requested",
+          "display_name": "Product Requested",
+          "proposed_value": "Premium",
+          "normalized_value": "Premium",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              430.0,
+              50.0,
+              480.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "id_ref_placeholder",
+          "display_name": "Identity Reference Placeholder",
+          "proposed_value": "ID-551029",
+          "normalized_value": "ID-551029",
+          "confidence": 0.92,
+          "decision": "human_review",
+          "sensitivity": "sensitive",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              430.0,
+              400.0,
+              480.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "consent_indicator",
+          "display_name": "Consent Indicator",
+          "proposed_value": "YES",
+          "normalized_value": "YES",
+          "confidence": 0.92,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              510.0,
+              50.0,
+              560.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "reviewer_status",
+          "display_name": "Reviewer Status",
+          "proposed_value": "PENDING",
+          "normalized_value": "PENDING",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              510.0,
+              400.0,
+              560.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "form_completeness",
+          "display_name": "Form Completeness",
+          "proposed_value": "COMPLETE",
+          "normalized_value": "COMPLETE",
+          "confidence": 0.92,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              590.0,
+              50.0,
+              640.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        }
+      ],
+      "record_status": "awaiting_review",
+      "audit_events": [],
+      "schema_version": "1.0.0",
+      "agent_version": "baseline-1.0.0"
+    },
+    {
+      "run_id": "baseline-sample-61c73fc3",
+      "document_id": "CO-003",
+      "document_type": "customer_onboarding",
+      "document_quality": {
+        "status": "pass",
+        "issues": [],
+        "rescan_required": false
+      },
+      "field_results": [
+        {
+          "field_name": "onboarding_ref",
+          "display_name": "Onboarding Reference",
+          "proposed_value": "ONB-2026-103",
+          "normalized_value": "ONB-2026-103",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              50.0,
+              150.0,
+              400.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "application_date",
+          "display_name": "Application Date",
+          "proposed_value": "2026-08-14",
+          "normalized_value": "2026-08-14",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              450.0,
+              150.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "applicant_name",
+          "display_name": "Applicant Name",
+          "proposed_value": "Elena Rostova",
+          "normalized_value": "Elena Rostova",
+          "confidence": 0.78,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              180.0,
+              50.0,
+              230.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "contact_number",
+          "display_name": "Contact Number",
+          "proposed_value": "+442079460912",
+          "normalized_value": "+442079460912",
+          "confidence": 0.78,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              260.0,
+              50.0,
+              310.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "email_address",
+          "display_name": "Email Address",
+          "proposed_value": "elena.r@net.co.uk",
+          "normalized_value": "elena.r@net.co.uk",
+          "confidence": 0.78,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              260.0,
+              400.0,
+              310.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "address_location",
+          "display_name": "Address / Location",
+          "proposed_value": "12 Baker Street, London",
+          "normalized_value": "12 Baker Street, London",
+          "confidence": 0.78,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              340.0,
+              50.0,
+              410.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "product_requested",
+          "display_name": "Product Requested",
+          "proposed_value": "Enterprise",
+          "normalized_value": "Enterprise",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              430.0,
+              50.0,
+              480.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "id_ref_placeholder",
+          "display_name": "Identity Reference Placeholder",
+          "proposed_value": "ID-334910?",
+          "normalized_value": "ID-334910?",
+          "confidence": 0.78,
+          "decision": "human_review",
+          "sensitivity": "sensitive",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              430.0,
+              400.0,
+              480.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "consent_indicator",
+          "display_name": "Consent Indicator",
+          "proposed_value": "YES",
+          "normalized_value": "YES",
+          "confidence": 0.78,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              510.0,
+              50.0,
+              560.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "reviewer_status",
+          "display_name": "Reviewer Status",
+          "proposed_value": "PENDING?",
+          "normalized_value": "PENDING?",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              510.0,
+              400.0,
+              560.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "form_completeness",
+          "display_name": "Form Completeness",
+          "proposed_value": "COMPLETE",
+          "normalized_value": "COMPLETE",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              590.0,
+              50.0,
+              640.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        }
+      ],
+      "record_status": "awaiting_review",
+      "audit_events": [],
+      "schema_version": "1.0.0",
+      "agent_version": "baseline-1.0.0"
+    },
+    {
+      "run_id": "baseline-sample-12556acf",
+      "document_id": "CO-004",
+      "document_type": "customer_onboarding",
+      "document_quality": {
+        "status": "pass",
+        "issues": [],
+        "rescan_required": false
+      },
+      "field_results": [
+        {
+          "field_name": "onboarding_ref",
+          "display_name": "Onboarding Reference",
+          "proposed_value": "ONB-2026-104",
+          "normalized_value": "ONB-2026-104",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              50.0,
+              150.0,
+              400.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "application_date",
+          "display_name": "Application Date",
+          "proposed_value": "2026-08-15",
+          "normalized_value": "2026-08-15",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              450.0,
+              150.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "applicant_name",
+          "display_name": "Applicant Name",
+          "proposed_value": "David Wu",
+          "normalized_value": "David Wu",
+          "confidence": 0.78,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              180.0,
+              50.0,
+              230.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "contact_number",
+          "display_name": "Contact Number",
+          "proposed_value": "+14085550188",
+          "normalized_value": "+14085550188",
+          "confidence": 0.78,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              260.0,
+              50.0,
+              310.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "email_address",
+          "display_name": "Email Address",
+          "proposed_value": "dwu@techcorp.io",
+          "normalized_value": "dwu@techcorp.io",
+          "confidence": 0.78,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              260.0,
+              400.0,
+              310.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "address_location",
+          "display_name": "Address / Location",
+          "proposed_value": "500 Market St, San Francisco, CA",
+          "normalized_value": "500 Market St, San Francisco, CA",
+          "confidence": 0.78,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              340.0,
+              50.0,
+              410.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "product_requested",
+          "display_name": "Product Requested",
+          "proposed_value": "Standard",
+          "normalized_value": "Standard",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              430.0,
+              50.0,
+              480.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "id_ref_placeholder",
+          "display_name": "Identity Reference Placeholder",
+          "proposed_value": "ID-771823",
+          "normalized_value": "ID-771823",
+          "confidence": 0.78,
+          "decision": "human_review",
+          "sensitivity": "sensitive",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              430.0,
+              400.0,
+              480.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "consent_indicator",
+          "display_name": "Consent Indicator",
+          "proposed_value": "NO?",
+          "normalized_value": "NO?",
+          "confidence": 0.78,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              510.0,
+              50.0,
+              560.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "reviewer_status",
+          "display_name": "Reviewer Status",
+          "proposed_value": "PENDING",
+          "normalized_value": "PENDING",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              510.0,
+              400.0,
+              560.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "form_completeness",
+          "display_name": "Form Completeness",
+          "proposed_value": "COMPLETE?",
+          "normalized_value": "COMPLETE?",
+          "confidence": 0.78,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              590.0,
+              50.0,
+              640.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        }
+      ],
+      "record_status": "awaiting_review",
+      "audit_events": [],
+      "schema_version": "1.0.0",
+      "agent_version": "baseline-1.0.0"
+    },
+    {
+      "run_id": "baseline-sample-632b2100",
+      "document_id": "CO-005",
+      "document_type": "customer_onboarding",
+      "document_quality": {
+        "status": "pass",
+        "issues": [],
+        "rescan_required": false
+      },
+      "field_results": [
+        {
+          "field_name": "onboarding_ref",
+          "display_name": "Onboarding Reference",
+          "proposed_value": "ONB-2026-105",
+          "normalized_value": "ONB-2026-105",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              50.0,
+              150.0,
+              400.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "application_date",
+          "display_name": "Application Date",
+          "proposed_value": "2026-08-19",
+          "normalized_value": "2026-08-19",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              450.0,
+              150.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "applicant_name",
+          "display_name": "Applicant Name",
+          "proposed_value": "Carlos GomeX",
+          "normalized_value": "Carlos GomeX",
+          "confidence": 0.55,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              180.0,
+              50.0,
+              230.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "contact_number",
+          "display_name": "Contact Number",
+          "proposed_value": "+34911234567",
+          "normalized_value": "+34911234567",
+          "confidence": 0.55,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              260.0,
+              50.0,
+              310.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "email_address",
+          "display_name": "Email Address",
+          "proposed_value": "carlos.g@madrid.eX",
+          "normalized_value": "carlos.g@madrid.eX",
+          "confidence": 0.55,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              260.0,
+              400.0,
+              310.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "address_location",
+          "display_name": "Address / Location",
+          "proposed_value": "Calle Mayor 4, Madrid",
+          "normalized_value": "Calle Mayor 4, Madrid",
+          "confidence": 0.55,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              340.0,
+              50.0,
+              410.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "product_requested",
+          "display_name": "Product Requested",
+          "proposed_value": "Premium",
+          "normalized_value": "Premium",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              430.0,
+              50.0,
+              480.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "id_ref_placeholder",
+          "display_name": "Identity Reference Placeholder",
+          "proposed_value": "ID-110293",
+          "normalized_value": "ID-110293",
+          "confidence": 0.55,
+          "decision": "human_review",
+          "sensitivity": "sensitive",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              430.0,
+              400.0,
+              480.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "consent_indicator",
+          "display_name": "Consent Indicator",
+          "proposed_value": "YES",
+          "normalized_value": "YES",
+          "confidence": 0.55,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              510.0,
+              50.0,
+              560.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "reviewer_status",
+          "display_name": "Reviewer Status",
+          "proposed_value": "PENDINX",
+          "normalized_value": "PENDINX",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              510.0,
+              400.0,
+              560.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "form_completeness",
+          "display_name": "Form Completeness",
+          "proposed_value": "COMPLETX",
+          "normalized_value": "COMPLETX",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              590.0,
+              50.0,
+              640.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        }
+      ],
+      "record_status": "awaiting_review",
+      "audit_events": [],
+      "schema_version": "1.0.0",
+      "agent_version": "baseline-1.0.0"
+    },
+    {
+      "run_id": "baseline-sample-45e2a0a8",
+      "document_id": "CO-006",
+      "document_type": "customer_onboarding",
+      "document_quality": {
+        "status": "pass",
+        "issues": [],
+        "rescan_required": false
+      },
+      "field_results": [
+        {
+          "field_name": "onboarding_ref",
+          "display_name": "Onboarding Reference",
+          "proposed_value": "ONB-2026-106",
+          "normalized_value": "ONB-2026-106",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              50.0,
+              150.0,
+              400.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "application_date",
+          "display_name": "Application Date",
+          "proposed_value": "2026-08-21",
+          "normalized_value": "2026-08-21",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "public",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              100.0,
+              450.0,
+              150.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "applicant_name",
+          "display_name": "Applicant Name",
+          "proposed_value": "Anita PateX",
+          "normalized_value": "Anita PateX",
+          "confidence": 0.55,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              180.0,
+              50.0,
+              230.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "contact_number",
+          "display_name": "Contact Number",
+          "proposed_value": "+91987654321X",
+          "normalized_value": "+91987654321X",
+          "confidence": 0.55,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              260.0,
+              50.0,
+              310.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "email_address",
+          "display_name": "Email Address",
+          "proposed_value": null,
+          "normalized_value": null,
+          "confidence": 0.5,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              260.0,
+              400.0,
+              310.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "address_location",
+          "display_name": "Address / Location",
+          "proposed_value": "MG Road 45, Bengaluru",
+          "normalized_value": "MG Road 45, Bengaluru",
+          "confidence": 0.55,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              340.0,
+              50.0,
+              410.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "product_requested",
+          "display_name": "Product Requested",
+          "proposed_value": "EnterprisX",
+          "normalized_value": "EnterprisX",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              430.0,
+              50.0,
+              480.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "id_ref_placeholder",
+          "display_name": "Identity Reference Placeholder",
+          "proposed_value": "ID-88201X",
+          "normalized_value": "ID-88201X",
+          "confidence": 0.55,
+          "decision": "human_review",
+          "sensitivity": "sensitive",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              430.0,
+              400.0,
+              480.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "consent_indicator",
+          "display_name": "Consent Indicator",
+          "proposed_value": "YES",
+          "normalized_value": "YES",
+          "confidence": 0.55,
+          "decision": "human_review",
+          "sensitivity": "personal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              510.0,
+              50.0,
+              560.0,
+              380.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "pending",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "reviewer_status",
+          "display_name": "Reviewer Status",
+          "proposed_value": "PENDINX",
+          "normalized_value": "PENDINX",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              510.0,
+              400.0,
+              560.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        },
+        {
+          "field_name": "form_completeness",
+          "display_name": "Form Completeness",
+          "proposed_value": "COMPLETX",
+          "normalized_value": "COMPLETX",
+          "confidence": 0.55,
+          "decision": "auto_accept",
+          "sensitivity": "internal",
+          "text_style": "handwritten",
+          "evidence": {
+            "page": 1,
+            "bounding_box": [
+              590.0,
+              50.0,
+              640.0,
+              750.0
+            ],
+            "crop_reference": null
+          },
+          "verification_checks": [],
+          "decision_reason": "Baseline single-pass unverified extraction",
+          "reviewer_value": null,
+          "reviewer_decision": "not_required",
+          "reviewer_reason": null
+        }
+      ],
+      "record_status": "awaiting_review",
+      "audit_events": [],
+      "schema_version": "1.0.0",
+      "agent_version": "baseline-1.0.0"
+    }
+  ]
+}

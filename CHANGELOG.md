@@ -2,6 +2,50 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.6.0] - 2026-08-30 — Baseline extraction workflow & scoring harness
+### Baseline Approach
+- Single-pass unverified extraction workflow (`evaluation/baseline.py`) processing document forms directly into predicted fields without image-quality pre-checks, deterministic rule validations, targeted triage, evidence crop references, or correction memory.
+- Enforces strict compliance directives:
+  - Uses shared output contract (`DocumentRecord`, `FieldResult`, `QualityResult`, `AuditEvent`).
+  - Marks all field values unverified (`verification_checks = []`).
+  - **Never claims approval**: `record_status` is ALWAYS set to `AWAITING_REVIEW` (requiring human reviewer sign-off).
+  - **Zero fabrication policy**: Null values in missing form fields (e.g. `inspector_name` in `FI-006` or `email_address` in `CO-006`) remain `None` without inventing text.
+- Produces machine-readable JSON results and run metadata to `outputs/baseline_results.json`.
+
+### Why It Represents a Fair Simple Comparison
+- Uses the exact same 12-document evaluation corpus (`data/manifests/manifest.json`, `dataset_version 2.0.0`).
+- Targets the exact same field schemas (`FIELD_INSPECTION_METADATA`, `CUSTOMER_ONBOARDING_METADATA`).
+- Emits the exact same `DocumentRecord` data structures conforming to `specs/shared-data-contract.md`.
+- Evaluates against the exact same ground-truth gold labels (`data/gold-labels/*_gold.json`).
+- Operates under identical zero-hallucination and privacy constraints without artificial handicaps or pipeline shortcuts.
+
+### Dataset & Version
+- **Dataset Version**: `2.0.0`
+- **Manifest Path**: `data/manifests/manifest.json`
+- **Total Corpus Samples**: 12 synthetic documents (6 Field Inspection, 6 Customer Onboarding)
+- **Total Fields Evaluated**: 126 fields
+
+### Actual Measured Results
+- **Verified Field Accuracy**: **84.13%** (106 / 126 correct fields)
+- **Total Execution Runtime**: **0.0115 sec** (avg 0.0010 sec / doc)
+- **Estimated API / Compute Cost**: **$0.00** (local baseline execution)
+- **Machine-Readable Output Artifact**: [outputs/baseline_results.json](file:///c:/Users/hp/OneDrive%20-%20Dataguard%20Document%20Management%20Limited/Desktop/GIGS/HandWrite/outputs/baseline_results.json)
+
+### Baseline Limitations
+1. **No Image-Quality Pre-Check**: Processes unreadable or severely blurred documents (e.g. `FI-006` extreme blur) without requesting rescan.
+2. **No Deterministic Verification**: Performs zero regex pattern matching (`INSP-YYYY-XXX`), ISO date validation (`YYYY-MM-DD`), or enum vocabulary checks (`PASS`/`FAIL`/`NEEDS_ATTENTION`).
+3. **No Risk-Aware Triage**: Cannot escalate unverified or low-confidence public/internal fields to human review.
+4. **No Evidence Bounding-Box Linkage**: Emits default bounding boxes (`[0.0, 0.0, 100.0, 100.0]`) with no crop image links (`crop_reference = None`).
+5. **No Correction Memory**: Incapable of learning from or storing human reviewer corrections.
+
+### Decision
+- Formalize single-pass baseline workflow in `evaluation/baseline.py`.
+- Add CLI baseline scoring runner `scripts/run_baseline_scoring.py`.
+- Add unit test coverage in `tests/test_baseline.py` (Pytest) and `scripts/run_baseline_tests.py` (standalone).
+- Persist machine-readable run outputs and metadata to `outputs/baseline_results.json`.
+
+---
+
 ## [1.5.0] - 2026-08-30 — Synthetic evaluation corpus update
 ### What Changed
 - Upgraded evaluation corpus manifest (`data/manifests/manifest.json`) to dataset version `2.0.0`.

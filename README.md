@@ -46,11 +46,13 @@ cp .env.example .env
 # 3. Generate 12 Synthetic Evaluation Forms
 python scripts/generate_synthetic_corpus.py
 
-# 4. Run Test Suite & Evaluation Benchmark
-python scripts/run_schema_tests.py
-python tests/test_pipeline.py
-python tests/test_api.py
-python evaluation/evaluate.py
+# 4. Run Baseline Scoring & Unit Test Suite
+python scripts/run_baseline_scoring.py   # Runs single-pass baseline, saves outputs/baseline_results.json
+python scripts/run_baseline_tests.py     # Standalone baseline unit tests (5/5 PASS)
+python scripts/run_corpus_tests.py       # Corpus validation tests (19/19 PASS)
+python scripts/run_schema_tests.py       # Schema validation tests (14/14 PASS)
+python tests/test_pipeline.py            # Agent pipeline tests (4/4 PASS)
+python tests/test_api.py                 # FastAPI & Reviewer workflow tests (3/3 PASS)
 
 # 5. Run FastAPI Backend API
 uvicorn app.backend.main:app --reload --port 8000
