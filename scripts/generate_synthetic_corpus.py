@@ -1,6 +1,9 @@
 import os
+import sys
 import json
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
+
+sys.path.insert(0, os.path.abspath("."))
 
 
 def ensure_dirs():
@@ -110,7 +113,7 @@ CORPUS_SPECS = [
     {
         "id": "FI-006",
         "family": "field_inspection",
-        "difficulty": "hard",
+        "difficulty": "extreme",
         "filename": "field_insp_006_extreme.png",
         "fields": {
             "inspection_ref": "INSP-2026-006",
@@ -256,6 +259,9 @@ CORPUS_SPECS = [
 ]
 
 
+from app.shared.pdf_utils import convert_image_to_pdf
+
+
 def render_synthetic_form(spec: dict) -> str:
     width, height = 800, 1000
     img = Image.new("RGB", (width, height), color=(250, 250, 248))
@@ -305,6 +311,11 @@ def render_synthetic_form(spec: dict) -> str:
     sub_dir = spec["family"].replace("_", "-")
     output_path = os.path.join("data/synthetic", sub_dir, spec["filename"])
     img.save(output_path)
+
+    # Generate corresponding PDF version alongside PNG image
+    pdf_path = os.path.splitext(output_path)[0] + ".pdf"
+    convert_image_to_pdf(output_path, pdf_path)
+
     return output_path
 
 
@@ -313,7 +324,7 @@ def main():
     manifest_records = []
 
     for spec in CORPUS_SPECS:
-        img_path = render_synthetic_form(spec)
+        img_path = render_synthetic_form(spec).replace("\\", "/")
 
         # Write Gold Label JSON
         gold_payload = {
@@ -324,9 +335,43 @@ def main():
             "gold_fields": spec["fields"],
         }
 
-        gold_path = os.path.join("data/gold-labels", f"{spec['id']}_gold.json")
+        gold_path = os.path.join("data/gold-labels", f"{spec['id']}_gold.json").replace("\\", "/")
         with open(gold_path, "w", encoding="utf-8") as f:
             json.dump(gold_payload, f, indent=2)
+
+        # Compute field difficulty map
+        field_diff = {}
+        for fk in spec["fields"].keys():
+            if spec["difficulty"] == "clean":
+                field_diff[fk] = "easy"
+            elif spec["difficulty"] == "medium":
+                field_diff[fk] = "medium"
+            else:
+                field_diff[fk] = "hard"
+
+        # Compute expected escalations
+        expected_esc = []
+        if spec["id"] == "FI-006":
+            for fk in spec["fields"].keys():
+                expected_esc.append({
+                    "field": fk,
+                    "expected_decision": "rescan_required",
+                    "reason": "quality_fail_rescan"
+                })
+        elif spec["family"] == "field_inspection":
+            expected_esc.append({
+                "field": "inspector_name",
+                "expected_decision": "human_review",
+                "reason": "personal_sensitivity"
+            })
+        elif spec["family"] == "customer_onboarding":
+            for fk in ["applicant_name", "contact_number", "email_address", "address_location", "id_ref_placeholder", "consent_indicator"]:
+                if fk in spec["fields"]:
+                    expected_esc.append({
+                        "field": fk,
+                        "expected_decision": "human_review",
+                        "reason": "personal_sensitivity" if fk != "id_ref_placeholder" else "sensitive_sensitivity"
+                    })
 
         manifest_records.append(
             {
@@ -336,15 +381,27 @@ def main():
                 "image_path": img_path,
                 "gold_label_path": gold_path,
                 "issues": spec["issues"],
+                "field_difficulty": field_diff,
+                "expected_escalations": expected_esc,
             }
         )
 
+    manifest_payload = {
+        "dataset_version": "2.0.0",
+        "schema_version": "1.0.0",
+        "generated_at": "2026-08-30T21:00:00Z",
+        "data_policy": "All documents, field values, and images in this corpus are 100% synthetic. Zero real customer data, real PII, or real business documents are included. Generated programmatically by scripts/generate_synthetic_corpus.py.",
+        "total_samples": len(manifest_records),
+        "samples": manifest_records,
+    }
+
     manifest_path = "data/manifests/manifest.json"
     with open(manifest_path, "w", encoding="utf-8") as f:
-        json.dump({"total_samples": len(manifest_records), "samples": manifest_records}, f, indent=2)
+        json.dump(manifest_payload, f, indent=2)
 
-    print(f"Generated {len(manifest_records)} synthetic forms, gold labels, and manifest at {manifest_path}.")
+    print(f"Generated {len(manifest_records)} synthetic PNG+PDF forms, gold labels, and v2.0.0 manifest at {manifest_path}.")
 
 
 if __name__ == "__main__":
+    main()
     main()

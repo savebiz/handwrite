@@ -25,7 +25,11 @@
         "form_completeness": "easy"
       },
       "expected_escalations": [
-        {"field": "inspector_name", "expected_decision": "human_review", "reason": "personal_sensitivity"}
+        {
+          "field": "inspector_name",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        }
       ]
     },
     {
@@ -48,7 +52,11 @@
         "form_completeness": "easy"
       },
       "expected_escalations": [
-        {"field": "inspector_name", "expected_decision": "human_review", "reason": "personal_sensitivity"}
+        {
+          "field": "inspector_name",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        }
       ]
     },
     {
@@ -57,7 +65,9 @@
       "difficulty": "medium",
       "image_path": "data/synthetic/field-inspection/field_insp_003.png",
       "gold_label_path": "data/gold-labels/FI-003_gold.json",
-      "issues": ["minor_skew"],
+      "issues": [
+        "minor_skew"
+      ],
       "field_difficulty": {
         "inspection_ref": "medium",
         "inspection_date": "medium",
@@ -71,7 +81,11 @@
         "form_completeness": "medium"
       },
       "expected_escalations": [
-        {"field": "inspector_name", "expected_decision": "human_review", "reason": "personal_sensitivity"}
+        {
+          "field": "inspector_name",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        }
       ]
     },
     {
@@ -80,7 +94,9 @@
       "difficulty": "medium",
       "image_path": "data/synthetic/field-inspection/field_insp_004.png",
       "gold_label_path": "data/gold-labels/FI-004_gold.json",
-      "issues": ["slight_contrast_variation"],
+      "issues": [
+        "slight_contrast_variation"
+      ],
       "field_difficulty": {
         "inspection_ref": "medium",
         "inspection_date": "medium",
@@ -94,7 +110,11 @@
         "form_completeness": "medium"
       },
       "expected_escalations": [
-        {"field": "inspector_name", "expected_decision": "human_review", "reason": "personal_sensitivity"}
+        {
+          "field": "inspector_name",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        }
       ]
     },
     {
@@ -103,7 +123,10 @@
       "difficulty": "hard",
       "image_path": "data/synthetic/field-inspection/field_insp_005.png",
       "gold_label_path": "data/gold-labels/FI-005_gold.json",
-      "issues": ["handwriting_overlap", "noise"],
+      "issues": [
+        "handwriting_overlap",
+        "noise"
+      ],
       "field_difficulty": {
         "inspection_ref": "hard",
         "inspection_date": "hard",
@@ -117,7 +140,11 @@
         "form_completeness": "hard"
       },
       "expected_escalations": [
-        {"field": "inspector_name", "expected_decision": "human_review", "reason": "personal_sensitivity"}
+        {
+          "field": "inspector_name",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        }
       ]
     },
     {
@@ -126,7 +153,13 @@
       "difficulty": "extreme",
       "image_path": "data/synthetic/field-inspection/field_insp_006_extreme.png",
       "gold_label_path": "data/gold-labels/FI-006_gold.json",
-      "issues": ["extreme_blur", "skew", "crossed_out_text", "missing_mandatory_field", "multiple_handwriting_styles"],
+      "issues": [
+        "extreme_blur",
+        "skew",
+        "crossed_out_text",
+        "missing_mandatory_field",
+        "multiple_handwriting_styles"
+      ],
       "field_difficulty": {
         "inspection_ref": "hard",
         "inspection_date": "hard",
@@ -140,16 +173,56 @@
         "form_completeness": "hard"
       },
       "expected_escalations": [
-        {"field": "inspection_ref", "expected_decision": "rescan_required", "reason": "quality_fail_rescan"},
-        {"field": "inspection_date", "expected_decision": "rescan_required", "reason": "quality_fail_rescan"},
-        {"field": "site_location", "expected_decision": "rescan_required", "reason": "quality_fail_rescan"},
-        {"field": "inspector_name", "expected_decision": "rescan_required", "reason": "quality_fail_rescan_and_missing_mandatory"},
-        {"field": "asset_ref", "expected_decision": "rescan_required", "reason": "quality_fail_rescan"},
-        {"field": "inspection_status", "expected_decision": "rescan_required", "reason": "quality_fail_rescan"},
-        {"field": "observation_finding", "expected_decision": "rescan_required", "reason": "quality_fail_rescan"},
-        {"field": "action_required", "expected_decision": "rescan_required", "reason": "quality_fail_rescan"},
-        {"field": "followup_date", "expected_decision": "rescan_required", "reason": "quality_fail_rescan"},
-        {"field": "form_completeness", "expected_decision": "rescan_required", "reason": "quality_fail_rescan"}
+        {
+          "field": "inspection_ref",
+          "expected_decision": "rescan_required",
+          "reason": "quality_fail_rescan"
+        },
+        {
+          "field": "inspection_date",
+          "expected_decision": "rescan_required",
+          "reason": "quality_fail_rescan"
+        },
+        {
+          "field": "site_location",
+          "expected_decision": "rescan_required",
+          "reason": "quality_fail_rescan"
+        },
+        {
+          "field": "inspector_name",
+          "expected_decision": "rescan_required",
+          "reason": "quality_fail_rescan"
+        },
+        {
+          "field": "asset_ref",
+          "expected_decision": "rescan_required",
+          "reason": "quality_fail_rescan"
+        },
+        {
+          "field": "inspection_status",
+          "expected_decision": "rescan_required",
+          "reason": "quality_fail_rescan"
+        },
+        {
+          "field": "observation_finding",
+          "expected_decision": "rescan_required",
+          "reason": "quality_fail_rescan"
+        },
+        {
+          "field": "action_required",
+          "expected_decision": "rescan_required",
+          "reason": "quality_fail_rescan"
+        },
+        {
+          "field": "followup_date",
+          "expected_decision": "rescan_required",
+          "reason": "quality_fail_rescan"
+        },
+        {
+          "field": "form_completeness",
+          "expected_decision": "rescan_required",
+          "reason": "quality_fail_rescan"
+        }
       ]
     },
     {
@@ -173,12 +246,36 @@
         "form_completeness": "easy"
       },
       "expected_escalations": [
-        {"field": "applicant_name", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "contact_number", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "email_address", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "address_location", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "id_ref_placeholder", "expected_decision": "human_review", "reason": "sensitive_sensitivity"},
-        {"field": "consent_indicator", "expected_decision": "human_review", "reason": "personal_sensitivity"}
+        {
+          "field": "applicant_name",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "contact_number",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "email_address",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "address_location",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "id_ref_placeholder",
+          "expected_decision": "human_review",
+          "reason": "sensitive_sensitivity"
+        },
+        {
+          "field": "consent_indicator",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        }
       ]
     },
     {
@@ -202,12 +299,36 @@
         "form_completeness": "easy"
       },
       "expected_escalations": [
-        {"field": "applicant_name", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "contact_number", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "email_address", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "address_location", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "id_ref_placeholder", "expected_decision": "human_review", "reason": "sensitive_sensitivity"},
-        {"field": "consent_indicator", "expected_decision": "human_review", "reason": "personal_sensitivity"}
+        {
+          "field": "applicant_name",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "contact_number",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "email_address",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "address_location",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "id_ref_placeholder",
+          "expected_decision": "human_review",
+          "reason": "sensitive_sensitivity"
+        },
+        {
+          "field": "consent_indicator",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        }
       ]
     },
     {
@@ -216,7 +337,9 @@
       "difficulty": "medium",
       "image_path": "data/synthetic/customer-onboarding/cust_onb_003.png",
       "gold_label_path": "data/gold-labels/CO-003_gold.json",
-      "issues": ["slight_skew"],
+      "issues": [
+        "slight_skew"
+      ],
       "field_difficulty": {
         "onboarding_ref": "medium",
         "application_date": "medium",
@@ -231,12 +354,36 @@
         "form_completeness": "medium"
       },
       "expected_escalations": [
-        {"field": "applicant_name", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "contact_number", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "email_address", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "address_location", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "id_ref_placeholder", "expected_decision": "human_review", "reason": "sensitive_sensitivity"},
-        {"field": "consent_indicator", "expected_decision": "human_review", "reason": "personal_sensitivity"}
+        {
+          "field": "applicant_name",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "contact_number",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "email_address",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "address_location",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "id_ref_placeholder",
+          "expected_decision": "human_review",
+          "reason": "sensitive_sensitivity"
+        },
+        {
+          "field": "consent_indicator",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        }
       ]
     },
     {
@@ -245,7 +392,9 @@
       "difficulty": "medium",
       "image_path": "data/synthetic/customer-onboarding/cust_onb_004.png",
       "gold_label_path": "data/gold-labels/CO-004_gold.json",
-      "issues": ["faded_ink"],
+      "issues": [
+        "faded_ink"
+      ],
       "field_difficulty": {
         "onboarding_ref": "medium",
         "application_date": "medium",
@@ -260,12 +409,36 @@
         "form_completeness": "medium"
       },
       "expected_escalations": [
-        {"field": "applicant_name", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "contact_number", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "email_address", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "address_location", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "id_ref_placeholder", "expected_decision": "human_review", "reason": "sensitive_sensitivity"},
-        {"field": "consent_indicator", "expected_decision": "human_review", "reason": "personal_sensitivity"}
+        {
+          "field": "applicant_name",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "contact_number",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "email_address",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "address_location",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "id_ref_placeholder",
+          "expected_decision": "human_review",
+          "reason": "sensitive_sensitivity"
+        },
+        {
+          "field": "consent_indicator",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        }
       ]
     },
     {
@@ -274,7 +447,10 @@
       "difficulty": "hard",
       "image_path": "data/synthetic/customer-onboarding/cust_onb_005.png",
       "gold_label_path": "data/gold-labels/CO-005_gold.json",
-      "issues": ["cursive_handwriting", "low_contrast"],
+      "issues": [
+        "cursive_handwriting",
+        "low_contrast"
+      ],
       "field_difficulty": {
         "onboarding_ref": "hard",
         "application_date": "hard",
@@ -289,12 +465,36 @@
         "form_completeness": "hard"
       },
       "expected_escalations": [
-        {"field": "applicant_name", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "contact_number", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "email_address", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "address_location", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "id_ref_placeholder", "expected_decision": "human_review", "reason": "sensitive_sensitivity"},
-        {"field": "consent_indicator", "expected_decision": "human_review", "reason": "personal_sensitivity"}
+        {
+          "field": "applicant_name",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "contact_number",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "email_address",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "address_location",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "id_ref_placeholder",
+          "expected_decision": "human_review",
+          "reason": "sensitive_sensitivity"
+        },
+        {
+          "field": "consent_indicator",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        }
       ]
     },
     {
@@ -303,7 +503,10 @@
       "difficulty": "hard",
       "image_path": "data/synthetic/customer-onboarding/cust_onb_006.png",
       "gold_label_path": "data/gold-labels/CO-006_gold.json",
-      "issues": ["ambiguous_digits", "wrinkled_paper"],
+      "issues": [
+        "ambiguous_digits",
+        "wrinkled_paper"
+      ],
       "field_difficulty": {
         "onboarding_ref": "hard",
         "application_date": "hard",
@@ -318,11 +521,36 @@
         "form_completeness": "hard"
       },
       "expected_escalations": [
-        {"field": "applicant_name", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "contact_number", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "address_location", "expected_decision": "human_review", "reason": "personal_sensitivity"},
-        {"field": "id_ref_placeholder", "expected_decision": "human_review", "reason": "sensitive_sensitivity"},
-        {"field": "consent_indicator", "expected_decision": "human_review", "reason": "personal_sensitivity"}
+        {
+          "field": "applicant_name",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "contact_number",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "email_address",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "address_location",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        },
+        {
+          "field": "id_ref_placeholder",
+          "expected_decision": "human_review",
+          "reason": "sensitive_sensitivity"
+        },
+        {
+          "field": "consent_indicator",
+          "expected_decision": "human_review",
+          "reason": "personal_sensitivity"
+        }
       ]
     }
   ]

@@ -16,6 +16,9 @@ from app.backend.agents.triage_agent import triage_field_and_record, determine_r
 from app.backend.audit import log_audit_event
 
 
+from app.shared.pdf_utils import is_pdf, convert_pdf_to_image
+
+
 def process_document_pipeline(
     image_path: str,
     document_id: str = None,
@@ -25,7 +28,7 @@ def process_document_pipeline(
 ) -> DocumentRecord:
     """
     Executes the full agentic pipeline:
-    1. Intake & Quality Agent
+    1. Intake & Quality Agent (supports PNG/JPG/WEBP and PDF)
     2. Document Classification Agent
     3. Field Extraction Agent
     4. Deterministic Verification Agent
@@ -35,18 +38,23 @@ def process_document_pipeline(
     run_id = f"run-{uuid.uuid4().hex[:8]}"
     doc_id = document_id or f"doc-{uuid.uuid4().hex[:8]}"
 
+    # Intercept PDF files and convert Page 1 to PNG image for processing
+    actual_image_path = image_path
+    if is_pdf(image_path):
+        actual_image_path = convert_pdf_to_image(image_path, default_dir="data/synthetic/uploads")
+
     # Stage 1: Intake & Quality Agent
-    quality_res = analyze_document_quality(image_path, issues_hint=issues_hint)
+    quality_res = analyze_document_quality(actual_image_path, issues_hint=issues_hint)
 
     # Stage 2: Document Classification Agent
-    doc_type, class_conf, class_reason = classify_document(image_path, hint_type=doc_type_hint)
+    doc_type, class_conf, class_reason = classify_document(actual_image_path, hint_type=doc_type_hint)
 
     if doc_type == DocumentType.UNKNOWN:
         quality_res.issues.append("Uncertain document classification category")
 
     # Stage 3: Field Extraction Agent
     candidates = extract_field_candidates(
-        image_path, doc_type, gold_data_path=gold_data_path, issues=issues_hint
+        actual_image_path, doc_type, gold_data_path=gold_data_path, issues=issues_hint
     )
 
     # Stage 4: Deterministic Verification Agent

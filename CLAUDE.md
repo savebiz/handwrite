@@ -14,7 +14,7 @@ HandWrite Verify turns scanned handwritten business forms into structured, evide
 ### MVP Scope Boundaries
 - **Primary Demo Schema**: `field_inspection` forms.
 - **Secondary Supported Schema**: `customer_onboarding` forms.
-- Input Formats: Synthetic PNG/JPG images and PDFs.
+- Input Formats: Native PDF documents (`.pdf`) and synthetic PNG/JPG/WEBP images.
 - Human-in-the-Loop Safety: Sensitive/personal data and low-confidence fields MUST be routed to human review.
 - **Deferred / Out of Scope**: Custom handwriting OCR model training, live ECM/M-Files integration, production multi-user auth, production deployment, real customer data, batch processing, complex analytics dashboards, pattern memory.
 

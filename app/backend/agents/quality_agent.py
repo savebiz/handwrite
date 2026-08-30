@@ -3,10 +3,14 @@ from PIL import Image, ImageStat
 from app.shared.schemas import QualityResult, QualityStatus
 
 
+from app.shared.pdf_utils import is_pdf, convert_pdf_to_image
+
+
 def analyze_document_quality(image_path: str, issues_hint: list = None) -> QualityResult:
     """
     Intake & Quality Agent:
     Inspects image properties (dimensions, contrast variance, blur markers) and manifest hints.
+    Supports PDF documents by rendering page 1 to an image before checking.
     Emits QualityResult with status, detected issues, and rescan_required flag.
     """
     issues = list(issues_hint) if issues_hint else []
@@ -18,8 +22,19 @@ def analyze_document_quality(image_path: str, issues_hint: list = None) -> Quali
             rescan_required=True,
         )
 
+    target_path = image_path
+    if is_pdf(image_path):
+        try:
+            target_path = convert_pdf_to_image(image_path)
+        except Exception as e:
+            return QualityResult(
+                status=QualityStatus.FAIL,
+                issues=[f"PDF conversion error: {str(e)}"],
+                rescan_required=True,
+            )
+
     try:
-        with Image.open(image_path) as img:
+        with Image.open(target_path) as img:
             stat = ImageStat.Stat(img.convert("L"))
             contrast_stddev = stat.stddev[0]
 

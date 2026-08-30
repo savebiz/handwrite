@@ -2,6 +2,32 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.7.0] - 2026-08-30 — Native PDF document processing support
+### What Changed
+- Created native PDF helper module `app/shared/pdf_utils.py` using `pypdf` (v6.10.2) and `PIL`:
+  - `is_pdf()`: Detects PDF files via `.pdf` file extension or `%PDF-` header magic bytes.
+  - `convert_pdf_to_image()`: Renders/extracts Page 1 from PDF documents into standard PNG images.
+  - `convert_image_to_pdf()`: Converts image files into standard PDF documents for synthetic testing.
+- Integrated PDF support into Document Intake & Quality Agent (`app/backend/agents/quality_agent.py`): auto-renders PDF input files to PNG before computing contrast and image dimensions.
+- Integrated PDF support into Agentic Pipeline (`app/backend/pipeline.py`): intercepts `.pdf` input paths, renders Page 1 to PNG in `data/synthetic/uploads/rendered_<id>.png`, and routes the rendered image through all 6 pipeline stages.
+- Enhanced `scripts/generate_synthetic_corpus.py` to automatically generate corresponding `.pdf` files for all 12 synthetic corpus forms alongside `.png` images.
+- Added comprehensive PDF test coverage: `tests/test_pdf.py` (5 pytest unit & integration tests) and `scripts/run_pdf_tests.py` (5 standalone tests).
+- Updated `README.md` and `CLAUDE.md` to document native PDF input document support.
+
+### Why It Changed
+- To enable seamless processing of PDF document forms uploaded via API (`POST /api/documents/upload`), CLI scripts, or Python pipeline calls without requiring external system dependencies or Poppler binaries.
+
+### Evidence
+- `scripts/run_pdf_tests.py`: 5/5 standalone PDF tests PASSED cleanly.
+- `pytest tests/test_pdf.py`: 5/5 pytest PDF unit & integration tests PASSED cleanly.
+- API test: `POST /api/documents/upload` with `.pdf` file payload successfully ingested, rendered, and extracted into a standard 10-field `DocumentRecord`.
+- Full regression suite: 44/44 pytest tests, 19/19 corpus tests, 14/14 schema tests, 5/5 baseline tests, 4/4 pipeline tests, 3/3 API tests PASSED cleanly.
+
+### Decision
+- Implement pure-Python PDF rendering via `pypdf` + `PIL` in `app/shared/pdf_utils.py`, eliminating third-party system binary dependencies.
+
+---
+
 ## [1.6.0] - 2026-08-30 — Baseline extraction workflow & scoring harness
 ### Baseline Approach
 - Single-pass unverified extraction workflow (`evaluation/baseline.py`) processing document forms directly into predicted fields without image-quality pre-checks, deterministic rule validations, targeted triage, evidence crop references, or correction memory.

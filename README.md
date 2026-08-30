@@ -48,6 +48,7 @@ python scripts/generate_synthetic_corpus.py
 
 # 4. Run Baseline Scoring & Unit Test Suite
 python scripts/run_baseline_scoring.py   # Runs single-pass baseline, saves outputs/baseline_results.json
+python scripts/run_pdf_tests.py          # Native PDF document processing tests (5/5 PASS)
 python scripts/run_baseline_tests.py     # Standalone baseline unit tests (5/5 PASS)
 python scripts/run_corpus_tests.py       # Corpus validation tests (19/19 PASS)
 python scripts/run_schema_tests.py       # Schema validation tests (14/14 PASS)
