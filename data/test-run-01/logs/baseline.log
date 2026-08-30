@@ -1,0 +1,31 @@
+==========================================================================
+HANDWRITE VERIFY — TEST-RUN-01 BASELINE EXTRACTION EXECUTION
+==========================================================================
+Loaded manifest test-run-01. Accepted files: 11 / 11
+
+[1/11] [SUCCESS] Processed ALL ATTENDANCE 2017-2020_1.pdf -> AXA-ATT-001_baseline.json (Status: awaiting_review)
+[2/11] [SUCCESS] Processed ALL ATTENDANCE 2017-2020_2.pdf -> AXA-ATT-002_baseline.json (Status: awaiting_review)
+[3/11] [SUCCESS] Processed ALL ATTENDANCE 2017-2020_3.pdf -> AXA-ATT-003_baseline.json (Status: awaiting_review)
+[4/11] [SUCCESS] Processed ALL ATTENDANCE 2017-2020_4.pdf -> AXA-ATT-004_baseline.json (Status: awaiting_review)
+[5/11] [SUCCESS] Processed ALL ATTENDANCE 2017-2020_5.pdf -> AXA-ATT-005_baseline.json (Status: awaiting_review)
+[6/11] [SUCCESS] Processed ALL ATTENDANCE 2017-2020_6.pdf -> AXA-ATT-006_baseline.json (Status: awaiting_review)
+[7/11] [SUCCESS] Processed ALL ATTENDANCE 2017-2020_7.pdf -> AXA-ATT-007_baseline.json (Status: awaiting_review)
+[8/11] [SUCCESS] Processed ALL ATTENDANCE 2017-2020_8.pdf -> AXA-ATT-008_baseline.json (Status: awaiting_review)
+[9/11] [SUCCESS] Processed ALL ATTENDANCE 2017-2020_9.pdf -> AXA-ATT-009_baseline.json (Status: awaiting_review)
+[10/11] [SUCCESS] Processed ALL ATTENDANCE 2017-2020_10.pdf -> AXA-ATT-010_baseline.json (Status: awaiting_review)
+[11/11] [SUCCESS] Processed ALL ATTENDANCE 2017-2020_11.pdf -> AXA-ATT-011_baseline.json (Status: awaiting_review)
+
+==========================================================================
+TEST-RUN-01 BASELINE SUMMARY REPORT
+==========================================================================
+Test Run ID:       test-run-01
+Files Processed:   11 / 11
+Failures:          0
+Total Fields:      110
+Correct Fields:    101
+Verified Accuracy: 91.82%
+Runtime Seconds:   1.3789 sec
+Output Summary:    data/test-run-01/outputs/baseline\summary.json
+Log Captured To:   data/test-run-01/logs\baseline.log
+==========================================================================
+

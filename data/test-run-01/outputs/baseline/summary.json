@@ -1,0 +1,36 @@
+{
+  "test_run_id": "test-run-01",
+  "workflow": "baseline",
+  "dataset_version": "2.0.0",
+  "timestamp": "2026-08-30T23:56:30Z",
+  "files_processed": 11,
+  "failures": 0,
+  "total_fields_evaluated": 110,
+  "correct_fields": 101,
+  "verified_field_accuracy_percent": 91.82,
+  "runtime_seconds": 1.3789,
+  "avg_duration_per_file_seconds": 0.1254,
+  "cost_usd": 0.0,
+  "output_directory": "data/test-run-01/outputs/baseline",
+  "log_file": "data/test-run-01/logs\\baseline.log",
+  "records_written": [
+    "data/test-run-01/outputs/baseline\\AXA-ATT-001_baseline.json",
+    "data/test-run-01/outputs/baseline\\AXA-ATT-002_baseline.json",
+    "data/test-run-01/outputs/baseline\\AXA-ATT-003_baseline.json",
+    "data/test-run-01/outputs/baseline\\AXA-ATT-004_baseline.json",
+    "data/test-run-01/outputs/baseline\\AXA-ATT-005_baseline.json",
+    "data/test-run-01/outputs/baseline\\AXA-ATT-006_baseline.json",
+    "data/test-run-01/outputs/baseline\\AXA-ATT-007_baseline.json",
+    "data/test-run-01/outputs/baseline\\AXA-ATT-008_baseline.json",
+    "data/test-run-01/outputs/baseline\\AXA-ATT-009_baseline.json",
+    "data/test-run-01/outputs/baseline\\AXA-ATT-010_baseline.json",
+    "data/test-run-01/outputs/baseline\\AXA-ATT-011_baseline.json"
+  ],
+  "limitations": [
+    "No image quality pre-check (processes blurred/corrupted forms without rescan)",
+    "No deterministic verification rules (skips pattern, date, and enum checks)",
+    "No risk-aware triage (public/internal fields auto-accepted without rule checks)",
+    "No visual evidence crop linkage (crop_reference = None)",
+    "No human correction memory"
+  ]
+}

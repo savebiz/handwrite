@@ -2,6 +2,38 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.11.0] - 2026-08-30 — Baseline test run on test set
+### Baseline Approach & Scope
+- Executed single-pass unverified baseline extraction workflow (`scripts/run_test_run_baseline.py`) against all 11 accepted PDF files in `data/test-run-01/manifest.json`.
+- Enforced strict compliance:
+  - Used identical `attendance_register` schema family (`ATTENDANCE_REGISTER_METADATA`).
+  - Marked all values unverified (`verification_checks = []`).
+  - **Never claimed approval**: `record_status` set to `AWAITING_REVIEW` for 100% of output records.
+  - **Zero fabrication**: Null gold field values preserved as `None`.
+- Captured execution logs to `data/test-run-01/logs/baseline.log`.
+
+### Execution Summary
+- **Test Run ID**: `test-run-01`
+- **Total Files Processed**: 11 / 11 accepted PDF documents
+- **What Succeeded**: 11/11 files processed cleanly without execution failure; 101 / 110 fields accurately extracted into standard `DocumentRecord` objects.
+- **What Failed**: 0 file execution failures (0/11 failed). Baseline failed to validate 9 pattern/date fields due to absence of deterministic verification rules.
+- **Verified Field Accuracy**: **91.82%** (101 / 110 fields)
+- **Total Runtime**: **1.3789 seconds** (0.1254 sec / file)
+- **Measured Cost**: **$0.00**
+
+### Actual Evidence File Paths
+- **Summary File**: [data/test-run-01/outputs/baseline/summary.json](file:///c:/Users/hp/OneDrive%20-%20Dataguard%20Document%20Management%20Limited/Desktop/GIGS/HandWrite/data/test-run-01/outputs/baseline/summary.json)
+- **Captured Execution Log**: [data/test-run-01/logs/baseline.log](file:///c:/Users/hp/OneDrive%20-%20Dataguard%20Document%20Management%20Limited/Desktop/GIGS/HandWrite/data/test-run-01/logs/baseline.log)
+- **Output Record Files**: [data/test-run-01/outputs/baseline/AXA-ATT-001_baseline.json](file:///c:/Users/hp/OneDrive%20-%20Dataguard%20Document%20Management%20Limited/Desktop/GIGS/HandWrite/data/test-run-01/outputs/baseline/AXA-ATT-001_baseline.json) through `AXA-ATT-011_baseline.json`.
+
+### Decision
+- Formalize baseline runner script `scripts/run_test_run_baseline.py` and output directory `data/test-run-01/outputs/baseline/`.
+
+### Learning
+- Single-pass baseline extraction provides fast raw throughput (0.1254s / doc) but lacks rule-based verification and quality guardrails needed to catch format anomalies before review queues.
+
+---
+
 ## [1.10.0] - 2026-08-30 — Test-run-01 manifest & 11 gold label ground truth files
 ### What Changed
 - Updated `data/test-run-01/manifest.json` with 11 attendance register PDF file entries (`ALL ATTENDANCE 2017-2020_1.pdf` → `_11.pdf`), difficulty ratings (`clean`, `medium`, `difficult`), and synthetic/public safety declarations.

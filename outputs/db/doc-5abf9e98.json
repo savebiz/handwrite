@@ -1,6 +1,6 @@
 {
-  "run_id": "run-0d1948ed",
-  "document_id": "FI-001",
+  "run_id": "run-6ce3538c",
+  "document_id": "doc-5abf9e98",
   "document_type": "field_inspection",
   "document_quality": {
     "status": "pass",
@@ -11,10 +11,10 @@
     {
       "field_name": "inspection_ref",
       "display_name": "Inspection Reference",
-      "proposed_value": "INSP-2026-001",
-      "normalized_value": "INSP-2026-001",
+      "proposed_value": null,
+      "normalized_value": null,
       "confidence": 0.99,
-      "decision": "auto_accept",
+      "decision": "human_review",
       "sensitivity": "public",
       "text_style": "typewritten",
       "evidence": {
@@ -25,32 +25,27 @@
           150.0,
           400.0
         ],
-        "crop_reference": "/crops/FI-001_inspection_ref.png"
+        "crop_reference": "/crops/doc-5abf9e98_inspection_ref.png"
       },
       "verification_checks": [
         {
           "rule_id": "RULE-REQ-001",
-          "result": "pass",
-          "message": "Required field present."
-        },
-        {
-          "rule_id": "RULE-PAT-003",
-          "result": "pass",
-          "message": "Matches pattern '^INSP-\\d{4}-\\d{3}$'."
+          "result": "fail",
+          "message": "Mandatory field 'Inspection Reference' is blank or unreadable."
         }
       ],
-      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "decision_reason": "Verification rule check failed: Mandatory field 'Inspection Reference' is blank or unreadable.",
       "reviewer_value": null,
-      "reviewer_decision": "not_required",
+      "reviewer_decision": "pending",
       "reviewer_reason": null
     },
     {
       "field_name": "inspection_date",
       "display_name": "Inspection Date",
-      "proposed_value": "2026-08-15",
-      "normalized_value": "2026-08-15",
+      "proposed_value": null,
+      "normalized_value": null,
       "confidence": 0.99,
-      "decision": "auto_accept",
+      "decision": "human_review",
       "sensitivity": "public",
       "text_style": "typewritten",
       "evidence": {
@@ -61,32 +56,27 @@
           150.0,
           750.0
         ],
-        "crop_reference": "/crops/FI-001_inspection_date.png"
+        "crop_reference": "/crops/doc-5abf9e98_inspection_date.png"
       },
       "verification_checks": [
         {
           "rule_id": "RULE-REQ-001",
-          "result": "pass",
-          "message": "Required field present."
-        },
-        {
-          "rule_id": "RULE-DATE-002",
-          "result": "pass",
-          "message": "Valid ISO-8601 date string."
+          "result": "fail",
+          "message": "Mandatory field 'Inspection Date' is blank or unreadable."
         }
       ],
-      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "decision_reason": "Verification rule check failed: Mandatory field 'Inspection Date' is blank or unreadable.",
       "reviewer_value": null,
-      "reviewer_decision": "not_required",
+      "reviewer_decision": "pending",
       "reviewer_reason": null
     },
     {
       "field_name": "site_location",
       "display_name": "Site / Location",
-      "proposed_value": "Building A, North Wing",
-      "normalized_value": "Building A, North Wing",
+      "proposed_value": null,
+      "normalized_value": null,
       "confidence": 0.94,
-      "decision": "auto_accept",
+      "decision": "human_review",
       "sensitivity": "internal",
       "text_style": "handwritten",
       "evidence": {
@@ -97,25 +87,25 @@
           230.0,
           750.0
         ],
-        "crop_reference": "/crops/FI-001_site_location.png"
+        "crop_reference": "/crops/doc-5abf9e98_site_location.png"
       },
       "verification_checks": [
         {
           "rule_id": "RULE-REQ-001",
-          "result": "pass",
-          "message": "Required field present."
+          "result": "fail",
+          "message": "Mandatory field 'Site / Location' is blank or unreadable."
         }
       ],
-      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "decision_reason": "Verification rule check failed: Mandatory field 'Site / Location' is blank or unreadable.",
       "reviewer_value": null,
-      "reviewer_decision": "not_required",
+      "reviewer_decision": "pending",
       "reviewer_reason": null
     },
     {
       "field_name": "inspector_name",
       "display_name": "Inspector Name",
-      "proposed_value": "John Doe",
-      "normalized_value": "John Doe",
+      "proposed_value": null,
+      "normalized_value": null,
       "confidence": 0.94,
       "decision": "human_review",
       "sensitivity": "personal",
@@ -128,13 +118,13 @@
           310.0,
           750.0
         ],
-        "crop_reference": "/crops/FI-001_inspector_name.png"
+        "crop_reference": "/crops/doc-5abf9e98_inspector_name.png"
       },
       "verification_checks": [
         {
           "rule_id": "RULE-REQ-001",
-          "result": "pass",
-          "message": "Required field present."
+          "result": "fail",
+          "message": "Mandatory field 'Inspector Name' is blank or unreadable."
         },
         {
           "rule_id": "RULE-SENS-006",
@@ -150,10 +140,10 @@
     {
       "field_name": "asset_ref",
       "display_name": "Asset Reference",
-      "proposed_value": "AST-10293",
-      "normalized_value": "AST-10293",
+      "proposed_value": null,
+      "normalized_value": null,
       "confidence": 0.94,
-      "decision": "auto_accept",
+      "decision": "human_review",
       "sensitivity": "internal",
       "text_style": "handwritten",
       "evidence": {
@@ -164,32 +154,27 @@
           390.0,
           400.0
         ],
-        "crop_reference": "/crops/FI-001_asset_ref.png"
+        "crop_reference": "/crops/doc-5abf9e98_asset_ref.png"
       },
       "verification_checks": [
         {
           "rule_id": "RULE-REQ-001",
-          "result": "pass",
-          "message": "Required field present."
-        },
-        {
-          "rule_id": "RULE-PAT-003",
-          "result": "pass",
-          "message": "Matches pattern '^AST-\\d{5}$'."
+          "result": "fail",
+          "message": "Mandatory field 'Asset Reference' is blank or unreadable."
         }
       ],
-      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "decision_reason": "Verification rule check failed: Mandatory field 'Asset Reference' is blank or unreadable.",
       "reviewer_value": null,
-      "reviewer_decision": "not_required",
+      "reviewer_decision": "pending",
       "reviewer_reason": null
     },
     {
       "field_name": "inspection_status",
       "display_name": "Inspection Status",
-      "proposed_value": "PASS",
-      "normalized_value": "PASS",
+      "proposed_value": null,
+      "normalized_value": null,
       "confidence": 0.94,
-      "decision": "auto_accept",
+      "decision": "human_review",
       "sensitivity": "public",
       "text_style": "handwritten",
       "evidence": {
@@ -200,30 +185,25 @@
           390.0,
           750.0
         ],
-        "crop_reference": "/crops/FI-001_inspection_status.png"
+        "crop_reference": "/crops/doc-5abf9e98_inspection_status.png"
       },
       "verification_checks": [
         {
           "rule_id": "RULE-REQ-001",
-          "result": "pass",
-          "message": "Required field present."
-        },
-        {
-          "rule_id": "RULE-VOCAB-004",
-          "result": "pass",
-          "message": "Value in controlled vocabulary."
+          "result": "fail",
+          "message": "Mandatory field 'Inspection Status' is blank or unreadable."
         }
       ],
-      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "decision_reason": "Verification rule check failed: Mandatory field 'Inspection Status' is blank or unreadable.",
       "reviewer_value": null,
-      "reviewer_decision": "not_required",
+      "reviewer_decision": "pending",
       "reviewer_reason": null
     },
     {
       "field_name": "observation_finding",
       "display_name": "Observation / Finding",
-      "proposed_value": "All pressure valves optimal.",
-      "normalized_value": "All pressure valves optimal.",
+      "proposed_value": null,
+      "normalized_value": null,
       "confidence": 0.94,
       "decision": "auto_accept",
       "sensitivity": "public",
@@ -236,7 +216,7 @@
           520.0,
           750.0
         ],
-        "crop_reference": "/crops/FI-001_observation_finding.png"
+        "crop_reference": "/crops/doc-5abf9e98_observation_finding.png"
       },
       "verification_checks": [],
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
@@ -247,8 +227,8 @@
     {
       "field_name": "action_required",
       "display_name": "Action Required",
-      "proposed_value": "None",
-      "normalized_value": "None",
+      "proposed_value": null,
+      "normalized_value": null,
       "confidence": 0.94,
       "decision": "auto_accept",
       "sensitivity": "public",
@@ -261,7 +241,7 @@
           650.0,
           750.0
         ],
-        "crop_reference": "/crops/FI-001_action_required.png"
+        "crop_reference": "/crops/doc-5abf9e98_action_required.png"
       },
       "verification_checks": [],
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
@@ -272,8 +252,8 @@
     {
       "field_name": "followup_date",
       "display_name": "Follow-up Date",
-      "proposed_value": "2026-11-15",
-      "normalized_value": "2026-11-15",
+      "proposed_value": null,
+      "normalized_value": null,
       "confidence": 0.94,
       "decision": "auto_accept",
       "sensitivity": "public",
@@ -286,15 +266,9 @@
           730.0,
           380.0
         ],
-        "crop_reference": "/crops/FI-001_followup_date.png"
+        "crop_reference": "/crops/doc-5abf9e98_followup_date.png"
       },
-      "verification_checks": [
-        {
-          "rule_id": "RULE-DATE-002",
-          "result": "pass",
-          "message": "Valid ISO-8601 date string."
-        }
-      ],
+      "verification_checks": [],
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
       "reviewer_value": null,
       "reviewer_decision": "not_required",
@@ -303,10 +277,10 @@
     {
       "field_name": "form_completeness",
       "display_name": "Form Completeness",
-      "proposed_value": "COMPLETE",
-      "normalized_value": "COMPLETE",
+      "proposed_value": null,
+      "normalized_value": null,
       "confidence": 0.94,
-      "decision": "auto_accept",
+      "decision": "human_review",
       "sensitivity": "internal",
       "text_style": "handwritten",
       "evidence": {
@@ -317,41 +291,36 @@
           730.0,
           750.0
         ],
-        "crop_reference": "/crops/FI-001_form_completeness.png"
+        "crop_reference": "/crops/doc-5abf9e98_form_completeness.png"
       },
       "verification_checks": [
         {
           "rule_id": "RULE-REQ-001",
-          "result": "pass",
-          "message": "Required field present."
-        },
-        {
-          "rule_id": "RULE-VOCAB-004",
-          "result": "pass",
-          "message": "Value in controlled vocabulary."
+          "result": "fail",
+          "message": "Mandatory field 'Form Completeness' is blank or unreadable."
         }
       ],
-      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "decision_reason": "Verification rule check failed: Mandatory field 'Form Completeness' is blank or unreadable.",
       "reviewer_value": null,
-      "reviewer_decision": "not_required",
+      "reviewer_decision": "pending",
       "reviewer_reason": null
     }
   ],
   "record_status": "awaiting_review",
   "audit_events": [
     {
-      "timestamp": "2026-08-30T22:57:02.517733+00:00",
+      "timestamp": "2026-08-30T22:57:00.168076+00:00",
       "actor": "agent",
       "action": "DOCUMENT_PIPELINE_PROCESSED",
       "details": {
-        "run_id": "run-0d1948ed",
-        "document_id": "FI-001",
+        "run_id": "run-6ce3538c",
+        "document_id": "doc-5abf9e98",
         "document_type": "field_inspection",
         "quality_status": "pass",
         "record_status": "awaiting_review",
         "total_fields": 10,
-        "auto_accepted_fields": 9,
-        "human_review_fields": 1
+        "auto_accepted_fields": 3,
+        "human_review_fields": 7
       }
     }
   ],

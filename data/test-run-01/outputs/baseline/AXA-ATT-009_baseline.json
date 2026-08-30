@@ -1,0 +1,266 @@
+{
+  "run_id": "baseline-sample-e111099e",
+  "document_id": "AXA-ATT-009",
+  "document_type": "attendance_register",
+  "document_quality": {
+    "status": "pass",
+    "issues": [],
+    "rescan_required": false
+  },
+  "field_results": [
+    {
+      "field_name": "register_ref",
+      "display_name": "Register Reference",
+      "proposed_value": "ATT-2020-009",
+      "normalized_value": "ATT-2020-009",
+      "confidence": 0.78,
+      "decision": "auto_accept",
+      "sensitivity": "public",
+      "text_style": "handwritten",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          100.0,
+          50.0,
+          150.0,
+          400.0
+        ],
+        "crop_reference": null
+      },
+      "verification_checks": [],
+      "decision_reason": "Baseline single-pass unverified extraction",
+      "reviewer_value": null,
+      "reviewer_decision": "not_required",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "record_date",
+      "display_name": "Record Date",
+      "proposed_value": "2020-08-15",
+      "normalized_value": "2020-08-15",
+      "confidence": 0.78,
+      "decision": "auto_accept",
+      "sensitivity": "public",
+      "text_style": "handwritten",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          100.0,
+          450.0,
+          150.0,
+          750.0
+        ],
+        "crop_reference": null
+      },
+      "verification_checks": [],
+      "decision_reason": "Baseline single-pass unverified extraction",
+      "reviewer_value": null,
+      "reviewer_decision": "not_required",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "site_department",
+      "display_name": "Site / Department",
+      "proposed_value": "AXA Operations",
+      "normalized_value": "AXA Operations",
+      "confidence": 0.78,
+      "decision": "auto_accept",
+      "sensitivity": "internal",
+      "text_style": "handwritten",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          180.0,
+          50.0,
+          230.0,
+          750.0
+        ],
+        "crop_reference": null
+      },
+      "verification_checks": [],
+      "decision_reason": "Baseline single-pass unverified extraction",
+      "reviewer_value": null,
+      "reviewer_decision": "not_required",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "attendee_name",
+      "display_name": "Attendee Name",
+      "proposed_value": "Staff Member 9",
+      "normalized_value": "Staff Member 9",
+      "confidence": 0.78,
+      "decision": "human_review",
+      "sensitivity": "personal",
+      "text_style": "handwritten",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          260.0,
+          50.0,
+          310.0,
+          750.0
+        ],
+        "crop_reference": null
+      },
+      "verification_checks": [],
+      "decision_reason": "Baseline single-pass unverified extraction",
+      "reviewer_value": null,
+      "reviewer_decision": "pending",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "staff_ref",
+      "display_name": "Staff Reference",
+      "proposed_value": "EMP-10009",
+      "normalized_value": "EMP-10009",
+      "confidence": 0.78,
+      "decision": "human_review",
+      "sensitivity": "sensitive",
+      "text_style": "handwritten",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          340.0,
+          50.0,
+          390.0,
+          400.0
+        ],
+        "crop_reference": null
+      },
+      "verification_checks": [],
+      "decision_reason": "Baseline single-pass unverified extraction",
+      "reviewer_value": null,
+      "reviewer_decision": "pending",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "attendance_status",
+      "display_name": "Attendance Status",
+      "proposed_value": "PRESENT",
+      "normalized_value": "PRESENT",
+      "confidence": 0.78,
+      "decision": "auto_accept",
+      "sensitivity": "public",
+      "text_style": "handwritten",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          340.0,
+          450.0,
+          390.0,
+          750.0
+        ],
+        "crop_reference": null
+      },
+      "verification_checks": [],
+      "decision_reason": "Baseline single-pass unverified extraction",
+      "reviewer_value": null,
+      "reviewer_decision": "not_required",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "time_in",
+      "display_name": "Time In",
+      "proposed_value": "08:30",
+      "normalized_value": "08:30",
+      "confidence": 0.78,
+      "decision": "auto_accept",
+      "sensitivity": "internal",
+      "text_style": "handwritten",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          420.0,
+          50.0,
+          470.0,
+          380.0
+        ],
+        "crop_reference": null
+      },
+      "verification_checks": [],
+      "decision_reason": "Baseline single-pass unverified extraction",
+      "reviewer_value": null,
+      "reviewer_decision": "not_required",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "time_out",
+      "display_name": "Time Out",
+      "proposed_value": "17:00",
+      "normalized_value": "17:00",
+      "confidence": 0.78,
+      "decision": "auto_accept",
+      "sensitivity": "internal",
+      "text_style": "handwritten",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          420.0,
+          400.0,
+          470.0,
+          750.0
+        ],
+        "crop_reference": null
+      },
+      "verification_checks": [],
+      "decision_reason": "Baseline single-pass unverified extraction",
+      "reviewer_value": null,
+      "reviewer_decision": "not_required",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "supervisor_notes",
+      "display_name": "Supervisor Notes",
+      "proposed_value": "Attendance verified",
+      "normalized_value": "Attendance verified",
+      "confidence": 0.78,
+      "decision": "auto_accept",
+      "sensitivity": "public",
+      "text_style": "handwritten",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          500.0,
+          50.0,
+          600.0,
+          750.0
+        ],
+        "crop_reference": null
+      },
+      "verification_checks": [],
+      "decision_reason": "Baseline single-pass unverified extraction",
+      "reviewer_value": null,
+      "reviewer_decision": "not_required",
+      "reviewer_reason": null
+    },
+    {
+      "field_name": "form_completeness",
+      "display_name": "Form Completeness",
+      "proposed_value": "COMPLETE",
+      "normalized_value": "COMPLETE",
+      "confidence": 0.78,
+      "decision": "auto_accept",
+      "sensitivity": "internal",
+      "text_style": "handwritten",
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          630.0,
+          50.0,
+          680.0,
+          750.0
+        ],
+        "crop_reference": null
+      },
+      "verification_checks": [],
+      "decision_reason": "Baseline single-pass unverified extraction",
+      "reviewer_value": null,
+      "reviewer_decision": "not_required",
+      "reviewer_reason": null
+    }
+  ],
+  "record_status": "awaiting_review",
+  "audit_events": [],
+  "schema_version": "1.0.0",
+  "agent_version": "baseline-1.0.0"
+}

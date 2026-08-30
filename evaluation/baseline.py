@@ -54,7 +54,17 @@ def run_baseline_extraction(manifest_sample: Dict[str, Any]) -> DocumentRecord:
     gold_label_path = manifest_sample["gold_label_path"]
 
     with open(gold_label_path, "r", encoding="utf-8") as f:
-        gold_data = json.load(f)["gold_fields"]
+        gold_json = json.load(f)
+
+    if "gold_fields" in gold_json:
+        gold_data = gold_json["gold_fields"]
+    elif "fields" in gold_json:
+        if isinstance(gold_json["fields"], list):
+            gold_data = {item["field_name"]: item.get("expected_value") for item in gold_json["fields"]}
+        else:
+            gold_data = gold_json["fields"]
+    else:
+        gold_data = gold_json
 
     field_meta_dict = get_metadata_for_family(doc_type)
     field_results = []
