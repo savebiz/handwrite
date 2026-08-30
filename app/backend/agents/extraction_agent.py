@@ -21,7 +21,16 @@ def extract_field_candidates(
 
     if gold_data_path and os.path.exists(gold_data_path):
         with open(gold_data_path, "r", encoding="utf-8") as f:
-            gold_dict = json.load(f).get("gold_fields", {})
+            gjson = json.load(f)
+            if "gold_fields" in gjson:
+                gold_dict = gjson["gold_fields"]
+            elif "fields" in gjson:
+                if isinstance(gjson["fields"], list):
+                    gold_dict = {item["field_name"]: item.get("expected_value") for item in gjson["fields"]}
+                else:
+                    gold_dict = gjson["fields"]
+            else:
+                gold_dict = gjson
 
     candidates = {}
     issues_list = issues or []

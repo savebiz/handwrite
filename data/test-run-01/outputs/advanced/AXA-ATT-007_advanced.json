@@ -1,5 +1,5 @@
 {
-  "run_id": "run-ec8c683d",
+  "run_id": "run-625df904",
   "document_id": "AXA-ATT-007",
   "document_type": "attendance_register",
   "document_quality": {
@@ -11,10 +11,10 @@
     {
       "field_name": "register_ref",
       "display_name": "Register Reference",
-      "proposed_value": null,
-      "normalized_value": null,
+      "proposed_value": "ATT-2020-007",
+      "normalized_value": "ATT-2020-007",
       "confidence": 0.94,
-      "decision": "human_review",
+      "decision": "auto_accept",
       "sensitivity": "public",
       "text_style": "handwritten",
       "evidence": {
@@ -30,22 +30,27 @@
       "verification_checks": [
         {
           "rule_id": "RULE-REQ-001",
-          "result": "fail",
-          "message": "Mandatory field 'Register Reference' is blank or unreadable."
+          "result": "pass",
+          "message": "Required field present."
+        },
+        {
+          "rule_id": "RULE-PAT-003",
+          "result": "pass",
+          "message": "Matches pattern '^ATT-\\d{4}-\\d{3}$'."
         }
       ],
-      "decision_reason": "Verification rule check failed: Mandatory field 'Register Reference' is blank or unreadable.",
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
       "reviewer_value": null,
-      "reviewer_decision": "pending",
+      "reviewer_decision": "not_required",
       "reviewer_reason": null
     },
     {
       "field_name": "record_date",
       "display_name": "Record Date",
-      "proposed_value": null,
-      "normalized_value": null,
+      "proposed_value": "2020-08-15",
+      "normalized_value": "2020-08-15",
       "confidence": 0.94,
-      "decision": "human_review",
+      "decision": "auto_accept",
       "sensitivity": "public",
       "text_style": "handwritten",
       "evidence": {
@@ -61,22 +66,27 @@
       "verification_checks": [
         {
           "rule_id": "RULE-REQ-001",
-          "result": "fail",
-          "message": "Mandatory field 'Record Date' is blank or unreadable."
+          "result": "pass",
+          "message": "Required field present."
+        },
+        {
+          "rule_id": "RULE-DATE-002",
+          "result": "pass",
+          "message": "Valid ISO-8601 date string."
         }
       ],
-      "decision_reason": "Verification rule check failed: Mandatory field 'Record Date' is blank or unreadable.",
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
       "reviewer_value": null,
-      "reviewer_decision": "pending",
+      "reviewer_decision": "not_required",
       "reviewer_reason": null
     },
     {
       "field_name": "site_department",
       "display_name": "Site / Department",
-      "proposed_value": null,
-      "normalized_value": null,
+      "proposed_value": "AXA Operations",
+      "normalized_value": "AXA Operations",
       "confidence": 0.94,
-      "decision": "human_review",
+      "decision": "auto_accept",
       "sensitivity": "internal",
       "text_style": "handwritten",
       "evidence": {
@@ -92,20 +102,20 @@
       "verification_checks": [
         {
           "rule_id": "RULE-REQ-001",
-          "result": "fail",
-          "message": "Mandatory field 'Site / Department' is blank or unreadable."
+          "result": "pass",
+          "message": "Required field present."
         }
       ],
-      "decision_reason": "Verification rule check failed: Mandatory field 'Site / Department' is blank or unreadable.",
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
       "reviewer_value": null,
-      "reviewer_decision": "pending",
+      "reviewer_decision": "not_required",
       "reviewer_reason": null
     },
     {
       "field_name": "attendee_name",
       "display_name": "Attendee Name",
-      "proposed_value": null,
-      "normalized_value": null,
+      "proposed_value": "Staff Member 7",
+      "normalized_value": "Staff Member 7",
       "confidence": 0.94,
       "decision": "human_review",
       "sensitivity": "personal",
@@ -123,8 +133,8 @@
       "verification_checks": [
         {
           "rule_id": "RULE-REQ-001",
-          "result": "fail",
-          "message": "Mandatory field 'Attendee Name' is blank or unreadable."
+          "result": "pass",
+          "message": "Required field present."
         },
         {
           "rule_id": "RULE-SENS-006",
@@ -140,8 +150,8 @@
     {
       "field_name": "staff_ref",
       "display_name": "Staff Reference",
-      "proposed_value": null,
-      "normalized_value": null,
+      "proposed_value": "EMP-10007",
+      "normalized_value": "EMP-10007",
       "confidence": 0.94,
       "decision": "human_review",
       "sensitivity": "sensitive",
@@ -159,8 +169,13 @@
       "verification_checks": [
         {
           "rule_id": "RULE-REQ-001",
-          "result": "fail",
-          "message": "Mandatory field 'Staff Reference' is blank or unreadable."
+          "result": "pass",
+          "message": "Required field present."
+        },
+        {
+          "rule_id": "RULE-PAT-003",
+          "result": "pass",
+          "message": "Matches pattern '^EMP-\\d{5}$'."
         },
         {
           "rule_id": "RULE-SENS-006",
@@ -176,10 +191,10 @@
     {
       "field_name": "attendance_status",
       "display_name": "Attendance Status",
-      "proposed_value": null,
-      "normalized_value": null,
+      "proposed_value": "PRESENT",
+      "normalized_value": "PRESENT",
       "confidence": 0.94,
-      "decision": "human_review",
+      "decision": "auto_accept",
       "sensitivity": "public",
       "text_style": "handwritten",
       "evidence": {
@@ -195,20 +210,25 @@
       "verification_checks": [
         {
           "rule_id": "RULE-REQ-001",
-          "result": "fail",
-          "message": "Mandatory field 'Attendance Status' is blank or unreadable."
+          "result": "pass",
+          "message": "Required field present."
+        },
+        {
+          "rule_id": "RULE-VOCAB-004",
+          "result": "pass",
+          "message": "Value in controlled vocabulary."
         }
       ],
-      "decision_reason": "Verification rule check failed: Mandatory field 'Attendance Status' is blank or unreadable.",
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
       "reviewer_value": null,
-      "reviewer_decision": "pending",
+      "reviewer_decision": "not_required",
       "reviewer_reason": null
     },
     {
       "field_name": "time_in",
       "display_name": "Time In",
-      "proposed_value": null,
-      "normalized_value": null,
+      "proposed_value": "08:30",
+      "normalized_value": "08:30",
       "confidence": 0.94,
       "decision": "auto_accept",
       "sensitivity": "internal",
@@ -223,7 +243,13 @@
         ],
         "crop_reference": "/crops/AXA-ATT-007_time_in.png"
       },
-      "verification_checks": [],
+      "verification_checks": [
+        {
+          "rule_id": "RULE-PAT-003",
+          "result": "pass",
+          "message": "Matches pattern '^[0-2][0-9]:[0-5][0-9]$'."
+        }
+      ],
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
       "reviewer_value": null,
       "reviewer_decision": "not_required",
@@ -232,8 +258,8 @@
     {
       "field_name": "time_out",
       "display_name": "Time Out",
-      "proposed_value": null,
-      "normalized_value": null,
+      "proposed_value": "17:00",
+      "normalized_value": "17:00",
       "confidence": 0.94,
       "decision": "auto_accept",
       "sensitivity": "internal",
@@ -248,7 +274,13 @@
         ],
         "crop_reference": "/crops/AXA-ATT-007_time_out.png"
       },
-      "verification_checks": [],
+      "verification_checks": [
+        {
+          "rule_id": "RULE-PAT-003",
+          "result": "pass",
+          "message": "Matches pattern '^[0-2][0-9]:[0-5][0-9]$'."
+        }
+      ],
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
       "reviewer_value": null,
       "reviewer_decision": "not_required",
@@ -257,8 +289,8 @@
     {
       "field_name": "supervisor_notes",
       "display_name": "Supervisor Notes",
-      "proposed_value": null,
-      "normalized_value": null,
+      "proposed_value": "Attendance verified",
+      "normalized_value": "Attendance verified",
       "confidence": 0.94,
       "decision": "auto_accept",
       "sensitivity": "public",
@@ -282,10 +314,10 @@
     {
       "field_name": "form_completeness",
       "display_name": "Form Completeness",
-      "proposed_value": null,
-      "normalized_value": null,
+      "proposed_value": "COMPLETE",
+      "normalized_value": "COMPLETE",
       "confidence": 0.94,
-      "decision": "human_review",
+      "decision": "auto_accept",
       "sensitivity": "internal",
       "text_style": "handwritten",
       "evidence": {
@@ -301,31 +333,36 @@
       "verification_checks": [
         {
           "rule_id": "RULE-REQ-001",
-          "result": "fail",
-          "message": "Mandatory field 'Form Completeness' is blank or unreadable."
+          "result": "pass",
+          "message": "Required field present."
+        },
+        {
+          "rule_id": "RULE-VOCAB-004",
+          "result": "pass",
+          "message": "Value in controlled vocabulary."
         }
       ],
-      "decision_reason": "Verification rule check failed: Mandatory field 'Form Completeness' is blank or unreadable.",
+      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
       "reviewer_value": null,
-      "reviewer_decision": "pending",
+      "reviewer_decision": "not_required",
       "reviewer_reason": null
     }
   ],
   "record_status": "awaiting_review",
   "audit_events": [
     {
-      "timestamp": "2026-08-30T23:02:15.899568+00:00",
+      "timestamp": "2026-08-30T23:04:55.347730+00:00",
       "actor": "agent",
       "action": "DOCUMENT_PIPELINE_PROCESSED",
       "details": {
-        "run_id": "run-ec8c683d",
+        "run_id": "run-625df904",
         "document_id": "AXA-ATT-007",
         "document_type": "attendance_register",
         "quality_status": "pass",
         "record_status": "awaiting_review",
         "total_fields": 10,
-        "auto_accepted_fields": 3,
-        "human_review_fields": 7
+        "auto_accepted_fields": 8,
+        "human_review_fields": 2
       }
     }
   ],

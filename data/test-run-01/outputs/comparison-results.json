@@ -1,0 +1,40 @@
+{
+  "test_run_id": "test-run-01",
+  "dataset_version": "2.0.0",
+  "timestamp": "2026-08-31T00:05:02Z",
+  "total_files_evaluated": 11,
+  "total_fields_evaluated": 110,
+  "failed_cases_count": 0,
+  "failed_cases": [],
+  "baseline_workflow": {
+    "raw_extraction_accuracy_percent": 91.82,
+    "reviewer_approved_accuracy_percent": 91.82,
+    "required_field_weighted_accuracy_percent": 91.98,
+    "escalation_recall_percent": null,
+    "unnecessary_review_rate_percent": null,
+    "schema_validation_pass_rate_percent": 100.0,
+    "total_runtime_seconds": 1.3789,
+    "avg_duration_per_doc_seconds": 0.1254,
+    "cost_usd": 0.0,
+    "human_reviewer_clock_time": "Unmeasured (N/A)"
+  },
+  "advanced_workflow": {
+    "raw_extraction_accuracy_percent": 100.0,
+    "reviewer_approved_accuracy_percent": 100.0,
+    "required_field_weighted_accuracy_percent": 100.0,
+    "escalation_recall_percent": 100.0,
+    "unnecessary_review_rate_percent": 0.0,
+    "schema_validation_pass_rate_percent": 100.0,
+    "total_runtime_seconds": 1.6988,
+    "avg_duration_per_doc_seconds": 0.1544,
+    "cost_usd": 0.0,
+    "human_reviewer_clock_time": "Unmeasured (N/A)"
+  },
+  "measured_advantages": {
+    "reviewer_approved_accuracy_delta_percent": 8.18,
+    "required_weighted_accuracy_delta_percent": 8.02,
+    "escalation_recall_percent": 100.0,
+    "unnecessary_review_rate_percent": 0.0,
+    "latency_overhead_per_doc_seconds": 0.029
+  }
+}

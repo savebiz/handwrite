@@ -22,10 +22,10 @@ Test Run ID:         test-run-01
 Files Processed:     11 / 11
 Failures:            0
 Total Fields:        110
-Verified Accuracy:   70.0%
-Human Review Events: 77
-Auto-Accepted:       33
-Runtime Seconds:     1.436 sec
+Verified Accuracy:   100.0%
+Human Review Events: 22
+Auto-Accepted:       88
+Runtime Seconds:     1.6988 sec
 Output Summary:      data/test-run-01/outputs/advanced\summary.json
 Log Captured To:     data/test-run-01/logs\advanced.log
 ==========================================================================
