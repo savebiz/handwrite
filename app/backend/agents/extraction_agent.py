@@ -33,8 +33,20 @@ PROMPT_VERSION_ID = "prompt-schema-guided-v1.0"
 
 def _generate_crop_file(image_path: str, doc_id: str, field_name: str, bbox: List[int]) -> str:
     """Slices bounding box [ymin, xmin, ymax, xmax] from image and saves PNG crop to outputs/crops/."""
+    import tempfile
+
     crop_dir = "outputs/crops"
-    os.makedirs(crop_dir, exist_ok=True)
+    try:
+        os.makedirs(crop_dir, exist_ok=True)
+        # Test writability
+        test_path = os.path.join(crop_dir, ".write_test")
+        with open(test_path, "w") as f:
+            f.write("ok")
+        os.remove(test_path)
+    except (OSError, PermissionError):
+        crop_dir = os.path.join(tempfile.gettempdir(), "outputs", "crops")
+        os.makedirs(crop_dir, exist_ok=True)
+
     crop_filename = f"{doc_id}_{field_name}.png"
     crop_path = os.path.join(crop_dir, crop_filename)
 

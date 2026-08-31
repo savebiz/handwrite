@@ -96,21 +96,35 @@ async def upload_document(
     gold_path = None
     issues_hint = []
 
-    if sample_id and os.path.exists("data/manifests/manifest.json"):
-        with open("data/manifests/manifest.json", "r", encoding="utf-8") as f:
-            manifest = json.load(f)
-        sample = next((s for s in manifest["samples"] if s["document_id"] == sample_id), None)
-        if sample:
-            image_path = sample["image_path"]
-            gold_path = sample["gold_label_path"]
-            issues_hint = sample.get("issues", [])
-            doc_type_hint = sample["document_type"]
+    manifest_path = "data/manifests/manifest.json"
+    if sample_id and os.path.exists(manifest_path):
+        try:
+            with open(manifest_path, "r", encoding="utf-8") as f:
+                manifest = json.load(f)
+            sample = next((s for s in manifest["samples"] if s["document_id"] == sample_id), None)
+            if sample:
+                image_path = sample["image_path"]
+                gold_path = sample["gold_label_path"]
+                issues_hint = sample.get("issues", [])
+                doc_type_hint = sample["document_type"]
+        except (OSError, json.JSONDecodeError):
+            pass
 
     if file:
-        os.makedirs("data/synthetic/uploads", exist_ok=True)
-        image_path = f"data/synthetic/uploads/{file.filename}"
-        with open(image_path, "wb") as f:
-            f.write(await file.read())
+        upload_dir = "data/synthetic/uploads"
+        try:
+            os.makedirs(upload_dir, exist_ok=True)
+            # Test writability
+            test_path = os.path.join(upload_dir, ".write_test")
+            with open(test_path, "w") as wf:
+                wf.write("ok")
+            os.remove(test_path)
+        except (OSError, PermissionError):
+            upload_dir = os.path.join(tempfile.gettempdir(), "data", "synthetic", "uploads")
+            os.makedirs(upload_dir, exist_ok=True)
+        image_path = os.path.join(upload_dir, file.filename)
+        with open(image_path, "wb") as wf:
+            wf.write(await file.read())
 
     record = process_document_pipeline(
         image_path=image_path,

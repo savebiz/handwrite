@@ -61,12 +61,28 @@ def convert_pdf_to_image(
     Extracts or renders Page 1 of a PDF document into a PNG image file.
     Returns the output PNG image path.
     """
+    import tempfile as _tempfile
+
     if not output_image_path:
-        os.makedirs(default_dir, exist_ok=True)
+        try:
+            os.makedirs(default_dir, exist_ok=True)
+            # Test writability
+            test_path = os.path.join(default_dir, ".write_test")
+            with open(test_path, "w") as f:
+                f.write("ok")
+            os.remove(test_path)
+        except (OSError, PermissionError):
+            default_dir = os.path.join(_tempfile.gettempdir(), "data", "synthetic", "uploads")
+            os.makedirs(default_dir, exist_ok=True)
         filename = f"pdf_render_{uuid.uuid4().hex[:8]}.png"
         output_image_path = os.path.join(default_dir, filename)
     else:
-        os.makedirs(os.path.dirname(output_image_path) or ".", exist_ok=True)
+        try:
+            os.makedirs(os.path.dirname(output_image_path) or ".", exist_ok=True)
+        except (OSError, PermissionError):
+            fallback_dir = os.path.join(_tempfile.gettempdir(), "data", "synthetic", "uploads")
+            os.makedirs(fallback_dir, exist_ok=True)
+            output_image_path = os.path.join(fallback_dir, os.path.basename(output_image_path))
 
     if isinstance(pdf_source, str):
         with open(pdf_source, "rb") as f:
