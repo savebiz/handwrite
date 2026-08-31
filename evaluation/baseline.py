@@ -202,9 +202,17 @@ def run_baseline_evaluation(
         "records": records_output,
     }
 
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(results, f, indent=2)
+    try:
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(results, f, indent=2)
+    except (OSError, PermissionError):
+        import tempfile
+        tmp_dir = os.path.join(tempfile.gettempdir(), "outputs")
+        os.makedirs(tmp_dir, exist_ok=True)
+        results_path = os.path.join(tmp_dir, os.path.basename(output_path))
+        with open(results_path, "w", encoding="utf-8") as f:
+            json.dump(results, f, indent=2)
 
     print("\n============================================================")
     print("HANDWRITE VERIFY — BASELINE EXTRACTION RESULTS")

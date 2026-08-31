@@ -132,10 +132,18 @@ def evaluate_corpus(manifest_path: str = "data/manifests/manifest.json") -> Dict
         },
     }
 
-    os.makedirs("outputs", exist_ok=True)
-    results_path = "outputs/evaluation_results.json"
-    with open(results_path, "w", encoding="utf-8") as f:
-        json.dump(results, f, indent=2)
+    try:
+        os.makedirs("outputs", exist_ok=True)
+        results_path = "outputs/evaluation_results.json"
+        with open(results_path, "w", encoding="utf-8") as f:
+            json.dump(results, f, indent=2)
+    except (OSError, PermissionError):
+        import tempfile
+        tmp_dir = os.path.join(tempfile.gettempdir(), "outputs")
+        os.makedirs(tmp_dir, exist_ok=True)
+        results_path = os.path.join(tmp_dir, "evaluation_results.json")
+        with open(results_path, "w", encoding="utf-8") as f:
+            json.dump(results, f, indent=2)
 
     print("\n============================================================")
     print("HANDWRITE VERIFY — COMPARATIVE EVALUATION RESULTS")
