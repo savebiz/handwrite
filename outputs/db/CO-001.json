@@ -1,5 +1,5 @@
 {
-  "run_id": "run-57693275",
+  "run_id": "run-6d6633a4",
   "document_id": "CO-001",
   "document_type": "customer_onboarding",
   "document_quality": {
@@ -8,7 +8,7 @@
     "rescan_required": false
   },
   "intake_result": {
-    "run_id": "run-57693275",
+    "run_id": "run-6d6633a4",
     "document_id": "CO-001",
     "page_count": 1,
     "orientation": "portrait",
@@ -32,7 +32,7 @@
         "duplicate_page"
       ],
       "checks_unavailable": [],
-      "start_time_iso": "2026-08-31T09:07:24.545943+00:00",
+      "start_time_iso": "2026-08-31T09:12:11.619125+00:00",
       "page_count": 1,
       "orientation": "portrait",
       "image_width": 800,
@@ -58,8 +58,8 @@
         9.04
       ],
       "duplicate_page_note": "not_applicable_single_page",
-      "end_time_iso": "2026-08-31T09:07:24.607043+00:00",
-      "duration_ms": 61.1
+      "end_time_iso": "2026-08-31T09:12:11.671111+00:00",
+      "duration_ms": 51.99
     }
   },
   "extraction_result": {
@@ -321,6 +321,379 @@
       "zero_fabrication_enforced": true
     }
   },
+  "verification_result": {
+    "agent_version": "1.3.0-verification",
+    "document_type": "customer_onboarding",
+    "checks": [
+      {
+        "rule_id": "RULE-REQ-001",
+        "result": "pass",
+        "message": "Required field 'Onboarding Reference' present.",
+        "field_name": "onboarding_ref"
+      },
+      {
+        "rule_id": "RULE-PAT-003",
+        "result": "pass",
+        "message": "Matches pattern '^ONB-\\d{4}-\\d{3}$'.",
+        "field_name": "onboarding_ref"
+      },
+      {
+        "rule_id": "RULE-REQ-001",
+        "result": "pass",
+        "message": "Required field 'Application Date' present.",
+        "field_name": "application_date"
+      },
+      {
+        "rule_id": "RULE-DATE-002",
+        "result": "pass",
+        "message": "Valid ISO-8601 date string.",
+        "field_name": "application_date"
+      },
+      {
+        "rule_id": "RULE-REQ-001",
+        "result": "pass",
+        "message": "Required field 'Applicant Name' present.",
+        "field_name": "applicant_name"
+      },
+      {
+        "rule_id": "RULE-SENS-006",
+        "result": "warning",
+        "message": "Field classified as 'personal' — mandatory human review required.",
+        "field_name": "applicant_name"
+      },
+      {
+        "rule_id": "RULE-REQ-001",
+        "result": "pass",
+        "message": "Required field 'Contact Number' present.",
+        "field_name": "contact_number"
+      },
+      {
+        "rule_id": "RULE-PAT-003",
+        "result": "pass",
+        "message": "Matches pattern '^\\+?[0-9]{10,14}$'.",
+        "field_name": "contact_number"
+      },
+      {
+        "rule_id": "RULE-SENS-006",
+        "result": "warning",
+        "message": "Field classified as 'personal' — mandatory human review required.",
+        "field_name": "contact_number"
+      },
+      {
+        "rule_id": "RULE-PAT-003",
+        "result": "pass",
+        "message": "Matches pattern '^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$'.",
+        "field_name": "email_address"
+      },
+      {
+        "rule_id": "RULE-SENS-006",
+        "result": "warning",
+        "message": "Field classified as 'personal' — mandatory human review required.",
+        "field_name": "email_address"
+      },
+      {
+        "rule_id": "RULE-REQ-001",
+        "result": "pass",
+        "message": "Required field 'Address / Location' present.",
+        "field_name": "address_location"
+      },
+      {
+        "rule_id": "RULE-SENS-006",
+        "result": "warning",
+        "message": "Field classified as 'personal' — mandatory human review required.",
+        "field_name": "address_location"
+      },
+      {
+        "rule_id": "RULE-REQ-001",
+        "result": "pass",
+        "message": "Required field 'Product Requested' present.",
+        "field_name": "product_requested"
+      },
+      {
+        "rule_id": "RULE-VOCAB-004",
+        "result": "pass",
+        "message": "Value in controlled vocabulary.",
+        "field_name": "product_requested"
+      },
+      {
+        "rule_id": "RULE-REQ-001",
+        "result": "pass",
+        "message": "Required field 'Identity Reference Placeholder' present.",
+        "field_name": "id_ref_placeholder"
+      },
+      {
+        "rule_id": "RULE-PAT-003",
+        "result": "pass",
+        "message": "Matches pattern '^ID-[\\*\\w]{5,10}$'.",
+        "field_name": "id_ref_placeholder"
+      },
+      {
+        "rule_id": "RULE-SENS-006",
+        "result": "warning",
+        "message": "Field classified as 'sensitive' — mandatory human review required.",
+        "field_name": "id_ref_placeholder"
+      },
+      {
+        "rule_id": "RULE-REQ-001",
+        "result": "pass",
+        "message": "Required field 'Consent Indicator' present.",
+        "field_name": "consent_indicator"
+      },
+      {
+        "rule_id": "RULE-VOCAB-004",
+        "result": "pass",
+        "message": "Value in controlled vocabulary.",
+        "field_name": "consent_indicator"
+      },
+      {
+        "rule_id": "RULE-CONSENT-007",
+        "result": "pass",
+        "message": "Consent indicator valid ('YES').",
+        "field_name": "consent_indicator"
+      },
+      {
+        "rule_id": "RULE-SENS-006",
+        "result": "warning",
+        "message": "Field classified as 'personal' — mandatory human review required.",
+        "field_name": "consent_indicator"
+      },
+      {
+        "rule_id": "RULE-REQ-001",
+        "result": "pass",
+        "message": "Required field 'Reviewer Status' present.",
+        "field_name": "reviewer_status"
+      },
+      {
+        "rule_id": "RULE-VOCAB-004",
+        "result": "pass",
+        "message": "Value in controlled vocabulary.",
+        "field_name": "reviewer_status"
+      },
+      {
+        "rule_id": "RULE-REQ-001",
+        "result": "pass",
+        "message": "Required field 'Form Completeness' present.",
+        "field_name": "form_completeness"
+      },
+      {
+        "rule_id": "RULE-VOCAB-004",
+        "result": "pass",
+        "message": "Value in controlled vocabulary.",
+        "field_name": "form_completeness"
+      }
+    ],
+    "field_checks": {
+      "onboarding_ref": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field 'Onboarding Reference' present.",
+          "field_name": "onboarding_ref"
+        },
+        {
+          "rule_id": "RULE-PAT-003",
+          "result": "pass",
+          "message": "Matches pattern '^ONB-\\d{4}-\\d{3}$'.",
+          "field_name": "onboarding_ref"
+        }
+      ],
+      "application_date": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field 'Application Date' present.",
+          "field_name": "application_date"
+        },
+        {
+          "rule_id": "RULE-DATE-002",
+          "result": "pass",
+          "message": "Valid ISO-8601 date string.",
+          "field_name": "application_date"
+        }
+      ],
+      "applicant_name": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field 'Applicant Name' present.",
+          "field_name": "applicant_name"
+        },
+        {
+          "rule_id": "RULE-SENS-006",
+          "result": "warning",
+          "message": "Field classified as 'personal' — mandatory human review required.",
+          "field_name": "applicant_name"
+        }
+      ],
+      "contact_number": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field 'Contact Number' present.",
+          "field_name": "contact_number"
+        },
+        {
+          "rule_id": "RULE-PAT-003",
+          "result": "pass",
+          "message": "Matches pattern '^\\+?[0-9]{10,14}$'.",
+          "field_name": "contact_number"
+        },
+        {
+          "rule_id": "RULE-SENS-006",
+          "result": "warning",
+          "message": "Field classified as 'personal' — mandatory human review required.",
+          "field_name": "contact_number"
+        }
+      ],
+      "email_address": [
+        {
+          "rule_id": "RULE-PAT-003",
+          "result": "pass",
+          "message": "Matches pattern '^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$'.",
+          "field_name": "email_address"
+        },
+        {
+          "rule_id": "RULE-SENS-006",
+          "result": "warning",
+          "message": "Field classified as 'personal' — mandatory human review required.",
+          "field_name": "email_address"
+        }
+      ],
+      "address_location": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field 'Address / Location' present.",
+          "field_name": "address_location"
+        },
+        {
+          "rule_id": "RULE-SENS-006",
+          "result": "warning",
+          "message": "Field classified as 'personal' — mandatory human review required.",
+          "field_name": "address_location"
+        }
+      ],
+      "product_requested": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field 'Product Requested' present.",
+          "field_name": "product_requested"
+        },
+        {
+          "rule_id": "RULE-VOCAB-004",
+          "result": "pass",
+          "message": "Value in controlled vocabulary.",
+          "field_name": "product_requested"
+        }
+      ],
+      "id_ref_placeholder": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field 'Identity Reference Placeholder' present.",
+          "field_name": "id_ref_placeholder"
+        },
+        {
+          "rule_id": "RULE-PAT-003",
+          "result": "pass",
+          "message": "Matches pattern '^ID-[\\*\\w]{5,10}$'.",
+          "field_name": "id_ref_placeholder"
+        },
+        {
+          "rule_id": "RULE-SENS-006",
+          "result": "warning",
+          "message": "Field classified as 'sensitive' — mandatory human review required.",
+          "field_name": "id_ref_placeholder"
+        }
+      ],
+      "consent_indicator": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field 'Consent Indicator' present.",
+          "field_name": "consent_indicator"
+        },
+        {
+          "rule_id": "RULE-VOCAB-004",
+          "result": "pass",
+          "message": "Value in controlled vocabulary.",
+          "field_name": "consent_indicator"
+        },
+        {
+          "rule_id": "RULE-CONSENT-007",
+          "result": "pass",
+          "message": "Consent indicator valid ('YES').",
+          "field_name": "consent_indicator"
+        },
+        {
+          "rule_id": "RULE-SENS-006",
+          "result": "warning",
+          "message": "Field classified as 'personal' — mandatory human review required.",
+          "field_name": "consent_indicator"
+        }
+      ],
+      "reviewer_status": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field 'Reviewer Status' present.",
+          "field_name": "reviewer_status"
+        },
+        {
+          "rule_id": "RULE-VOCAB-004",
+          "result": "pass",
+          "message": "Value in controlled vocabulary.",
+          "field_name": "reviewer_status"
+        }
+      ],
+      "form_completeness": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field 'Form Completeness' present.",
+          "field_name": "form_completeness"
+        },
+        {
+          "rule_id": "RULE-VOCAB-004",
+          "result": "pass",
+          "message": "Value in controlled vocabulary.",
+          "field_name": "form_completeness"
+        }
+      ]
+    },
+    "normalized_values": {
+      "onboarding_ref": "ONB-2026-101",
+      "application_date": "2026-08-10",
+      "applicant_name": "Sarah Jenkins",
+      "contact_number": "+14155550192",
+      "email_address": "sarah.j@example.com",
+      "address_location": "742 Evergreen Terrace, Springfield",
+      "product_requested": "Standard",
+      "id_ref_placeholder": "ID-984712",
+      "consent_indicator": "YES",
+      "reviewer_status": "PENDING",
+      "form_completeness": "COMPLETE"
+    },
+    "value_transformations": [],
+    "total_checks_run": 26,
+    "passed_checks_count": 20,
+    "failed_checks_count": 0,
+    "warning_checks_count": 6,
+    "verification_metadata": {
+      "rules_evaluated": [
+        "RULE-REQ-001",
+        "RULE-DATE-002",
+        "RULE-PAT-003",
+        "RULE-VOCAB-004",
+        "RULE-CROSS-005",
+        "RULE-SENS-006",
+        "RULE-CONSENT-007",
+        "RULE-MISSING-008",
+        "RULE-NORM-009"
+      ]
+    }
+  },
   "field_results": [
     {
       "field_name": "onboarding_ref",
@@ -345,12 +718,14 @@
         {
           "rule_id": "RULE-REQ-001",
           "result": "pass",
-          "message": "Required field present."
+          "message": "Required field 'Onboarding Reference' present.",
+          "field_name": "onboarding_ref"
         },
         {
           "rule_id": "RULE-PAT-003",
           "result": "pass",
-          "message": "Matches pattern '^ONB-\\d{4}-\\d{3}$'."
+          "message": "Matches pattern '^ONB-\\d{4}-\\d{3}$'.",
+          "field_name": "onboarding_ref"
         }
       ],
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
@@ -381,12 +756,14 @@
         {
           "rule_id": "RULE-REQ-001",
           "result": "pass",
-          "message": "Required field present."
+          "message": "Required field 'Application Date' present.",
+          "field_name": "application_date"
         },
         {
           "rule_id": "RULE-DATE-002",
           "result": "pass",
-          "message": "Valid ISO-8601 date string."
+          "message": "Valid ISO-8601 date string.",
+          "field_name": "application_date"
         }
       ],
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
@@ -417,12 +794,14 @@
         {
           "rule_id": "RULE-REQ-001",
           "result": "pass",
-          "message": "Required field present."
+          "message": "Required field 'Applicant Name' present.",
+          "field_name": "applicant_name"
         },
         {
           "rule_id": "RULE-SENS-006",
           "result": "warning",
-          "message": "Field classified as 'personal' — mandatory human review required."
+          "message": "Field classified as 'personal' — mandatory human review required.",
+          "field_name": "applicant_name"
         }
       ],
       "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
@@ -453,17 +832,20 @@
         {
           "rule_id": "RULE-REQ-001",
           "result": "pass",
-          "message": "Required field present."
+          "message": "Required field 'Contact Number' present.",
+          "field_name": "contact_number"
         },
         {
           "rule_id": "RULE-PAT-003",
           "result": "pass",
-          "message": "Matches pattern '^\\+?[0-9]{10,14}$'."
+          "message": "Matches pattern '^\\+?[0-9]{10,14}$'.",
+          "field_name": "contact_number"
         },
         {
           "rule_id": "RULE-SENS-006",
           "result": "warning",
-          "message": "Field classified as 'personal' — mandatory human review required."
+          "message": "Field classified as 'personal' — mandatory human review required.",
+          "field_name": "contact_number"
         }
       ],
       "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
@@ -494,12 +876,14 @@
         {
           "rule_id": "RULE-PAT-003",
           "result": "pass",
-          "message": "Matches pattern '^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$'."
+          "message": "Matches pattern '^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$'.",
+          "field_name": "email_address"
         },
         {
           "rule_id": "RULE-SENS-006",
           "result": "warning",
-          "message": "Field classified as 'personal' — mandatory human review required."
+          "message": "Field classified as 'personal' — mandatory human review required.",
+          "field_name": "email_address"
         }
       ],
       "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
@@ -530,12 +914,14 @@
         {
           "rule_id": "RULE-REQ-001",
           "result": "pass",
-          "message": "Required field present."
+          "message": "Required field 'Address / Location' present.",
+          "field_name": "address_location"
         },
         {
           "rule_id": "RULE-SENS-006",
           "result": "warning",
-          "message": "Field classified as 'personal' — mandatory human review required."
+          "message": "Field classified as 'personal' — mandatory human review required.",
+          "field_name": "address_location"
         }
       ],
       "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
@@ -566,12 +952,14 @@
         {
           "rule_id": "RULE-REQ-001",
           "result": "pass",
-          "message": "Required field present."
+          "message": "Required field 'Product Requested' present.",
+          "field_name": "product_requested"
         },
         {
           "rule_id": "RULE-VOCAB-004",
           "result": "pass",
-          "message": "Value in controlled vocabulary."
+          "message": "Value in controlled vocabulary.",
+          "field_name": "product_requested"
         }
       ],
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
@@ -602,17 +990,20 @@
         {
           "rule_id": "RULE-REQ-001",
           "result": "pass",
-          "message": "Required field present."
+          "message": "Required field 'Identity Reference Placeholder' present.",
+          "field_name": "id_ref_placeholder"
         },
         {
           "rule_id": "RULE-PAT-003",
           "result": "pass",
-          "message": "Matches pattern '^ID-[\\*\\w]{5,10}$'."
+          "message": "Matches pattern '^ID-[\\*\\w]{5,10}$'.",
+          "field_name": "id_ref_placeholder"
         },
         {
           "rule_id": "RULE-SENS-006",
           "result": "warning",
-          "message": "Field classified as 'sensitive' — mandatory human review required."
+          "message": "Field classified as 'sensitive' — mandatory human review required.",
+          "field_name": "id_ref_placeholder"
         }
       ],
       "decision_reason": "Policy rule: Field sensitivity is 'sensitive'. Human review mandatory.",
@@ -643,17 +1034,26 @@
         {
           "rule_id": "RULE-REQ-001",
           "result": "pass",
-          "message": "Required field present."
+          "message": "Required field 'Consent Indicator' present.",
+          "field_name": "consent_indicator"
         },
         {
           "rule_id": "RULE-VOCAB-004",
           "result": "pass",
-          "message": "Value in controlled vocabulary."
+          "message": "Value in controlled vocabulary.",
+          "field_name": "consent_indicator"
+        },
+        {
+          "rule_id": "RULE-CONSENT-007",
+          "result": "pass",
+          "message": "Consent indicator valid ('YES').",
+          "field_name": "consent_indicator"
         },
         {
           "rule_id": "RULE-SENS-006",
           "result": "warning",
-          "message": "Field classified as 'personal' — mandatory human review required."
+          "message": "Field classified as 'personal' — mandatory human review required.",
+          "field_name": "consent_indicator"
         }
       ],
       "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
@@ -684,12 +1084,14 @@
         {
           "rule_id": "RULE-REQ-001",
           "result": "pass",
-          "message": "Required field present."
+          "message": "Required field 'Reviewer Status' present.",
+          "field_name": "reviewer_status"
         },
         {
           "rule_id": "RULE-VOCAB-004",
           "result": "pass",
-          "message": "Value in controlled vocabulary."
+          "message": "Value in controlled vocabulary.",
+          "field_name": "reviewer_status"
         }
       ],
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
@@ -720,12 +1122,14 @@
         {
           "rule_id": "RULE-REQ-001",
           "result": "pass",
-          "message": "Required field present."
+          "message": "Required field 'Form Completeness' present.",
+          "field_name": "form_completeness"
         },
         {
           "rule_id": "RULE-VOCAB-004",
           "result": "pass",
-          "message": "Value in controlled vocabulary."
+          "message": "Value in controlled vocabulary.",
+          "field_name": "form_completeness"
         }
       ],
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
@@ -737,11 +1141,11 @@
   "record_status": "approved",
   "audit_events": [
     {
-      "timestamp": "2026-08-31T09:07:24.610341+00:00",
+      "timestamp": "2026-08-31T09:12:11.676334+00:00",
       "actor": "agent",
       "action": "DOCUMENT_PIPELINE_PROCESSED",
       "details": {
-        "run_id": "run-57693275",
+        "run_id": "run-6d6633a4",
         "document_id": "CO-001",
         "document_type": "customer_onboarding",
         "quality_status": "pass",
@@ -752,7 +1156,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T09:07:24.656048+00:00",
+      "timestamp": "2026-08-31T09:12:11.724294+00:00",
       "actor": "reviewer",
       "action": "DOCUMENT_REVIEW_SUBMITTED",
       "details": {

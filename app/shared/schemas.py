@@ -64,6 +64,21 @@ class VerificationCheck(BaseModel):
     rule_id: str
     result: VerificationCheckResult
     message: str
+    field_name: Optional[str] = None
+
+
+class VerificationResult(BaseModel):
+    agent_version: str = "1.3.0-verification"
+    document_type: DocumentType
+    checks: List[VerificationCheck] = Field(default_factory=list)
+    field_checks: Dict[str, List[VerificationCheck]] = Field(default_factory=dict)
+    normalized_values: Dict[str, Optional[str]] = Field(default_factory=dict)
+    value_transformations: List[Dict[str, Any]] = Field(default_factory=list)
+    total_checks_run: int = 0
+    passed_checks_count: int = 0
+    failed_checks_count: int = 0
+    warning_checks_count: int = 0
+    verification_metadata: Dict[str, Any] = Field(default_factory=dict)
 
 
 class Evidence(BaseModel):
@@ -184,6 +199,7 @@ class DocumentRecord(BaseModel):
     document_quality: QualityResult
     intake_result: Optional[IntakeResult] = None
     extraction_result: Optional[ExtractionResult] = None
+    verification_result: Optional[VerificationResult] = None
     field_results: List[FieldResult] = Field(default_factory=list)
     record_status: RecordStatusEnum = RecordStatusEnum.PROCESSING
     audit_events: List[AuditEvent] = Field(default_factory=list)

@@ -2,6 +2,46 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.19.0] - 2026-08-31 — Deterministic verification stage (`run_deterministic_verification()`)
+
+### Stage
+Deterministic Verification Agent (`app/backend/agents/verification_agent.py`)
+
+### Rules Added
+- `RULE-REQ-001` (Required Field Check): Fails if mandatory field is missing or blank.
+- `RULE-DATE-002` (ISO Date Validation): Validates `YYYY-MM-DD` format and fails if date is in the future.
+- `RULE-PAT-003` (Pattern Match / Reference Number): Regex validation against reference patterns (`INSP-\d{4}-\d{3}`, `ONB-\d{4}-\d{3}`, `ATT-\d{4}-\d{3}`, `AST-\d{5}`, `EMP-\d{5}`, phone, email).
+- `RULE-VOCAB-004` (Controlled Vocabulary): Enum membership check against allowed values.
+- `RULE-CONSENT-007` (Consent Indicator Check): Validates `consent_indicator` is strictly `YES` or `NO`.
+- `RULE-SENS-006` (Sensitivity Guardrail): Generates WARNING check for `personal` or `sensitive` fields requiring human review routing.
+- `RULE-CROSS-005` (Cross-Field Consistency): Fails if `followup_date < inspection_date` or `time_out < time_in`.
+- `RULE-MISSING-008` (Missing/Conflicting Values Check): Fails if form is marked `COMPLETE` but required fields are missing.
+- `RULE-NORM-009` (Normalized-Value Validity & Transformation Tracking): Normalizes text while strictly preserving raw `proposed_value` untouched.
+
+### Change
+- Implemented `run_deterministic_verification()` returning structured `VerificationResult`.
+- Extended `VerificationCheck` schema to include `field_name: Optional[str] = None`.
+- Added `VerificationResult` Pydantic model to `app/shared/schemas.py`.
+- Added optional `verification_result` field to `DocumentRecord` for pipeline integration.
+- Integrated Stage 4 into `app/backend/pipeline.py`.
+- Enforced value preservation rule: raw `proposed_value` is NEVER overwritten; transformations are recorded in `value_transformations`.
+- Created `tests/test_verification.py` (12 tests) and `scripts/run_verification_tests.py` standalone test runner.
+
+### Reason
+Enforce deterministic data validation rules across all form schemas without letting verification overwrite raw extraction text.
+
+### Evidence
+- `scripts/run_verification_tests.py`: 12/12 PASSED
+- `python -m pytest`: 89/89 PASSED (0 failures across all test suites)
+
+### Decision
+Ship as `[1.19.0]`.
+
+### Learning
+- Explicit rule-by-rule evaluation with `field_name` attribution enables precise error taxonomy tracking (`VALIDATION_ERROR`, `NORMALIZATION_ERROR`) without losing the raw OCR candidate string.
+
+---
+
 ## [1.18.0] - 2026-08-31 — Schema-guided field extraction stage (`extract_fields()`)
 
 ### Stage

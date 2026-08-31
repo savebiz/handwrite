@@ -9,11 +9,12 @@ from app.shared.schemas import (
     ActorEnum,
     IntakeResult,
     ExtractionResult,
+    VerificationResult,
 )
 from app.backend.agents.quality_agent import analyze_document_quality, run_intake_and_quality
 from app.backend.agents.classification_agent import classify_document
 from app.backend.agents.extraction_agent import extract_field_candidates, extract_fields
-from app.backend.agents.verification_agent import verify_extracted_fields
+from app.backend.agents.verification_agent import verify_extracted_fields, run_deterministic_verification
 from app.backend.agents.triage_agent import triage_field_and_record, determine_record_status
 from app.backend.audit import log_audit_event
 
@@ -73,6 +74,7 @@ def process_document_pipeline(
     )
 
     # Stage 4: Deterministic Verification Agent
+    verification_res = run_deterministic_verification(doc_type, candidates)
     verifications = verify_extracted_fields(doc_type, candidates)
 
     # Stage 5: Triage Agent
@@ -146,6 +148,7 @@ def process_document_pipeline(
         document_quality=quality_res,
         intake_result=intake_res,
         extraction_result=extraction_res,
+        verification_result=verification_res,
         field_results=field_results,
         record_status=record_status,
         audit_events=[audit_evt],
