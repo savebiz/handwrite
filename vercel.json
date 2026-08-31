@@ -1,46 +1,19 @@
 {
-  "version": 2,
-  "builds": [
+  "buildCommand": "npm run build",
+  "outputDirectory": "app/frontend/dist",
+  "framework": "vite",
+  "rewrites": [
     {
-      "src": "api/index.py",
-      "use": "@vercel/python",
-      "config": {
-        "includeFiles": [
-          "app/**",
-          "data/**",
-          "evaluation/**",
-          "scripts/**",
-          "outputs/**"
-        ]
-      }
+      "source": "/api/(.*)",
+      "destination": "/api/index.py"
     },
     {
-      "src": "app/frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "api/index.py"
+      "source": "/synthetic/(.*)",
+      "destination": "/api/index.py"
     },
     {
-      "src": "/synthetic/(.*)",
-      "dest": "api/index.py"
-    },
-    {
-      "src": "/crops/(.*)",
-      "dest": "api/index.py"
-    },
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "app/frontend/$1"
+      "source": "/crops/(.*)",
+      "destination": "/api/index.py"
     }
   ]
 }
