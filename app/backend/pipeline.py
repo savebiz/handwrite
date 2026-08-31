@@ -10,12 +10,13 @@ from app.shared.schemas import (
     IntakeResult,
     ExtractionResult,
     VerificationResult,
+    TriageResult,
 )
 from app.backend.agents.quality_agent import analyze_document_quality, run_intake_and_quality
 from app.backend.agents.classification_agent import classify_document
 from app.backend.agents.extraction_agent import extract_field_candidates, extract_fields
 from app.backend.agents.verification_agent import verify_extracted_fields, run_deterministic_verification
-from app.backend.agents.triage_agent import triage_field_and_record, determine_record_status
+from app.backend.agents.triage_agent import triage_field_and_record, determine_record_status, run_triage_decision_stage
 from app.backend.audit import log_audit_event
 
 
@@ -77,7 +78,8 @@ def process_document_pipeline(
     verification_res = run_deterministic_verification(doc_type, candidates)
     verifications = verify_extracted_fields(doc_type, candidates)
 
-    # Stage 5: Triage Agent
+    # Stage 5: Triage & Record-Status Decision Agent
+    triage_res = run_triage_decision_stage(quality_res, candidates, verifications)
     field_results = []
     field_decisions = []
 
@@ -149,6 +151,7 @@ def process_document_pipeline(
         intake_result=intake_res,
         extraction_result=extraction_res,
         verification_result=verification_res,
+        triage_result=triage_res,
         field_results=field_results,
         record_status=record_status,
         audit_events=[audit_evt],

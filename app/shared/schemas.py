@@ -179,6 +179,29 @@ class RecordStatusEnum(str, Enum):
     REJECTED = "rejected"
 
 
+class FieldTriageDecision(BaseModel):
+    field_name: str
+    decision: DecisionEnum
+    rationale: str
+    triggered_rules: List[str] = Field(default_factory=list)
+    confidence: float
+    sensitivity: SensitivityEnum
+
+
+class TriageResult(BaseModel):
+    agent_version: str = "1.4.0-triage"
+    configuration_version: str = "triage-policy-v1.0-conf0.85"
+    confidence_threshold: float = 0.85
+    record_status: RecordStatusEnum
+    record_rationale: str
+    field_decisions: List[FieldTriageDecision] = Field(default_factory=list)
+    total_fields: int = 0
+    auto_accepted_count: int = 0
+    human_review_count: int = 0
+    rescan_required_count: int = 0
+    triage_metadata: Dict[str, Any] = Field(default_factory=dict)
+
+
 class ActorEnum(str, Enum):
     AGENT = "agent"
     REVIEWER = "reviewer"
@@ -200,6 +223,7 @@ class DocumentRecord(BaseModel):
     intake_result: Optional[IntakeResult] = None
     extraction_result: Optional[ExtractionResult] = None
     verification_result: Optional[VerificationResult] = None
+    triage_result: Optional[TriageResult] = None
     field_results: List[FieldResult] = Field(default_factory=list)
     record_status: RecordStatusEnum = RecordStatusEnum.PROCESSING
     audit_events: List[AuditEvent] = Field(default_factory=list)

@@ -2,6 +2,43 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.20.0] - 2026-08-31 — Triage & record-status decision stage (`run_triage_decision_stage()`)
+
+### Stage
+Triage & Record-Status Decision Agent (`app/backend/agents/triage_agent.py`)
+
+### Rules & Policies Implemented
+- **Quality Precedence Rule**: `QualityStatus.FAIL` or `rescan_required = True` forces all field decisions to `rescan_required` and `record_status = RESCAN_REQUIRED` (`QUALITY_CHECK_FAILED`).
+- **Mandatory Sensitivity Guardrail (`RULE-SENS-006`)**: All `personal` or `sensitive` fields or `mandatory_human_review` flags strictly route to `human_review`.
+- **Verification Failure & Contradiction Routing**: Any failing verification check (`RULE-REQ-001`, `RULE-DATE-002`, `RULE-CROSS-005`, etc.) forces decision to `human_review` with specific failing rule IDs in `triggered_rules`.
+- **Confidence Boundary Rule**: `confidence < 0.85` forces decision to `human_review` (`CONFIDENCE_BELOW_THRESHOLD`). Tested exact boundary (`0.84` -> `human_review`, `0.85` -> `auto_accept`).
+- **Auto-Accept Eligibility**: Only non-sensitive (`public`/`internal`), high-confidence (`>= 0.85`), 100% passing fields are eligible for `auto_accept` (`AUTO_ACCEPT_ELIGIBLE`).
+- **Record Status Resolution**: Resolves overall `record_status` (`rescan_required`, `awaiting_review`, `approved`) with natural language `record_rationale`.
+
+### Change
+- Implemented `run_triage_decision_stage()` returning structured `TriageResult`.
+- Added `FieldTriageDecision` and `TriageResult` Pydantic models to `app/shared/schemas.py`.
+- Added optional `triage_result` field to `DocumentRecord` for pipeline integration.
+- Integrated Stage 5 in `app/backend/pipeline.py`.
+- Tracked `agent_version` (`"1.4.0-triage"`), `configuration_version` (`"triage-policy-v1.0-conf0.85"`), and `confidence_threshold` (`0.85`).
+- Preserved `triage_field_and_record()` and `determine_record_status()` helper functions for backward compatibility.
+- Created `tests/test_triage.py` (10 tests) and `scripts/run_triage_tests.py` standalone test runner.
+
+### Reason
+Fulfill triage and record-status decision stage requirements with exhaustive decision-table policies, quality precedence, confidence boundary enforcement, and lineage metadata.
+
+### Evidence
+- `scripts/run_triage_tests.py`: 10/10 PASSED
+- `python -m pytest`: 99/99 PASSED (0 failures across all 9 test suites)
+
+### Decision
+Ship as `[1.20.0]`.
+
+### Learning
+- Explicit decision table hierarchy ensures that quality failures override all field-level confidences, while sensitive PII fields are strictly prohibited from auto-accepting regardless of OCR confidence scores.
+
+---
+
 ## [1.19.0] - 2026-08-31 — Deterministic verification stage (`run_deterministic_verification()`)
 
 ### Stage

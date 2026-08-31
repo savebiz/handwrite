@@ -1,5 +1,5 @@
 {
-  "run_id": "run-6d6633a4",
+  "run_id": "run-883366ed",
   "document_id": "CO-001",
   "document_type": "customer_onboarding",
   "document_quality": {
@@ -8,7 +8,7 @@
     "rescan_required": false
   },
   "intake_result": {
-    "run_id": "run-6d6633a4",
+    "run_id": "run-883366ed",
     "document_id": "CO-001",
     "page_count": 1,
     "orientation": "portrait",
@@ -32,7 +32,7 @@
         "duplicate_page"
       ],
       "checks_unavailable": [],
-      "start_time_iso": "2026-08-31T09:12:11.619125+00:00",
+      "start_time_iso": "2026-08-31T11:40:54.555587+00:00",
       "page_count": 1,
       "orientation": "portrait",
       "image_width": 800,
@@ -58,8 +58,8 @@
         9.04
       ],
       "duplicate_page_note": "not_applicable_single_page",
-      "end_time_iso": "2026-08-31T09:12:11.671111+00:00",
-      "duration_ms": 51.99
+      "end_time_iso": "2026-08-31T11:40:54.656501+00:00",
+      "duration_ms": 100.91
     }
   },
   "extraction_result": {
@@ -694,6 +694,133 @@
       ]
     }
   },
+  "triage_result": {
+    "agent_version": "1.4.0-triage",
+    "configuration_version": "triage-policy-v1.0-conf0.85",
+    "confidence_threshold": 0.85,
+    "record_status": "awaiting_review",
+    "record_rationale": "Record contains 6 field(s) requiring human reviewer verification before export.",
+    "field_decisions": [
+      {
+        "field_name": "onboarding_ref",
+        "decision": "auto_accept",
+        "rationale": "Passed quality checks, high confidence (>=0.85), 100% passing verification rules, non-sensitive data.",
+        "triggered_rules": [
+          "AUTO_ACCEPT_ELIGIBLE"
+        ],
+        "confidence": 0.99,
+        "sensitivity": "public"
+      },
+      {
+        "field_name": "application_date",
+        "decision": "auto_accept",
+        "rationale": "Passed quality checks, high confidence (>=0.85), 100% passing verification rules, non-sensitive data.",
+        "triggered_rules": [
+          "AUTO_ACCEPT_ELIGIBLE"
+        ],
+        "confidence": 0.99,
+        "sensitivity": "public"
+      },
+      {
+        "field_name": "applicant_name",
+        "decision": "human_review",
+        "rationale": "Sensitivity 'personal' requires human review",
+        "triggered_rules": [
+          "RULE-SENS-006"
+        ],
+        "confidence": 0.94,
+        "sensitivity": "personal"
+      },
+      {
+        "field_name": "contact_number",
+        "decision": "human_review",
+        "rationale": "Sensitivity 'personal' requires human review",
+        "triggered_rules": [
+          "RULE-SENS-006"
+        ],
+        "confidence": 0.94,
+        "sensitivity": "personal"
+      },
+      {
+        "field_name": "email_address",
+        "decision": "human_review",
+        "rationale": "Sensitivity 'personal' requires human review",
+        "triggered_rules": [
+          "RULE-SENS-006"
+        ],
+        "confidence": 0.94,
+        "sensitivity": "personal"
+      },
+      {
+        "field_name": "address_location",
+        "decision": "human_review",
+        "rationale": "Sensitivity 'personal' requires human review",
+        "triggered_rules": [
+          "RULE-SENS-006"
+        ],
+        "confidence": 0.94,
+        "sensitivity": "personal"
+      },
+      {
+        "field_name": "product_requested",
+        "decision": "auto_accept",
+        "rationale": "Passed quality checks, high confidence (>=0.85), 100% passing verification rules, non-sensitive data.",
+        "triggered_rules": [
+          "AUTO_ACCEPT_ELIGIBLE"
+        ],
+        "confidence": 0.94,
+        "sensitivity": "internal"
+      },
+      {
+        "field_name": "id_ref_placeholder",
+        "decision": "human_review",
+        "rationale": "Sensitivity 'sensitive' requires human review",
+        "triggered_rules": [
+          "RULE-SENS-006"
+        ],
+        "confidence": 0.94,
+        "sensitivity": "sensitive"
+      },
+      {
+        "field_name": "consent_indicator",
+        "decision": "human_review",
+        "rationale": "Sensitivity 'personal' requires human review",
+        "triggered_rules": [
+          "RULE-SENS-006"
+        ],
+        "confidence": 0.94,
+        "sensitivity": "personal"
+      },
+      {
+        "field_name": "reviewer_status",
+        "decision": "auto_accept",
+        "rationale": "Passed quality checks, high confidence (>=0.85), 100% passing verification rules, non-sensitive data.",
+        "triggered_rules": [
+          "AUTO_ACCEPT_ELIGIBLE"
+        ],
+        "confidence": 0.94,
+        "sensitivity": "internal"
+      },
+      {
+        "field_name": "form_completeness",
+        "decision": "auto_accept",
+        "rationale": "Passed quality checks, high confidence (>=0.85), 100% passing verification rules, non-sensitive data.",
+        "triggered_rules": [
+          "AUTO_ACCEPT_ELIGIBLE"
+        ],
+        "confidence": 0.94,
+        "sensitivity": "internal"
+      }
+    ],
+    "total_fields": 11,
+    "auto_accepted_count": 5,
+    "human_review_count": 6,
+    "rescan_required_count": 0,
+    "triage_metadata": {
+      "quality_status": "pass",
+      "quality_rescan_required": false
+    }
+  },
   "field_results": [
     {
       "field_name": "onboarding_ref",
@@ -1141,11 +1268,11 @@
   "record_status": "approved",
   "audit_events": [
     {
-      "timestamp": "2026-08-31T09:12:11.676334+00:00",
+      "timestamp": "2026-08-31T11:40:54.675080+00:00",
       "actor": "agent",
       "action": "DOCUMENT_PIPELINE_PROCESSED",
       "details": {
-        "run_id": "run-6d6633a4",
+        "run_id": "run-883366ed",
         "document_id": "CO-001",
         "document_type": "customer_onboarding",
         "quality_status": "pass",
@@ -1156,7 +1283,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T09:12:11.724294+00:00",
+      "timestamp": "2026-08-31T11:40:54.741131+00:00",
       "actor": "reviewer",
       "action": "DOCUMENT_REVIEW_SUBMITTED",
       "details": {
