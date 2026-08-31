@@ -2,6 +2,47 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.21.0] - 2026-08-31 — Human-review workflow & export guardrails (`app/backend/main.py` & `app/static/reviewer.html`)
+
+### Stage
+Human Reviewer Workflow & Export Guardrails (`app/backend/main.py` & `app/static/reviewer.html`)
+
+### Features Implemented
+- **Reviewer Actions**:
+  - `approved`: Field approval updating `reviewer_decision = APPROVED`.
+  - `corrected`: Field correction with mandatory `reviewer_reason` updating `reviewer_value` and `normalized_value`.
+  - `rejected`: Field rejection with mandatory `reviewer_reason` setting `reviewer_decision = REJECTED` and `record_status = REJECTED`.
+  - `rescan`: Document rescan request with mandatory `reviewer_reason` setting `record_status = RESCAN_REQUIRED` and `quality.rescan_required = True`.
+- **Reviewer Inspection Workspace**:
+  - Web UI at `/static/reviewer.html` displaying document queue, original image, crop thumbnail reference (`/crops/{doc_id}_{field_name}.png`), proposed vs normalized values, confidence score, verification checks, decision rationale, sensitivity badge (`PUBLIC`, `INTERNAL`, `PERSONAL`, `SENSITIVE`), and action forms.
+- **Verification Guardrails**:
+  - **Reason Requirement Enforcement**: Rejects correction, rejection, or rescan requests with HTTP 400 if `reviewer_reason` is missing or whitespace-only.
+  - **Sensitive PII Export Guardrail**: Blocks JSON and CSV export (HTTP 400) if any `personal` or `sensitive` field has not received explicit human sign-off (`APPROVED` or `CORRECTED`).
+  - **Pending Record Export Guardrail**: Blocks export of `AWAITING_REVIEW`, `PROCESSING`, or `RESCAN_REQUIRED` records with HTTP 400 error.
+  - **Immutable Audit Logging**: Appends `FIELD_REVIEWED`, `DOCUMENT_REVIEW_SUBMITTED`, and `DOCUMENT_RESCAN_REQUESTED` audit events to `record.audit_events` and `logs/audit.jsonl`.
+
+### Change
+- Updated `RecordReviewPayload`, `submit_document_review()`, and `export_document_record()` in `app/backend/main.py`.
+- Created interactive reviewer web UI `app/static/reviewer.html` mounted at `/static`.
+- Created `tests/test_reviewer_workflow.py` (9 tests) and `scripts/run_reviewer_tests.py` standalone test runner.
+- Updated `README.md` with reviewer workflow and export safety documentation.
+
+### Reason
+Provide the smallest human-review workflow with mandatory reviewer action reasons, sensitive field export protection, immutable audit trails, and interactive web dashboard.
+
+### Evidence
+- `scripts/run_reviewer_tests.py`: 9/9 PASSED
+- `scripts/run_test_run_suite.py`: 7/7 Walkthrough stages PASSED
+- `python -m pytest`: 108/108 PASSED (0 failures across all 11 test suites)
+
+### Decision
+Ship as `[1.21.0]`.
+
+### Learning
+- Requiring mandatory reasons for corrections, rejections, and rescans, combined with server-side sensitive field export guardrails, prevents unreviewed PII data from leaking out of the pipeline.
+
+---
+
 ## [1.20.0] - 2026-08-31 — Triage & record-status decision stage (`run_triage_decision_stage()`)
 
 ### Stage

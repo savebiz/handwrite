@@ -1,5 +1,5 @@
 {
-  "run_id": "baseline-sample-0dbc2558",
+  "run_id": "baseline-sample-123be1ac",
   "document_id": "AXA-ATT-004",
   "document_type": "attendance_register",
   "document_quality": {
@@ -7,6 +7,10 @@
     "issues": [],
     "rescan_required": false
   },
+  "intake_result": null,
+  "extraction_result": null,
+  "verification_result": null,
+  "triage_result": null,
   "field_results": [
     {
       "field_name": "register_ref",

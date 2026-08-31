@@ -1,5 +1,5 @@
 {
-  "run_id": "run-883366ed",
+  "run_id": "run-f4aa66f5",
   "document_id": "CO-001",
   "document_type": "customer_onboarding",
   "document_quality": {
@@ -8,7 +8,7 @@
     "rescan_required": false
   },
   "intake_result": {
-    "run_id": "run-883366ed",
+    "run_id": "run-f4aa66f5",
     "document_id": "CO-001",
     "page_count": 1,
     "orientation": "portrait",
@@ -32,7 +32,7 @@
         "duplicate_page"
       ],
       "checks_unavailable": [],
-      "start_time_iso": "2026-08-31T11:40:54.555587+00:00",
+      "start_time_iso": "2026-08-31T12:40:55.552229+00:00",
       "page_count": 1,
       "orientation": "portrait",
       "image_width": 800,
@@ -58,8 +58,8 @@
         9.04
       ],
       "duplicate_page_note": "not_applicable_single_page",
-      "end_time_iso": "2026-08-31T11:40:54.656501+00:00",
-      "duration_ms": 100.91
+      "end_time_iso": "2026-08-31T12:40:55.609684+00:00",
+      "duration_ms": 57.45
     }
   },
   "extraction_result": {
@@ -858,7 +858,7 @@
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
       "reviewer_value": "ONB-2026-101",
       "reviewer_decision": "approved",
-      "reviewer_reason": "Verified by test operator"
+      "reviewer_reason": "Verified onboarding_ref"
     },
     {
       "field_name": "application_date",
@@ -896,7 +896,7 @@
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
       "reviewer_value": "2026-08-10",
       "reviewer_decision": "approved",
-      "reviewer_reason": "Verified by test operator"
+      "reviewer_reason": "Verified application_date"
     },
     {
       "field_name": "applicant_name",
@@ -934,7 +934,7 @@
       "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
       "reviewer_value": "Sarah Jenkins",
       "reviewer_decision": "approved",
-      "reviewer_reason": "Verified by test operator"
+      "reviewer_reason": "Verified applicant_name"
     },
     {
       "field_name": "contact_number",
@@ -978,7 +978,7 @@
       "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
       "reviewer_value": "+14155550192",
       "reviewer_decision": "approved",
-      "reviewer_reason": "Verified by test operator"
+      "reviewer_reason": "Verified contact_number"
     },
     {
       "field_name": "email_address",
@@ -1016,7 +1016,7 @@
       "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
       "reviewer_value": "sarah.j@example.com",
       "reviewer_decision": "approved",
-      "reviewer_reason": "Verified by test operator"
+      "reviewer_reason": "Verified email_address"
     },
     {
       "field_name": "address_location",
@@ -1054,7 +1054,7 @@
       "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
       "reviewer_value": "742 Evergreen Terrace, Springfield",
       "reviewer_decision": "approved",
-      "reviewer_reason": "Verified by test operator"
+      "reviewer_reason": "Verified address_location"
     },
     {
       "field_name": "product_requested",
@@ -1092,7 +1092,7 @@
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
       "reviewer_value": "Standard",
       "reviewer_decision": "approved",
-      "reviewer_reason": "Verified by test operator"
+      "reviewer_reason": "Verified product_requested"
     },
     {
       "field_name": "id_ref_placeholder",
@@ -1136,7 +1136,7 @@
       "decision_reason": "Policy rule: Field sensitivity is 'sensitive'. Human review mandatory.",
       "reviewer_value": "ID-984712",
       "reviewer_decision": "approved",
-      "reviewer_reason": "Verified by test operator"
+      "reviewer_reason": "Verified id_ref_placeholder"
     },
     {
       "field_name": "consent_indicator",
@@ -1186,7 +1186,7 @@
       "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
       "reviewer_value": "YES",
       "reviewer_decision": "approved",
-      "reviewer_reason": "Verified by test operator"
+      "reviewer_reason": "Verified consent_indicator"
     },
     {
       "field_name": "reviewer_status",
@@ -1224,7 +1224,7 @@
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
       "reviewer_value": "PENDING",
       "reviewer_decision": "approved",
-      "reviewer_reason": "Verified by test operator"
+      "reviewer_reason": "Verified reviewer_status"
     },
     {
       "field_name": "form_completeness",
@@ -1262,17 +1262,17 @@
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
       "reviewer_value": "COMPLETE",
       "reviewer_decision": "approved",
-      "reviewer_reason": "Verified by test operator"
+      "reviewer_reason": "Verified form_completeness"
     }
   ],
   "record_status": "approved",
   "audit_events": [
     {
-      "timestamp": "2026-08-31T11:40:54.675080+00:00",
+      "timestamp": "2026-08-31T12:40:55.614928+00:00",
       "actor": "agent",
       "action": "DOCUMENT_PIPELINE_PROCESSED",
       "details": {
-        "run_id": "run-883366ed",
+        "run_id": "run-f4aa66f5",
         "document_id": "CO-001",
         "document_type": "customer_onboarding",
         "quality_status": "pass",
@@ -1283,12 +1283,144 @@
       }
     },
     {
-      "timestamp": "2026-08-31T11:40:54.741131+00:00",
+      "timestamp": "2026-08-31T12:40:55.653525+00:00",
+      "actor": "reviewer",
+      "action": "FIELD_REVIEWED",
+      "details": {
+        "document_id": "CO-001",
+        "field_name": "onboarding_ref",
+        "action": "approved",
+        "reviewer_value": "ONB-2026-101",
+        "reviewer_reason": "Verified onboarding_ref"
+      }
+    },
+    {
+      "timestamp": "2026-08-31T12:40:55.654081+00:00",
+      "actor": "reviewer",
+      "action": "FIELD_REVIEWED",
+      "details": {
+        "document_id": "CO-001",
+        "field_name": "application_date",
+        "action": "approved",
+        "reviewer_value": "2026-08-10",
+        "reviewer_reason": "Verified application_date"
+      }
+    },
+    {
+      "timestamp": "2026-08-31T12:40:55.654549+00:00",
+      "actor": "reviewer",
+      "action": "FIELD_REVIEWED",
+      "details": {
+        "document_id": "CO-001",
+        "field_name": "applicant_name",
+        "action": "approved",
+        "reviewer_value": "Sarah Jenkins",
+        "reviewer_reason": "Verified applicant_name"
+      }
+    },
+    {
+      "timestamp": "2026-08-31T12:40:55.654848+00:00",
+      "actor": "reviewer",
+      "action": "FIELD_REVIEWED",
+      "details": {
+        "document_id": "CO-001",
+        "field_name": "contact_number",
+        "action": "approved",
+        "reviewer_value": "+14155550192",
+        "reviewer_reason": "Verified contact_number"
+      }
+    },
+    {
+      "timestamp": "2026-08-31T12:40:55.655161+00:00",
+      "actor": "reviewer",
+      "action": "FIELD_REVIEWED",
+      "details": {
+        "document_id": "CO-001",
+        "field_name": "email_address",
+        "action": "approved",
+        "reviewer_value": "sarah.j@example.com",
+        "reviewer_reason": "Verified email_address"
+      }
+    },
+    {
+      "timestamp": "2026-08-31T12:40:55.655488+00:00",
+      "actor": "reviewer",
+      "action": "FIELD_REVIEWED",
+      "details": {
+        "document_id": "CO-001",
+        "field_name": "address_location",
+        "action": "approved",
+        "reviewer_value": "742 Evergreen Terrace, Springfield",
+        "reviewer_reason": "Verified address_location"
+      }
+    },
+    {
+      "timestamp": "2026-08-31T12:40:55.655797+00:00",
+      "actor": "reviewer",
+      "action": "FIELD_REVIEWED",
+      "details": {
+        "document_id": "CO-001",
+        "field_name": "product_requested",
+        "action": "approved",
+        "reviewer_value": "Standard",
+        "reviewer_reason": "Verified product_requested"
+      }
+    },
+    {
+      "timestamp": "2026-08-31T12:40:55.657780+00:00",
+      "actor": "reviewer",
+      "action": "FIELD_REVIEWED",
+      "details": {
+        "document_id": "CO-001",
+        "field_name": "id_ref_placeholder",
+        "action": "approved",
+        "reviewer_value": "ID-984712",
+        "reviewer_reason": "Verified id_ref_placeholder"
+      }
+    },
+    {
+      "timestamp": "2026-08-31T12:40:55.659468+00:00",
+      "actor": "reviewer",
+      "action": "FIELD_REVIEWED",
+      "details": {
+        "document_id": "CO-001",
+        "field_name": "consent_indicator",
+        "action": "approved",
+        "reviewer_value": "YES",
+        "reviewer_reason": "Verified consent_indicator"
+      }
+    },
+    {
+      "timestamp": "2026-08-31T12:40:55.661003+00:00",
+      "actor": "reviewer",
+      "action": "FIELD_REVIEWED",
+      "details": {
+        "document_id": "CO-001",
+        "field_name": "reviewer_status",
+        "action": "approved",
+        "reviewer_value": "PENDING",
+        "reviewer_reason": "Verified reviewer_status"
+      }
+    },
+    {
+      "timestamp": "2026-08-31T12:40:55.662415+00:00",
+      "actor": "reviewer",
+      "action": "FIELD_REVIEWED",
+      "details": {
+        "document_id": "CO-001",
+        "field_name": "form_completeness",
+        "action": "approved",
+        "reviewer_value": "COMPLETE",
+        "reviewer_reason": "Verified form_completeness"
+      }
+    },
+    {
+      "timestamp": "2026-08-31T12:40:55.663821+00:00",
       "actor": "reviewer",
       "action": "DOCUMENT_REVIEW_SUBMITTED",
       "details": {
         "document_id": "CO-001",
-        "reviewer_id": "op-test",
+        "reviewer_id": "reviewer-1",
         "fields_reviewed": 11,
         "final_record_status": "approved"
       }

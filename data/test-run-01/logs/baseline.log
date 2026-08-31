@@ -24,7 +24,7 @@ Failures:          0
 Total Fields:      110
 Correct Fields:    104
 Verified Accuracy: 94.55%
-Runtime Seconds:   1.1513 sec
+Runtime Seconds:   2.3929 sec
 Output Summary:    data/test-run-01/outputs/baseline\summary.json
 Log Captured To:   data/test-run-01/logs\baseline.log
 ==========================================================================

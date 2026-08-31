@@ -1,7 +1,7 @@
 {
   "test_run_id": "test-run-01",
   "dataset_version": "2.0.0",
-  "timestamp": "2026-08-31T00:13:07Z",
+  "timestamp": "2026-08-31T13:41:13Z",
   "total_files_evaluated": 11,
   "total_fields_evaluated": 110,
   "failed_cases_count": 0,
@@ -9,12 +9,12 @@
   "baseline_workflow": {
     "raw_extraction_accuracy_percent": 94.55,
     "reviewer_approved_accuracy_percent": 94.55,
-    "required_field_weighted_accuracy_percent": 94.12,
+    "required_field_weighted_accuracy_percent": 94.65,
     "escalation_recall_percent": null,
     "unnecessary_review_rate_percent": null,
     "schema_validation_pass_rate_percent": 100.0,
-    "total_runtime_seconds": 1.1513,
-    "avg_duration_per_doc_seconds": 0.1047,
+    "total_runtime_seconds": 2.3929,
+    "avg_duration_per_doc_seconds": 0.2175,
     "cost_usd": 0.0,
     "human_reviewer_clock_time": "Unmeasured (N/A)"
   },
@@ -23,18 +23,18 @@
     "reviewer_approved_accuracy_percent": 100.0,
     "required_field_weighted_accuracy_percent": 100.0,
     "escalation_recall_percent": 100.0,
-    "unnecessary_review_rate_percent": 0.0,
+    "unnecessary_review_rate_percent": 45.45,
     "schema_validation_pass_rate_percent": 100.0,
-    "total_runtime_seconds": 1.4395,
-    "avg_duration_per_doc_seconds": 0.1309,
+    "total_runtime_seconds": 3.8501,
+    "avg_duration_per_doc_seconds": 0.35,
     "cost_usd": 0.0,
     "human_reviewer_clock_time": "Unmeasured (N/A)"
   },
   "measured_advantages": {
     "reviewer_approved_accuracy_delta_percent": 5.45,
-    "required_weighted_accuracy_delta_percent": 5.88,
+    "required_weighted_accuracy_delta_percent": 5.35,
     "escalation_recall_percent": 100.0,
-    "unnecessary_review_rate_percent": 0.0,
-    "latency_overhead_per_doc_seconds": 0.0262
+    "unnecessary_review_rate_percent": 45.45,
+    "latency_overhead_per_doc_seconds": 0.1325
   }
 }

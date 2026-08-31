@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HandWrite Verify — Human Reviewer Dashboard</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --card-border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --success: #22c55e;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --purple: #a855f7;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 24px;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 24px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .queue-item {
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid transparent;
+    }
+    .queue-item:hover, .queue-item.active {
+      border-color: var(--accent);
+      background: rgba(56, 189, 248, 0.1);
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .badge-approved { background: rgba(34, 197, 94, 0.2); color: var(--success); }
+    .badge-awaiting_review { background: rgba(245, 158, 11, 0.2); color: var(--warning); }
+    .badge-rescan_required { background: rgba(239, 68, 68, 0.2); color: var(--danger); }
+    .badge-personal, .badge-sensitive { background: rgba(168, 85, 247, 0.2); color: var(--purple); }
+    .badge-public, .badge-internal { background: rgba(148, 163, 184, 0.2); color: var(--text-muted); }
+
+    .field-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+    .field-table th, .field-table td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .field-table th { color: var(--text-muted); font-size: 12px; }
+
+    .btn {
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: none;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-right: 4px;
+    }
+    .btn-approve { background: var(--success); color: #000; }
+    .btn-correct { background: var(--warning); color: #000; }
+    .btn-reject { background: var(--danger); color: #fff; }
+    .btn-rescan { background: var(--purple); color: #fff; }
+    .btn-export { background: var(--accent); color: #000; padding: 10px 18px; font-size: 14px; }
+
+    input, textarea {
+      background: var(--bg);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .alert {
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      display: none;
+    }
+    .alert-danger { background: rgba(239, 68, 68, 0.2); border: 1px solid var(--danger); color: #fca5a5; }
+    .alert-success { background: rgba(34, 197, 94, 0.2); border: 1px solid var(--success); color: #86efac; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <h1 style="margin:0; font-size:24px;">HandWrite Verify — Reviewer Dashboard</h1>
+      <p style="margin:4px 0 0; color:var(--text-muted); font-size:14px;">Evidence-linked human reviewer verification workspace</p>
+    </div>
+    <div>
+      <button class="btn btn-export" onclick="exportRecord('json')">Export JSON</button>
+      <button class="btn btn-export" onclick="exportRecord('csv')">Export CSV</button>
+    </div>
+  </div>
+
+  <div id="alertBox" class="alert"></div>
+
+  <div class="grid">
+    <!-- Queue Sidebar -->
+    <div class="card">
+      <h3 style="margin-top:0;">Review Queue</h3>
+      <div id="queueList">Loading queue...</div>
+    </div>
+
+    <!-- Document Detail View -->
+    <div class="card">
+      <div id="detailHeader" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <div>
+          <h2 id="docTitle" style="margin:0;">Select a Document</h2>
+          <span id="docStatusBadge" class="badge" style="display:none;"></span>
+        </div>
+        <button class="btn btn-rescan" id="rescanDocBtn" style="display:none;" onclick="promptRescanDoc()">Request Document Rescan</button>
+      </div>
+
+      <div id="fieldContent">
+        <p style="color:var(--text-muted);">Choose a record from the review queue on the left to inspect evidence and review fields.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let activeDocId = null;
+    let activeRecord = null;
+
+    async function loadQueue() {
+      try {
+        const res = await fetch('/api/documents/queue');
+        const records = await res.json();
+        const container = document.getElementById('queueList');
+        container.innerHTML = '';
+
+        if (records.length === 0) {
+          container.innerHTML = '<p style="color:var(--text-muted);">No document records found.</p>';
+          return;
+        }
+
+        records.forEach(rec => {
+          const item = document.createElement('div');
+          item.className = `queue-item ${rec.document_id === activeDocId ? 'active' : ''}`;
+          item.onclick = () => loadDocumentDetail(rec.document_id);
+          item.innerHTML = `
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <strong>${rec.document_id}</strong>
+              <span class="badge badge-${rec.record_status}">${rec.record_status}</span>
+            </div>
+            <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">
+              ${rec.document_type} • ${rec.field_results ? rec.field_results.length : 0} fields
+            </div>
+          `;
+          container.appendChild(item);
+        });
+      } catch (err) {
+        console.error("Queue load error:", err);
+      }
+    }
+
+    async function loadDocumentDetail(docId) {
+      activeDocId = docId;
+      loadQueue();
+      showAlert('', 'none');
+
+      try {
+        const res = await fetch(`/api/documents/${docId}`);
+        activeRecord = await res.json();
+
+        document.getElementById('docTitle').innerText = `${activeRecord.document_id} (${activeRecord.document_type})`;
+        const badge = document.getElementById('docStatusBadge');
+        badge.className = `badge badge-${activeRecord.record_status}`;
+        badge.innerText = activeRecord.record_status;
+        badge.style.display = 'inline-block';
+        document.getElementById('rescanDocBtn').style.display = 'inline-block';
+
+        renderFieldsTable(activeRecord.field_results);
+      } catch (err) {
+        console.error("Detail load error:", err);
+      }
+    }
+
+    function renderFieldsTable(fields) {
+      const container = document.getElementById('fieldContent');
+      if (!fields || fields.length === 0) {
+        container.innerHTML = '<p>No fields in record.</p>';
+        return;
+      }
+
+      let html = `
+        <table class="field-table">
+          <thead>
+            <tr>
+              <th>Field Name</th>
+              <th>Sensitivity</th>
+              <th>Proposed / Normalized</th>
+              <th>Confidence</th>
+              <th>Triage Decision</th>
+              <th>Reviewer Action</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      fields.forEach(f => {
+        const isSensitive = ['personal', 'sensitive'].includes(f.sensitivity);
+        const cropUri = f.evidence ? f.evidence.crop_reference : '';
+        const propVal = f.proposed_value !== null ? f.proposed_value : '<em style="color:#ef4444;">null (missing)</em>';
+        const normVal = f.normalized_value !== null ? f.normalized_value : propVal;
+
+        html += `
+          <tr>
+            <td>
+              <strong>${f.display_name}</strong><br>
+              <small style="color:var(--text-muted);">${f.field_name}</small>
+            </td>
+            <td>
+              <span class="badge badge-${f.sensitivity}">${f.sensitivity}</span>
+              ${f.mandatory_human_review ? '<br><small style="color:var(--purple);">mandatory review</small>' : ''}
+            </td>
+            <td>
+              <div>Raw: <code>${propVal}</code></div>
+              <div style="font-size:12px; color:var(--text-muted);">Norm: <code>${normVal}</code></div>
+              ${cropUri ? `<div style="margin-top:4px;"><a href="${cropUri}" target="_blank" style="color:var(--accent); font-size:11px;">View Crop Evidence</a></div>` : ''}
+            </td>
+            <td>
+              <strong>${(f.confidence * 100).toFixed(0)}%</strong>
+            </td>
+            <td>
+              <span class="badge badge-${f.decision}">${f.decision}</span><br>
+              <small style="color:var(--text-muted);">${f.decision_reason || ''}</small>
+            </td>
+            <td>
+              <div id="action-cell-${f.field_name}">
+                <div style="margin-bottom:4px;">
+                  Status: <strong>${f.reviewer_decision}</strong>
+                </div>
+                <button class="btn btn-approve" onclick="submitFieldReview('${f.field_name}', 'approved')">Approve</button>
+                <button class="btn btn-correct" onclick="showCorrectForm('${f.field_name}')">Correct</button>
+                <button class="btn btn-reject" onclick="showRejectForm('${f.field_name}')">Reject</button>
+              </div>
+              <div id="form-cell-${f.field_name}" style="display:none; margin-top:8px;"></div>
+            </td>
+          </tr>
+        `;
+      });
+
+      html += '</tbody></table>';
+      container.innerHTML = html;
+    }
+
+    function showCorrectForm(fieldName) {
+      const formDiv = document.getElementById(`form-cell-${fieldName}`);
+      formDiv.style.display = 'block';
+      formDiv.innerHTML = `
+        <input type="text" id="val-${fieldName}" placeholder="New corrected value..." style="margin-bottom:4px;">
+        <input type="text" id="reason-${fieldName}" placeholder="Reason for correction (required)..." style="margin-bottom:4px;">
+        <button class="btn btn-approve" onclick="submitCorrection('${fieldName}')">Submit Correction</button>
+        <button class="btn" onclick="formDiv.style.display='none'">Cancel</button>
+      `;
+    }
+
+    function showRejectForm(fieldName) {
+      const formDiv = document.getElementById(`form-cell-${fieldName}`);
+      formDiv.style.display = 'block';
+      formDiv.innerHTML = `
+        <input type="text" id="reason-${fieldName}" placeholder="Reason for rejection (required)..." style="margin-bottom:4px;">
+        <button class="btn btn-reject" onclick="submitRejection('${fieldName}')">Confirm Rejection</button>
+        <button class="btn" onclick="formDiv.style.display='none'">Cancel</button>
+      `;
+    }
+
+    async function submitFieldReview(fieldName, action, reviewerValue = null, reviewerReason = null) {
+      try {
+        const payload = {
+          reviewer_id: "reviewer-1",
+          field_reviews: [{
+            field_name: fieldName,
+            action: action,
+            reviewer_value: reviewerValue,
+            reviewer_reason: reviewerReason
+          }]
+        };
+
+        const res = await fetch(`/api/documents/${activeDocId}/review`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (!res.ok) {
+          const err = await res.json();
+          showAlert(err.detail || 'Review submission failed', 'danger');
+          return;
+        }
+
+        showAlert(`Field '${fieldName}' updated to ${action}.`, 'success');
+        loadDocumentDetail(activeDocId);
+      } catch (err) {
+        showAlert(err.message, 'danger');
+      }
+    }
+
+    function submitCorrection(fieldName) {
+      const val = document.getElementById(`val-${fieldName}`).value;
+      const reason = document.getElementById(`reason-${fieldName}`).value;
+      if (!reason.trim()) {
+        showAlert('Correction reason is mandatory.', 'danger');
+        return;
+      }
+      submitFieldReview(fieldName, 'corrected', val, reason);
+    }
+
+    function submitRejection(fieldName) {
+      const reason = document.getElementById(`reason-${fieldName}`).value;
+      if (!reason.trim()) {
+        showAlert('Rejection reason is mandatory.', 'danger');
+        return;
+      }
+      submitFieldReview(fieldName, 'rejected', null, reason);
+    }
+
+    async function promptRescanDoc() {
+      const reason = prompt("Enter reason for document-level rescan request (mandatory):");
+      if (!reason || !reason.trim()) {
+        showAlert('Rescan request reason is mandatory.', 'danger');
+        return;
+      }
+
+      try {
+        const payload = {
+          reviewer_id: "reviewer-1",
+          overall_action: "rescan",
+          reason: reason
+        };
+
+        const res = await fetch(`/api/documents/${activeDocId}/review`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (!res.ok) {
+          const err = await res.json();
+          showAlert(err.detail || 'Rescan request failed', 'danger');
+          return;
+        }
+
+        showAlert('Document rescan requested.', 'success');
+        loadDocumentDetail(activeDocId);
+      } catch (err) {
+        showAlert(err.message, 'danger');
+      }
+    }
+
+    async function exportRecord(format) {
+      if (!activeDocId) {
+        showAlert('Select a document first.', 'danger');
+        return;
+      }
+
+      try {
+        const res = await fetch(`/api/documents/${activeDocId}/export?format=${format}`);
+        if (!res.ok) {
+          const err = await res.json();
+          showAlert(`EXPORT BLOCKED: ${err.detail}`, 'danger');
+          return;
+        }
+
+        if (format === 'csv') {
+          const blob = await res.blob();
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `${activeDocId}_export.csv`;
+          a.click();
+        } else {
+          const data = await res.json();
+          const jsonStr = JSON.stringify(data, null, 2);
+          const blob = new Blob([jsonStr], { type: 'application/json' });
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `${activeDocId}_export.json`;
+          a.click();
+        }
+        showAlert(`Successfully exported ${activeDocId} as ${format.toUpperCase()}.`, 'success');
+      } catch (err) {
+        showAlert(err.message, 'danger');
+      }
+    }
+
+    function showAlert(msg, type) {
+      const box = document.getElementById('alertBox');
+      if (type === 'none' || !msg) {
+        box.style.display = 'none';
+        return;
+      }
+      box.className = `alert alert-${type}`;
+      box.innerText = msg;
+      box.style.display = 'block';
+    }
+
+    // Initial load
+    loadQueue();
+  </script>
+</body>
+</html>

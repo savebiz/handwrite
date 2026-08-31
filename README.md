@@ -46,18 +46,35 @@ cp .env.example .env
 # 3. Generate 12 Synthetic Evaluation Forms
 python scripts/generate_synthetic_corpus.py
 
-# 4. Run Baseline Scoring & Unit Test Suite
-python scripts/run_baseline_scoring.py   # Runs single-pass baseline, saves outputs/baseline_results.json
-python scripts/run_pdf_tests.py          # Native PDF document processing tests (5/5 PASS)
-python scripts/run_baseline_tests.py     # Standalone baseline unit tests (5/5 PASS)
-python scripts/run_corpus_tests.py       # Corpus validation tests (19/19 PASS)
-python scripts/run_schema_tests.py       # Schema validation tests (14/14 PASS)
-python tests/test_pipeline.py            # Agent pipeline tests (4/4 PASS)
-python tests/test_api.py                 # FastAPI & Reviewer workflow tests (3/3 PASS)
+# 4. Run Baseline Scoring & Full Test Suite
+python scripts/run_test_run_suite.py   # Unified test harness (baseline, advanced, comparison, walkthrough)
+python scripts/run_reviewer_tests.py    # Human reviewer workflow tests (9/9 PASS)
+python scripts/run_triage_tests.py      # Triage & decision table tests (10/10 PASS)
+python scripts/run_verification_tests.py# Deterministic verification tests (12/12 PASS)
+python scripts/run_extraction_tests.py  # Schema-guided extraction tests (13/13 PASS)
+python scripts/run_intake_quality_tests.py # Enhanced intake quality tests (14/14 PASS)
+python -m pytest                         # Full Pytest suite (108/108 PASS)
 
-# 5. Run FastAPI Backend API
+# 5. Run FastAPI Backend & Reviewer UI Dashboard
 uvicorn app.backend.main:app --reload --port 8000
+# Reviewer Web UI: http://localhost:8000/static/reviewer.html
 ```
+
+---
+
+## 🖥️ Human Reviewer Workflow & Export Guardrails
+
+The reviewer workspace (`http://localhost:8000/static/reviewer.html`) provides a human-in-the-loop review UI:
+- **Evidence-Linked Inspection**: Displays original document image, crop thumbnail URI (`/crops/{doc_id}_{field_name}.png`), proposed vs normalized values, confidence score, verification checks, decision rationale, and sensitivity tags.
+- **Reviewer Actions**:
+  - `approved`: 1-click approval for clean fields.
+  - `corrected`: Manual value entry with **mandatory** reviewer reason (`reviewer_reason`).
+  - `rejected`: Field rejection with **mandatory** reviewer reason.
+  - `rescan`: Document-level rescan request with **mandatory** reviewer reason.
+- **Export Safety Guardrails**:
+  - **Pending Record Export Blocking**: Records in `AWAITING_REVIEW`, `PROCESSING`, or `RESCAN_REQUIRED` status cannot be exported (HTTP 400).
+  - **Sensitive PII Export Guardrail**: Records containing `personal` or `sensitive` fields CANNOT be exported unless every sensitive field has received explicit human approval (`APPROVED` or `CORRECTED`). Attempting export returns HTTP 400.
+  - **Immutable Audit Trail**: Every field decision and review submission appends an immutable audit event (`actor = REVIEWER`) to `record.audit_events` and `logs/audit.jsonl`.
 
 ---
 

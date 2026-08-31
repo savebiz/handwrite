@@ -1,5 +1,5 @@
 {
-  "run_id": "baseline-sample-189b3b31",
+  "run_id": "baseline-sample-0b71da62",
   "document_id": "AXA-ATT-001",
   "document_type": "attendance_register",
   "document_quality": {
@@ -7,12 +7,16 @@
     "issues": [],
     "rescan_required": false
   },
+  "intake_result": null,
+  "extraction_result": null,
+  "verification_result": null,
+  "triage_result": null,
   "field_results": [
     {
       "field_name": "register_ref",
       "display_name": "Register Reference",
-      "proposed_value": "ATT-2020-001",
-      "normalized_value": "ATT-2020-001",
+      "proposed_value": "ATT-2020-001?",
+      "normalized_value": "ATT-2020-001?",
       "confidence": 0.78,
       "decision": "auto_accept",
       "sensitivity": "public",
@@ -136,8 +140,8 @@
     {
       "field_name": "attendance_status",
       "display_name": "Attendance Status",
-      "proposed_value": "PRESENT?",
-      "normalized_value": "PRESENT?",
+      "proposed_value": "PRESENT",
+      "normalized_value": "PRESENT",
       "confidence": 0.78,
       "decision": "auto_accept",
       "sensitivity": "public",
@@ -186,8 +190,8 @@
     {
       "field_name": "time_out",
       "display_name": "Time Out",
-      "proposed_value": "17:00",
-      "normalized_value": "17:00",
+      "proposed_value": "17:00?",
+      "normalized_value": "17:00?",
       "confidence": 0.78,
       "decision": "auto_accept",
       "sensitivity": "internal",

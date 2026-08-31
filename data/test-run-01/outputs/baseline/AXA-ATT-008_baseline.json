@@ -1,5 +1,5 @@
 {
-  "run_id": "baseline-sample-f21e7975",
+  "run_id": "baseline-sample-4485a74a",
   "document_id": "AXA-ATT-008",
   "document_type": "attendance_register",
   "document_quality": {
@@ -7,6 +7,10 @@
     "issues": [],
     "rescan_required": false
   },
+  "intake_result": null,
+  "extraction_result": null,
+  "verification_result": null,
+  "triage_result": null,
   "field_results": [
     {
       "field_name": "register_ref",
@@ -86,8 +90,8 @@
     {
       "field_name": "attendee_name",
       "display_name": "Attendee Name",
-      "proposed_value": "Staff Member 8?",
-      "normalized_value": "Staff Member 8?",
+      "proposed_value": "Staff Member 8",
+      "normalized_value": "Staff Member 8",
       "confidence": 0.78,
       "decision": "human_review",
       "sensitivity": "personal",
@@ -161,8 +165,8 @@
     {
       "field_name": "time_in",
       "display_name": "Time In",
-      "proposed_value": "08:30",
-      "normalized_value": "08:30",
+      "proposed_value": "08:30?",
+      "normalized_value": "08:30?",
       "confidence": 0.78,
       "decision": "auto_accept",
       "sensitivity": "internal",

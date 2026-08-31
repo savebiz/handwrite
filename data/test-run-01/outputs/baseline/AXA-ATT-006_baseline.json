@@ -1,5 +1,5 @@
 {
-  "run_id": "baseline-sample-da93b92e",
+  "run_id": "baseline-sample-9338edaf",
   "document_id": "AXA-ATT-006",
   "document_type": "attendance_register",
   "document_quality": {
@@ -7,6 +7,10 @@
     "issues": [],
     "rescan_required": false
   },
+  "intake_result": null,
+  "extraction_result": null,
+  "verification_result": null,
+  "triage_result": null,
   "field_results": [
     {
       "field_name": "register_ref",
@@ -111,8 +115,8 @@
     {
       "field_name": "staff_ref",
       "display_name": "Staff Reference",
-      "proposed_value": "EMP-10006",
-      "normalized_value": "EMP-10006",
+      "proposed_value": "EMP-10006?",
+      "normalized_value": "EMP-10006?",
       "confidence": 0.78,
       "decision": "human_review",
       "sensitivity": "sensitive",

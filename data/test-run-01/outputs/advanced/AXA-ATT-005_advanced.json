@@ -1,11 +1,685 @@
 {
-  "run_id": "run-b451fe21",
+  "run_id": "run-3d0b86a5",
   "document_id": "AXA-ATT-005",
   "document_type": "attendance_register",
   "document_quality": {
-    "status": "pass",
-    "issues": [],
-    "rescan_required": false
+    "status": "fail",
+    "issues": [
+      "unreadable_region"
+    ],
+    "rescan_required": true
+  },
+  "intake_result": {
+    "run_id": "run-3d0b86a5",
+    "document_id": "AXA-ATT-005",
+    "page_count": 1,
+    "orientation": "portrait",
+    "quality": {
+      "status": "fail",
+      "issues": [
+        "unreadable_region"
+      ],
+      "rescan_required": true
+    },
+    "file_type": "png",
+    "file_size_bytes": 298470,
+    "processing_metadata": {
+      "checks_executed": [
+        "file_type",
+        "readability",
+        "page_count",
+        "blank_page",
+        "blur",
+        "skew",
+        "cut_off",
+        "unreadable_region",
+        "duplicate_page"
+      ],
+      "checks_unavailable": [],
+      "start_time_iso": "2026-08-31T12:41:10.924982+00:00",
+      "page_count": 1,
+      "orientation": "portrait",
+      "image_width": 828,
+      "image_height": 1180,
+      "contrast_stddev": 17.51,
+      "blur_method": "laplacian_variance_pil",
+      "blur_variance": 170.02,
+      "blur_threshold_warn": 50.0,
+      "blur_threshold_fail": 25.0,
+      "skew_method": "row_projection_heuristic",
+      "skew_row_variance": 0.001996,
+      "skew_edge_asymmetry": 0.0014,
+      "border_ink_density": {
+        "top": 0.0076,
+        "bottom": 0.0,
+        "left": 0.0,
+        "right": 0.0
+      },
+      "quadrant_stddevs": [
+        32.25,
+        6.25,
+        7.38,
+        4.14
+      ],
+      "duplicate_page_note": "not_applicable_single_page",
+      "end_time_iso": "2026-08-31T12:41:11.018412+00:00",
+      "duration_ms": 93.43
+    }
+  },
+  "extraction_result": {
+    "agent_version": "1.2.0-extraction",
+    "prompt_version_id": "prompt-schema-guided-v1.0",
+    "adapter_type": "synthetic_test_adapter",
+    "document_type": "attendance_register",
+    "fields": [
+      {
+        "field_name": "register_ref",
+        "display_name": "Register Reference",
+        "proposed_value": "ATT-2020-005",
+        "normalized_value": "ATT-2020-005",
+        "confidence": 0.99,
+        "text_style": "typewritten",
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            100.0,
+            50.0,
+            150.0,
+            400.0
+          ],
+          "crop_reference": "/crops/AXA-ATT-005_register_ref.png"
+        },
+        "sensitivity": "public",
+        "mandatory_human_review": false,
+        "is_unreadable": false,
+        "is_absent": false
+      },
+      {
+        "field_name": "record_date",
+        "display_name": "Record Date",
+        "proposed_value": "2020-08-15",
+        "normalized_value": "2020-08-15",
+        "confidence": 0.99,
+        "text_style": "typewritten",
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            100.0,
+            450.0,
+            150.0,
+            750.0
+          ],
+          "crop_reference": "/crops/AXA-ATT-005_record_date.png"
+        },
+        "sensitivity": "public",
+        "mandatory_human_review": false,
+        "is_unreadable": false,
+        "is_absent": false
+      },
+      {
+        "field_name": "site_department",
+        "display_name": "Site / Department",
+        "proposed_value": "AXA Operations",
+        "normalized_value": "AXA Operations",
+        "confidence": 0.94,
+        "text_style": "handwritten",
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            180.0,
+            50.0,
+            230.0,
+            750.0
+          ],
+          "crop_reference": "/crops/AXA-ATT-005_site_department.png"
+        },
+        "sensitivity": "internal",
+        "mandatory_human_review": false,
+        "is_unreadable": false,
+        "is_absent": false
+      },
+      {
+        "field_name": "attendee_name",
+        "display_name": "Attendee Name",
+        "proposed_value": "Staff Member 5",
+        "normalized_value": "Staff Member 5",
+        "confidence": 0.94,
+        "text_style": "handwritten",
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            260.0,
+            50.0,
+            310.0,
+            750.0
+          ],
+          "crop_reference": "/crops/AXA-ATT-005_attendee_name.png"
+        },
+        "sensitivity": "personal",
+        "mandatory_human_review": true,
+        "is_unreadable": false,
+        "is_absent": false
+      },
+      {
+        "field_name": "staff_ref",
+        "display_name": "Staff Reference",
+        "proposed_value": "EMP-10005",
+        "normalized_value": "EMP-10005",
+        "confidence": 0.94,
+        "text_style": "handwritten",
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            340.0,
+            50.0,
+            390.0,
+            400.0
+          ],
+          "crop_reference": "/crops/AXA-ATT-005_staff_ref.png"
+        },
+        "sensitivity": "sensitive",
+        "mandatory_human_review": true,
+        "is_unreadable": false,
+        "is_absent": false
+      },
+      {
+        "field_name": "attendance_status",
+        "display_name": "Attendance Status",
+        "proposed_value": "PRESENT",
+        "normalized_value": "PRESENT",
+        "confidence": 0.94,
+        "text_style": "handwritten",
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            340.0,
+            450.0,
+            390.0,
+            750.0
+          ],
+          "crop_reference": "/crops/AXA-ATT-005_attendance_status.png"
+        },
+        "sensitivity": "public",
+        "mandatory_human_review": false,
+        "is_unreadable": false,
+        "is_absent": false
+      },
+      {
+        "field_name": "time_in",
+        "display_name": "Time In",
+        "proposed_value": "08:30",
+        "normalized_value": "08:30",
+        "confidence": 0.94,
+        "text_style": "handwritten",
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            420.0,
+            50.0,
+            470.0,
+            380.0
+          ],
+          "crop_reference": "/crops/AXA-ATT-005_time_in.png"
+        },
+        "sensitivity": "internal",
+        "mandatory_human_review": false,
+        "is_unreadable": false,
+        "is_absent": false
+      },
+      {
+        "field_name": "time_out",
+        "display_name": "Time Out",
+        "proposed_value": "17:00",
+        "normalized_value": "17:00",
+        "confidence": 0.94,
+        "text_style": "handwritten",
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            420.0,
+            400.0,
+            470.0,
+            750.0
+          ],
+          "crop_reference": "/crops/AXA-ATT-005_time_out.png"
+        },
+        "sensitivity": "internal",
+        "mandatory_human_review": false,
+        "is_unreadable": false,
+        "is_absent": false
+      },
+      {
+        "field_name": "supervisor_notes",
+        "display_name": "Supervisor Notes",
+        "proposed_value": "Attendance verified",
+        "normalized_value": "Attendance verified",
+        "confidence": 0.94,
+        "text_style": "handwritten",
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            500.0,
+            50.0,
+            600.0,
+            750.0
+          ],
+          "crop_reference": "/crops/AXA-ATT-005_supervisor_notes.png"
+        },
+        "sensitivity": "public",
+        "mandatory_human_review": false,
+        "is_unreadable": false,
+        "is_absent": false
+      },
+      {
+        "field_name": "form_completeness",
+        "display_name": "Form Completeness",
+        "proposed_value": "COMPLETE",
+        "normalized_value": "COMPLETE",
+        "confidence": 0.94,
+        "text_style": "handwritten",
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            630.0,
+            50.0,
+            680.0,
+            750.0
+          ],
+          "crop_reference": "/crops/AXA-ATT-005_form_completeness.png"
+        },
+        "sensitivity": "internal",
+        "mandatory_human_review": false,
+        "is_unreadable": false,
+        "is_absent": false
+      }
+    ],
+    "total_expected_fields": 10,
+    "extracted_fields_count": 10,
+    "unreadable_fields_count": 0,
+    "absent_fields_count": 0,
+    "extraction_metadata": {
+      "image_path": "data/test-run-01/renders\\ALL_ATTENDANCE_2017-2020_5.png",
+      "issues_applied": [],
+      "zero_fabrication_enforced": true
+    }
+  },
+  "verification_result": {
+    "agent_version": "1.3.0-verification",
+    "document_type": "attendance_register",
+    "checks": [
+      {
+        "rule_id": "RULE-REQ-001",
+        "result": "pass",
+        "message": "Required field 'Register Reference' present.",
+        "field_name": "register_ref"
+      },
+      {
+        "rule_id": "RULE-PAT-003",
+        "result": "pass",
+        "message": "Matches pattern '^ATT-\\d{4}-\\d{3}$'.",
+        "field_name": "register_ref"
+      },
+      {
+        "rule_id": "RULE-REQ-001",
+        "result": "pass",
+        "message": "Required field 'Record Date' present.",
+        "field_name": "record_date"
+      },
+      {
+        "rule_id": "RULE-DATE-002",
+        "result": "pass",
+        "message": "Valid ISO-8601 date string.",
+        "field_name": "record_date"
+      },
+      {
+        "rule_id": "RULE-REQ-001",
+        "result": "pass",
+        "message": "Required field 'Site / Department' present.",
+        "field_name": "site_department"
+      },
+      {
+        "rule_id": "RULE-REQ-001",
+        "result": "pass",
+        "message": "Required field 'Attendee Name' present.",
+        "field_name": "attendee_name"
+      },
+      {
+        "rule_id": "RULE-SENS-006",
+        "result": "warning",
+        "message": "Field classified as 'personal' — mandatory human review required.",
+        "field_name": "attendee_name"
+      },
+      {
+        "rule_id": "RULE-REQ-001",
+        "result": "pass",
+        "message": "Required field 'Staff Reference' present.",
+        "field_name": "staff_ref"
+      },
+      {
+        "rule_id": "RULE-PAT-003",
+        "result": "pass",
+        "message": "Matches pattern '^EMP-\\d{5}$'.",
+        "field_name": "staff_ref"
+      },
+      {
+        "rule_id": "RULE-SENS-006",
+        "result": "warning",
+        "message": "Field classified as 'sensitive' — mandatory human review required.",
+        "field_name": "staff_ref"
+      },
+      {
+        "rule_id": "RULE-REQ-001",
+        "result": "pass",
+        "message": "Required field 'Attendance Status' present.",
+        "field_name": "attendance_status"
+      },
+      {
+        "rule_id": "RULE-VOCAB-004",
+        "result": "pass",
+        "message": "Value in controlled vocabulary.",
+        "field_name": "attendance_status"
+      },
+      {
+        "rule_id": "RULE-PAT-003",
+        "result": "pass",
+        "message": "Matches pattern '^[0-2][0-9]:[0-5][0-9]$'.",
+        "field_name": "time_in"
+      },
+      {
+        "rule_id": "RULE-PAT-003",
+        "result": "pass",
+        "message": "Matches pattern '^[0-2][0-9]:[0-5][0-9]$'.",
+        "field_name": "time_out"
+      },
+      {
+        "rule_id": "RULE-REQ-001",
+        "result": "pass",
+        "message": "Required field 'Form Completeness' present.",
+        "field_name": "form_completeness"
+      },
+      {
+        "rule_id": "RULE-VOCAB-004",
+        "result": "pass",
+        "message": "Value in controlled vocabulary.",
+        "field_name": "form_completeness"
+      },
+      {
+        "rule_id": "RULE-CROSS-005",
+        "result": "pass",
+        "message": "Time out is after or equal to time in.",
+        "field_name": "time_out"
+      }
+    ],
+    "field_checks": {
+      "register_ref": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field 'Register Reference' present.",
+          "field_name": "register_ref"
+        },
+        {
+          "rule_id": "RULE-PAT-003",
+          "result": "pass",
+          "message": "Matches pattern '^ATT-\\d{4}-\\d{3}$'.",
+          "field_name": "register_ref"
+        }
+      ],
+      "record_date": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field 'Record Date' present.",
+          "field_name": "record_date"
+        },
+        {
+          "rule_id": "RULE-DATE-002",
+          "result": "pass",
+          "message": "Valid ISO-8601 date string.",
+          "field_name": "record_date"
+        }
+      ],
+      "site_department": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field 'Site / Department' present.",
+          "field_name": "site_department"
+        }
+      ],
+      "attendee_name": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field 'Attendee Name' present.",
+          "field_name": "attendee_name"
+        },
+        {
+          "rule_id": "RULE-SENS-006",
+          "result": "warning",
+          "message": "Field classified as 'personal' — mandatory human review required.",
+          "field_name": "attendee_name"
+        }
+      ],
+      "staff_ref": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field 'Staff Reference' present.",
+          "field_name": "staff_ref"
+        },
+        {
+          "rule_id": "RULE-PAT-003",
+          "result": "pass",
+          "message": "Matches pattern '^EMP-\\d{5}$'.",
+          "field_name": "staff_ref"
+        },
+        {
+          "rule_id": "RULE-SENS-006",
+          "result": "warning",
+          "message": "Field classified as 'sensitive' — mandatory human review required.",
+          "field_name": "staff_ref"
+        }
+      ],
+      "attendance_status": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field 'Attendance Status' present.",
+          "field_name": "attendance_status"
+        },
+        {
+          "rule_id": "RULE-VOCAB-004",
+          "result": "pass",
+          "message": "Value in controlled vocabulary.",
+          "field_name": "attendance_status"
+        }
+      ],
+      "time_in": [
+        {
+          "rule_id": "RULE-PAT-003",
+          "result": "pass",
+          "message": "Matches pattern '^[0-2][0-9]:[0-5][0-9]$'.",
+          "field_name": "time_in"
+        }
+      ],
+      "time_out": [
+        {
+          "rule_id": "RULE-PAT-003",
+          "result": "pass",
+          "message": "Matches pattern '^[0-2][0-9]:[0-5][0-9]$'.",
+          "field_name": "time_out"
+        },
+        {
+          "rule_id": "RULE-CROSS-005",
+          "result": "pass",
+          "message": "Time out is after or equal to time in.",
+          "field_name": "time_out"
+        }
+      ],
+      "supervisor_notes": [],
+      "form_completeness": [
+        {
+          "rule_id": "RULE-REQ-001",
+          "result": "pass",
+          "message": "Required field 'Form Completeness' present.",
+          "field_name": "form_completeness"
+        },
+        {
+          "rule_id": "RULE-VOCAB-004",
+          "result": "pass",
+          "message": "Value in controlled vocabulary.",
+          "field_name": "form_completeness"
+        }
+      ]
+    },
+    "normalized_values": {
+      "register_ref": "ATT-2020-005",
+      "record_date": "2020-08-15",
+      "site_department": "AXA Operations",
+      "attendee_name": "Staff Member 5",
+      "staff_ref": "EMP-10005",
+      "attendance_status": "PRESENT",
+      "time_in": "08:30",
+      "time_out": "17:00",
+      "supervisor_notes": "Attendance verified",
+      "form_completeness": "COMPLETE"
+    },
+    "value_transformations": [],
+    "total_checks_run": 17,
+    "passed_checks_count": 15,
+    "failed_checks_count": 0,
+    "warning_checks_count": 2,
+    "verification_metadata": {
+      "rules_evaluated": [
+        "RULE-REQ-001",
+        "RULE-DATE-002",
+        "RULE-PAT-003",
+        "RULE-VOCAB-004",
+        "RULE-CROSS-005",
+        "RULE-SENS-006",
+        "RULE-CONSENT-007",
+        "RULE-MISSING-008",
+        "RULE-NORM-009"
+      ]
+    }
+  },
+  "triage_result": {
+    "agent_version": "1.4.0-triage",
+    "configuration_version": "triage-policy-v1.0-conf0.85",
+    "confidence_threshold": 0.85,
+    "record_status": "rescan_required",
+    "record_rationale": "Document quality check failed or scan unreadable — rescan required.",
+    "field_decisions": [
+      {
+        "field_name": "register_ref",
+        "decision": "rescan_required",
+        "rationale": "Document quality check failed — rescan required.",
+        "triggered_rules": [
+          "QUALITY_CHECK_FAILED"
+        ],
+        "confidence": 0.99,
+        "sensitivity": "public"
+      },
+      {
+        "field_name": "record_date",
+        "decision": "rescan_required",
+        "rationale": "Document quality check failed — rescan required.",
+        "triggered_rules": [
+          "QUALITY_CHECK_FAILED"
+        ],
+        "confidence": 0.99,
+        "sensitivity": "public"
+      },
+      {
+        "field_name": "site_department",
+        "decision": "rescan_required",
+        "rationale": "Document quality check failed — rescan required.",
+        "triggered_rules": [
+          "QUALITY_CHECK_FAILED"
+        ],
+        "confidence": 0.94,
+        "sensitivity": "internal"
+      },
+      {
+        "field_name": "attendee_name",
+        "decision": "rescan_required",
+        "rationale": "Document quality check failed — rescan required.",
+        "triggered_rules": [
+          "QUALITY_CHECK_FAILED"
+        ],
+        "confidence": 0.94,
+        "sensitivity": "personal"
+      },
+      {
+        "field_name": "staff_ref",
+        "decision": "rescan_required",
+        "rationale": "Document quality check failed — rescan required.",
+        "triggered_rules": [
+          "QUALITY_CHECK_FAILED"
+        ],
+        "confidence": 0.94,
+        "sensitivity": "sensitive"
+      },
+      {
+        "field_name": "attendance_status",
+        "decision": "rescan_required",
+        "rationale": "Document quality check failed — rescan required.",
+        "triggered_rules": [
+          "QUALITY_CHECK_FAILED"
+        ],
+        "confidence": 0.94,
+        "sensitivity": "public"
+      },
+      {
+        "field_name": "time_in",
+        "decision": "rescan_required",
+        "rationale": "Document quality check failed — rescan required.",
+        "triggered_rules": [
+          "QUALITY_CHECK_FAILED"
+        ],
+        "confidence": 0.94,
+        "sensitivity": "internal"
+      },
+      {
+        "field_name": "time_out",
+        "decision": "rescan_required",
+        "rationale": "Document quality check failed — rescan required.",
+        "triggered_rules": [
+          "QUALITY_CHECK_FAILED"
+        ],
+        "confidence": 0.94,
+        "sensitivity": "internal"
+      },
+      {
+        "field_name": "supervisor_notes",
+        "decision": "rescan_required",
+        "rationale": "Document quality check failed — rescan required.",
+        "triggered_rules": [
+          "QUALITY_CHECK_FAILED"
+        ],
+        "confidence": 0.94,
+        "sensitivity": "public"
+      },
+      {
+        "field_name": "form_completeness",
+        "decision": "rescan_required",
+        "rationale": "Document quality check failed — rescan required.",
+        "triggered_rules": [
+          "QUALITY_CHECK_FAILED"
+        ],
+        "confidence": 0.94,
+        "sensitivity": "internal"
+      }
+    ],
+    "total_fields": 10,
+    "auto_accepted_count": 0,
+    "human_review_count": 0,
+    "rescan_required_count": 10,
+    "triage_metadata": {
+      "quality_status": "fail",
+      "quality_rescan_required": true
+    }
   },
   "field_results": [
     {
@@ -13,10 +687,10 @@
       "display_name": "Register Reference",
       "proposed_value": "ATT-2020-005",
       "normalized_value": "ATT-2020-005",
-      "confidence": 0.94,
-      "decision": "auto_accept",
+      "confidence": 0.99,
+      "decision": "rescan_required",
       "sensitivity": "public",
-      "text_style": "handwritten",
+      "text_style": "typewritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -31,17 +705,19 @@
         {
           "rule_id": "RULE-REQ-001",
           "result": "pass",
-          "message": "Required field present."
+          "message": "Required field 'Register Reference' present.",
+          "field_name": "register_ref"
         },
         {
           "rule_id": "RULE-PAT-003",
           "result": "pass",
-          "message": "Matches pattern '^ATT-\\d{4}-\\d{3}$'."
+          "message": "Matches pattern '^ATT-\\d{4}-\\d{3}$'.",
+          "field_name": "register_ref"
         }
       ],
-      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "decision_reason": "Document quality check failed — rescan required.",
       "reviewer_value": null,
-      "reviewer_decision": "not_required",
+      "reviewer_decision": "pending",
       "reviewer_reason": null
     },
     {
@@ -49,10 +725,10 @@
       "display_name": "Record Date",
       "proposed_value": "2020-08-15",
       "normalized_value": "2020-08-15",
-      "confidence": 0.94,
-      "decision": "auto_accept",
+      "confidence": 0.99,
+      "decision": "rescan_required",
       "sensitivity": "public",
-      "text_style": "handwritten",
+      "text_style": "typewritten",
       "evidence": {
         "page": 1,
         "bounding_box": [
@@ -67,17 +743,19 @@
         {
           "rule_id": "RULE-REQ-001",
           "result": "pass",
-          "message": "Required field present."
+          "message": "Required field 'Record Date' present.",
+          "field_name": "record_date"
         },
         {
           "rule_id": "RULE-DATE-002",
           "result": "pass",
-          "message": "Valid ISO-8601 date string."
+          "message": "Valid ISO-8601 date string.",
+          "field_name": "record_date"
         }
       ],
-      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "decision_reason": "Document quality check failed — rescan required.",
       "reviewer_value": null,
-      "reviewer_decision": "not_required",
+      "reviewer_decision": "pending",
       "reviewer_reason": null
     },
     {
@@ -86,7 +764,7 @@
       "proposed_value": "AXA Operations",
       "normalized_value": "AXA Operations",
       "confidence": 0.94,
-      "decision": "auto_accept",
+      "decision": "rescan_required",
       "sensitivity": "internal",
       "text_style": "handwritten",
       "evidence": {
@@ -103,12 +781,13 @@
         {
           "rule_id": "RULE-REQ-001",
           "result": "pass",
-          "message": "Required field present."
+          "message": "Required field 'Site / Department' present.",
+          "field_name": "site_department"
         }
       ],
-      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "decision_reason": "Document quality check failed — rescan required.",
       "reviewer_value": null,
-      "reviewer_decision": "not_required",
+      "reviewer_decision": "pending",
       "reviewer_reason": null
     },
     {
@@ -117,7 +796,7 @@
       "proposed_value": "Staff Member 5",
       "normalized_value": "Staff Member 5",
       "confidence": 0.94,
-      "decision": "human_review",
+      "decision": "rescan_required",
       "sensitivity": "personal",
       "text_style": "handwritten",
       "evidence": {
@@ -134,15 +813,17 @@
         {
           "rule_id": "RULE-REQ-001",
           "result": "pass",
-          "message": "Required field present."
+          "message": "Required field 'Attendee Name' present.",
+          "field_name": "attendee_name"
         },
         {
           "rule_id": "RULE-SENS-006",
           "result": "warning",
-          "message": "Field classified as 'personal' — mandatory human review required."
+          "message": "Field classified as 'personal' — mandatory human review required.",
+          "field_name": "attendee_name"
         }
       ],
-      "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
+      "decision_reason": "Document quality check failed — rescan required.",
       "reviewer_value": null,
       "reviewer_decision": "pending",
       "reviewer_reason": null
@@ -153,7 +834,7 @@
       "proposed_value": "EMP-10005",
       "normalized_value": "EMP-10005",
       "confidence": 0.94,
-      "decision": "human_review",
+      "decision": "rescan_required",
       "sensitivity": "sensitive",
       "text_style": "handwritten",
       "evidence": {
@@ -170,20 +851,23 @@
         {
           "rule_id": "RULE-REQ-001",
           "result": "pass",
-          "message": "Required field present."
+          "message": "Required field 'Staff Reference' present.",
+          "field_name": "staff_ref"
         },
         {
           "rule_id": "RULE-PAT-003",
           "result": "pass",
-          "message": "Matches pattern '^EMP-\\d{5}$'."
+          "message": "Matches pattern '^EMP-\\d{5}$'.",
+          "field_name": "staff_ref"
         },
         {
           "rule_id": "RULE-SENS-006",
           "result": "warning",
-          "message": "Field classified as 'sensitive' — mandatory human review required."
+          "message": "Field classified as 'sensitive' — mandatory human review required.",
+          "field_name": "staff_ref"
         }
       ],
-      "decision_reason": "Policy rule: Field sensitivity is 'sensitive'. Human review mandatory.",
+      "decision_reason": "Document quality check failed — rescan required.",
       "reviewer_value": null,
       "reviewer_decision": "pending",
       "reviewer_reason": null
@@ -194,7 +878,7 @@
       "proposed_value": "PRESENT",
       "normalized_value": "PRESENT",
       "confidence": 0.94,
-      "decision": "auto_accept",
+      "decision": "rescan_required",
       "sensitivity": "public",
       "text_style": "handwritten",
       "evidence": {
@@ -211,17 +895,19 @@
         {
           "rule_id": "RULE-REQ-001",
           "result": "pass",
-          "message": "Required field present."
+          "message": "Required field 'Attendance Status' present.",
+          "field_name": "attendance_status"
         },
         {
           "rule_id": "RULE-VOCAB-004",
           "result": "pass",
-          "message": "Value in controlled vocabulary."
+          "message": "Value in controlled vocabulary.",
+          "field_name": "attendance_status"
         }
       ],
-      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "decision_reason": "Document quality check failed — rescan required.",
       "reviewer_value": null,
-      "reviewer_decision": "not_required",
+      "reviewer_decision": "pending",
       "reviewer_reason": null
     },
     {
@@ -230,7 +916,7 @@
       "proposed_value": "08:30",
       "normalized_value": "08:30",
       "confidence": 0.94,
-      "decision": "auto_accept",
+      "decision": "rescan_required",
       "sensitivity": "internal",
       "text_style": "handwritten",
       "evidence": {
@@ -247,12 +933,13 @@
         {
           "rule_id": "RULE-PAT-003",
           "result": "pass",
-          "message": "Matches pattern '^[0-2][0-9]:[0-5][0-9]$'."
+          "message": "Matches pattern '^[0-2][0-9]:[0-5][0-9]$'.",
+          "field_name": "time_in"
         }
       ],
-      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "decision_reason": "Document quality check failed — rescan required.",
       "reviewer_value": null,
-      "reviewer_decision": "not_required",
+      "reviewer_decision": "pending",
       "reviewer_reason": null
     },
     {
@@ -261,7 +948,7 @@
       "proposed_value": "17:00",
       "normalized_value": "17:00",
       "confidence": 0.94,
-      "decision": "auto_accept",
+      "decision": "rescan_required",
       "sensitivity": "internal",
       "text_style": "handwritten",
       "evidence": {
@@ -278,12 +965,19 @@
         {
           "rule_id": "RULE-PAT-003",
           "result": "pass",
-          "message": "Matches pattern '^[0-2][0-9]:[0-5][0-9]$'."
+          "message": "Matches pattern '^[0-2][0-9]:[0-5][0-9]$'.",
+          "field_name": "time_out"
+        },
+        {
+          "rule_id": "RULE-CROSS-005",
+          "result": "pass",
+          "message": "Time out is after or equal to time in.",
+          "field_name": "time_out"
         }
       ],
-      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "decision_reason": "Document quality check failed — rescan required.",
       "reviewer_value": null,
-      "reviewer_decision": "not_required",
+      "reviewer_decision": "pending",
       "reviewer_reason": null
     },
     {
@@ -292,7 +986,7 @@
       "proposed_value": "Attendance verified",
       "normalized_value": "Attendance verified",
       "confidence": 0.94,
-      "decision": "auto_accept",
+      "decision": "rescan_required",
       "sensitivity": "public",
       "text_style": "handwritten",
       "evidence": {
@@ -306,9 +1000,9 @@
         "crop_reference": "/crops/AXA-ATT-005_supervisor_notes.png"
       },
       "verification_checks": [],
-      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "decision_reason": "Document quality check failed — rescan required.",
       "reviewer_value": null,
-      "reviewer_decision": "not_required",
+      "reviewer_decision": "pending",
       "reviewer_reason": null
     },
     {
@@ -317,7 +1011,7 @@
       "proposed_value": "COMPLETE",
       "normalized_value": "COMPLETE",
       "confidence": 0.94,
-      "decision": "auto_accept",
+      "decision": "rescan_required",
       "sensitivity": "internal",
       "text_style": "handwritten",
       "evidence": {
@@ -334,35 +1028,37 @@
         {
           "rule_id": "RULE-REQ-001",
           "result": "pass",
-          "message": "Required field present."
+          "message": "Required field 'Form Completeness' present.",
+          "field_name": "form_completeness"
         },
         {
           "rule_id": "RULE-VOCAB-004",
           "result": "pass",
-          "message": "Value in controlled vocabulary."
+          "message": "Value in controlled vocabulary.",
+          "field_name": "form_completeness"
         }
       ],
-      "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
+      "decision_reason": "Document quality check failed — rescan required.",
       "reviewer_value": null,
-      "reviewer_decision": "not_required",
+      "reviewer_decision": "pending",
       "reviewer_reason": null
     }
   ],
-  "record_status": "awaiting_review",
+  "record_status": "rescan_required",
   "audit_events": [
     {
-      "timestamp": "2026-08-30T23:13:06.975692+00:00",
+      "timestamp": "2026-08-31T12:41:11.023365+00:00",
       "actor": "agent",
       "action": "DOCUMENT_PIPELINE_PROCESSED",
       "details": {
-        "run_id": "run-b451fe21",
+        "run_id": "run-3d0b86a5",
         "document_id": "AXA-ATT-005",
         "document_type": "attendance_register",
-        "quality_status": "pass",
-        "record_status": "awaiting_review",
+        "quality_status": "fail",
+        "record_status": "rescan_required",
         "total_fields": 10,
-        "auto_accepted_fields": 8,
-        "human_review_fields": 2
+        "auto_accepted_fields": 0,
+        "human_review_fields": 0
       }
     }
   ],
