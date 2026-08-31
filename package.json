@@ -3,6 +3,7 @@
   "version": "1.30.0",
   "private": true,
   "scripts": {
+    "postinstall": "cd app/frontend && npm install",
     "build": "cd app/frontend && npm run build"
   }
 }

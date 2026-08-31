@@ -1,25 +1,37 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "app/frontend/dist",
-  "framework": "vite",
-  "functions": {
-    "api/**/*.py": {
-      "memory": 1024,
-      "maxDuration": 15
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "app/frontend/dist"
+      }
     }
-  },
-  "rewrites": [
+  ],
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/index.py"
+      "src": "/api/(.*)",
+      "dest": "api/index.py"
     },
     {
-      "source": "/synthetic/(.*)",
-      "destination": "/api/index.py"
+      "src": "/synthetic/(.*)",
+      "dest": "api/index.py"
     },
     {
-      "source": "/crops/(.*)",
-      "destination": "/api/index.py"
+      "src": "/crops/(.*)",
+      "dest": "api/index.py"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "app/frontend/dist/$1"
     }
   ]
 }
