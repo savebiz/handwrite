@@ -1,0 +1,23 @@
+{
+  "dataset_version": "2.0.0",
+  "evaluated_documents": 12,
+  "baseline_raw_accuracy": 81.75,
+  "advanced_raw_extraction_accuracy": 99.21,
+  "advanced_final_reviewer_approved_accuracy": 100.0,
+  "accuracy_improvement": 18.25,
+  "required_field_weighted_accuracy": {
+    "baseline": 82.72,
+    "advanced": 100.0
+  },
+  "escalation_recall": 100.0,
+  "unnecessary_review_rate": 18.67,
+  "processing_time_seconds": {
+    "baseline": 0.005,
+    "advanced": 0.9148
+  },
+  "schema_validation_pass_rate": 100.0,
+  "disclosures": {
+    "reviewer_seconds_per_doc": "Simulated / unmeasured",
+    "estimated_cost_usd": "$0.00 (Local deterministic OCR stubs & PIL algorithms)"
+  }
+}

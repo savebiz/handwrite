@@ -1,5 +1,5 @@
 {
-  "run_id": "run-f4aa66f5",
+  "run_id": "run-1bd017e8",
   "document_id": "CO-001",
   "document_type": "customer_onboarding",
   "document_quality": {
@@ -8,7 +8,7 @@
     "rescan_required": false
   },
   "intake_result": {
-    "run_id": "run-f4aa66f5",
+    "run_id": "run-1bd017e8",
     "document_id": "CO-001",
     "page_count": 1,
     "orientation": "portrait",
@@ -32,7 +32,7 @@
         "duplicate_page"
       ],
       "checks_unavailable": [],
-      "start_time_iso": "2026-08-31T12:40:55.552229+00:00",
+      "start_time_iso": "2026-08-31T12:43:19.939829+00:00",
       "page_count": 1,
       "orientation": "portrait",
       "image_width": 800,
@@ -58,8 +58,8 @@
         9.04
       ],
       "duplicate_page_note": "not_applicable_single_page",
-      "end_time_iso": "2026-08-31T12:40:55.609684+00:00",
-      "duration_ms": 57.45
+      "end_time_iso": "2026-08-31T12:43:20.020359+00:00",
+      "duration_ms": 80.53
     }
   },
   "extraction_result": {
@@ -1268,11 +1268,11 @@
   "record_status": "approved",
   "audit_events": [
     {
-      "timestamp": "2026-08-31T12:40:55.614928+00:00",
+      "timestamp": "2026-08-31T12:43:20.026043+00:00",
       "actor": "agent",
       "action": "DOCUMENT_PIPELINE_PROCESSED",
       "details": {
-        "run_id": "run-f4aa66f5",
+        "run_id": "run-1bd017e8",
         "document_id": "CO-001",
         "document_type": "customer_onboarding",
         "quality_status": "pass",
@@ -1283,7 +1283,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:40:55.653525+00:00",
+      "timestamp": "2026-08-31T12:43:20.060106+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1295,7 +1295,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:40:55.654081+00:00",
+      "timestamp": "2026-08-31T12:43:20.060820+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1307,7 +1307,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:40:55.654549+00:00",
+      "timestamp": "2026-08-31T12:43:20.061595+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1319,7 +1319,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:40:55.654848+00:00",
+      "timestamp": "2026-08-31T12:43:20.062994+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1331,7 +1331,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:40:55.655161+00:00",
+      "timestamp": "2026-08-31T12:43:20.063940+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1343,7 +1343,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:40:55.655488+00:00",
+      "timestamp": "2026-08-31T12:43:20.064623+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1355,7 +1355,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:40:55.655797+00:00",
+      "timestamp": "2026-08-31T12:43:20.065609+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1367,7 +1367,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:40:55.657780+00:00",
+      "timestamp": "2026-08-31T12:43:20.066211+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1379,7 +1379,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:40:55.659468+00:00",
+      "timestamp": "2026-08-31T12:43:20.066868+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1391,7 +1391,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:40:55.661003+00:00",
+      "timestamp": "2026-08-31T12:43:20.067414+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1403,7 +1403,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:40:55.662415+00:00",
+      "timestamp": "2026-08-31T12:43:20.068067+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1415,7 +1415,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:40:55.663821+00:00",
+      "timestamp": "2026-08-31T12:43:20.069147+00:00",
       "actor": "reviewer",
       "action": "DOCUMENT_REVIEW_SUBMITTED",
       "details": {

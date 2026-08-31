@@ -1,0 +1,16 @@
+{
+  "dataset_version": "2.0.0",
+  "total_documents": 12,
+  "total_fields": 126,
+  "raw_automated_extraction_accuracy_percent": 99.21,
+  "final_reviewer_approved_accuracy_percent": 100.0,
+  "required_weighted_accuracy_percent": 100.0,
+  "escalation_recall_percent": 100.0,
+  "unnecessary_review_rate_percent": 18.67,
+  "schema_validation_pass_rate_percent": 100.0,
+  "total_runtime_seconds": 0.9148,
+  "avg_seconds_per_document": 0.0762,
+  "estimated_api_cost_usd": 0.0,
+  "reviewer_seconds_per_document": "Simulated (15s per human_review field)",
+  "failures_count": 0
+}
