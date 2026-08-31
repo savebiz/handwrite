@@ -2,6 +2,18 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.30.0] - 2026-08-31 — Supabase database adapter & serverless deployment update
+
+### Supabase database adapter & serverless deployment update
+- **What changed**: Implemented dual-mode database adapter in `app/backend/db.py` supporting Supabase PostgreSQL (via PostgREST API) with graceful local file fallback. Added `/tmp` filesystem safety for read-only Vercel serverless environments and created `scripts/setup_supabase.sql`.
+- **Why**: Fix HTTP 500 Server Error on Vercel caused by read-only serverless filesystems while retaining 100% offline local testability.
+- **Files/components**: `app/backend/db.py`, `app/backend/main.py`, `scripts/setup_supabase.sql`, `tests/test_supabase_adapter.py`.
+- **Tests and evidence**: Added `tests/test_supabase_adapter.py`; full Pytest test suite passing (**129 / 129 PASSED**).
+- **Decision**: Keep.
+- **Learning**: PostgREST HTTPS REST API allows serverless deployment to Supabase without requiring extra binary PostgreSQL drivers.
+
+---
+
 ## [1.29.0] - 2026-08-31 — Approved field selection and controlled export update
 
 ### Approved field selection and controlled export update

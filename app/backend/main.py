@@ -34,42 +34,36 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# In-memory / file-backed DB store
-DB_DIR = "outputs/db"
-os.makedirs(DB_DIR, exist_ok=True)
-os.makedirs("data/synthetic", exist_ok=True)
-os.makedirs("outputs/crops", exist_ok=True)
-os.makedirs("app/static", exist_ok=True)
+import tempfile
+from app.backend.db import (
+    save_record as save_record_to_db,
+    load_record as load_record_from_db,
+    list_records as list_records_from_db,
+)
 
-app.mount("/synthetic", StaticFiles(directory="data/synthetic"), name="synthetic")
-app.mount("/crops", StaticFiles(directory="outputs/crops"), name="crops")
-app.mount("/static", StaticFiles(directory="app/static", html=True), name="static")
+# Directory creation with read-only serverless filesystem safety
+for d in ["outputs/db", "data/synthetic", "outputs/crops", "app/static"]:
+    try:
+        os.makedirs(d, exist_ok=True)
+    except (OSError, PermissionError):
+        pass
 
+synthetic_dir = "data/synthetic" if os.path.exists("data/synthetic") else os.path.join(tempfile.gettempdir(), "data", "synthetic")
+crops_dir = "outputs/crops" if os.path.exists("outputs/crops") else os.path.join(tempfile.gettempdir(), "outputs", "crops")
+static_dir = "app/static" if os.path.exists("app/static") else os.path.join(tempfile.gettempdir(), "app", "static")
 
-def save_record_to_db(record: DocumentRecord):
-    path = os.path.join(DB_DIR, f"{record.document_id}.json")
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(record.model_dump_json(indent=2))
+for d in [synthetic_dir, crops_dir, static_dir]:
+    try:
+        os.makedirs(d, exist_ok=True)
+    except (OSError, PermissionError):
+        pass
 
-
-def load_record_from_db(doc_id: str) -> Optional[DocumentRecord]:
-    path = os.path.join(DB_DIR, f"{doc_id}.json")
-    if not os.path.exists(path):
-        return None
-    with open(path, "r", encoding="utf-8") as f:
-        return DocumentRecord.model_validate_json(f.read())
-
-
-def list_records_from_db() -> List[DocumentRecord]:
-    records = []
-    if not os.path.exists(DB_DIR):
-        return records
-    for fname in os.listdir(DB_DIR):
-        if fname.endswith(".json"):
-            rec = load_record_from_db(fname[:-5])
-            if rec:
-                records.append(rec)
-    return records
+if os.path.exists(synthetic_dir):
+    app.mount("/synthetic", StaticFiles(directory=synthetic_dir), name="synthetic")
+if os.path.exists(crops_dir):
+    app.mount("/crops", StaticFiles(directory=crops_dir), name="crops")
+if os.path.exists(static_dir):
+    app.mount("/static", StaticFiles(directory=static_dir, html=True), name="static")
 
 
 class FieldReviewAction(BaseModel):
