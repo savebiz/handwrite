@@ -2,6 +2,37 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.27.0] - 2026-08-31 — Submission documentation preparation (`README.md` & `docs/`)
+
+### Stage
+Final Submission Documentation Preparation & Audit
+
+### Documents Created or Updated
+- **`README.md`**: Expanded to explicitly cover all 17 mandatory topics (product name, intended user, bottleneck, why problem matters, primary field-inspection demo, secondary customer-onboarding schema, baseline definition, advanced workflow definition, agent roles & contributions, human-review boundary, data & privacy policy, setup commands, evaluation commands, actual results, limitations, known failure mode, hot take).
+- **`docs/demo-script.md`**: Created 5-minute timed presentation video script covering all 10 required video demonstration points.
+- **`docs/video-shot-list.md`**: Created second-by-second video visual shot list, screen layout, and narration queues.
+- **`docs/submission-checklist.md`**: Created final submission audit checklist certifying codebase, test suite (110/110 PASS), and qualification gate criteria (11/11 VERIFIED).
+- **`docs/known-limitations.md`**: Created technical limitations, system trade-offs, and failure mode analysis.
+- **`docs/hot-take.md`**: Created engineering hot take & philosophy document.
+- **`docs/qualification-gate-checklist.md`**: Updated test metrics and master trajectory index references.
+
+### Evidence Used
+- `outputs/comparison-results.json` (Baseline raw accuracy: 85.71% vs Advanced final accuracy: 100.00%)
+- `evaluation/error-analysis.md` (Hard case analysis for blur, skew, and cutoff)
+- `logs/trajectories/traj-01-planning-orchestration.json` through `traj-09-final-review.json`
+- `tests/` Pytest test suite run outputs (**110 / 110 PASSED**)
+
+### Decisions
+Finalized all submission documentation without modifying application runtime code.
+
+### Remaining Gaps
+None. All 11 qualification gate criteria, 17 README sections, 9 agent trajectories, and submission documentation artifacts are 100% complete and verified.
+
+### Learning
+- Comprehensive, evidence-linked documentation provides complete submission clarity and auditability for competition evaluators.
+
+---
+
 ## [1.26.0] - 2026-08-31 — Reproducibility verification (`docs/reproduction.md`)
 
 ### Stage
