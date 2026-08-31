@@ -1,5 +1,5 @@
 {
-  "run_id": "run-7f9f4d60",
+  "run_id": "run-e5ab561e",
   "document_id": "AXA-ATT-006",
   "document_type": "attendance_register",
   "document_quality": {
@@ -10,7 +10,7 @@
     "rescan_required": true
   },
   "intake_result": {
-    "run_id": "run-7f9f4d60",
+    "run_id": "run-e5ab561e",
     "document_id": "AXA-ATT-006",
     "page_count": 1,
     "orientation": "portrait",
@@ -36,7 +36,7 @@
         "duplicate_page"
       ],
       "checks_unavailable": [],
-      "start_time_iso": "2026-08-31T12:41:11.133885+00:00",
+      "start_time_iso": "2026-08-31T13:01:18.554441+00:00",
       "page_count": 1,
       "orientation": "portrait",
       "image_width": 828,
@@ -62,8 +62,8 @@
         8.4
       ],
       "duplicate_page_note": "not_applicable_single_page",
-      "end_time_iso": "2026-08-31T12:41:11.237090+00:00",
-      "duration_ms": 103.2
+      "end_time_iso": "2026-08-31T13:01:18.654420+00:00",
+      "duration_ms": 99.98
     }
   },
   "extraction_result": {
@@ -320,6 +320,12 @@
         "field_name": "register_ref"
       },
       {
+        "rule_id": "RULE-EVID-010",
+        "result": "pass",
+        "message": "Field evidence bounding box [100.0, 50.0, 150.0, 400.0] is valid.",
+        "field_name": "register_ref"
+      },
+      {
         "rule_id": "RULE-REQ-001",
         "result": "pass",
         "message": "Required field 'Record Date' present.",
@@ -332,9 +338,21 @@
         "field_name": "record_date"
       },
       {
+        "rule_id": "RULE-EVID-010",
+        "result": "pass",
+        "message": "Field evidence bounding box [100.0, 450.0, 150.0, 750.0] is valid.",
+        "field_name": "record_date"
+      },
+      {
         "rule_id": "RULE-REQ-001",
         "result": "pass",
         "message": "Required field 'Site / Department' present.",
+        "field_name": "site_department"
+      },
+      {
+        "rule_id": "RULE-EVID-010",
+        "result": "pass",
+        "message": "Field evidence bounding box [180.0, 50.0, 230.0, 750.0] is valid.",
         "field_name": "site_department"
       },
       {
@@ -347,6 +365,12 @@
         "rule_id": "RULE-SENS-006",
         "result": "warning",
         "message": "Field classified as 'personal' — mandatory human review required.",
+        "field_name": "attendee_name"
+      },
+      {
+        "rule_id": "RULE-EVID-010",
+        "result": "pass",
+        "message": "Field evidence bounding box [260.0, 50.0, 310.0, 750.0] is valid.",
         "field_name": "attendee_name"
       },
       {
@@ -368,6 +392,12 @@
         "field_name": "staff_ref"
       },
       {
+        "rule_id": "RULE-EVID-010",
+        "result": "pass",
+        "message": "Field evidence bounding box [340.0, 50.0, 390.0, 400.0] is valid.",
+        "field_name": "staff_ref"
+      },
+      {
         "rule_id": "RULE-REQ-001",
         "result": "pass",
         "message": "Required field 'Attendance Status' present.",
@@ -380,9 +410,21 @@
         "field_name": "attendance_status"
       },
       {
+        "rule_id": "RULE-EVID-010",
+        "result": "pass",
+        "message": "Field evidence bounding box [340.0, 450.0, 390.0, 750.0] is valid.",
+        "field_name": "attendance_status"
+      },
+      {
         "rule_id": "RULE-PAT-003",
         "result": "pass",
         "message": "Matches pattern '^[0-2][0-9]:[0-5][0-9]$'.",
+        "field_name": "time_in"
+      },
+      {
+        "rule_id": "RULE-EVID-010",
+        "result": "pass",
+        "message": "Field evidence bounding box [420.0, 50.0, 470.0, 380.0] is valid.",
         "field_name": "time_in"
       },
       {
@@ -390,6 +432,18 @@
         "result": "pass",
         "message": "Matches pattern '^[0-2][0-9]:[0-5][0-9]$'.",
         "field_name": "time_out"
+      },
+      {
+        "rule_id": "RULE-EVID-010",
+        "result": "pass",
+        "message": "Field evidence bounding box [420.0, 400.0, 470.0, 750.0] is valid.",
+        "field_name": "time_out"
+      },
+      {
+        "rule_id": "RULE-EVID-010",
+        "result": "pass",
+        "message": "Field evidence bounding box [500.0, 50.0, 600.0, 750.0] is valid.",
+        "field_name": "supervisor_notes"
       },
       {
         "rule_id": "RULE-REQ-001",
@@ -401,6 +455,12 @@
         "rule_id": "RULE-VOCAB-004",
         "result": "pass",
         "message": "Value in controlled vocabulary.",
+        "field_name": "form_completeness"
+      },
+      {
+        "rule_id": "RULE-EVID-010",
+        "result": "pass",
+        "message": "Field evidence bounding box [630.0, 50.0, 680.0, 750.0] is valid.",
         "field_name": "form_completeness"
       },
       {
@@ -423,6 +483,12 @@
           "result": "pass",
           "message": "Matches pattern '^ATT-\\d{4}-\\d{3}$'.",
           "field_name": "register_ref"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [100.0, 50.0, 150.0, 400.0] is valid.",
+          "field_name": "register_ref"
         }
       ],
       "record_date": [
@@ -437,6 +503,12 @@
           "result": "pass",
           "message": "Valid ISO-8601 date string.",
           "field_name": "record_date"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [100.0, 450.0, 150.0, 750.0] is valid.",
+          "field_name": "record_date"
         }
       ],
       "site_department": [
@@ -444,6 +516,12 @@
           "rule_id": "RULE-REQ-001",
           "result": "pass",
           "message": "Required field 'Site / Department' present.",
+          "field_name": "site_department"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [180.0, 50.0, 230.0, 750.0] is valid.",
           "field_name": "site_department"
         }
       ],
@@ -458,6 +536,12 @@
           "rule_id": "RULE-SENS-006",
           "result": "warning",
           "message": "Field classified as 'personal' — mandatory human review required.",
+          "field_name": "attendee_name"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [260.0, 50.0, 310.0, 750.0] is valid.",
           "field_name": "attendee_name"
         }
       ],
@@ -479,6 +563,12 @@
           "result": "warning",
           "message": "Field classified as 'sensitive' — mandatory human review required.",
           "field_name": "staff_ref"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [340.0, 50.0, 390.0, 400.0] is valid.",
+          "field_name": "staff_ref"
         }
       ],
       "attendance_status": [
@@ -493,6 +583,12 @@
           "result": "pass",
           "message": "Value in controlled vocabulary.",
           "field_name": "attendance_status"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [340.0, 450.0, 390.0, 750.0] is valid.",
+          "field_name": "attendance_status"
         }
       ],
       "time_in": [
@@ -500,6 +596,12 @@
           "rule_id": "RULE-PAT-003",
           "result": "pass",
           "message": "Matches pattern '^[0-2][0-9]:[0-5][0-9]$'.",
+          "field_name": "time_in"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [420.0, 50.0, 470.0, 380.0] is valid.",
           "field_name": "time_in"
         }
       ],
@@ -511,13 +613,26 @@
           "field_name": "time_out"
         },
         {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [420.0, 400.0, 470.0, 750.0] is valid.",
+          "field_name": "time_out"
+        },
+        {
           "rule_id": "RULE-CROSS-005",
           "result": "pass",
           "message": "Time out is after or equal to time in.",
           "field_name": "time_out"
         }
       ],
-      "supervisor_notes": [],
+      "supervisor_notes": [
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [500.0, 50.0, 600.0, 750.0] is valid.",
+          "field_name": "supervisor_notes"
+        }
+      ],
       "form_completeness": [
         {
           "rule_id": "RULE-REQ-001",
@@ -529,6 +644,12 @@
           "rule_id": "RULE-VOCAB-004",
           "result": "pass",
           "message": "Value in controlled vocabulary.",
+          "field_name": "form_completeness"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [630.0, 50.0, 680.0, 750.0] is valid.",
           "field_name": "form_completeness"
         }
       ]
@@ -546,8 +667,8 @@
       "form_completeness": "COMPLETE"
     },
     "value_transformations": [],
-    "total_checks_run": 17,
-    "passed_checks_count": 15,
+    "total_checks_run": 27,
+    "passed_checks_count": 25,
     "failed_checks_count": 0,
     "warning_checks_count": 2,
     "verification_metadata": {
@@ -713,6 +834,12 @@
           "result": "pass",
           "message": "Matches pattern '^ATT-\\d{4}-\\d{3}$'.",
           "field_name": "register_ref"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [100.0, 50.0, 150.0, 400.0] is valid.",
+          "field_name": "register_ref"
         }
       ],
       "decision_reason": "Document quality check failed — rescan required.",
@@ -751,6 +878,12 @@
           "result": "pass",
           "message": "Valid ISO-8601 date string.",
           "field_name": "record_date"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [100.0, 450.0, 150.0, 750.0] is valid.",
+          "field_name": "record_date"
         }
       ],
       "decision_reason": "Document quality check failed — rescan required.",
@@ -782,6 +915,12 @@
           "rule_id": "RULE-REQ-001",
           "result": "pass",
           "message": "Required field 'Site / Department' present.",
+          "field_name": "site_department"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [180.0, 50.0, 230.0, 750.0] is valid.",
           "field_name": "site_department"
         }
       ],
@@ -820,6 +959,12 @@
           "rule_id": "RULE-SENS-006",
           "result": "warning",
           "message": "Field classified as 'personal' — mandatory human review required.",
+          "field_name": "attendee_name"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [260.0, 50.0, 310.0, 750.0] is valid.",
           "field_name": "attendee_name"
         }
       ],
@@ -865,6 +1010,12 @@
           "result": "warning",
           "message": "Field classified as 'sensitive' — mandatory human review required.",
           "field_name": "staff_ref"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [340.0, 50.0, 390.0, 400.0] is valid.",
+          "field_name": "staff_ref"
         }
       ],
       "decision_reason": "Document quality check failed — rescan required.",
@@ -903,6 +1054,12 @@
           "result": "pass",
           "message": "Value in controlled vocabulary.",
           "field_name": "attendance_status"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [340.0, 450.0, 390.0, 750.0] is valid.",
+          "field_name": "attendance_status"
         }
       ],
       "decision_reason": "Document quality check failed — rescan required.",
@@ -934,6 +1091,12 @@
           "rule_id": "RULE-PAT-003",
           "result": "pass",
           "message": "Matches pattern '^[0-2][0-9]:[0-5][0-9]$'.",
+          "field_name": "time_in"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [420.0, 50.0, 470.0, 380.0] is valid.",
           "field_name": "time_in"
         }
       ],
@@ -969,6 +1132,12 @@
           "field_name": "time_out"
         },
         {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [420.0, 400.0, 470.0, 750.0] is valid.",
+          "field_name": "time_out"
+        },
+        {
           "rule_id": "RULE-CROSS-005",
           "result": "pass",
           "message": "Time out is after or equal to time in.",
@@ -999,7 +1168,14 @@
         ],
         "crop_reference": "/crops/AXA-ATT-006_supervisor_notes.png"
       },
-      "verification_checks": [],
+      "verification_checks": [
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [500.0, 50.0, 600.0, 750.0] is valid.",
+          "field_name": "supervisor_notes"
+        }
+      ],
       "decision_reason": "Document quality check failed — rescan required.",
       "reviewer_value": null,
       "reviewer_decision": "pending",
@@ -1036,6 +1212,12 @@
           "result": "pass",
           "message": "Value in controlled vocabulary.",
           "field_name": "form_completeness"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [630.0, 50.0, 680.0, 750.0] is valid.",
+          "field_name": "form_completeness"
         }
       ],
       "decision_reason": "Document quality check failed — rescan required.",
@@ -1047,11 +1229,11 @@
   "record_status": "rescan_required",
   "audit_events": [
     {
-      "timestamp": "2026-08-31T12:41:11.242991+00:00",
+      "timestamp": "2026-08-31T13:01:19.017368+00:00",
       "actor": "agent",
       "action": "DOCUMENT_PIPELINE_PROCESSED",
       "details": {
-        "run_id": "run-7f9f4d60",
+        "run_id": "run-e5ab561e",
         "document_id": "AXA-ATT-006",
         "document_type": "attendance_register",
         "quality_status": "fail",

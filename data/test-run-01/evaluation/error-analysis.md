@@ -9,13 +9,13 @@ Evaluated single-pass unverified baseline extraction vs. full advanced agentic p
 
 | Metric Dimension | Single-Pass Baseline | Advanced Agentic Pipeline | Measured Delta / Net Gain |
 |---|---|---|---|
-| **Raw Extraction Accuracy** | 94.55% | 100.00% | Baseline +-5.45% |
-| **Reviewer-Approved Accuracy** | 94.55% | **100.00%** | **+5.45%** |
-| **Required-Field Weighted Accuracy** | 94.65% | **100.00%** | **+5.35%** |
+| **Raw Extraction Accuracy** | 91.82% | 100.00% | Baseline +-8.18% |
+| **Reviewer-Approved Accuracy** | 91.82% | **100.00%** | **+8.18%** |
+| **Required-Field Weighted Accuracy** | 91.98% | **100.00%** | **+8.02%** |
 | **Escalation Recall** | N/A | **100.00%** | **100% PII Isolation** |
 | **Unnecessary Review Rate** | N/A | **45.45%** | Clean throughput |
 | **Schema Validation Pass Rate** | 100.0% | 100.0% | 100% Schema Compliance |
-| **Avg Processing Time / Doc** | 0.2175s | 0.3500s | +0.1325s latency |
+| **Avg Processing Time / Doc** | 0.1174s | 0.8657s | +0.7483s latency |
 | **Compute / API Cost** | $0.00 | $0.00 | $0.00 |
 
 ---
@@ -29,10 +29,10 @@ Evaluated single-pass unverified baseline extraction vs. full advanced agentic p
 | `AXA-ATT-003` | `ALL ATTENDANCE 2017-2020_3.pdf` | `difficult` | 100.0% | 100.0% | **100.0%** | 2 / 10 |
 | `AXA-ATT-004` | `ALL ATTENDANCE 2017-2020_4.pdf` | `clean` | 100.0% | 100.0% | **100.0%** | 10 / 10 |
 | `AXA-ATT-005` | `ALL ATTENDANCE 2017-2020_5.pdf` | `clean` | 100.0% | 100.0% | **100.0%** | 10 / 10 |
-| `AXA-ATT-006` | `ALL ATTENDANCE 2017-2020_6.pdf` | `medium` | 90.0% | 100.0% | **100.0%** | 10 / 10 |
+| `AXA-ATT-006` | `ALL ATTENDANCE 2017-2020_6.pdf` | `medium` | 80.0% | 100.0% | **100.0%** | 10 / 10 |
 | `AXA-ATT-007` | `ALL ATTENDANCE 2017-2020_7.pdf` | `difficult` | 100.0% | 100.0% | **100.0%** | 2 / 10 |
-| `AXA-ATT-008` | `ALL ATTENDANCE 2017-2020_8.pdf` | `medium` | 90.0% | 100.0% | **100.0%** | 10 / 10 |
-| `AXA-ATT-009` | `ALL ATTENDANCE 2017-2020_9.pdf` | `medium` | 100.0% | 100.0% | **100.0%** | 10 / 10 |
+| `AXA-ATT-008` | `ALL ATTENDANCE 2017-2020_8.pdf` | `medium` | 80.0% | 100.0% | **100.0%** | 10 / 10 |
+| `AXA-ATT-009` | `ALL ATTENDANCE 2017-2020_9.pdf` | `medium` | 90.0% | 100.0% | **100.0%** | 10 / 10 |
 | `AXA-ATT-010` | `ALL ATTENDANCE 2017-2020_10.pdf` | `difficult` | 100.0% | 100.0% | **100.0%** | 2 / 10 |
 | `AXA-ATT-011` | `ALL ATTENDANCE 2017-2020_11.pdf` | `clean` | 100.0% | 100.0% | **100.0%** | 2 / 10 |
 

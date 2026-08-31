@@ -1,19 +1,19 @@
 {
   "dataset_version": "2.0.0",
   "evaluated_documents": 12,
-  "baseline_raw_accuracy": 80.16,
+  "baseline_raw_accuracy": 85.71,
   "advanced_raw_extraction_accuracy": 99.21,
   "advanced_final_reviewer_approved_accuracy": 100.0,
-  "accuracy_improvement": 19.84,
+  "accuracy_improvement": 14.29,
   "required_field_weighted_accuracy": {
-    "baseline": 78.4,
+    "baseline": 86.42,
     "advanced": 100.0
   },
   "escalation_recall": 100.0,
   "unnecessary_review_rate": 18.67,
   "processing_time_seconds": {
-    "baseline": 0.0039,
-    "advanced": 2.0157
+    "baseline": 0.0032,
+    "advanced": 2.0493
   },
   "schema_validation_pass_rate": 100.0,
   "disclosures": {

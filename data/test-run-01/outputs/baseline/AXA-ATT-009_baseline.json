@@ -1,5 +1,5 @@
 {
-  "run_id": "baseline-sample-f0018369",
+  "run_id": "baseline-sample-b14e5d84",
   "document_id": "AXA-ATT-009",
   "document_type": "attendance_register",
   "document_quality": {
@@ -40,8 +40,8 @@
     {
       "field_name": "record_date",
       "display_name": "Record Date",
-      "proposed_value": "2020-08-15",
-      "normalized_value": "2020-08-15",
+      "proposed_value": "2020-08-15?",
+      "normalized_value": "2020-08-15?",
       "confidence": 0.78,
       "decision": "auto_accept",
       "sensitivity": "public",

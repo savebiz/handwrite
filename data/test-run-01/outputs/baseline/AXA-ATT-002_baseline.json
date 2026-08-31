@@ -1,5 +1,5 @@
 {
-  "run_id": "baseline-sample-f90d55b7",
+  "run_id": "baseline-sample-85efada9",
   "document_id": "AXA-ATT-002",
   "document_type": "attendance_register",
   "document_quality": {
@@ -40,8 +40,8 @@
     {
       "field_name": "record_date",
       "display_name": "Record Date",
-      "proposed_value": "2020-08-15?",
-      "normalized_value": "2020-08-15?",
+      "proposed_value": "2020-08-15",
+      "normalized_value": "2020-08-15",
       "confidence": 0.78,
       "decision": "auto_accept",
       "sensitivity": "public",
@@ -90,8 +90,8 @@
     {
       "field_name": "attendee_name",
       "display_name": "Attendee Name",
-      "proposed_value": "Staff Member 2",
-      "normalized_value": "Staff Member 2",
+      "proposed_value": "Staff Member 2?",
+      "normalized_value": "Staff Member 2?",
       "confidence": 0.78,
       "decision": "human_review",
       "sensitivity": "personal",
@@ -140,8 +140,8 @@
     {
       "field_name": "attendance_status",
       "display_name": "Attendance Status",
-      "proposed_value": "PRESENT?",
-      "normalized_value": "PRESENT?",
+      "proposed_value": "PRESENT",
+      "normalized_value": "PRESENT",
       "confidence": 0.78,
       "decision": "auto_accept",
       "sensitivity": "public",
@@ -165,8 +165,8 @@
     {
       "field_name": "time_in",
       "display_name": "Time In",
-      "proposed_value": "08:30",
-      "normalized_value": "08:30",
+      "proposed_value": "08:30?",
+      "normalized_value": "08:30?",
       "confidence": 0.78,
       "decision": "auto_accept",
       "sensitivity": "internal",

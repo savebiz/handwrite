@@ -1,5 +1,5 @@
 {
-  "run_id": "baseline-sample-9338edaf",
+  "run_id": "baseline-sample-f90897a1",
   "document_id": "AXA-ATT-006",
   "document_type": "attendance_register",
   "document_quality": {
@@ -65,8 +65,8 @@
     {
       "field_name": "site_department",
       "display_name": "Site / Department",
-      "proposed_value": "AXA Operations",
-      "normalized_value": "AXA Operations",
+      "proposed_value": "AXA Operations?",
+      "normalized_value": "AXA Operations?",
       "confidence": 0.78,
       "decision": "auto_accept",
       "sensitivity": "internal",
@@ -115,8 +115,8 @@
     {
       "field_name": "staff_ref",
       "display_name": "Staff Reference",
-      "proposed_value": "EMP-10006?",
-      "normalized_value": "EMP-10006?",
+      "proposed_value": "EMP-10006",
+      "normalized_value": "EMP-10006",
       "confidence": 0.78,
       "decision": "human_review",
       "sensitivity": "sensitive",
@@ -190,8 +190,8 @@
     {
       "field_name": "time_out",
       "display_name": "Time Out",
-      "proposed_value": "17:00",
-      "normalized_value": "17:00",
+      "proposed_value": "17:00?",
+      "normalized_value": "17:00?",
       "confidence": 0.78,
       "decision": "auto_accept",
       "sensitivity": "internal",

@@ -50,10 +50,10 @@ python scripts/generate_synthetic_corpus.py
 python scripts/run_test_run_suite.py   # Unified test harness (baseline, advanced, comparison, walkthrough)
 python scripts/run_reviewer_tests.py    # Human reviewer workflow tests (9/9 PASS)
 python scripts/run_triage_tests.py      # Triage & decision table tests (10/10 PASS)
-python scripts/run_verification_tests.py# Deterministic verification tests (12/12 PASS)
+python scripts/run_verification_tests.py# Deterministic verification tests (14/14 PASS)
 python scripts/run_extraction_tests.py  # Schema-guided extraction tests (13/13 PASS)
 python scripts/run_intake_quality_tests.py # Enhanced intake quality tests (14/14 PASS)
-python -m pytest                         # Full Pytest suite (108/108 PASS)
+python -m pytest                         # Full Pytest suite (110/110 PASS)
 
 # 5. Run FastAPI Backend & Reviewer UI Dashboard
 uvicorn app.backend.main:app --reload --port 8000

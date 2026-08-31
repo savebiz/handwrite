@@ -25,7 +25,7 @@ Total Fields:        110
 Verified Accuracy:   100.0%
 Human Review Events: 62
 Auto-Accepted:       48
-Runtime Seconds:     3.8501 sec
+Runtime Seconds:     9.5222 sec
 Output Summary:      data/test-run-01/outputs/advanced\summary.json
 Log Captured To:     data/test-run-01/logs\advanced.log
 ==========================================================================

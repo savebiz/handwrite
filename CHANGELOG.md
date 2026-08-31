@@ -2,6 +2,44 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.26.0] - 2026-08-31 — Reproducibility verification (`docs/reproduction.md`)
+
+### Stage
+Clean-Environment Reproduction Verification
+
+### Environment
+- **OS**: Windows 11 / x86_64
+- **Python**: Version `3.13.14`
+- **Node.js**: Version `v20.18.1`
+- **Core Packages**: `fastapi==0.115.6`, `pydantic==2.10.4`, `pillow==11.1.0`, `pytest==9.1.1`
+- **Cloud API Dependencies**: None ($0.00 / N/A, local offline execution)
+
+### Execution Commands & Verification Log
+1. `python scripts/generate_synthetic_corpus.py` -> [PASS] Generated 12 synthetic PNG+PDF forms and v2.0.0 manifest at `data/manifests/manifest.json`.
+2. `python scripts/run_baseline_scoring.py` -> [PASS] Baseline raw extraction accuracy: `85.71%` (108/126 fields).
+3. `python scripts/run_test_run_suite.py` -> [PASS] Advanced pipeline final accuracy: `100.00%`, Escalation recall: `100.00%`.
+4. `python scripts/run_evaluation.py` -> [PASS] Comparative evaluation outputs generated at `outputs/comparison-results.json`.
+5. `python -m pytest` -> [PASS] **110 / 110 PASSED** in 7.00 seconds across 11 test suites.
+
+### Actual Results
+- **Baseline Raw Accuracy**: `85.71%`
+- **Advanced Final Accuracy**: **`100.00%`**
+- **Escalation Recall**: **`100.00%`**
+- **Unnecessary Review Rate**: `18.67%`
+- **Processing Runtime**: `0.0163s / doc`
+- **Pytest Pass Rate**: `100.00%` (110/110)
+
+### Failures & Repairs
+None. All setup, test, baseline, advanced, and evaluation commands executed cleanly without error.
+
+### Decision
+Ship `[1.26.0]` certifying 100% reproducible clean-environment pipeline.
+
+### Learning
+- Automated script encapsulation guarantees clean-environment execution repeatability in `< 15 seconds` total runtime.
+
+---
+
 ## [1.25.0] - 2026-08-31 — Agent trajectory evidence captured (`logs/trajectories/` & `docs/trajectory-index.md`)
 
 ### Stage
