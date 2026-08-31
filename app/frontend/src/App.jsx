@@ -56,8 +56,12 @@ export default function App() {
     }
   }
 
+  const [processingStatus, setProcessingStatus] = useState(null)
+
   const handleProcessSample = async (sampleId) => {
     setLoading(true)
+    setProcessingStatus(`Processing sample document ${sampleId} through agentic pipeline...`)
+    setActionAlert(null)
     try {
       const formData = new FormData()
       formData.append('sample_id', sampleId)
@@ -70,11 +74,16 @@ export default function App() {
         setSelectedDoc(data)
         await fetchQueue()
         setActiveTab('reviewer')
+        setActionAlert({ type: 'success', message: `Document ${sampleId} processed successfully! Switched to Review Workspace.` })
+      } else {
+        const err = await res.json().catch(() => ({}))
+        setActionAlert({ type: 'danger', message: `Failed to process document ${sampleId}: ${err.detail || res.statusText || 'Server error'}` })
       }
     } catch (err) {
-      alert("Error processing document: " + err.message)
+      setActionAlert({ type: 'danger', message: `Backend connection error: ${err.message}. Make sure the FastAPI server is running at http://localhost:8000 (run: uvicorn app.backend.main:app --reload --port 8000).` })
     } finally {
       setLoading(false)
+      setProcessingStatus(null)
     }
   }
 
@@ -378,6 +387,27 @@ export default function App() {
       {/* Main Content Area */}
       <main className="flex-1 p-4 md:p-6 max-w-7xl w-full mx-auto space-y-8">
 
+        {/* Global Action / Connection Alert */}
+        {actionAlert && (
+          <div className={`p-4 rounded-xl text-sm font-semibold flex justify-between items-center shadow-lg ${
+            actionAlert.type === 'success' ? 'bg-emerald-950 border border-emerald-500 text-emerald-300' : 'bg-red-950 border border-red-500 text-red-300'
+          }`}>
+            <span>{actionAlert.message}</span>
+            <button onClick={() => setActionAlert(null)} className="ml-4 text-xs underline font-bold">Dismiss</button>
+          </div>
+        )}
+
+        {/* Global Processing Loading Overlay */}
+        {loading && (
+          <div className="bg-blue-950/90 border-2 border-blue-500 text-blue-200 p-4 rounded-xl flex items-center gap-3 animate-pulse shadow-lg">
+            <svg className="animate-spin h-5 w-5 text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <span className="font-bold text-sm">{processingStatus || "Processing document through agentic verification pipeline..."}</span>
+          </div>
+        )}
+
         {/* TAB 1: OVERVIEW / DASHBOARD */}
         {activeTab === 'dashboard' && (
           <div className="space-y-10">
@@ -396,7 +426,8 @@ export default function App() {
 
               <div className="flex flex-wrap gap-4 pt-2">
                 <button
-                  onClick={() => setActiveTab('upload')}
+                  onClick={() => handleProcessSample('FI-001')}
+                  disabled={loading}
                   className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3.5 rounded-lg font-bold text-sm shadow-lg hover:shadow-blue-600/30 transition flex items-center gap-2"
                 >
                   Process a sample form
@@ -515,10 +546,11 @@ export default function App() {
                     Capture inspection references, dates, locations, inspector details, asset references, findings, statuses, and follow-up actions from handwritten operational forms.
                   </p>
                   <button
-                    onClick={() => setActiveTab('upload')}
-                    className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded text-xs font-bold transition"
+                    onClick={() => handleProcessSample('FI-001')}
+                    disabled={loading}
+                    className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded text-xs font-bold transition shadow"
                   >
-                    Try an inspection sample
+                    Try an inspection sample (FI-001)
                   </button>
                 </div>
 
@@ -528,10 +560,11 @@ export default function App() {
                     Review application details, contact information, requested services, consent, and review status. Personal information remains subject to human approval.
                   </p>
                   <button
-                    onClick={() => setActiveTab('upload')}
-                    className="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded text-xs font-bold transition"
+                    onClick={() => handleProcessSample('CO-001')}
+                    disabled={loading}
+                    className="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded text-xs font-bold transition shadow"
                   >
-                    Try an onboarding sample
+                    Try an onboarding sample (CO-001)
                   </button>
                 </div>
               </div>
