@@ -27,6 +27,9 @@ outputs/crops/*
 !outputs/crops/.gitkeep
 data/local_test/
 outputs/local_test/
+outputs/db/TEST-SEL-*.json
+outputs/db/doc-*.json
+data/synthetic/uploads/pdf_render_*.png
 logs/*.log
 logs/*.jsonl
 !logs/.gitkeep
