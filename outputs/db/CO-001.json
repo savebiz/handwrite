@@ -1,11 +1,66 @@
 {
-  "run_id": "run-90a419b2",
+  "run_id": "run-bc39fcb2",
   "document_id": "CO-001",
   "document_type": "customer_onboarding",
   "document_quality": {
     "status": "pass",
     "issues": [],
     "rescan_required": false
+  },
+  "intake_result": {
+    "run_id": "run-bc39fcb2",
+    "document_id": "CO-001",
+    "page_count": 1,
+    "orientation": "portrait",
+    "quality": {
+      "status": "pass",
+      "issues": [],
+      "rescan_required": false
+    },
+    "file_type": "png",
+    "file_size_bytes": 27999,
+    "processing_metadata": {
+      "checks_executed": [
+        "file_type",
+        "readability",
+        "page_count",
+        "blank_page",
+        "blur",
+        "skew",
+        "cut_off",
+        "unreadable_region",
+        "duplicate_page"
+      ],
+      "checks_unavailable": [],
+      "start_time_iso": "2026-08-31T08:26:12.464019+00:00",
+      "page_count": 1,
+      "orientation": "portrait",
+      "image_width": 800,
+      "image_height": 1000,
+      "contrast_stddev": 16.87,
+      "blur_method": "laplacian_variance_pil",
+      "blur_variance": 939.32,
+      "blur_threshold_warn": 50.0,
+      "blur_threshold_fail": 25.0,
+      "skew_method": "row_projection_heuristic",
+      "skew_row_variance": 0.010962,
+      "skew_edge_asymmetry": 0.0001,
+      "border_ink_density": {
+        "top": 0.0,
+        "bottom": 0.0,
+        "left": 0.0,
+        "right": 0.0
+      },
+      "quadrant_stddevs": [
+        23.66,
+        15.27,
+        15.8,
+        9.04
+      ],
+      "duplicate_page_note": "not_applicable_single_page",
+      "end_time_iso": "2026-08-31T08:26:12.519950+00:00",
+      "duration_ms": 55.93
+    }
   },
   "field_results": [
     {
@@ -423,11 +478,11 @@
   "record_status": "approved",
   "audit_events": [
     {
-      "timestamp": "2026-08-30T23:13:30.297219+00:00",
+      "timestamp": "2026-08-31T08:26:12.523296+00:00",
       "actor": "agent",
       "action": "DOCUMENT_PIPELINE_PROCESSED",
       "details": {
-        "run_id": "run-90a419b2",
+        "run_id": "run-bc39fcb2",
         "document_id": "CO-001",
         "document_type": "customer_onboarding",
         "quality_status": "pass",
@@ -438,7 +493,7 @@
       }
     },
     {
-      "timestamp": "2026-08-30T23:13:30.360769+00:00",
+      "timestamp": "2026-08-31T08:26:12.577089+00:00",
       "actor": "reviewer",
       "action": "DOCUMENT_REVIEW_SUBMITTED",
       "details": {

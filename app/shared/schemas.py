@@ -22,6 +22,24 @@ class QualityResult(BaseModel):
     rescan_required: bool = False
 
 
+class OrientationEnum(str, Enum):
+    PORTRAIT = "portrait"
+    LANDSCAPE = "landscape"
+    SQUARE = "square"
+    UNKNOWN = "unknown"
+
+
+class IntakeResult(BaseModel):
+    run_id: str
+    document_id: str
+    page_count: int = 1
+    orientation: OrientationEnum = OrientationEnum.UNKNOWN
+    quality: QualityResult
+    file_type: str = "unknown"
+    file_size_bytes: int = 0
+    processing_metadata: Dict[str, Any] = Field(default_factory=dict)
+
+
 class DecisionEnum(str, Enum):
     AUTO_ACCEPT = "auto_accept"
     HUMAN_REVIEW = "human_review"
@@ -137,8 +155,10 @@ class DocumentRecord(BaseModel):
     document_id: str
     document_type: DocumentType
     document_quality: QualityResult
+    intake_result: Optional[IntakeResult] = None
     field_results: List[FieldResult] = Field(default_factory=list)
     record_status: RecordStatusEnum = RecordStatusEnum.PROCESSING
     audit_events: List[AuditEvent] = Field(default_factory=list)
     schema_version: str = "1.0.0"
     agent_version: str = "1.0.0"
+

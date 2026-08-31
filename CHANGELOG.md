@@ -2,6 +2,40 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.17.0] - 2026-08-31 — Enhanced intake & document-quality stage (9 deterministic checks)
+
+### Stage
+Intake & Document-Quality Agent (`app/backend/agents/quality_agent.py`)
+
+### Change
+- Rewrote quality agent with 9 deterministic PIL-only checks: file type validation, file readability, page count & orientation, blank page detection, blur detection (Laplacian variance proxy), skew detection (row-projection heuristic), cropping/cut-off detection (border ink density), unreadable region detection (quadrant contrast), and duplicate-page suspicion (perceptual hash).
+- Added `IntakeResult` schema model (`app/shared/schemas.py`) with `run_id`, `document_id`, `page_count`, `orientation`, `quality`, `file_type`, `file_size_bytes`, and `processing_metadata`.
+- Added `OrientationEnum` (portrait/landscape/square/unknown).
+- Added optional `intake_result` field to `DocumentRecord` for backward compatibility.
+- Integrated `run_intake_and_quality()` into `app/backend/pipeline.py`.
+- Preserved backward-compatible `analyze_document_quality()` entry point.
+- Created `tests/test_intake_quality.py` (14 tests) and `scripts/run_intake_quality_tests.py`.
+- Fixed Pillow 14 deprecation warnings (`.getdata()` → `.get_flattened_data()`).
+
+### Reason
+The existing quality agent only checked contrast stddev and resolution. The user's prompt required explicit detection for 8 quality issue categories with structured outputs including page count, orientation, and full processing metadata.
+
+### Evidence
+- `scripts/run_intake_quality_tests.py`: 14/14 PASSED
+- `python -m pytest tests/test_intake_quality.py`: 13/13 PASSED
+- Full regression suite: 57/57 pytest PASSED + all standalone runners PASSED
+- Zero backward-compatibility regressions
+
+### Decision
+Ship as `[1.17.0]`. No external dependencies added — all checks use PIL (Pillow) only.
+
+### Learning
+- Laplacian variance via PIL `ImageFilter.Kernel` is a viable blur proxy without OpenCV, but documents clearly-typed text can have moderate variance even when partially blurry. The threshold must be calibrated per document family.
+- Row-projection skew heuristic works for line-oriented forms but cannot estimate deskew angle. True angle estimation would require scipy or OpenCV.
+- Processing metadata transparency (documenting method names, thresholds, and limitations in the output) is critical for honest quality reporting.
+
+---
+
 ## [1.16.0] - 2026-08-31 — Unified command-line test suite harness (`scripts/run_test_run_suite.py`)
 ### What Changed
 - Created `scripts/run_test_run_suite.py` unifying baseline extraction, advanced pipeline execution, comparative evaluation, and reviewer walkthrough in a single command.

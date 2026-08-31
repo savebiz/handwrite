@@ -7,8 +7,9 @@ from app.shared.schemas import (
     Evidence,
     ReviewerDecisionEnum,
     ActorEnum,
+    IntakeResult,
 )
-from app.backend.agents.quality_agent import analyze_document_quality
+from app.backend.agents.quality_agent import analyze_document_quality, run_intake_and_quality
 from app.backend.agents.classification_agent import classify_document
 from app.backend.agents.extraction_agent import extract_field_candidates
 from app.backend.agents.verification_agent import verify_extracted_fields
@@ -38,13 +39,19 @@ def process_document_pipeline(
     run_id = f"run-{uuid.uuid4().hex[:8]}"
     doc_id = document_id or f"doc-{uuid.uuid4().hex[:8]}"
 
-    # Intercept PDF files and convert Page 1 to PNG image for processing
+    # Stage 1: Enhanced Intake & Quality Agent (handles PDF conversion internally)
+    intake_res = run_intake_and_quality(
+        file_path=image_path,
+        document_id=doc_id,
+        run_id=run_id,
+        issues_hint=issues_hint,
+    )
+    quality_res = intake_res.quality
+
+    # Resolve actual image path for downstream agents (PDF -> rendered PNG)
     actual_image_path = image_path
     if is_pdf(image_path):
         actual_image_path = convert_pdf_to_image(image_path, default_dir="data/synthetic/uploads")
-
-    # Stage 1: Intake & Quality Agent
-    quality_res = analyze_document_quality(actual_image_path, issues_hint=issues_hint)
 
     # Stage 2: Document Classification Agent
     doc_type, class_conf, class_reason = classify_document(actual_image_path, hint_type=doc_type_hint)
@@ -129,6 +136,7 @@ def process_document_pipeline(
         document_id=doc_id,
         document_type=doc_type,
         document_quality=quality_res,
+        intake_result=intake_res,
         field_results=field_results,
         record_status=record_status,
         audit_events=[audit_evt],
