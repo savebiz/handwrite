@@ -230,3 +230,17 @@ class DocumentRecord(BaseModel):
     schema_version: str = "1.0.0"
     agent_version: str = "1.0.0"
 
+
+class ExportFormatEnum(str, Enum):
+    CSV = "csv"
+    EXCEL_COMPATIBLE_CSV = "excel_compatible_csv"
+    JSON = "json"
+
+
+class FieldSelectionPayload(BaseModel):
+    selected_fields: List[str] = Field(default_factory=list)
+    preset_name: Optional[str] = None
+    format: ExportFormatEnum = ExportFormatEnum.CSV
+    action_type: str = "save"  # save | export
+
+

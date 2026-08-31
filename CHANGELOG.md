@@ -2,6 +2,36 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.29.0] - 2026-08-31 — Approved field selection and controlled export update
+
+### Approved field selection and controlled export update
+- **What changed**: Implemented "Select fields to save and export" panel in approved record workspace with eligibility rules, selection presets ("Operational record" & "Minimal approved record"), and server-side export endpoints.
+- **Eligibility policy enforced**: Records must be in `APPROVED` status. Only non-sensitive auto-accepted fields or explicitly human-approved/corrected fields are eligible for selection. Unapproved sensitive PII or validation-failing fields are excluded and blocked on the server.
+- **Save/export actions implemented**:
+  1. Save selected fields to approved record
+  2. Export selected fields as CSV
+  3. Export selected fields as Excel-compatible CSV (UTF-8 BOM encoded)
+  4. Export selected fields as JSON
+- **Tests and evidence**: Added `tests/test_field_selection_export.py` (**14 / 14 PASSED**, full suite **124 / 124 PASSED**).
+- **Decision**: Keep.
+- **Learning**: Server-side eligibility validation prevents frontend bypass attempts, guaranteeing that unapproved PII is never exported.
+- **Known limitation**: Excel-compatible CSV export was provided; native .xlsx generation remains deferred pending explicit dependency approval.
+
+---
+
+## [1.28.0] - 2026-08-31 — Landing-page onboarding and trust update
+
+### Landing-page onboarding and trust update
+- **What changed**: Updated landing page messaging, hero headline ("Turn handwritten forms into trusted, review-ready records."), header badges ("Demo workspace · Synthetic data only"), 4-step "How HandWrite Verify works" section, 2 workflow cards, 4 outcome-focused benefit cards, "Safeguards" accountability section, evaluation metrics preview, accessible 8-item FAQ accordion, and mobile responsive menu.
+- **Why**: Improve onboarding clarity, establish clear human-in-the-loop accountability, and communicate workflow value without overstating AI capabilities or using absolute claims.
+- **Files/components**: `app/frontend/src/App.jsx`, `app/static/reviewer.html`.
+- **Tests/preview evidence**: Visual desktop and mobile browser previews verified; build clean (Vite 1.30s); full Pytest test suite passing (**124 / 124 PASSED**).
+- **Decision**: Keep.
+- **Learning**: Outcome-focused messaging combined with transparent synthetic demo disclosures builds user trust without overpromising OCR capabilities.
+- **Known limitation**: Synthetic document samples are pre-rendered for demo predictability.
+
+---
+
 ## [1.27.0] - 2026-08-31 — Submission documentation preparation (`README.md` & `docs/`)
 
 ### Stage

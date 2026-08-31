@@ -120,12 +120,16 @@
 
   <div class="header">
     <div>
-      <h1 style="margin:0; font-size:24px;">HandWrite Verify — Reviewer Dashboard</h1>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <h1 style="margin:0; font-size:24px;">HandWrite Verify — Reviewer Dashboard</h1>
+        <span class="badge" style="background:var(--card-border); color:var(--text-muted); text-transform:none;">Demo workspace · Synthetic data only</span>
+      </div>
       <p style="margin:4px 0 0; color:var(--text-muted); font-size:14px;">Evidence-linked human reviewer verification workspace</p>
     </div>
     <div>
-      <button class="btn btn-export" onclick="exportRecord('json')">Export JSON</button>
-      <button class="btn btn-export" onclick="exportRecord('csv')">Export CSV</button>
+      <button class="btn btn-export" onclick="exportSelectedRecord('excel_compatible_csv')">Export Excel CSV</button>
+      <button class="btn btn-export" onclick="exportSelectedRecord('csv')">Export CSV</button>
+      <button class="btn btn-export" onclick="exportSelectedRecord('json')">Export JSON</button>
     </div>
   </div>
 

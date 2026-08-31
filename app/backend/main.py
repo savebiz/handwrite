@@ -15,6 +15,9 @@ from app.shared.schemas import (
     RecordStatusEnum,
     SensitivityEnum,
     ActorEnum,
+    DecisionEnum,
+    ExportFormatEnum,
+    FieldSelectionPayload,
 )
 from app.backend.pipeline import process_document_pipeline
 from app.backend.audit import log_audit_event
@@ -327,6 +330,128 @@ def export_document_record(doc_id: str, format: str = "json"):
             content=output.getvalue(),
             media_type="text/csv",
             headers={"Content-Disposition": f"attachment; filename={doc_id}_export.csv"},
+        )
+
+    return JSONResponse(content=export_data)
+
+
+def validate_field_eligibility(f) -> tuple[bool, str]:
+    if f.sensitivity in [SensitivityEnum.PERSONAL, SensitivityEnum.SENSITIVE]:
+        if f.reviewer_decision not in [ReviewerDecisionEnum.APPROVED, ReviewerDecisionEnum.CORRECTED]:
+            return False, f"Sensitive PII field '{f.field_name}' requires explicit human approval before selection."
+
+    val = f.reviewer_value if f.reviewer_value is not None else (f.normalized_value or f.proposed_value)
+    if val is None or str(val).strip() == "":
+        return False, f"Field '{f.field_name}' has no usable value."
+
+    if f.decision != DecisionEnum.AUTO_ACCEPT and f.reviewer_decision not in [ReviewerDecisionEnum.APPROVED, ReviewerDecisionEnum.CORRECTED]:
+        return False, f"Field '{f.field_name}' requires human review or correction."
+
+    return True, "Eligible"
+
+
+@app.post("/api/documents/{doc_id}/export-selected")
+def export_selected_fields(doc_id: str, payload: FieldSelectionPayload):
+    record = load_record_from_db(doc_id)
+    if not record:
+        raise HTTPException(status_code=404, detail="Document record not found")
+
+    if record.record_status != RecordStatusEnum.APPROVED:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Action blocked: Cannot save/export record in '{record.record_status.value}' state. Record must be 'approved' first.",
+        )
+
+    if not payload.selected_fields:
+        raise HTTPException(
+            status_code=400,
+            detail="Action blocked: No fields selected for save or export.",
+        )
+
+    eligible_fields = []
+    for f_name in payload.selected_fields:
+        field_obj = next((f for f in record.field_results if f.field_name == f_name), None)
+        if not field_obj:
+            raise HTTPException(status_code=400, detail=f"Field '{f_name}' not found in record.")
+
+        is_ok, reason = validate_field_eligibility(field_obj)
+        if not is_ok:
+            raise HTTPException(status_code=400, detail=f"Selection blocked: {reason}")
+        eligible_fields.append(field_obj)
+
+    if payload.action_type == "save":
+        evt = log_audit_event(
+            actor=ActorEnum.REVIEWER,
+            action="SELECTED_FIELDS_SAVED",
+            details={
+                "document_id": doc_id,
+                "selected_fields": [f.field_name for f in eligible_fields],
+                "preset_name": payload.preset_name,
+                "count": len(eligible_fields),
+            },
+        )
+        record.audit_events.append(evt)
+        save_record_to_db(record)
+        return {
+            "status": "success",
+            "message": f"{len(eligible_fields)} approved fields saved to record {doc_id}.",
+            "selected_fields": [f.field_name for f in eligible_fields],
+            "record_id": doc_id,
+        }
+
+    evt = log_audit_event(
+        actor=ActorEnum.REVIEWER,
+        action="SELECTED_FIELDS_EXPORTED",
+        details={
+            "document_id": doc_id,
+            "selected_fields": [f.field_name for f in eligible_fields],
+            "format": payload.format.value,
+            "preset_name": payload.preset_name,
+            "count": len(eligible_fields),
+        },
+    )
+    record.audit_events.append(evt)
+    save_record_to_db(record)
+
+    export_data = {
+        "document_id": record.document_id,
+        "document_type": record.document_type.value,
+        "record_status": record.record_status.value,
+        "preset_name": payload.preset_name,
+        "selected_fields_count": len(eligible_fields),
+        "verified_fields": {},
+    }
+
+    for f in eligible_fields:
+        final_val = f.reviewer_value if f.reviewer_value is not None else (f.normalized_value or f.proposed_value)
+        export_data["verified_fields"][f.field_name] = {
+            "display_name": f.display_name,
+            "value": final_val,
+            "decision": f.decision.value,
+            "reviewer_decision": f.reviewer_decision.value,
+            "reviewer_reason": f.reviewer_reason,
+            "sensitivity": f.sensitivity.value,
+        }
+
+    if payload.format in [ExportFormatEnum.CSV, ExportFormatEnum.EXCEL_COMPATIBLE_CSV]:
+        output = io.StringIO()
+        if payload.format == ExportFormatEnum.EXCEL_COMPATIBLE_CSV:
+            output.write("\ufeff")  # Write UTF-8 BOM for Excel compatibility
+        writer = csv.writer(output)
+        writer.writerow(["Field Name", "Display Name", "Verified Value", "Sensitivity", "Reviewer Decision", "Reviewer Reason"])
+        for f_name, f_info in export_data["verified_fields"].items():
+            writer.writerow([
+                f_name,
+                f_info["display_name"],
+                f_info["value"],
+                f_info["sensitivity"],
+                f_info["reviewer_decision"],
+                f_info.get("reviewer_reason") or "",
+            ])
+        return Response(
+            content=output.getvalue(),
+            media_type="text/csv",
+            headers={"Content-Disposition": f"attachment; filename={doc_id}_selected_export.csv"},
         )
 
     return JSONResponse(content=export_data)
