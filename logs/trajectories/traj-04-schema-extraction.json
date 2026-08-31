@@ -1,0 +1,49 @@
+{
+  "trajectory_id": "traj-04-schema-extraction",
+  "agent_or_role_name": "Handwriting Extraction Specialist",
+  "task": "Execute schema-guided field extraction, zero-fabrication transcription, confidence scoring, and PIL bounding-box crop PNG file creation.",
+  "input_context": {
+    "document_type": "field_inspection",
+    "image_path": "data/synthetic/field-inspection/field_insp_001.png",
+    "document_id": "FI-001"
+  },
+  "instructions_or_prompt_version": "prompt-schema-guided-v1.0 (specs/shared-data-contract.md)",
+  "tools_used": [
+    "view_file",
+    "write_to_file",
+    "replace_file_content"
+  ],
+  "files_read": [
+    "app/backend/agents/extraction_agent.py",
+    "app/shared/metadata.py"
+  ],
+  "files_changed": [
+    "app/backend/agents/extraction_agent.py",
+    "outputs/crops/FI-001_inspection_ref.png"
+  ],
+  "intermediate_output": {
+    "total_expected_fields": 10,
+    "extracted_fields": 10,
+    "crops_generated": 10,
+    "adapter_type": "synthetic_test_adapter"
+  },
+  "validation_feedback": {
+    "schema_coverage": "100.0%",
+    "pytest_status": "PASSED"
+  },
+  "retries": 0,
+  "human_checkpoint": {
+    "checkpoint_type": "Schema Extraction Verification",
+    "status": "APPROVED",
+    "feedback": "Extraction result validated against target Pydantic ExtractionResult contract."
+  },
+  "final_output": {
+    "agent_version": "1.2.0-extraction",
+    "prompt_version_id": "prompt-schema-guided-v1.0",
+    "extracted_fields_count": 10,
+    "unreadable_fields_count": 0,
+    "absent_fields_count": 0
+  },
+  "evidence_file": "scripts/run_extraction_tests.py",
+  "limitations": "Uses local PIL crop slicing and deterministic metadata stubs when commercial VLM API keys are unconfigured."
+}

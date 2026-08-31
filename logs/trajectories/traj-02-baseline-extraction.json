@@ -1,0 +1,46 @@
+{
+  "trajectory_id": "traj-02-baseline-extraction",
+  "agent_or_role_name": "Baseline Extraction Runner",
+  "task": "Single-pass raw OCR extraction baseline across synthetic document corpus without quality pre-checks or human triage.",
+  "input_context": {
+    "corpus_manifest": "data/manifests/manifest.json",
+    "dataset_version": "2.0.0",
+    "total_samples": 12
+  },
+  "instructions_or_prompt_version": "specs/evaluation-plan.md (Single-pass unassisted baseline definition)",
+  "tools_used": [
+    "run_command",
+    "view_file"
+  ],
+  "files_read": [
+    "evaluation/baseline.py",
+    "data/manifests/manifest.json",
+    "data/gold-labels/*.json"
+  ],
+  "files_changed": [
+    "outputs/baseline-results.json"
+  ],
+  "intermediate_output": {
+    "raw_accuracy": 81.75,
+    "total_fields": 126,
+    "correct_fields": 103,
+    "corrupted_fields_exported": 23
+  },
+  "validation_feedback": {
+    "status": "COMPLETED",
+    "note": "Baseline single-pass pipeline completed in 0.047 seconds. Failed on corrupted/blurred forms FI-004 and CO-004."
+  },
+  "retries": 0,
+  "human_checkpoint": {
+    "checkpoint_type": "Evaluation Reporting",
+    "status": "APPROVED",
+    "feedback": "Baseline raw accuracy recorded as benchmark comparison target."
+  },
+  "final_output": {
+    "raw_extraction_accuracy_percent": 81.75,
+    "required_weighted_accuracy_percent": 82.72,
+    "failures_count": 23
+  },
+  "evidence_file": "outputs/baseline-results.json",
+  "limitations": "Single-pass baseline lacks document quality detection and cannot detect missing mandatory fields or corrupted handwriting."
+}

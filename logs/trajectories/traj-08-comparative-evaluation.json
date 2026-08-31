@@ -1,0 +1,52 @@
+{
+  "trajectory_id": "traj-08-comparative-evaluation",
+  "agent_or_role_name": "Evaluation Benchmark Specialist",
+  "task": "Execute fair baseline-versus-advanced comparative evaluation across benchmark corpus (data/manifests/manifest.json v2.0.0, 126 fields).",
+  "input_context": {
+    "manifest": "data/manifests/manifest.json",
+    "dataset_version": "2.0.0",
+    "total_documents": 12
+  },
+  "instructions_or_prompt_version": "specs/evaluation-plan.md & scripts/run_evaluation.py",
+  "tools_used": [
+    "run_command",
+    "view_file",
+    "write_to_file"
+  ],
+  "files_read": [
+    "data/manifests/manifest.json",
+    "data/gold-labels/*.json",
+    "scripts/run_evaluation.py"
+  ],
+  "files_changed": [
+    "outputs/baseline-results.json",
+    "outputs/advanced-results.json",
+    "outputs/comparison-results.json",
+    "evaluation/error-analysis.md",
+    "evaluation/reproducibility-run.md"
+  ],
+  "intermediate_output": {
+    "baseline_raw_accuracy": 86.51,
+    "advanced_raw_accuracy": 99.21,
+    "advanced_final_accuracy": 100.0,
+    "escalation_recall": 100.0,
+    "unnecessary_review_rate": 18.67
+  },
+  "validation_feedback": {
+    "status": "COMPLETED",
+    "artifacts_generated": 5
+  },
+  "retries": 0,
+  "human_checkpoint": {
+    "checkpoint_type": "Comparative Benchmark Verification",
+    "status": "APPROVED",
+    "feedback": "100% Final Reviewer-Approved Accuracy and 100% Escalation Recall verified."
+  },
+  "final_output": {
+    "accuracy_improvement_percent": 13.49,
+    "required_weighted_accuracy_percent": 100.0,
+    "schema_validation_pass_rate_percent": 100.0
+  },
+  "evidence_file": "outputs/comparison-results.json",
+  "limitations": "Commercial VLM cost is disclosed as $0.00 / N/A due to local execution."
+}

@@ -1,0 +1,57 @@
+{
+  "trajectory_id": "traj-07-reviewer-workflow",
+  "agent_or_role_name": "Reviewer Experience Specialist",
+  "task": "Execute human reviewer actions (approve, correct, reject, rescan), enforce mandatory action reasons, block sensitive PII exports, and log immutable audit events.",
+  "input_context": {
+    "document_id": "CO-001",
+    "reviewer_id": "reviewer-1",
+    "actions_submitted": [
+      "approved",
+      "corrected",
+      "rejected",
+      "rescan"
+    ]
+  },
+  "instructions_or_prompt_version": "specs/reviewer-decision-policy.md & app/backend/main.py (Reviewer Workflow & Export Guardrails)",
+  "tools_used": [
+    "view_file",
+    "write_to_file",
+    "replace_file_content",
+    "run_command"
+  ],
+  "files_read": [
+    "app/backend/main.py",
+    "app/static/reviewer.html",
+    "tests/test_reviewer_workflow.py"
+  ],
+  "files_changed": [
+    "app/backend/main.py",
+    "app/static/reviewer.html",
+    "tests/test_reviewer_workflow.py"
+  ],
+  "intermediate_output": {
+    "missing_reason_validation": "HTTP 400 Bad Request",
+    "sensitive_export_blocking": "HTTP 400 Bad Request",
+    "audit_event_logged": "FIELD_REVIEWED"
+  },
+  "validation_feedback": {
+    "pytest_status": "PASSED",
+    "tests_run": 9
+  },
+  "retries": 0,
+  "human_checkpoint": {
+    "checkpoint_type": "Reviewer Action & Export Sign-off",
+    "status": "APPROVED",
+    "feedback": "Sensitive PII export guardrail verified. Unapproved personal data cannot be exported."
+  },
+  "final_output": {
+    "reviewer_dashboard_url": "http://localhost:8000/static/reviewer.html",
+    "record_status": "approved",
+    "exported_formats": [
+      "json",
+      "csv"
+    ]
+  },
+  "evidence_file": "scripts/run_reviewer_tests.py",
+  "limitations": "Web UI dashboard runs locally against file-backed JSON DB store."
+}

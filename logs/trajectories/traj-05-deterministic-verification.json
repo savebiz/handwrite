@@ -1,0 +1,58 @@
+{
+  "trajectory_id": "traj-05-deterministic-verification",
+  "agent_or_role_name": "Verification & Triage Specialist",
+  "task": "Execute 10 deterministic validation rules across extracted candidates without overwriting raw proposed values.",
+  "input_context": {
+    "document_type": "customer_onboarding",
+    "extracted_candidates": 11
+  },
+  "instructions_or_prompt_version": "specs/verification-rules.md (Rules RULE-REQ-001 through RULE-COMP-011)",
+  "tools_used": [
+    "view_file",
+    "write_to_file",
+    "replace_file_content"
+  ],
+  "files_read": [
+    "app/backend/agents/verification_agent.py",
+    "app/shared/schemas.py"
+  ],
+  "files_changed": [
+    "app/backend/agents/verification_agent.py",
+    "tests/test_verification.py"
+  ],
+  "intermediate_output": {
+    "rules_evaluated": [
+      "RULE-REQ-001",
+      "RULE-DATE-002",
+      "RULE-PAT-003",
+      "RULE-VOCAB-004",
+      "RULE-CROSS-005",
+      "RULE-SENS-006",
+      "RULE-CONSENT-007",
+      "RULE-MISSING-008",
+      "RULE-NORM-009",
+      "RULE-EVID-010",
+      "RULE-COMP-011"
+    ],
+    "total_checks_run": 24,
+    "checks_passed": 22,
+    "checks_failed": 2
+  },
+  "validation_feedback": {
+    "pytest_status": "PASSED",
+    "tests_run": 14
+  },
+  "retries": 0,
+  "human_checkpoint": {
+    "checkpoint_type": "Deterministic Verification Gate",
+    "status": "APPROVED",
+    "feedback": "Transformation tracking verified. Original proposed_value unmutated."
+  },
+  "final_output": {
+    "agent_version": "1.3.0-verification",
+    "total_checks": 24,
+    "value_transformations_count": 1
+  },
+  "evidence_file": "scripts/run_verification_tests.py",
+  "limitations": "Deterministic rules rely on pre-configured regex patterns and metadata schemas."
+}

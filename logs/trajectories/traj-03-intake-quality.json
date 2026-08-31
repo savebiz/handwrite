@@ -1,0 +1,60 @@
+{
+  "trajectory_id": "traj-03-intake-quality",
+  "agent_or_role_name": "Document Quality Specialist",
+  "task": "Execute 9 deterministic PIL-based document quality pre-checks to flag unreadable, blurry, skewed, or cropped documents before extraction.",
+  "input_context": {
+    "image_path": "data/synthetic/field-inspection/field_insp_004.png",
+    "document_id": "FI-004_blur_corrupted"
+  },
+  "instructions_or_prompt_version": "specs/verification-rules.md & app/backend/agents/quality_agent.py (Intake & Quality Contract)",
+  "tools_used": [
+    "view_file",
+    "write_to_file",
+    "run_command"
+  ],
+  "files_read": [
+    "app/backend/agents/quality_agent.py",
+    "app/shared/schemas.py"
+  ],
+  "files_changed": [
+    "app/backend/agents/quality_agent.py",
+    "tests/test_intake_quality.py"
+  ],
+  "intermediate_output": {
+    "checks_run": [
+      "file_format_whitelist",
+      "file_readability",
+      "page_count_and_orientation",
+      "blank_page_detection",
+      "laplacian_blur_detection",
+      "row_projection_skew",
+      "border_ink_cutoff",
+      "quadrant_contrast_uniformity",
+      "ahash_duplicate_page"
+    ],
+    "quality_status": "fail",
+    "issues_detected": [
+      "extreme_blur",
+      "border_ink_cutoff"
+    ],
+    "rescan_required": true
+  },
+  "validation_feedback": {
+    "pytest_status": "PASSED",
+    "tests_run": 14
+  },
+  "retries": 0,
+  "human_checkpoint": {
+    "checkpoint_type": "Automated Quality Gate",
+    "status": "APPROVED",
+    "feedback": "Quality failure automatically routed to RESCAN_REQUIRED."
+  },
+  "final_output": {
+    "run_id": "run-intake-fi-004",
+    "document_id": "FI-004_blur_corrupted",
+    "quality_status": "fail",
+    "rescan_required": true
+  },
+  "evidence_file": "scripts/run_intake_quality_tests.py",
+  "limitations": "Operates strictly via deterministic Pillow image analysis without invoking external computer vision web services."
+}

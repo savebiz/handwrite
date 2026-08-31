@@ -1,0 +1,55 @@
+{
+  "trajectory_id": "traj-06-triage-decision",
+  "agent_or_role_name": "Triage & Decision Agent",
+  "task": "Evaluate decision table policy hierarchy (quality failure > sensitivity guardrail > validation failure > confidence < 0.85 > auto_accept) and resolve overall record status.",
+  "input_context": {
+    "quality_status": "pass",
+    "total_candidates": 10,
+    "confidence_threshold": 0.85
+  },
+  "instructions_or_prompt_version": "specs/reviewer-decision-policy.md (Triage Decision Table Matrix)",
+  "tools_used": [
+    "view_file",
+    "write_to_file",
+    "replace_file_content"
+  ],
+  "files_read": [
+    "app/backend/agents/triage_agent.py",
+    "app/shared/schemas.py"
+  ],
+  "files_changed": [
+    "app/backend/agents/triage_agent.py",
+    "tests/test_triage.py"
+  ],
+  "intermediate_output": {
+    "field_decisions": {
+      "auto_accept": 6,
+      "human_review": 4,
+      "rescan_required": 0
+    },
+    "record_status": "awaiting_review",
+    "triggered_rules": [
+      "RULE-SENS-006",
+      "CONFIDENCE_BELOW_THRESHOLD"
+    ]
+  },
+  "validation_feedback": {
+    "pytest_status": "PASSED",
+    "tests_run": 10
+  },
+  "retries": 0,
+  "human_checkpoint": {
+    "checkpoint_type": "Triage Decision Table Verification",
+    "status": "APPROVED",
+    "feedback": "Boundary confidence (0.84 vs 0.85) and quality precedence verified."
+  },
+  "final_output": {
+    "agent_version": "1.4.0-triage",
+    "configuration_version": "triage-policy-v1.0-conf0.85",
+    "record_status": "awaiting_review",
+    "auto_accepted_count": 6,
+    "human_review_count": 4
+  },
+  "evidence_file": "scripts/run_triage_tests.py",
+  "limitations": "Triage thresholds require strict policy versioning when confidence parameters are tuned."
+}
