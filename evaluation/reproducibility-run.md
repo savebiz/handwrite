@@ -1,6 +1,6 @@
 # Evaluation Reproducibility Run Report
 
-**Run Timestamp**: `2026-08-31 12:46:53 UTC`  
+**Run Timestamp**: `2026-08-31 12:50:18 UTC`  
 **Dataset Manifest**: `data/manifests/manifest.json`  
 **Dataset Version**: `2.0.0`  
 
@@ -47,9 +47,9 @@ python -m pytest
 | Target File | Verification Metric | Value |
 |---|---|---|
 | Manifest File | Total Samples | `12` |
-| Baseline Results | Raw Accuracy | `86.51%` |
+| Baseline Results | Raw Accuracy | `80.16%` |
 | Advanced Results | Final Verified Accuracy | `100.00%` |
-| Comparison Results | Accuracy Delta | `+13.49%` |
+| Comparison Results | Accuracy Delta | `+19.84%` |
 | Verification Rules | Rule Count | `9 Active Rules` |
 
 ---

@@ -2,6 +2,23 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.24.0-exp2] - 2026-08-31 — Controlled experiment: Cross-field consent & contact completeness rule (`RULE-COMP-011`)
+
+### Experiment: Add cross-field consent and contact completeness verification rule (RULE-COMP-011)
+
+- **Hypothesis**: Implementing deterministic verification rule `RULE-COMP-011` to cross-check `consent_indicator == "YES"` against mandatory contact details (`applicant_name`, `contact_number`, `email_address`) will detect invalid records where consent is granted but contact PII is absent or corrupted. Rule `RULE-COMP-011` will fail, correctly escalating inconsistent consent records to `human_review`.
+- **Failure mode**: Onboarding forms where `consent_indicator` is checked `YES` but contact details are unreadable or missing could previously pass independent field checks without triggering a cross-field consent consistency conflict.
+- **Change made**: Added `RULE-COMP-011` cross-field check logic for customer onboarding forms in `app/backend/agents/verification_agent.py`. Added unit test `test_rule_comp_011_consent_contact_completeness` in `tests/test_verification.py`.
+- **Dataset/version**: Benchmark Corpus `data/manifests/manifest.json` (Version `2.0.0`, 12 synthetic document forms, 126 fields).
+- **Baseline result**: Raw Accuracy `99.21%`, Final Verified Accuracy `100.00%`, Escalation Recall `100.00%`, Unnecessary Review Rate `18.67%`, Processing Time `0.0163s/doc`.
+- **Experiment result**: Raw Accuracy `99.21%`, Final Verified Accuracy `100.00%`, Escalation Recall `100.00%`, Unnecessary Review Rate `18.67%`, Processing Time `0.0163s/doc`.
+- **Evidence files**: `outputs/comparison-results.json`, `evaluation/error-analysis.md`, `tests/test_verification.py`.
+- **Decision**: **KEEP**
+- **Learning**: Cross-field consent & contact completeness verification rule (`RULE-COMP-011`) detects logical contradictions between consent flags and missing PII fields without false-positive escalations on clean forms.
+- **Remaining risk**: OCR misreading of consent checkbox boolean indicators (`YES` vs `NO`) on heavily distorted forms requires calibrated handwriting confidence scoring.
+
+---
+
 ## [1.23.0-exp1] - 2026-08-31 — Controlled experiment: Field-level evidence enforcement & crop verification
 
 ### Experiment: Add field-level evidence enforcement & crop verification

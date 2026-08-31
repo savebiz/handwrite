@@ -384,6 +384,40 @@ def run_deterministic_verification(
                     all_checks.append(chk)
                     failed_count += 1
 
+    # ------------------------------------------------------------------
+    # RULE-COMP-011: Cross-Field Consent & Contact Completeness Verification
+    # ------------------------------------------------------------------
+    if doc_type == DocumentType.CUSTOMER_ONBOARDING:
+        consent_val = extracted_candidates.get("consent_indicator", {}).get("proposed_value")
+        if consent_val and str(consent_val).strip().upper() == "YES":
+            missing_contacts = []
+            for fn in ["applicant_name", "contact_number", "email_address"]:
+                cand = extracted_candidates.get(fn, {})
+                val = cand.get("proposed_value")
+                if val is None or str(val).strip() == "" or cand.get("is_absent") or cand.get("is_unreadable"):
+                    missing_contacts.append(fn)
+
+            if missing_contacts:
+                chk = VerificationCheck(
+                    rule_id="RULE-COMP-011",
+                    result=VerificationCheckResult.FAIL,
+                    message=f"Consent indicator is 'YES' but mandatory contact field(s) {missing_contacts} missing/unreadable.",
+                    field_name="consent_indicator",
+                )
+                field_checks_map.setdefault("consent_indicator", []).append(chk)
+                all_checks.append(chk)
+                failed_count += 1
+            else:
+                chk = VerificationCheck(
+                    rule_id="RULE-COMP-011",
+                    result=VerificationCheckResult.PASS,
+                    message="Consent indicator 'YES' matches complete contact PII details.",
+                    field_name="consent_indicator",
+                )
+                field_checks_map.setdefault("consent_indicator", []).append(chk)
+                all_checks.append(chk)
+                passed_count += 1
+
     return VerificationResult(
         agent_version=AGENT_VERSION,
         document_type=doc_type,

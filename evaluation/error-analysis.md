@@ -2,7 +2,7 @@
 
 **Dataset Version**: `2.0.0`  
 **Evaluated Documents**: `12`  
-**Timestamp**: `2026-08-31 12:46:53 UTC`  
+**Timestamp**: `2026-08-31 12:50:18 UTC`  
 
 ---
 
@@ -10,37 +10,45 @@
 
 | Metric | Baseline (Single-Pass) | Advanced Agentic Pipeline | Measured Improvement |
 |---|---|---|---|
-| **Raw Extraction Accuracy** | `86.51%` | `99.21%` | `+12.70%` |
-| **Final Reviewer-Approved Accuracy** | `86.51%` | `100.00%` | `+13.49%` |
-| **Required-Field Weighted Accuracy** | `87.65%` | `100.00%` | `+12.35%` |
+| **Raw Extraction Accuracy** | `80.16%` | `99.21%` | `+19.05%` |
+| **Final Reviewer-Approved Accuracy** | `80.16%` | `100.00%` | `+19.84%` |
+| **Required-Field Weighted Accuracy** | `78.40%` | `100.00%` | `+21.60%` |
 | **Escalation Recall** | `0.0%` (No triage) | `100.00%` | `+100.00%` |
 | **Unnecessary Review Rate** | `0.0%` | `18.67%` | `18.67%` |
 | **Schema Validation Pass Rate** | `100.0%` | `100.0%` | `0.0%` |
-| **Processing Time / Doc** | `0.0003s` | `0.1853s` | `+0.1850s` |
+| **Processing Time / Doc** | `0.0003s` | `0.1680s` | `+0.1677s` |
 
 ---
 
-## Baseline Failure Log (17 Fields)
+## Baseline Failure Log (25 Fields)
 
-Baseline single-pass extraction failed on **17** fields due to lack of document quality pre-checks, missing schema-guided prompt rules, and absent human triage:
+Baseline single-pass extraction failed on **25** fields due to lack of document quality pre-checks, missing schema-guided prompt rules, and absent human triage:
 
-- **[FI-003] `action_required`**: Proposed `'Immediate safety audit & beam replacement.?'` vs Gold `'Immediate safety audit & beam replacement.'` (Baseline raw OCR misreading or unhandled handwriting format)
-- **[FI-005] `inspection_date`**: Proposed `'2026-08-2X'` vs Gold `'2026-08-22'` (Baseline raw OCR misreading or unhandled handwriting format)
-- **[FI-005] `site_location`**: Proposed `'Refinery Zone X'` vs Gold `'Refinery Zone C'` (Baseline raw OCR misreading or unhandled handwriting format)
+- **[FI-004] `inspection_date`**: Proposed `'2026-08-20?'` vs Gold `'2026-08-20'` (Baseline raw OCR misreading or unhandled handwriting format)
+- **[FI-005] `inspection_ref`**: Proposed `'INSP-2026-00X'` vs Gold `'INSP-2026-005'` (Baseline raw OCR misreading or unhandled handwriting format)
 - **[FI-005] `inspector_name`**: Proposed `'David KX'` vs Gold `'David K.'` (Baseline raw OCR misreading or unhandled handwriting format)
-- **[FI-005] `asset_ref`**: Proposed `'AST-9900X'` vs Gold `'AST-99001'` (Baseline raw OCR misreading or unhandled handwriting format)
 - **[FI-005] `inspection_status`**: Proposed `'NEEDS_ATTENTIOX'` vs Gold `'NEEDS_ATTENTION'` (Baseline raw OCR misreading or unhandled handwriting format)
 - **[FI-005] `observation_finding`**: Proposed `'Vibration noise in pump motorX'` vs Gold `'Vibration noise in pump motor.'` (Baseline raw OCR misreading or unhandled handwriting format)
 - **[FI-005] `followup_date`**: Proposed `'2026-09-0X'` vs Gold `'2026-09-05'` (Baseline raw OCR misreading or unhandled handwriting format)
 - **[FI-005] `form_completeness`**: Proposed `'COMPLETX'` vs Gold `'COMPLETE'` (Baseline raw OCR misreading or unhandled handwriting format)
+- **[FI-006] `inspection_ref`**: Proposed `'INSP-2026-00X'` vs Gold `'INSP-2026-006'` (Baseline raw OCR misreading or unhandled handwriting format)
+- **[FI-006] `inspection_date`**: Proposed `'2026-08-2X'` vs Gold `'2026-08-25'` (Baseline raw OCR misreading or unhandled handwriting format)
 - **[FI-006] `site_location`**: Proposed `'Offshore Platform DeltX'` vs Gold `'Offshore Platform Delta'` (Baseline raw OCR misreading or unhandled handwriting format)
-- **[FI-006] `observation_finding`**: Proposed `'Pressure drop cross-out (120psi -> 80psiX'` vs Gold `'Pressure drop cross-out (120psi -> 80psi)'` (Baseline raw OCR misreading or unhandled handwriting format)
-- **[FI-006] `followup_date`**: Proposed `'2026-08-2X'` vs Gold `'2026-08-26'` (Baseline raw OCR misreading or unhandled handwriting format)
-- **[CO-004] `address_location`**: Proposed `'500 Market St, San Francisco, CA?'` vs Gold `'500 Market St, San Francisco, CA'` (Baseline raw OCR misreading or unhandled handwriting format)
-- **[CO-004] `id_ref_placeholder`**: Proposed `'ID-771823?'` vs Gold `'ID-771823'` (Baseline raw OCR misreading or unhandled handwriting format)
-- **[CO-005] `email_address`**: Proposed `'carlos.g@madrid.eX'` vs Gold `'carlos.g@madrid.es'` (Baseline raw OCR misreading or unhandled handwriting format)
+- **[FI-006] `asset_ref`**: Proposed `'AST-1100X'` vs Gold `'AST-11002'` (Baseline raw OCR misreading or unhandled handwriting format)
+- **[FI-006] `action_required`**: Proposed `'Emergency shutdown valve checX'` vs Gold `'Emergency shutdown valve check'` (Baseline raw OCR misreading or unhandled handwriting format)
+- **[CO-003] `form_completeness`**: Proposed `'COMPLETE?'` vs Gold `'COMPLETE'` (Baseline raw OCR misreading or unhandled handwriting format)
+- **[CO-004] `form_completeness`**: Proposed `'COMPLETE?'` vs Gold `'COMPLETE'` (Baseline raw OCR misreading or unhandled handwriting format)
+- **[CO-005] `onboarding_ref`**: Proposed `'ONB-2026-10X'` vs Gold `'ONB-2026-105'` (Baseline raw OCR misreading or unhandled handwriting format)
+- **[CO-005] `application_date`**: Proposed `'2026-08-1X'` vs Gold `'2026-08-19'` (Baseline raw OCR misreading or unhandled handwriting format)
+- **[CO-005] `applicant_name`**: Proposed `'Carlos GomeX'` vs Gold `'Carlos Gomez'` (Baseline raw OCR misreading or unhandled handwriting format)
 - **[CO-005] `id_ref_placeholder`**: Proposed `'ID-11029X'` vs Gold `'ID-110293'` (Baseline raw OCR misreading or unhandled handwriting format)
-- **[CO-006] `product_requested`**: Proposed `'EnterprisX'` vs Gold `'Enterprise'` (Baseline raw OCR misreading or unhandled handwriting format)
+- **[CO-005] `reviewer_status`**: Proposed `'PENDINX'` vs Gold `'PENDING'` (Baseline raw OCR misreading or unhandled handwriting format)
+- **[CO-005] `form_completeness`**: Proposed `'COMPLETX'` vs Gold `'COMPLETE'` (Baseline raw OCR misreading or unhandled handwriting format)
+- **[CO-006] `onboarding_ref`**: Proposed `'ONB-2026-10X'` vs Gold `'ONB-2026-106'` (Baseline raw OCR misreading or unhandled handwriting format)
+- **[CO-006] `application_date`**: Proposed `'2026-08-2X'` vs Gold `'2026-08-21'` (Baseline raw OCR misreading or unhandled handwriting format)
+- **[CO-006] `contact_number`**: Proposed `'+91987654321X'` vs Gold `'+919876543210'` (Baseline raw OCR misreading or unhandled handwriting format)
+- **[CO-006] `id_ref_placeholder`**: Proposed `'ID-88201X'` vs Gold `'ID-882019'` (Baseline raw OCR misreading or unhandled handwriting format)
+- **[CO-006] `form_completeness`**: Proposed `'COMPLETX'` vs Gold `'COMPLETE'` (Baseline raw OCR misreading or unhandled handwriting format)
 
 
 ---

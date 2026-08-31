@@ -253,6 +253,29 @@ def test_rule_evid_010_field_evidence_verification():
     assert chk_inv.result == VerificationCheckResult.FAIL
 
 
+def test_rule_comp_011_consent_contact_completeness():
+    """RULE-COMP-011 verifies consent YES matches complete contact PII details."""
+    cand_valid = {
+        "consent_indicator": {"proposed_value": "YES"},
+        "applicant_name": {"proposed_value": "John Doe"},
+        "contact_number": {"proposed_value": "+1555123456"},
+        "email_address": {"proposed_value": "john@example.com"},
+    }
+    res_v = run_deterministic_verification(DocumentType.CUSTOMER_ONBOARDING, cand_valid)
+    chk_v = next(c for c in res_v.checks if c.rule_id == "RULE-COMP-011")
+    assert chk_v.result == VerificationCheckResult.PASS
+
+    cand_missing = {
+        "consent_indicator": {"proposed_value": "YES"},
+        "applicant_name": {"proposed_value": "John Doe"},
+        "contact_number": {"proposed_value": "+1555123456"},
+        "email_address": {"proposed_value": None, "is_absent": True},
+    }
+    res_m = run_deterministic_verification(DocumentType.CUSTOMER_ONBOARDING, cand_missing)
+    chk_m = next(c for c in res_m.checks if c.rule_id == "RULE-COMP-011")
+    assert chk_m.result == VerificationCheckResult.FAIL
+
+
 def test_pipeline_integration_verification_result():
     """Pipeline attaches VerificationResult to DocumentRecord."""
     record = process_document_pipeline(
@@ -305,16 +328,19 @@ def run_all_verification_tests():
     test_rule_evid_010_field_evidence_verification()
     print("[PASS] Test 10: RULE-EVID-010 Field evidence bounding box verification")
 
+    test_rule_comp_011_consent_contact_completeness()
+    print("[PASS] Test 11: RULE-COMP-011 Consent and contact completeness cross-field check")
+
     test_field_name_included_in_checks()
-    print("[PASS] Test 11: field_name included in all VerificationCheck objects")
+    print("[PASS] Test 12: field_name included in all VerificationCheck objects")
 
     test_backward_compatibility_verify_extracted_fields()
-    print("[PASS] Test 12: Backward-compatible verify_extracted_fields helper")
+    print("[PASS] Test 13: Backward-compatible verify_extracted_fields helper")
 
     test_pipeline_integration_verification_result()
-    print("[PASS] Test 13: Pipeline integration attaching VerificationResult to DocumentRecord")
+    print("[PASS] Test 14: Pipeline integration attaching VerificationResult to DocumentRecord")
 
-    print("\n[SUCCESS] ALL DETERMINISTIC VERIFICATION TESTS PASSED (13/13).")
+    print("\n[SUCCESS] ALL DETERMINISTIC VERIFICATION TESTS PASSED (14/14).")
 
 
 if __name__ == "__main__":

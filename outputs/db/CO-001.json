@@ -1,5 +1,5 @@
 {
-  "run_id": "run-9bbd02db",
+  "run_id": "run-aca96cf5",
   "document_id": "CO-001",
   "document_type": "customer_onboarding",
   "document_quality": {
@@ -8,7 +8,7 @@
     "rescan_required": false
   },
   "intake_result": {
-    "run_id": "run-9bbd02db",
+    "run_id": "run-aca96cf5",
     "document_id": "CO-001",
     "page_count": 1,
     "orientation": "portrait",
@@ -32,7 +32,7 @@
         "duplicate_page"
       ],
       "checks_unavailable": [],
-      "start_time_iso": "2026-08-31T12:47:05.524157+00:00",
+      "start_time_iso": "2026-08-31T12:50:30.395996+00:00",
       "page_count": 1,
       "orientation": "portrait",
       "image_width": 800,
@@ -58,8 +58,8 @@
         9.04
       ],
       "duplicate_page_note": "not_applicable_single_page",
-      "end_time_iso": "2026-08-31T12:47:05.587666+00:00",
-      "duration_ms": 63.51
+      "end_time_iso": "2026-08-31T12:50:30.458586+00:00",
+      "duration_ms": 62.59
     }
   },
   "extraction_result": {
@@ -546,6 +546,12 @@
         "result": "pass",
         "message": "Field evidence bounding box [590.0, 50.0, 640.0, 750.0] is valid.",
         "field_name": "form_completeness"
+      },
+      {
+        "rule_id": "RULE-COMP-011",
+        "result": "pass",
+        "message": "Consent indicator 'YES' matches complete contact PII details.",
+        "field_name": "consent_indicator"
       }
     ],
     "field_checks": {
@@ -751,6 +757,12 @@
           "result": "pass",
           "message": "Field evidence bounding box [510.0, 50.0, 560.0, 380.0] is valid.",
           "field_name": "consent_indicator"
+        },
+        {
+          "rule_id": "RULE-COMP-011",
+          "result": "pass",
+          "message": "Consent indicator 'YES' matches complete contact PII details.",
+          "field_name": "consent_indicator"
         }
       ],
       "reviewer_status": [
@@ -808,8 +820,8 @@
       "form_completeness": "COMPLETE"
     },
     "value_transformations": [],
-    "total_checks_run": 37,
-    "passed_checks_count": 31,
+    "total_checks_run": 38,
+    "passed_checks_count": 32,
     "failed_checks_count": 0,
     "warning_checks_count": 6,
     "verification_metadata": {
@@ -1367,6 +1379,12 @@
           "result": "pass",
           "message": "Field evidence bounding box [510.0, 50.0, 560.0, 380.0] is valid.",
           "field_name": "consent_indicator"
+        },
+        {
+          "rule_id": "RULE-COMP-011",
+          "result": "pass",
+          "message": "Consent indicator 'YES' matches complete contact PII details.",
+          "field_name": "consent_indicator"
         }
       ],
       "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
@@ -1466,11 +1484,11 @@
   "record_status": "approved",
   "audit_events": [
     {
-      "timestamp": "2026-08-31T12:47:05.698086+00:00",
+      "timestamp": "2026-08-31T12:50:30.546042+00:00",
       "actor": "agent",
       "action": "DOCUMENT_PIPELINE_PROCESSED",
       "details": {
-        "run_id": "run-9bbd02db",
+        "run_id": "run-aca96cf5",
         "document_id": "CO-001",
         "document_type": "customer_onboarding",
         "quality_status": "pass",
@@ -1481,7 +1499,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:47:05.726836+00:00",
+      "timestamp": "2026-08-31T12:50:30.573948+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1493,7 +1511,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:47:05.727452+00:00",
+      "timestamp": "2026-08-31T12:50:30.574526+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1505,7 +1523,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:47:05.727903+00:00",
+      "timestamp": "2026-08-31T12:50:30.575038+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1517,7 +1535,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:47:05.728976+00:00",
+      "timestamp": "2026-08-31T12:50:30.575396+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1529,7 +1547,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:47:05.730517+00:00",
+      "timestamp": "2026-08-31T12:50:30.575704+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1541,7 +1559,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:47:05.732072+00:00",
+      "timestamp": "2026-08-31T12:50:30.576123+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1553,7 +1571,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:47:05.733327+00:00",
+      "timestamp": "2026-08-31T12:50:30.576459+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1565,7 +1583,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:47:05.734624+00:00",
+      "timestamp": "2026-08-31T12:50:30.576790+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1577,7 +1595,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:47:05.735992+00:00",
+      "timestamp": "2026-08-31T12:50:30.577090+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1589,7 +1607,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:47:05.737469+00:00",
+      "timestamp": "2026-08-31T12:50:30.577471+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1601,7 +1619,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:47:05.738939+00:00",
+      "timestamp": "2026-08-31T12:50:30.577830+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1613,7 +1631,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:47:05.740226+00:00",
+      "timestamp": "2026-08-31T12:50:30.578207+00:00",
       "actor": "reviewer",
       "action": "DOCUMENT_REVIEW_SUBMITTED",
       "details": {
