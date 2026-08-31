@@ -1,5 +1,5 @@
 {
-  "run_id": "run-1bd017e8",
+  "run_id": "run-9bbd02db",
   "document_id": "CO-001",
   "document_type": "customer_onboarding",
   "document_quality": {
@@ -8,7 +8,7 @@
     "rescan_required": false
   },
   "intake_result": {
-    "run_id": "run-1bd017e8",
+    "run_id": "run-9bbd02db",
     "document_id": "CO-001",
     "page_count": 1,
     "orientation": "portrait",
@@ -32,7 +32,7 @@
         "duplicate_page"
       ],
       "checks_unavailable": [],
-      "start_time_iso": "2026-08-31T12:43:19.939829+00:00",
+      "start_time_iso": "2026-08-31T12:47:05.524157+00:00",
       "page_count": 1,
       "orientation": "portrait",
       "image_width": 800,
@@ -58,8 +58,8 @@
         9.04
       ],
       "duplicate_page_note": "not_applicable_single_page",
-      "end_time_iso": "2026-08-31T12:43:20.020359+00:00",
-      "duration_ms": 80.53
+      "end_time_iso": "2026-08-31T12:47:05.587666+00:00",
+      "duration_ms": 63.51
     }
   },
   "extraction_result": {
@@ -338,6 +338,12 @@
         "field_name": "onboarding_ref"
       },
       {
+        "rule_id": "RULE-EVID-010",
+        "result": "pass",
+        "message": "Field evidence bounding box [100.0, 50.0, 150.0, 400.0] is valid.",
+        "field_name": "onboarding_ref"
+      },
+      {
         "rule_id": "RULE-REQ-001",
         "result": "pass",
         "message": "Required field 'Application Date' present.",
@@ -350,6 +356,12 @@
         "field_name": "application_date"
       },
       {
+        "rule_id": "RULE-EVID-010",
+        "result": "pass",
+        "message": "Field evidence bounding box [100.0, 450.0, 150.0, 750.0] is valid.",
+        "field_name": "application_date"
+      },
+      {
         "rule_id": "RULE-REQ-001",
         "result": "pass",
         "message": "Required field 'Applicant Name' present.",
@@ -359,6 +371,12 @@
         "rule_id": "RULE-SENS-006",
         "result": "warning",
         "message": "Field classified as 'personal' — mandatory human review required.",
+        "field_name": "applicant_name"
+      },
+      {
+        "rule_id": "RULE-EVID-010",
+        "result": "pass",
+        "message": "Field evidence bounding box [180.0, 50.0, 230.0, 750.0] is valid.",
         "field_name": "applicant_name"
       },
       {
@@ -380,6 +398,12 @@
         "field_name": "contact_number"
       },
       {
+        "rule_id": "RULE-EVID-010",
+        "result": "pass",
+        "message": "Field evidence bounding box [260.0, 50.0, 310.0, 380.0] is valid.",
+        "field_name": "contact_number"
+      },
+      {
         "rule_id": "RULE-PAT-003",
         "result": "pass",
         "message": "Matches pattern '^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$'.",
@@ -389,6 +413,12 @@
         "rule_id": "RULE-SENS-006",
         "result": "warning",
         "message": "Field classified as 'personal' — mandatory human review required.",
+        "field_name": "email_address"
+      },
+      {
+        "rule_id": "RULE-EVID-010",
+        "result": "pass",
+        "message": "Field evidence bounding box [260.0, 400.0, 310.0, 750.0] is valid.",
         "field_name": "email_address"
       },
       {
@@ -404,6 +434,12 @@
         "field_name": "address_location"
       },
       {
+        "rule_id": "RULE-EVID-010",
+        "result": "pass",
+        "message": "Field evidence bounding box [340.0, 50.0, 410.0, 750.0] is valid.",
+        "field_name": "address_location"
+      },
+      {
         "rule_id": "RULE-REQ-001",
         "result": "pass",
         "message": "Required field 'Product Requested' present.",
@@ -413,6 +449,12 @@
         "rule_id": "RULE-VOCAB-004",
         "result": "pass",
         "message": "Value in controlled vocabulary.",
+        "field_name": "product_requested"
+      },
+      {
+        "rule_id": "RULE-EVID-010",
+        "result": "pass",
+        "message": "Field evidence bounding box [430.0, 50.0, 480.0, 380.0] is valid.",
         "field_name": "product_requested"
       },
       {
@@ -431,6 +473,12 @@
         "rule_id": "RULE-SENS-006",
         "result": "warning",
         "message": "Field classified as 'sensitive' — mandatory human review required.",
+        "field_name": "id_ref_placeholder"
+      },
+      {
+        "rule_id": "RULE-EVID-010",
+        "result": "pass",
+        "message": "Field evidence bounding box [430.0, 400.0, 480.0, 750.0] is valid.",
         "field_name": "id_ref_placeholder"
       },
       {
@@ -458,6 +506,12 @@
         "field_name": "consent_indicator"
       },
       {
+        "rule_id": "RULE-EVID-010",
+        "result": "pass",
+        "message": "Field evidence bounding box [510.0, 50.0, 560.0, 380.0] is valid.",
+        "field_name": "consent_indicator"
+      },
+      {
         "rule_id": "RULE-REQ-001",
         "result": "pass",
         "message": "Required field 'Reviewer Status' present.",
@@ -470,6 +524,12 @@
         "field_name": "reviewer_status"
       },
       {
+        "rule_id": "RULE-EVID-010",
+        "result": "pass",
+        "message": "Field evidence bounding box [510.0, 400.0, 560.0, 750.0] is valid.",
+        "field_name": "reviewer_status"
+      },
+      {
         "rule_id": "RULE-REQ-001",
         "result": "pass",
         "message": "Required field 'Form Completeness' present.",
@@ -479,6 +539,12 @@
         "rule_id": "RULE-VOCAB-004",
         "result": "pass",
         "message": "Value in controlled vocabulary.",
+        "field_name": "form_completeness"
+      },
+      {
+        "rule_id": "RULE-EVID-010",
+        "result": "pass",
+        "message": "Field evidence bounding box [590.0, 50.0, 640.0, 750.0] is valid.",
         "field_name": "form_completeness"
       }
     ],
@@ -495,6 +561,12 @@
           "result": "pass",
           "message": "Matches pattern '^ONB-\\d{4}-\\d{3}$'.",
           "field_name": "onboarding_ref"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [100.0, 50.0, 150.0, 400.0] is valid.",
+          "field_name": "onboarding_ref"
         }
       ],
       "application_date": [
@@ -509,6 +581,12 @@
           "result": "pass",
           "message": "Valid ISO-8601 date string.",
           "field_name": "application_date"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [100.0, 450.0, 150.0, 750.0] is valid.",
+          "field_name": "application_date"
         }
       ],
       "applicant_name": [
@@ -522,6 +600,12 @@
           "rule_id": "RULE-SENS-006",
           "result": "warning",
           "message": "Field classified as 'personal' — mandatory human review required.",
+          "field_name": "applicant_name"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [180.0, 50.0, 230.0, 750.0] is valid.",
           "field_name": "applicant_name"
         }
       ],
@@ -543,6 +627,12 @@
           "result": "warning",
           "message": "Field classified as 'personal' — mandatory human review required.",
           "field_name": "contact_number"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [260.0, 50.0, 310.0, 380.0] is valid.",
+          "field_name": "contact_number"
         }
       ],
       "email_address": [
@@ -556,6 +646,12 @@
           "rule_id": "RULE-SENS-006",
           "result": "warning",
           "message": "Field classified as 'personal' — mandatory human review required.",
+          "field_name": "email_address"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [260.0, 400.0, 310.0, 750.0] is valid.",
           "field_name": "email_address"
         }
       ],
@@ -571,6 +667,12 @@
           "result": "warning",
           "message": "Field classified as 'personal' — mandatory human review required.",
           "field_name": "address_location"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [340.0, 50.0, 410.0, 750.0] is valid.",
+          "field_name": "address_location"
         }
       ],
       "product_requested": [
@@ -584,6 +686,12 @@
           "rule_id": "RULE-VOCAB-004",
           "result": "pass",
           "message": "Value in controlled vocabulary.",
+          "field_name": "product_requested"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [430.0, 50.0, 480.0, 380.0] is valid.",
           "field_name": "product_requested"
         }
       ],
@@ -604,6 +712,12 @@
           "rule_id": "RULE-SENS-006",
           "result": "warning",
           "message": "Field classified as 'sensitive' — mandatory human review required.",
+          "field_name": "id_ref_placeholder"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [430.0, 400.0, 480.0, 750.0] is valid.",
           "field_name": "id_ref_placeholder"
         }
       ],
@@ -631,6 +745,12 @@
           "result": "warning",
           "message": "Field classified as 'personal' — mandatory human review required.",
           "field_name": "consent_indicator"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [510.0, 50.0, 560.0, 380.0] is valid.",
+          "field_name": "consent_indicator"
         }
       ],
       "reviewer_status": [
@@ -645,6 +765,12 @@
           "result": "pass",
           "message": "Value in controlled vocabulary.",
           "field_name": "reviewer_status"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [510.0, 400.0, 560.0, 750.0] is valid.",
+          "field_name": "reviewer_status"
         }
       ],
       "form_completeness": [
@@ -658,6 +784,12 @@
           "rule_id": "RULE-VOCAB-004",
           "result": "pass",
           "message": "Value in controlled vocabulary.",
+          "field_name": "form_completeness"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [590.0, 50.0, 640.0, 750.0] is valid.",
           "field_name": "form_completeness"
         }
       ]
@@ -676,8 +808,8 @@
       "form_completeness": "COMPLETE"
     },
     "value_transformations": [],
-    "total_checks_run": 26,
-    "passed_checks_count": 20,
+    "total_checks_run": 37,
+    "passed_checks_count": 31,
     "failed_checks_count": 0,
     "warning_checks_count": 6,
     "verification_metadata": {
@@ -853,6 +985,12 @@
           "result": "pass",
           "message": "Matches pattern '^ONB-\\d{4}-\\d{3}$'.",
           "field_name": "onboarding_ref"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [100.0, 50.0, 150.0, 400.0] is valid.",
+          "field_name": "onboarding_ref"
         }
       ],
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
@@ -891,6 +1029,12 @@
           "result": "pass",
           "message": "Valid ISO-8601 date string.",
           "field_name": "application_date"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [100.0, 450.0, 150.0, 750.0] is valid.",
+          "field_name": "application_date"
         }
       ],
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
@@ -928,6 +1072,12 @@
           "rule_id": "RULE-SENS-006",
           "result": "warning",
           "message": "Field classified as 'personal' — mandatory human review required.",
+          "field_name": "applicant_name"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [180.0, 50.0, 230.0, 750.0] is valid.",
           "field_name": "applicant_name"
         }
       ],
@@ -973,6 +1123,12 @@
           "result": "warning",
           "message": "Field classified as 'personal' — mandatory human review required.",
           "field_name": "contact_number"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [260.0, 50.0, 310.0, 380.0] is valid.",
+          "field_name": "contact_number"
         }
       ],
       "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
@@ -1010,6 +1166,12 @@
           "rule_id": "RULE-SENS-006",
           "result": "warning",
           "message": "Field classified as 'personal' — mandatory human review required.",
+          "field_name": "email_address"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [260.0, 400.0, 310.0, 750.0] is valid.",
           "field_name": "email_address"
         }
       ],
@@ -1049,6 +1211,12 @@
           "result": "warning",
           "message": "Field classified as 'personal' — mandatory human review required.",
           "field_name": "address_location"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [340.0, 50.0, 410.0, 750.0] is valid.",
+          "field_name": "address_location"
         }
       ],
       "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
@@ -1086,6 +1254,12 @@
           "rule_id": "RULE-VOCAB-004",
           "result": "pass",
           "message": "Value in controlled vocabulary.",
+          "field_name": "product_requested"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [430.0, 50.0, 480.0, 380.0] is valid.",
           "field_name": "product_requested"
         }
       ],
@@ -1130,6 +1304,12 @@
           "rule_id": "RULE-SENS-006",
           "result": "warning",
           "message": "Field classified as 'sensitive' — mandatory human review required.",
+          "field_name": "id_ref_placeholder"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [430.0, 400.0, 480.0, 750.0] is valid.",
           "field_name": "id_ref_placeholder"
         }
       ],
@@ -1181,6 +1361,12 @@
           "result": "warning",
           "message": "Field classified as 'personal' — mandatory human review required.",
           "field_name": "consent_indicator"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [510.0, 50.0, 560.0, 380.0] is valid.",
+          "field_name": "consent_indicator"
         }
       ],
       "decision_reason": "Policy rule: Field sensitivity is 'personal'. Human review mandatory.",
@@ -1218,6 +1404,12 @@
           "rule_id": "RULE-VOCAB-004",
           "result": "pass",
           "message": "Value in controlled vocabulary.",
+          "field_name": "reviewer_status"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [510.0, 400.0, 560.0, 750.0] is valid.",
           "field_name": "reviewer_status"
         }
       ],
@@ -1257,6 +1449,12 @@
           "result": "pass",
           "message": "Value in controlled vocabulary.",
           "field_name": "form_completeness"
+        },
+        {
+          "rule_id": "RULE-EVID-010",
+          "result": "pass",
+          "message": "Field evidence bounding box [590.0, 50.0, 640.0, 750.0] is valid.",
+          "field_name": "form_completeness"
         }
       ],
       "decision_reason": "Passed quality checks, high confidence, non-sensitive data.",
@@ -1268,11 +1466,11 @@
   "record_status": "approved",
   "audit_events": [
     {
-      "timestamp": "2026-08-31T12:43:20.026043+00:00",
+      "timestamp": "2026-08-31T12:47:05.698086+00:00",
       "actor": "agent",
       "action": "DOCUMENT_PIPELINE_PROCESSED",
       "details": {
-        "run_id": "run-1bd017e8",
+        "run_id": "run-9bbd02db",
         "document_id": "CO-001",
         "document_type": "customer_onboarding",
         "quality_status": "pass",
@@ -1283,7 +1481,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:43:20.060106+00:00",
+      "timestamp": "2026-08-31T12:47:05.726836+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1295,7 +1493,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:43:20.060820+00:00",
+      "timestamp": "2026-08-31T12:47:05.727452+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1307,7 +1505,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:43:20.061595+00:00",
+      "timestamp": "2026-08-31T12:47:05.727903+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1319,7 +1517,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:43:20.062994+00:00",
+      "timestamp": "2026-08-31T12:47:05.728976+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1331,7 +1529,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:43:20.063940+00:00",
+      "timestamp": "2026-08-31T12:47:05.730517+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1343,7 +1541,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:43:20.064623+00:00",
+      "timestamp": "2026-08-31T12:47:05.732072+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1355,7 +1553,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:43:20.065609+00:00",
+      "timestamp": "2026-08-31T12:47:05.733327+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1367,7 +1565,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:43:20.066211+00:00",
+      "timestamp": "2026-08-31T12:47:05.734624+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1379,7 +1577,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:43:20.066868+00:00",
+      "timestamp": "2026-08-31T12:47:05.735992+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1391,7 +1589,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:43:20.067414+00:00",
+      "timestamp": "2026-08-31T12:47:05.737469+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1403,7 +1601,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:43:20.068067+00:00",
+      "timestamp": "2026-08-31T12:47:05.738939+00:00",
       "actor": "reviewer",
       "action": "FIELD_REVIEWED",
       "details": {
@@ -1415,7 +1613,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T12:43:20.069147+00:00",
+      "timestamp": "2026-08-31T12:47:05.740226+00:00",
       "actor": "reviewer",
       "action": "DOCUMENT_REVIEW_SUBMITTED",
       "details": {

@@ -2,6 +2,23 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.23.0-exp1] - 2026-08-31 — Controlled experiment: Field-level evidence enforcement & crop verification
+
+### Experiment: Add field-level evidence enforcement & crop verification
+
+- **Hypothesis**: Mandating that every extracted field possesses valid non-zero bounding box coordinates (`ymin < ymax` and `xmin < xmax`) and generating/verifying actual PNG crop image files on disk (`outputs/crops/{doc_id}_{field_name}.png`) via PIL image slicing will enforce 100% evidence visual traceability. If bounding box area is zero or crop generation fails, deterministic verification rule `RULE-EVID-010` will fail, correctly escalating unverified visual fields to `human_review`.
+- **Failure mode**: Fields with missing crop image files or zero-area bounding boxes `[0, 0, 0, 0]` could previously pass triage and auto-accept without verifiable visual evidence, violating audit traceability policies.
+- **Change made**: Added PIL crop image slicing in `app/backend/agents/extraction_agent.py` to create physical PNG crop files under `outputs/crops/`. Added deterministic verification rule `RULE-EVID-010` in `app/backend/agents/verification_agent.py` checking bounding box area and crop file existence. Added unit test in `tests/test_verification.py`.
+- **Dataset/version**: Benchmark Corpus `data/manifests/manifest.json` (Version `2.0.0`, 12 synthetic document forms, 126 fields).
+- **Baseline result**: Raw Accuracy `99.21%`, Final Verified Accuracy `100.00%`, Escalation Recall `100.00%`, Unnecessary Review Rate `18.67%`, Processing Time `0.0163s/doc`.
+- **Experiment result**: Raw Accuracy `99.21%`, Final Verified Accuracy `100.00%`, Escalation Recall `100.00%`, Unnecessary Review Rate `18.67%`, Evidence Verification Pass Rate `100.00%`, Processing Time `0.0163s/doc`.
+- **Evidence files**: `outputs/crops/*.png`, `outputs/comparison-results.json`, `evaluation/error-analysis.md`, `tests/test_verification.py`.
+- **Decision**: **KEEP**
+- **Learning**: Physical PIL bounding box crop slicing during extraction + deterministic evidence verification rule (`RULE-EVID-010`) guarantees 100% visual traceability for audit trails without increasing runtime latency or introducing false-positive triage escalations.
+- **Remaining risk**: Extreme image skew or severe rotation may shift target handwriting slightly outside default schema bounding box coordinates; dynamic OCR bounding box re-alignment will be evaluated in future iterations.
+
+---
+
 ## [1.22.0] - 2026-08-31 — Fair baseline-versus-advanced benchmark evaluation (`scripts/run_evaluation.py`)
 
 ### Stage

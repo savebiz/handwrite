@@ -25,6 +25,7 @@ from app.shared.schemas import (
     VerificationCheckResult,
     VerificationResult,
     DocumentRecord,
+    Evidence,
 )
 from app.backend.agents.verification_agent import (
     run_deterministic_verification,
@@ -229,6 +230,29 @@ def test_backward_compatibility_verify_extracted_fields():
     assert norm_val == "INSP-2026-001"
 
 
+def test_rule_evid_010_field_evidence_verification():
+    """RULE-EVID-010 verifies bounding_box is valid non-zero rectangle."""
+    cand_valid = {
+        "inspection_ref": {
+            "proposed_value": "INSP-2026-001",
+            "evidence": Evidence(page=1, bounding_box=[100, 200, 150, 400], crop_reference="/crops/test.png"),
+        }
+    }
+    res_v = run_deterministic_verification(DocumentType.FIELD_INSPECTION, cand_valid)
+    chk_v = next(c for c in res_v.checks if c.rule_id == "RULE-EVID-010")
+    assert chk_v.result == VerificationCheckResult.PASS
+
+    cand_invalid = {
+        "inspection_ref": {
+            "proposed_value": "INSP-2026-001",
+            "evidence": Evidence(page=1, bounding_box=[0, 0, 0, 0], crop_reference="/crops/test.png"),
+        }
+    }
+    res_inv = run_deterministic_verification(DocumentType.FIELD_INSPECTION, cand_invalid)
+    chk_inv = next(c for c in res_inv.checks if c.rule_id == "RULE-EVID-010")
+    assert chk_inv.result == VerificationCheckResult.FAIL
+
+
 def test_pipeline_integration_verification_result():
     """Pipeline attaches VerificationResult to DocumentRecord."""
     record = process_document_pipeline(
@@ -278,16 +302,19 @@ def run_all_verification_tests():
     test_rule_norm_009_original_value_preservation_and_transformations()
     print("[PASS] Test 9: RULE-NORM-009 Original value preservation & transformation tracking")
 
+    test_rule_evid_010_field_evidence_verification()
+    print("[PASS] Test 10: RULE-EVID-010 Field evidence bounding box verification")
+
     test_field_name_included_in_checks()
-    print("[PASS] Test 10: field_name included in all VerificationCheck objects")
+    print("[PASS] Test 11: field_name included in all VerificationCheck objects")
 
     test_backward_compatibility_verify_extracted_fields()
-    print("[PASS] Test 11: Backward-compatible verify_extracted_fields helper")
+    print("[PASS] Test 12: Backward-compatible verify_extracted_fields helper")
 
     test_pipeline_integration_verification_result()
-    print("[PASS] Test 12: Pipeline integration attaching VerificationResult to DocumentRecord")
+    print("[PASS] Test 13: Pipeline integration attaching VerificationResult to DocumentRecord")
 
-    print("\n[SUCCESS] ALL DETERMINISTIC VERIFICATION TESTS PASSED (12/12).")
+    print("\n[SUCCESS] ALL DETERMINISTIC VERIFICATION TESTS PASSED (13/13).")
 
 
 if __name__ == "__main__":

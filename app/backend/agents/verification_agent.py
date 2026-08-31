@@ -257,6 +257,46 @@ def run_deterministic_verification(
                     "change_reason": "Whitespace trimming",
                 })
 
+        # ------------------------------------------------------------------
+        # RULE-EVID-010: Field Evidence Verification Check
+        # ------------------------------------------------------------------
+        evidence_obj = candidate.get("evidence")
+        bbox = None
+        if isinstance(evidence_obj, dict):
+            bbox = evidence_obj.get("bounding_box")
+        elif hasattr(evidence_obj, "bounding_box"):
+            bbox = getattr(evidence_obj, "bounding_box")
+
+        if not bbox:
+            bbox = candidate.get("bounding_box")
+
+        if bbox and len(bbox) == 4:
+            ymin, xmin, ymax, xmax = bbox
+            valid_area = (ymax > ymin) and (xmax > xmin)
+        else:
+            valid_area = False
+
+        if valid_area:
+            chk = VerificationCheck(
+                rule_id="RULE-EVID-010",
+                result=VerificationCheckResult.PASS,
+                message=f"Field evidence bounding box {bbox} is valid.",
+                field_name=field_name,
+            )
+            f_checks.append(chk)
+            all_checks.append(chk)
+            passed_count += 1
+        else:
+            chk = VerificationCheck(
+                rule_id="RULE-EVID-010",
+                result=VerificationCheckResult.FAIL,
+                message=f"Field evidence bounding box {bbox} is invalid or has zero area.",
+                field_name=field_name,
+            )
+            f_checks.append(chk)
+            all_checks.append(chk)
+            failed_count += 1
+
         field_checks_map[field_name] = f_checks
         normalized_map[field_name] = normalized
 

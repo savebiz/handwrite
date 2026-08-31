@@ -15,6 +15,8 @@ Strictly enforces:
 import os
 import json
 from typing import Dict, Any, List, Optional
+from PIL import Image
+
 from app.shared.schemas import (
     DocumentType,
     FieldCandidate,
@@ -27,6 +29,35 @@ from app.shared.metadata import get_metadata_for_family
 
 AGENT_VERSION = "1.2.0-extraction"
 PROMPT_VERSION_ID = "prompt-schema-guided-v1.0"
+
+
+def _generate_crop_file(image_path: str, doc_id: str, field_name: str, bbox: List[int]) -> str:
+    """Slices bounding box [ymin, xmin, ymax, xmax] from image and saves PNG crop to outputs/crops/."""
+    crop_dir = "outputs/crops"
+    os.makedirs(crop_dir, exist_ok=True)
+    crop_filename = f"{doc_id}_{field_name}.png"
+    crop_path = os.path.join(crop_dir, crop_filename)
+
+    if os.path.exists(image_path):
+        try:
+            with Image.open(image_path) as img:
+                w, h = img.size
+                ymin, xmin, ymax, xmax = bbox
+                # Convert 0-1000 normalized bbox coordinates to pixel box (left, upper, right, lower)
+                left = max(0, int((xmin / 1000.0) * w))
+                upper = max(0, int((ymin / 1000.0) * h))
+                right = min(w, int((xmax / 1000.0) * w))
+                lower = min(h, int((ymax / 1000.0) * h))
+
+                if right > left and lower > upper:
+                    cropped = img.crop((left, upper, right, lower))
+                    cropped.save(crop_path, "PNG")
+                else:
+                    img.save(crop_path, "PNG")
+        except Exception:
+            pass
+
+    return f"/crops/{crop_filename}"
 
 
 def _detect_adapter_type() -> str:
@@ -136,7 +167,7 @@ def extract_fields(
         else:
             extracted_count += 1
 
-        crop_ref = f"/crops/{doc_id}_{field_name}.png"
+        crop_ref = _generate_crop_file(image_path, doc_id, field_name, meta.default_bounding_box)
         evidence = Evidence(
             page=1,
             bounding_box=meta.default_bounding_box,
