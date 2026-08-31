@@ -91,6 +91,33 @@ class TextStyleEnum(str, Enum):
     MIXED = "mixed"
 
 
+class FieldCandidate(BaseModel):
+    field_name: str
+    display_name: str
+    proposed_value: Optional[str] = None
+    normalized_value: Optional[str] = None
+    confidence: float = Field(..., ge=0.0, le=1.0)
+    text_style: TextStyleEnum = TextStyleEnum.HANDWRITTEN
+    evidence: Evidence
+    sensitivity: SensitivityEnum
+    mandatory_human_review: bool = False
+    is_unreadable: bool = False
+    is_absent: bool = False
+
+
+class ExtractionResult(BaseModel):
+    agent_version: str = "1.2.0-extraction"
+    prompt_version_id: str = "prompt-schema-guided-v1.0"
+    adapter_type: str = "synthetic_test_adapter"
+    document_type: DocumentType
+    fields: List[FieldCandidate] = Field(default_factory=list)
+    total_expected_fields: int = 0
+    extracted_fields_count: int = 0
+    unreadable_fields_count: int = 0
+    absent_fields_count: int = 0
+    extraction_metadata: Dict[str, Any] = Field(default_factory=dict)
+
+
 class FieldResult(BaseModel):
     field_name: str
     display_name: str
@@ -156,6 +183,7 @@ class DocumentRecord(BaseModel):
     document_type: DocumentType
     document_quality: QualityResult
     intake_result: Optional[IntakeResult] = None
+    extraction_result: Optional[ExtractionResult] = None
     field_results: List[FieldResult] = Field(default_factory=list)
     record_status: RecordStatusEnum = RecordStatusEnum.PROCESSING
     audit_events: List[AuditEvent] = Field(default_factory=list)

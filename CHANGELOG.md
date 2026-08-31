@@ -2,6 +2,39 @@
 
 All notable changes, experiments, baseline comparisons, and evaluation iterations are documented below.
 
+## [1.18.0] - 2026-08-31 — Schema-guided field extraction stage (`extract_fields()`)
+
+### Stage
+Schema-Guided Field Extraction Agent (`app/backend/agents/extraction_agent.py`)
+
+### Change
+- Implemented `extract_fields()` returning structured `ExtractionResult` model containing `agent_version` (`"1.2.0-extraction"`), `prompt_version_id` (`"prompt-schema-guided-v1.0"`), `adapter_type` (`"vlm_vision_api"` | `"synthetic_test_adapter"`), and `fields: List[FieldCandidate]`.
+- Added `FieldCandidate` and `ExtractionResult` Pydantic models to `app/shared/schemas.py`.
+- Added optional `extraction_result` field to `DocumentRecord` for backward compatibility.
+- Integrated `extract_fields()` into Stage 3 of `app/backend/pipeline.py`.
+- Enforced 100% schema coverage across all supported form families (`field_inspection`: 10 fields, `customer_onboarding`: 11 fields, `attendance_register`: 10 fields).
+- Enforced zero-fabrication policy: unreadable, crossed-out, or missing values return `proposed_value = None` (`null`), `is_absent = True`, and `confidence = 0.0`.
+- Preserved raw `proposed_value` and `normalized_value` representation separately.
+- Generated template-derived 4-element `bounding_box` `[ymin, xmin, ymax, xmax]` and crop URI reference (`/crops/{doc_id}_{field_name}.png`) for every field.
+- Added explicit adapter type disclosure (`vlm_vision_api` when live Vision LLM keys are configured vs `synthetic_test_adapter` during local benchmark evaluations).
+- Created `tests/test_extraction.py` (13 tests) and `scripts/run_extraction_tests.py` standalone test runner.
+
+### Reason
+Fulfill schema-guided field extraction stage requirements while maintaining zero-fabrication rules, evidence coordinates, lineage metadata, and transparent vision adapter fallback disclosure.
+
+### Evidence
+- `scripts/run_extraction_tests.py`: 13/13 PASSED
+- `python -m pytest`: 77/77 PASSED (0 failures across all test suites)
+
+### Decision
+Ship as `[1.18.0]`.
+
+### Learning
+- Explicit schema binding ensures 100% target field coverage across document families while preventing model hallucinations.
+- Transparent adapter tagging (`adapter_type`) prevents synthetic benchmark adapters from being misrepresented as live VLM vision model runs.
+
+---
+
 ## [1.17.0] - 2026-08-31 — Enhanced intake & document-quality stage (9 deterministic checks)
 
 ### Stage

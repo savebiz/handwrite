@@ -8,10 +8,11 @@ from app.shared.schemas import (
     ReviewerDecisionEnum,
     ActorEnum,
     IntakeResult,
+    ExtractionResult,
 )
 from app.backend.agents.quality_agent import analyze_document_quality, run_intake_and_quality
 from app.backend.agents.classification_agent import classify_document
-from app.backend.agents.extraction_agent import extract_field_candidates
+from app.backend.agents.extraction_agent import extract_field_candidates, extract_fields
 from app.backend.agents.verification_agent import verify_extracted_fields
 from app.backend.agents.triage_agent import triage_field_and_record, determine_record_status
 from app.backend.audit import log_audit_event
@@ -59,7 +60,14 @@ def process_document_pipeline(
     if doc_type == DocumentType.UNKNOWN:
         quality_res.issues.append("Uncertain document classification category")
 
-    # Stage 3: Field Extraction Agent
+    # Stage 3: Schema-Guided Field Extraction Agent
+    extraction_res = extract_fields(
+        image_path=actual_image_path,
+        doc_type=doc_type,
+        gold_data_path=gold_data_path,
+        issues=issues_hint,
+        document_id=doc_id,
+    )
     candidates = extract_field_candidates(
         actual_image_path, doc_type, gold_data_path=gold_data_path, issues=issues_hint
     )
@@ -137,6 +145,7 @@ def process_document_pipeline(
         document_type=doc_type,
         document_quality=quality_res,
         intake_result=intake_res,
+        extraction_result=extraction_res,
         field_results=field_results,
         record_status=record_status,
         audit_events=[audit_evt],

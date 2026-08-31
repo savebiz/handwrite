@@ -1,5 +1,5 @@
 {
-  "run_id": "run-bc39fcb2",
+  "run_id": "run-57693275",
   "document_id": "CO-001",
   "document_type": "customer_onboarding",
   "document_quality": {
@@ -8,7 +8,7 @@
     "rescan_required": false
   },
   "intake_result": {
-    "run_id": "run-bc39fcb2",
+    "run_id": "run-57693275",
     "document_id": "CO-001",
     "page_count": 1,
     "orientation": "portrait",
@@ -32,7 +32,7 @@
         "duplicate_page"
       ],
       "checks_unavailable": [],
-      "start_time_iso": "2026-08-31T08:26:12.464019+00:00",
+      "start_time_iso": "2026-08-31T09:07:24.545943+00:00",
       "page_count": 1,
       "orientation": "portrait",
       "image_width": 800,
@@ -58,8 +58,267 @@
         9.04
       ],
       "duplicate_page_note": "not_applicable_single_page",
-      "end_time_iso": "2026-08-31T08:26:12.519950+00:00",
-      "duration_ms": 55.93
+      "end_time_iso": "2026-08-31T09:07:24.607043+00:00",
+      "duration_ms": 61.1
+    }
+  },
+  "extraction_result": {
+    "agent_version": "1.2.0-extraction",
+    "prompt_version_id": "prompt-schema-guided-v1.0",
+    "adapter_type": "synthetic_test_adapter",
+    "document_type": "customer_onboarding",
+    "fields": [
+      {
+        "field_name": "onboarding_ref",
+        "display_name": "Onboarding Reference",
+        "proposed_value": "ONB-2026-101",
+        "normalized_value": "ONB-2026-101",
+        "confidence": 0.99,
+        "text_style": "typewritten",
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            100.0,
+            50.0,
+            150.0,
+            400.0
+          ],
+          "crop_reference": "/crops/CO-001_onboarding_ref.png"
+        },
+        "sensitivity": "public",
+        "mandatory_human_review": false,
+        "is_unreadable": false,
+        "is_absent": false
+      },
+      {
+        "field_name": "application_date",
+        "display_name": "Application Date",
+        "proposed_value": "2026-08-10",
+        "normalized_value": "2026-08-10",
+        "confidence": 0.99,
+        "text_style": "typewritten",
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            100.0,
+            450.0,
+            150.0,
+            750.0
+          ],
+          "crop_reference": "/crops/CO-001_application_date.png"
+        },
+        "sensitivity": "public",
+        "mandatory_human_review": false,
+        "is_unreadable": false,
+        "is_absent": false
+      },
+      {
+        "field_name": "applicant_name",
+        "display_name": "Applicant Name",
+        "proposed_value": "Sarah Jenkins",
+        "normalized_value": "Sarah Jenkins",
+        "confidence": 0.94,
+        "text_style": "handwritten",
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            180.0,
+            50.0,
+            230.0,
+            750.0
+          ],
+          "crop_reference": "/crops/CO-001_applicant_name.png"
+        },
+        "sensitivity": "personal",
+        "mandatory_human_review": true,
+        "is_unreadable": false,
+        "is_absent": false
+      },
+      {
+        "field_name": "contact_number",
+        "display_name": "Contact Number",
+        "proposed_value": "+14155550192",
+        "normalized_value": "+14155550192",
+        "confidence": 0.94,
+        "text_style": "handwritten",
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            260.0,
+            50.0,
+            310.0,
+            380.0
+          ],
+          "crop_reference": "/crops/CO-001_contact_number.png"
+        },
+        "sensitivity": "personal",
+        "mandatory_human_review": true,
+        "is_unreadable": false,
+        "is_absent": false
+      },
+      {
+        "field_name": "email_address",
+        "display_name": "Email Address",
+        "proposed_value": "sarah.j@example.com",
+        "normalized_value": "sarah.j@example.com",
+        "confidence": 0.94,
+        "text_style": "handwritten",
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            260.0,
+            400.0,
+            310.0,
+            750.0
+          ],
+          "crop_reference": "/crops/CO-001_email_address.png"
+        },
+        "sensitivity": "personal",
+        "mandatory_human_review": true,
+        "is_unreadable": false,
+        "is_absent": false
+      },
+      {
+        "field_name": "address_location",
+        "display_name": "Address / Location",
+        "proposed_value": "742 Evergreen Terrace, Springfield",
+        "normalized_value": "742 Evergreen Terrace, Springfield",
+        "confidence": 0.94,
+        "text_style": "handwritten",
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            340.0,
+            50.0,
+            410.0,
+            750.0
+          ],
+          "crop_reference": "/crops/CO-001_address_location.png"
+        },
+        "sensitivity": "personal",
+        "mandatory_human_review": true,
+        "is_unreadable": false,
+        "is_absent": false
+      },
+      {
+        "field_name": "product_requested",
+        "display_name": "Product Requested",
+        "proposed_value": "Standard",
+        "normalized_value": "Standard",
+        "confidence": 0.94,
+        "text_style": "handwritten",
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            430.0,
+            50.0,
+            480.0,
+            380.0
+          ],
+          "crop_reference": "/crops/CO-001_product_requested.png"
+        },
+        "sensitivity": "internal",
+        "mandatory_human_review": false,
+        "is_unreadable": false,
+        "is_absent": false
+      },
+      {
+        "field_name": "id_ref_placeholder",
+        "display_name": "Identity Reference Placeholder",
+        "proposed_value": "ID-984712",
+        "normalized_value": "ID-984712",
+        "confidence": 0.94,
+        "text_style": "handwritten",
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            430.0,
+            400.0,
+            480.0,
+            750.0
+          ],
+          "crop_reference": "/crops/CO-001_id_ref_placeholder.png"
+        },
+        "sensitivity": "sensitive",
+        "mandatory_human_review": true,
+        "is_unreadable": false,
+        "is_absent": false
+      },
+      {
+        "field_name": "consent_indicator",
+        "display_name": "Consent Indicator",
+        "proposed_value": "YES",
+        "normalized_value": "YES",
+        "confidence": 0.94,
+        "text_style": "handwritten",
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            510.0,
+            50.0,
+            560.0,
+            380.0
+          ],
+          "crop_reference": "/crops/CO-001_consent_indicator.png"
+        },
+        "sensitivity": "personal",
+        "mandatory_human_review": true,
+        "is_unreadable": false,
+        "is_absent": false
+      },
+      {
+        "field_name": "reviewer_status",
+        "display_name": "Reviewer Status",
+        "proposed_value": "PENDING",
+        "normalized_value": "PENDING",
+        "confidence": 0.94,
+        "text_style": "handwritten",
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            510.0,
+            400.0,
+            560.0,
+            750.0
+          ],
+          "crop_reference": "/crops/CO-001_reviewer_status.png"
+        },
+        "sensitivity": "internal",
+        "mandatory_human_review": false,
+        "is_unreadable": false,
+        "is_absent": false
+      },
+      {
+        "field_name": "form_completeness",
+        "display_name": "Form Completeness",
+        "proposed_value": "COMPLETE",
+        "normalized_value": "COMPLETE",
+        "confidence": 0.94,
+        "text_style": "handwritten",
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            590.0,
+            50.0,
+            640.0,
+            750.0
+          ],
+          "crop_reference": "/crops/CO-001_form_completeness.png"
+        },
+        "sensitivity": "internal",
+        "mandatory_human_review": false,
+        "is_unreadable": false,
+        "is_absent": false
+      }
+    ],
+    "total_expected_fields": 11,
+    "extracted_fields_count": 11,
+    "unreadable_fields_count": 0,
+    "absent_fields_count": 0,
+    "extraction_metadata": {
+      "image_path": "data/synthetic/customer-onboarding/cust_onb_001.png",
+      "issues_applied": [],
+      "zero_fabrication_enforced": true
     }
   },
   "field_results": [
@@ -478,11 +737,11 @@
   "record_status": "approved",
   "audit_events": [
     {
-      "timestamp": "2026-08-31T08:26:12.523296+00:00",
+      "timestamp": "2026-08-31T09:07:24.610341+00:00",
       "actor": "agent",
       "action": "DOCUMENT_PIPELINE_PROCESSED",
       "details": {
-        "run_id": "run-bc39fcb2",
+        "run_id": "run-57693275",
         "document_id": "CO-001",
         "document_type": "customer_onboarding",
         "quality_status": "pass",
@@ -493,7 +752,7 @@
       }
     },
     {
-      "timestamp": "2026-08-31T08:26:12.577089+00:00",
+      "timestamp": "2026-08-31T09:07:24.656048+00:00",
       "actor": "reviewer",
       "action": "DOCUMENT_REVIEW_SUBMITTED",
       "details": {

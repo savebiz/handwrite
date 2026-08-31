@@ -1,21 +1,21 @@
 {
   "run_metadata": {
-    "run_id": "baseline-run-20260831-092556",
+    "run_id": "baseline-run-20260831-095057",
     "dataset_version": "2.0.0",
     "schema_version": "1.0.0",
     "agent_version": "baseline-1.0.0",
-    "timestamp": "2026-08-31T09:25:56Z",
+    "timestamp": "2026-08-31T09:50:57Z",
     "total_samples": 12,
     "total_fields": 126,
-    "correct_fields": 106,
-    "verified_field_accuracy_percent": 84.13,
-    "duration_seconds": 0.0041,
+    "correct_fields": 107,
+    "verified_field_accuracy_percent": 84.92,
+    "duration_seconds": 0.0038,
     "avg_duration_per_doc_seconds": 0.0003,
     "cost_usd": 0.0
   },
   "records": [
     {
-      "run_id": "baseline-sample-edd45b44",
+      "run_id": "baseline-sample-5734a1ba",
       "document_id": "FI-001",
       "document_type": "field_inspection",
       "document_quality": {
@@ -24,6 +24,7 @@
         "rescan_required": false
       },
       "intake_result": null,
+      "extraction_result": null,
       "field_results": [
         {
           "field_name": "inspection_ref",
@@ -282,7 +283,7 @@
       "agent_version": "baseline-1.0.0"
     },
     {
-      "run_id": "baseline-sample-5393533c",
+      "run_id": "baseline-sample-919ce9d2",
       "document_id": "FI-002",
       "document_type": "field_inspection",
       "document_quality": {
@@ -291,6 +292,7 @@
         "rescan_required": false
       },
       "intake_result": null,
+      "extraction_result": null,
       "field_results": [
         {
           "field_name": "inspection_ref",
@@ -549,7 +551,7 @@
       "agent_version": "baseline-1.0.0"
     },
     {
-      "run_id": "baseline-sample-ef614011",
+      "run_id": "baseline-sample-91077939",
       "document_id": "FI-003",
       "document_type": "field_inspection",
       "document_quality": {
@@ -558,6 +560,7 @@
         "rescan_required": false
       },
       "intake_result": null,
+      "extraction_result": null,
       "field_results": [
         {
           "field_name": "inspection_ref",
@@ -787,8 +790,8 @@
         {
           "field_name": "form_completeness",
           "display_name": "Form Completeness",
-          "proposed_value": "COMPLETE",
-          "normalized_value": "COMPLETE",
+          "proposed_value": "COMPLETE?",
+          "normalized_value": "COMPLETE?",
           "confidence": 0.78,
           "decision": "auto_accept",
           "sensitivity": "internal",
@@ -816,7 +819,7 @@
       "agent_version": "baseline-1.0.0"
     },
     {
-      "run_id": "baseline-sample-9c9cc2b2",
+      "run_id": "baseline-sample-759c3044",
       "document_id": "FI-004",
       "document_type": "field_inspection",
       "document_quality": {
@@ -825,6 +828,7 @@
         "rescan_required": false
       },
       "intake_result": null,
+      "extraction_result": null,
       "field_results": [
         {
           "field_name": "inspection_ref",
@@ -854,8 +858,8 @@
         {
           "field_name": "inspection_date",
           "display_name": "Inspection Date",
-          "proposed_value": "2026-08-20",
-          "normalized_value": "2026-08-20",
+          "proposed_value": "2026-08-20?",
+          "normalized_value": "2026-08-20?",
           "confidence": 0.78,
           "decision": "auto_accept",
           "sensitivity": "public",
@@ -879,8 +883,8 @@
         {
           "field_name": "site_location",
           "display_name": "Site / Location",
-          "proposed_value": "Solar Array Field 7",
-          "normalized_value": "Solar Array Field 7",
+          "proposed_value": "Solar Array Field 7?",
+          "normalized_value": "Solar Array Field 7?",
           "confidence": 0.78,
           "decision": "auto_accept",
           "sensitivity": "internal",
@@ -954,8 +958,8 @@
         {
           "field_name": "inspection_status",
           "display_name": "Inspection Status",
-          "proposed_value": "PASS",
-          "normalized_value": "PASS",
+          "proposed_value": "PASS?",
+          "normalized_value": "PASS?",
           "confidence": 0.78,
           "decision": "auto_accept",
           "sensitivity": "public",
@@ -1083,7 +1087,7 @@
       "agent_version": "baseline-1.0.0"
     },
     {
-      "run_id": "baseline-sample-b986f809",
+      "run_id": "baseline-sample-92321b25",
       "document_id": "FI-005",
       "document_type": "field_inspection",
       "document_quality": {
@@ -1092,6 +1096,7 @@
         "rescan_required": false
       },
       "intake_result": null,
+      "extraction_result": null,
       "field_results": [
         {
           "field_name": "inspection_ref",
@@ -1121,8 +1126,8 @@
         {
           "field_name": "inspection_date",
           "display_name": "Inspection Date",
-          "proposed_value": "2026-08-2X",
-          "normalized_value": "2026-08-2X",
+          "proposed_value": "2026-08-22",
+          "normalized_value": "2026-08-22",
           "confidence": 0.55,
           "decision": "auto_accept",
           "sensitivity": "public",
@@ -1146,8 +1151,8 @@
         {
           "field_name": "site_location",
           "display_name": "Site / Location",
-          "proposed_value": "Refinery Zone X",
-          "normalized_value": "Refinery Zone X",
+          "proposed_value": "Refinery Zone C",
+          "normalized_value": "Refinery Zone C",
           "confidence": 0.55,
           "decision": "auto_accept",
           "sensitivity": "internal",
@@ -1196,8 +1201,8 @@
         {
           "field_name": "asset_ref",
           "display_name": "Asset Reference",
-          "proposed_value": "AST-9900X",
-          "normalized_value": "AST-9900X",
+          "proposed_value": "AST-99001",
+          "normalized_value": "AST-99001",
           "confidence": 0.55,
           "decision": "auto_accept",
           "sensitivity": "internal",
@@ -1246,8 +1251,8 @@
         {
           "field_name": "observation_finding",
           "display_name": "Observation / Finding",
-          "proposed_value": "Vibration noise in pump motorX",
-          "normalized_value": "Vibration noise in pump motorX",
+          "proposed_value": "Vibration noise in pump motor.",
+          "normalized_value": "Vibration noise in pump motor.",
           "confidence": 0.55,
           "decision": "auto_accept",
           "sensitivity": "public",
@@ -1271,8 +1276,8 @@
         {
           "field_name": "action_required",
           "display_name": "Action Required",
-          "proposed_value": "Lubricate bearings.",
-          "normalized_value": "Lubricate bearings.",
+          "proposed_value": "Lubricate bearingsX",
+          "normalized_value": "Lubricate bearingsX",
           "confidence": 0.55,
           "decision": "auto_accept",
           "sensitivity": "public",
@@ -1350,7 +1355,7 @@
       "agent_version": "baseline-1.0.0"
     },
     {
-      "run_id": "baseline-sample-3c37f372",
+      "run_id": "baseline-sample-69002213",
       "document_id": "FI-006",
       "document_type": "field_inspection",
       "document_quality": {
@@ -1359,12 +1364,13 @@
         "rescan_required": false
       },
       "intake_result": null,
+      "extraction_result": null,
       "field_results": [
         {
           "field_name": "inspection_ref",
           "display_name": "Inspection Reference",
-          "proposed_value": "INSP-2026-00X",
-          "normalized_value": "INSP-2026-00X",
+          "proposed_value": "INSP-2026-006",
+          "normalized_value": "INSP-2026-006",
           "confidence": 0.55,
           "decision": "auto_accept",
           "sensitivity": "public",
@@ -1463,8 +1469,8 @@
         {
           "field_name": "asset_ref",
           "display_name": "Asset Reference",
-          "proposed_value": "AST-11002",
-          "normalized_value": "AST-11002",
+          "proposed_value": "AST-1100X",
+          "normalized_value": "AST-1100X",
           "confidence": 0.55,
           "decision": "auto_accept",
           "sensitivity": "internal",
@@ -1513,8 +1519,8 @@
         {
           "field_name": "observation_finding",
           "display_name": "Observation / Finding",
-          "proposed_value": "Pressure drop cross-out (120psi -> 80psiX",
-          "normalized_value": "Pressure drop cross-out (120psi -> 80psiX",
+          "proposed_value": "Pressure drop cross-out (120psi -> 80psi)",
+          "normalized_value": "Pressure drop cross-out (120psi -> 80psi)",
           "confidence": 0.55,
           "decision": "auto_accept",
           "sensitivity": "public",
@@ -1588,8 +1594,8 @@
         {
           "field_name": "form_completeness",
           "display_name": "Form Completeness",
-          "proposed_value": "INCOMPLETX",
-          "normalized_value": "INCOMPLETX",
+          "proposed_value": "INCOMPLETE",
+          "normalized_value": "INCOMPLETE",
           "confidence": 0.55,
           "decision": "auto_accept",
           "sensitivity": "internal",
@@ -1617,7 +1623,7 @@
       "agent_version": "baseline-1.0.0"
     },
     {
-      "run_id": "baseline-sample-f386e897",
+      "run_id": "baseline-sample-80cc0935",
       "document_id": "CO-001",
       "document_type": "customer_onboarding",
       "document_quality": {
@@ -1626,6 +1632,7 @@
         "rescan_required": false
       },
       "intake_result": null,
+      "extraction_result": null,
       "field_results": [
         {
           "field_name": "onboarding_ref",
@@ -1909,7 +1916,7 @@
       "agent_version": "baseline-1.0.0"
     },
     {
-      "run_id": "baseline-sample-26933b95",
+      "run_id": "baseline-sample-2ea9368d",
       "document_id": "CO-002",
       "document_type": "customer_onboarding",
       "document_quality": {
@@ -1918,6 +1925,7 @@
         "rescan_required": false
       },
       "intake_result": null,
+      "extraction_result": null,
       "field_results": [
         {
           "field_name": "onboarding_ref",
@@ -2201,7 +2209,7 @@
       "agent_version": "baseline-1.0.0"
     },
     {
-      "run_id": "baseline-sample-2857f118",
+      "run_id": "baseline-sample-240a0656",
       "document_id": "CO-003",
       "document_type": "customer_onboarding",
       "document_quality": {
@@ -2210,6 +2218,7 @@
         "rescan_required": false
       },
       "intake_result": null,
+      "extraction_result": null,
       "field_results": [
         {
           "field_name": "onboarding_ref",
@@ -2289,8 +2298,8 @@
         {
           "field_name": "contact_number",
           "display_name": "Contact Number",
-          "proposed_value": "+442079460912?",
-          "normalized_value": "+442079460912?",
+          "proposed_value": "+442079460912",
+          "normalized_value": "+442079460912",
           "confidence": 0.78,
           "decision": "human_review",
           "sensitivity": "personal",
@@ -2439,8 +2448,8 @@
         {
           "field_name": "reviewer_status",
           "display_name": "Reviewer Status",
-          "proposed_value": "PENDING",
-          "normalized_value": "PENDING",
+          "proposed_value": "PENDING?",
+          "normalized_value": "PENDING?",
           "confidence": 0.78,
           "decision": "auto_accept",
           "sensitivity": "internal",
@@ -2493,7 +2502,7 @@
       "agent_version": "baseline-1.0.0"
     },
     {
-      "run_id": "baseline-sample-50f21a61",
+      "run_id": "baseline-sample-832eab47",
       "document_id": "CO-004",
       "document_type": "customer_onboarding",
       "document_quality": {
@@ -2502,6 +2511,7 @@
         "rescan_required": false
       },
       "intake_result": null,
+      "extraction_result": null,
       "field_results": [
         {
           "field_name": "onboarding_ref",
@@ -2531,8 +2541,8 @@
         {
           "field_name": "application_date",
           "display_name": "Application Date",
-          "proposed_value": "2026-08-15?",
-          "normalized_value": "2026-08-15?",
+          "proposed_value": "2026-08-15",
+          "normalized_value": "2026-08-15",
           "confidence": 0.78,
           "decision": "auto_accept",
           "sensitivity": "public",
@@ -2606,8 +2616,8 @@
         {
           "field_name": "email_address",
           "display_name": "Email Address",
-          "proposed_value": "dwu@techcorp.io",
-          "normalized_value": "dwu@techcorp.io",
+          "proposed_value": "dwu@techcorp.io?",
+          "normalized_value": "dwu@techcorp.io?",
           "confidence": 0.78,
           "decision": "human_review",
           "sensitivity": "personal",
@@ -2785,7 +2795,7 @@
       "agent_version": "baseline-1.0.0"
     },
     {
-      "run_id": "baseline-sample-6b7dc821",
+      "run_id": "baseline-sample-5ddc5459",
       "document_id": "CO-005",
       "document_type": "customer_onboarding",
       "document_quality": {
@@ -2794,12 +2804,13 @@
         "rescan_required": false
       },
       "intake_result": null,
+      "extraction_result": null,
       "field_results": [
         {
           "field_name": "onboarding_ref",
           "display_name": "Onboarding Reference",
-          "proposed_value": "ONB-2026-10X",
-          "normalized_value": "ONB-2026-10X",
+          "proposed_value": "ONB-2026-105",
+          "normalized_value": "ONB-2026-105",
           "confidence": 0.55,
           "decision": "auto_accept",
           "sensitivity": "public",
@@ -2823,8 +2834,8 @@
         {
           "field_name": "application_date",
           "display_name": "Application Date",
-          "proposed_value": "2026-08-1X",
-          "normalized_value": "2026-08-1X",
+          "proposed_value": "2026-08-19",
+          "normalized_value": "2026-08-19",
           "confidence": 0.55,
           "decision": "auto_accept",
           "sensitivity": "public",
@@ -2848,8 +2859,8 @@
         {
           "field_name": "applicant_name",
           "display_name": "Applicant Name",
-          "proposed_value": "Carlos Gomez",
-          "normalized_value": "Carlos Gomez",
+          "proposed_value": "Carlos GomeX",
+          "normalized_value": "Carlos GomeX",
           "confidence": 0.55,
           "decision": "human_review",
           "sensitivity": "personal",
@@ -2873,8 +2884,8 @@
         {
           "field_name": "contact_number",
           "display_name": "Contact Number",
-          "proposed_value": "+3491123456X",
-          "normalized_value": "+3491123456X",
+          "proposed_value": "+34911234567",
+          "normalized_value": "+34911234567",
           "confidence": 0.55,
           "decision": "human_review",
           "sensitivity": "personal",
@@ -2898,8 +2909,8 @@
         {
           "field_name": "email_address",
           "display_name": "Email Address",
-          "proposed_value": "carlos.g@madrid.es",
-          "normalized_value": "carlos.g@madrid.es",
+          "proposed_value": "carlos.g@madrid.eX",
+          "normalized_value": "carlos.g@madrid.eX",
           "confidence": 0.55,
           "decision": "human_review",
           "sensitivity": "personal",
@@ -2973,8 +2984,8 @@
         {
           "field_name": "id_ref_placeholder",
           "display_name": "Identity Reference Placeholder",
-          "proposed_value": "ID-110293",
-          "normalized_value": "ID-110293",
+          "proposed_value": "ID-11029X",
+          "normalized_value": "ID-11029X",
           "confidence": 0.55,
           "decision": "human_review",
           "sensitivity": "sensitive",
@@ -3023,8 +3034,8 @@
         {
           "field_name": "reviewer_status",
           "display_name": "Reviewer Status",
-          "proposed_value": "PENDINX",
-          "normalized_value": "PENDINX",
+          "proposed_value": "PENDING",
+          "normalized_value": "PENDING",
           "confidence": 0.55,
           "decision": "auto_accept",
           "sensitivity": "internal",
@@ -3077,7 +3088,7 @@
       "agent_version": "baseline-1.0.0"
     },
     {
-      "run_id": "baseline-sample-55ad6353",
+      "run_id": "baseline-sample-1b96697c",
       "document_id": "CO-006",
       "document_type": "customer_onboarding",
       "document_quality": {
@@ -3086,6 +3097,7 @@
         "rescan_required": false
       },
       "intake_result": null,
+      "extraction_result": null,
       "field_results": [
         {
           "field_name": "onboarding_ref",
@@ -3115,8 +3127,8 @@
         {
           "field_name": "application_date",
           "display_name": "Application Date",
-          "proposed_value": "2026-08-21",
-          "normalized_value": "2026-08-21",
+          "proposed_value": "2026-08-2X",
+          "normalized_value": "2026-08-2X",
           "confidence": 0.55,
           "decision": "auto_accept",
           "sensitivity": "public",
@@ -3215,8 +3227,8 @@
         {
           "field_name": "address_location",
           "display_name": "Address / Location",
-          "proposed_value": "MG Road 45, Bengaluru",
-          "normalized_value": "MG Road 45, Bengaluru",
+          "proposed_value": "MG Road 45, BengalurX",
+          "normalized_value": "MG Road 45, BengalurX",
           "confidence": 0.55,
           "decision": "human_review",
           "sensitivity": "personal",
@@ -3340,8 +3352,8 @@
         {
           "field_name": "form_completeness",
           "display_name": "Form Completeness",
-          "proposed_value": "COMPLETX",
-          "normalized_value": "COMPLETX",
+          "proposed_value": "COMPLETE",
+          "normalized_value": "COMPLETE",
           "confidence": 0.55,
           "decision": "auto_accept",
           "sensitivity": "internal",
