@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "app/backend/main.py",
+      "src": "api/index.py",
       "use": "@vercel/python"
     },
     {
@@ -16,15 +16,15 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "app/backend/main.py"
+      "dest": "api/index.py"
     },
     {
       "src": "/synthetic/(.*)",
-      "dest": "app/backend/main.py"
+      "dest": "api/index.py"
     },
     {
       "src": "/crops/(.*)",
-      "dest": "app/backend/main.py"
+      "dest": "api/index.py"
     },
     {
       "handle": "filesystem"
